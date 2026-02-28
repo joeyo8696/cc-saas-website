@@ -1,0 +1,275 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import {
+  ChevronDown,
+  Waypoints,
+  MessageSquare,
+  PhoneForwarded,
+  LayoutTemplate,
+  GitBranch,
+  FileSignature,
+  UserCircle,
+  BarChart3,
+  Users,
+  TrendingUp,
+  ArrowRight,
+} from 'lucide-react'
+
+const platformLinks = {
+  featured: {
+    href: '/solutions/waypoint',
+    eyebrow: 'AI Feature',
+    name: 'Waypoint',
+    description:
+      'The AI scoring engine built for law firms. Automatically qualify, rank, and prioritize every intake — powered by your firm\'s own criteria.',
+  },
+  columns: [
+    {
+      heading: 'Intake',
+      links: [
+        { icon: MessageSquare, label: 'Intelligent Intake', href: '/#features' },
+        { icon: PhoneForwarded, label: 'Live Transfer', href: '/#features' },
+        { icon: LayoutTemplate, label: 'Intake Form Builder', href: '/#features' },
+      ],
+    },
+    {
+      heading: 'Workflow',
+      links: [
+        { icon: GitBranch, label: 'Timeline Automation', href: '/#features' },
+        { icon: FileSignature, label: 'E-Signatures', href: '/#features' },
+        { icon: UserCircle, label: 'Client Portal', href: '/#features' },
+      ],
+    },
+    {
+      heading: 'Intelligence',
+      links: [
+        { icon: BarChart3, label: 'Enterprise Analytics', href: '/#features' },
+        { icon: Users, label: 'Referrals', href: '/#referrals' },
+        { icon: TrendingUp, label: 'Marketing Attribution', href: '/#features' },
+      ],
+    },
+  ],
+}
+
+export default function Nav() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <nav
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 200,
+        height: '64px',
+        padding: '0 40px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        background: scrolled ? 'rgba(6,13,31,0.92)' : 'rgba(6,13,31,0.6)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        transition: 'background 0.3s',
+      }}
+    >
+      {/* Logo */}
+      <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
+        <Image
+          src="/images/cc-logo-white.png"
+          alt="Case Compass"
+          width={160}
+          height={26}
+          style={{ height: '26px', width: 'auto', display: 'block' }}
+          priority
+        />
+      </Link>
+
+      {/* Links */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+
+        {/* Platform mega menu */}
+        <div
+          className="nav-item"
+          style={{ position: 'relative' }}
+          onMouseEnter={() => setMenuOpen(true)}
+          onMouseLeave={() => setMenuOpen(false)}
+        >
+          <button
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+              color: menuOpen ? '#fff' : 'rgba(255,255,255,0.7)',
+              fontSize: '0.875rem',
+              fontWeight: 500,
+              background: 'none',
+              border: 'none',
+              padding: 0,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              transition: 'color 0.2s',
+            }}
+          >
+            Platform
+            <ChevronDown
+              size={14}
+              style={{
+                transition: 'transform 0.2s',
+                transform: menuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+              }}
+            />
+          </button>
+
+          {/* Mega menu dropdown */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 'calc(100% + 16px)',
+              left: '50%',
+              width: '720px',
+              background: '#fff',
+              borderRadius: '16px',
+              boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)',
+              opacity: menuOpen ? 1 : 0,
+              visibility: menuOpen ? 'visible' : 'hidden',
+              transform: menuOpen ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(10px)',
+              transition: 'opacity 0.18s, transform 0.18s, visibility 0.18s',
+              pointerEvents: menuOpen ? 'all' : 'none',
+              zIndex: 300,
+            }}
+          >
+            {/* Featured: Waypoint */}
+            <Link
+              href={platformLinks.featured.href}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                padding: '20px 24px',
+                background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)',
+                borderRadius: '16px 16px 0 0',
+                borderBottom: '1px solid #e8edf5',
+                textDecoration: 'none',
+              }}
+            >
+              <div
+                style={{
+                  width: '46px',
+                  height: '46px',
+                  flexShrink: 0,
+                  background: 'linear-gradient(135deg, #4f46e5, #818cf8)',
+                  borderRadius: '11px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Waypoints size={22} color="#fff" />
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>
+                  {platformLinks.featured.eyebrow}
+                </div>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '3px' }}>
+                  {platformLinks.featured.name}
+                </div>
+                <div style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.45 }}>
+                  {platformLinks.featured.description}
+                </div>
+              </div>
+              <div style={{ color: '#a5b4fc', flexShrink: 0 }}>
+                <ArrowRight size={18} />
+              </div>
+            </Link>
+
+            {/* 3-column grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', padding: '20px 20px 22px', gap: '0 12px' }}>
+              {platformLinks.columns.map((col) => (
+                <div key={col.heading}>
+                  <div style={{ fontSize: '0.67rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', padding: '0 8px', marginBottom: '8px' }}>
+                    {col.heading}
+                  </div>
+                  {col.links.map(({ icon: Icon, label, href }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        padding: '8px 8px',
+                        borderRadius: '8px',
+                        textDecoration: 'none',
+                        marginBottom: '2px',
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#f8fafc' }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = '' }}
+                    >
+                      <div style={{ width: '28px', height: '28px', flexShrink: 0, borderRadius: '6px', background: 'linear-gradient(135deg,#ede9fe,#dbeafe)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Icon size={13} color="#4338ca" />
+                      </div>
+                      <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 600, color: '#0f172a' }}>
+                        {label}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <Link href="/#results" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
+        >
+          Results
+        </Link>
+        <Link href="/blog" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
+        >
+          Blog
+        </Link>
+        <Link
+          href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
+          style={{
+            background: '#4f46e5',
+            color: '#fff',
+            padding: '9px 22px',
+            borderRadius: '6px',
+            fontFamily: 'var(--font-display)',
+            fontSize: '0.83rem',
+            fontWeight: 700,
+            letterSpacing: '0.02em',
+            transition: 'background 0.2s, transform 0.15s, box-shadow 0.2s',
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLElement
+            el.style.background = '#4338ca'
+            el.style.transform = 'translateY(-1px)'
+            el.style.boxShadow = '0 4px 16px rgba(79,70,229,0.4)'
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLElement
+            el.style.background = '#4f46e5'
+            el.style.transform = ''
+            el.style.boxShadow = ''
+          }}
+        >
+          Schedule Demo
+        </Link>
+      </div>
+    </nav>
+  )
+}
