@@ -177,42 +177,15 @@ export default function Nav() {
               boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)',
             }}
           >
-            {/* Featured: Waypoint + Intake OS */}
+            {/* Featured: Intake OS + Waypoint */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderRadius: '16px 16px 0 0', overflow: 'hidden', borderBottom: '1px solid #e8edf5' }}>
-              <Link
-                href={platformLinks.featured.href}
-                style={{
-                  display: 'flex', alignItems: 'flex-start', gap: '14px',
-                  padding: '20px 20px',
-                  background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)',
-                  borderRight: '1px solid #e8edf5',
-                  textDecoration: 'none',
-                }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eff6ff)' }}
-              >
-                <div style={{ width: '40px', height: '40px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Waypoints size={20} color="#fff" />
-                </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>
-                    {platformLinks.featured.eyebrow}
-                  </div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>
-                    {platformLinks.featured.name}
-                  </div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.45 }}>
-                    {platformLinks.featured.description}
-                  </div>
-                </div>
-              </Link>
-
               <Link
                 href={platformLinks.intakeOS.href}
                 style={{
                   display: 'flex', alignItems: 'flex-start', gap: '14px',
                   padding: '20px 20px',
                   background: 'linear-gradient(135deg, #f0fdf4, #eff6ff)',
+                  borderRight: '1px solid #e8edf5',
                   textDecoration: 'none',
                 }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #dcfce7, #dbeafe)' }}
@@ -230,6 +203,33 @@ export default function Nav() {
                   </div>
                   <div style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.45 }}>
                     {platformLinks.intakeOS.description}
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href={platformLinks.featured.href}
+                style={{
+                  display: 'flex', alignItems: 'flex-start', gap: '14px',
+                  padding: '20px 20px',
+                  background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eff6ff)' }}
+              >
+                <div style={{ width: '40px', height: '40px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Waypoints size={20} color="#fff" />
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>
+                    {platformLinks.featured.eyebrow}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>
+                    {platformLinks.featured.name}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.45 }}>
+                    {platformLinks.featured.description}
                   </div>
                 </div>
               </Link>
