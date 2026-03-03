@@ -18,6 +18,7 @@ import {
   ArrowRight,
   Building2,
   HardHat,
+  Inbox,
 } from 'lucide-react'
 import DemoButton from '@/components/DemoButton'
 
@@ -28,6 +29,13 @@ const platformLinks = {
     name: 'Waypoint',
     description:
       'The AI scoring engine built for law firms. Automatically qualify, rank, and prioritize every intake — powered by your firm\'s own criteria.',
+  },
+  intakeOS: {
+    href: '/solutions/qualifications',
+    eyebrow: 'Core Platform',
+    name: 'Intake OS',
+    description:
+      'The complete intake system — chatbots, webforms, live transfer, e-signatures, and automated nurture. From first click to signed retainer.',
   },
   standalone: {
     href: '/solutions/dwellex',
@@ -169,49 +177,63 @@ export default function Nav() {
               boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)',
             }}
           >
-            {/* Featured: Waypoint */}
-            <Link
-              href={platformLinks.featured.href}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '16px',
-                padding: '20px 24px',
-                background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)',
-                borderRadius: '16px 16px 0 0',
-                borderBottom: '1px solid #e8edf5',
-                textDecoration: 'none',
-              }}
-            >
-              <div
+            {/* Featured: Waypoint + Intake OS */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderRadius: '16px 16px 0 0', overflow: 'hidden', borderBottom: '1px solid #e8edf5' }}>
+              <Link
+                href={platformLinks.featured.href}
                 style={{
-                  width: '46px',
-                  height: '46px',
-                  flexShrink: 0,
-                  background: 'linear-gradient(135deg, #4f46e5, #818cf8)',
-                  borderRadius: '11px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  display: 'flex', alignItems: 'flex-start', gap: '14px',
+                  padding: '20px 20px',
+                  background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)',
+                  borderRight: '1px solid #e8edf5',
+                  textDecoration: 'none',
                 }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eff6ff)' }}
               >
-                <Waypoints size={22} color="#fff" />
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>
-                  {platformLinks.featured.eyebrow}
+                <div style={{ width: '40px', height: '40px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Waypoints size={20} color="#fff" />
                 </div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '3px' }}>
-                  {platformLinks.featured.name}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>
+                    {platformLinks.featured.eyebrow}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>
+                    {platformLinks.featured.name}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.45 }}>
+                    {platformLinks.featured.description}
+                  </div>
                 </div>
-                <div style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.45 }}>
-                  {platformLinks.featured.description}
+              </Link>
+
+              <Link
+                href={platformLinks.intakeOS.href}
+                style={{
+                  display: 'flex', alignItems: 'flex-start', gap: '14px',
+                  padding: '20px 20px',
+                  background: 'linear-gradient(135deg, #f0fdf4, #eff6ff)',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #dcfce7, #dbeafe)' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f0fdf4, #eff6ff)' }}
+              >
+                <div style={{ width: '40px', height: '40px', flexShrink: 0, background: 'linear-gradient(135deg, #0ea5e9, #4f46e5)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Inbox size={20} color="#fff" />
                 </div>
-              </div>
-              <div style={{ color: '#a5b4fc', flexShrink: 0 }}>
-                <ArrowRight size={18} />
-              </div>
-            </Link>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0284c7', marginBottom: '3px' }}>
+                    {platformLinks.intakeOS.eyebrow}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>
+                    {platformLinks.intakeOS.name}
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.45 }}>
+                    {platformLinks.intakeOS.description}
+                  </div>
+                </div>
+              </Link>
+            </div>
 
             {/* Industry solutions — compact row */}
             <div style={{ display: 'flex', borderBottom: '1px solid #e8edf5', padding: '0 8px' }}>
