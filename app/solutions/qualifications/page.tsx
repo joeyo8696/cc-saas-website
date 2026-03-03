@@ -485,7 +485,7 @@ export default function QualificationsPage() {
                     pointerEvents: 'none', zIndex: 1,
                   }} />
                   <Image
-                    src="/images/timeline-builder-screenshot.png"
+                    src="/images/waypoint-criteria.png"
                     alt="Timeline Builder"
                     width={1200} height={750}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -568,7 +568,7 @@ export default function QualificationsPage() {
                     pointerEvents: 'none', zIndex: 1,
                   }} />
                   <Image
-                    src="/images/waypoint-criteria.png"
+                    src="/images/timeline-builder-screenshot.png"
                     alt="Waypoint Criteria"
                     width={1200} height={750}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
