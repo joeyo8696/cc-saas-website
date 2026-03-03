@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CheckCircle, Zap, BarChart3, Users, FileSignature, Waypoints } from 'lucide-react'
 import SectionReveal from '@/components/ui/SectionReveal'
+import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
   title: 'Roblox Mass Tort Litigation Software | Case Compass',
@@ -26,9 +27,9 @@ export default function RobloxPage() {
       {/* Nav */}
       <nav style={{ background: 'rgba(11,21,48,0.97)', padding: '0 40px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, zIndex: 100 }}>
         <Link href="/"><Image src="/images/cc-logo-white.png" alt="Case Compass" width={160} height={26} style={{ height: '26px', width: 'auto' }} /></Link>
-        <Link href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo" target="_blank" rel="noopener" style={{ background: '#4f46e5', color: '#fff', padding: '9px 20px', borderRadius: '6px', fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 700 }}>
+        <DemoButton style={{ padding: '9px 20px', borderRadius: '6px', fontSize: '0.85rem' }}>
           Book a Demo
-        </Link>
+        </DemoButton>
       </nav>
 
       {/* Hero */}
@@ -42,9 +43,9 @@ export default function RobloxPage() {
             High-volume Roblox MDL intake requires speed and precision. Case Compass captures claimants, scores their cases, and routes qualified leads — automatically.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo" target="_blank" rel="noopener" style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(79,70,229,0.35)' }}>
+            <DemoButton style={{ padding: '14px 32px', borderRadius: '8px', fontSize: '0.9rem' }}>
               Schedule a Demo →
-            </Link>
+            </DemoButton>
           </div>
         </div>
       </section>

@@ -6,6 +6,7 @@ import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import SectionReveal from '@/components/ui/SectionReveal'
+import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
   title: 'Waypoint — AI Intake Scoring for Law Firms',
@@ -44,12 +45,9 @@ export default function WaypointPage() {
               Stop relying on gut instinct to prioritize your pipeline. Waypoint evaluates every submitted intake against a fully customizable scoring rubric — and surfaces a score before your team opens the file.
             </p>
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <Link
-                href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-                style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(79,70,229,0.35)' }}
-              >
+              <DemoButton style={{ padding: '14px 32px', borderRadius: '8px', fontSize: '0.9rem' }}>
                 See Waypoint in Action →
-              </Link>
+              </DemoButton>
               <Link
                 href="https://blog.casecompass.io/posts/referrals-and-waypoint-launch"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600 }}
@@ -141,12 +139,9 @@ export default function WaypointPage() {
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '40px' }}>
               Book a walkthrough and we&apos;ll show you Waypoint live in your account.
             </p>
-            <Link
-              href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-              style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: '#fff', padding: '15px 36px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(79,70,229,0.35)' }}
-            >
+            <DemoButton style={{ padding: '15px 36px', borderRadius: '8px', fontSize: '1rem' }}>
               Schedule a Demo →
-            </Link>
+            </DemoButton>
           </SectionReveal>
         </section>
 

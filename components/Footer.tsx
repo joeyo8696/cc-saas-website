@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useDemoModal } from './DemoModalProvider'
 
 const footerLinks = [
   {
@@ -26,7 +27,7 @@ const footerLinks = [
   {
     heading: 'Contact',
     links: [
-      { label: 'Schedule a Demo', href: 'https://scheduler.zoom.us/joey-organisciak/case-compass-demo' },
+      { label: 'Schedule a Demo', href: '#demo' },
       { label: 'Support', href: 'mailto:support@casecompass.io' },
       { label: 'Privacy Policy', href: '/privacy' },
     ],
@@ -34,6 +35,7 @@ const footerLinks = [
 ]
 
 export default function Footer() {
+  const { openModal } = useDemoModal()
   return (
     <footer
       style={{
@@ -85,15 +87,25 @@ export default function Footer() {
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {col.links.map(({ label, href }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)' }}
-                  >
-                    {label}
-                  </Link>
+                  label === 'Schedule a Demo'
+                    ? <button
+                        key={label}
+                        onClick={openModal}
+                        style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', transition: 'color 0.2s', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'inherit', textAlign: 'left' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)' }}
+                      >
+                        {label}
+                      </button>
+                    : <Link
+                        key={label}
+                        href={href}
+                        style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', transition: 'color 0.2s' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)' }}
+                      >
+                        {label}
+                      </Link>
                 ))}
               </div>
             </div>
