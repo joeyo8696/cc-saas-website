@@ -20,8 +20,10 @@ export default function HomePage() {
   return (
     <>
       <GalaxyCanvas />
-      <AnnouncementBanner />
-      <Nav />
+      <div style={{ position: 'sticky', top: 0, zIndex: 200 }}>
+        <AnnouncementBanner />
+        <Nav />
+      </div>
       <main>
         <Hero />
         <Ticker />

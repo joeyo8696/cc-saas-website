@@ -15,9 +15,8 @@ export default function AnnouncementBanner() {
         fontFamily: 'var(--font-display)',
         fontWeight: 600,
         color: '#fff',
-        position: 'sticky',
-        top: 0,
-        zIndex: 300,
+        position: 'relative',
+        zIndex: 1,
       }}
     >
       <span
