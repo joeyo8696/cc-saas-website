@@ -225,7 +225,6 @@ export default function QualificationsPage() {
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <DemoButton
-                label="Schedule a Demo"
                 style={{
                   background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
                   color: '#fff', padding: '15px 36px', borderRadius: '10px',
@@ -233,7 +232,7 @@ export default function QualificationsPage() {
                   border: 'none', cursor: 'pointer',
                   boxShadow: '0 8px 32px rgba(79,70,229,0.4)',
                 }}
-              />
+              >Schedule a Demo</DemoButton>
               <a
                 href="#workflow"
                 style={{
@@ -790,7 +789,6 @@ export default function QualificationsPage() {
                 We&apos;ll build your intake bot, configure Waypoint for your practice area, and deploy your first automated flow. Most firms are live within a week. Onboarding is included.
               </p>
               <DemoButton
-                label="Schedule a Demo →"
                 style={{
                   background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
                   color: '#fff', padding: '16px 40px', borderRadius: '10px',
@@ -798,7 +796,7 @@ export default function QualificationsPage() {
                   border: 'none', cursor: 'pointer',
                   boxShadow: '0 12px 40px rgba(79,70,229,0.4)',
                 }}
-              />
+              >Schedule a Demo →</DemoButton>
             </div>
           </SectionReveal>
         </section>
