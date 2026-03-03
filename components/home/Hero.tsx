@@ -27,14 +27,14 @@ export default function Hero() {
         span.style.transition = 'opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1)'
         span.style.opacity = '1'
         span.style.transform = 'none'
-      }, 900 + i * 140)
+      }, i * 120)
     })
 
     const mockup = mockupRef.current
     if (mockup) {
       setTimeout(() => {
         mockup.style.animation = 'mockup-in 1.2s cubic-bezier(0.16,1,0.3,1) forwards'
-      }, 1600)
+      }, 500)
     }
   }, [])
 
