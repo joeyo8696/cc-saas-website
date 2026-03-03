@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { CheckCircle } from 'lucide-react'
 import SectionReveal from '@/components/ui/SectionReveal'
+import DemoButton from '@/components/DemoButton'
 
 const bullets = [
   'Dedicated referral partner portal with real-time case tracking',
@@ -67,12 +67,9 @@ export default function ReferralsSection() {
               </ul>
             </SectionReveal>
             <SectionReveal delay={4}>
-              <Link
-                href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#4f46e5', color: '#fff', padding: '13px 28px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700 }}
-              >
+              <DemoButton style={{ padding: '13px 28px', borderRadius: '8px', fontSize: '0.9rem' }}>
                 See Referrals in Action →
-              </Link>
+              </DemoButton>
             </SectionReveal>
           </div>
         </div>
