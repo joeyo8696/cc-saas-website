@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   MessageSquare, PhoneForwarded, LayoutTemplate, Zap, CheckCircle,
   Mail, BarChart3, Users, Clock, ArrowRight, Star, TrendingUp, Shield,
@@ -555,6 +556,18 @@ export default function QualificationsPage() {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    href="/solutions/waypoint"
+                    style={{
+                      display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '24px',
+                      fontSize: '0.875rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                      color: '#7c3aed', textDecoration: 'none',
+                    }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = '0.75' }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = '1' }}
+                  >
+                    Learn more about Waypoint <ArrowRight size={15} />
+                  </Link>
                 </div>
                 <div style={{
                   borderRadius: '16px', overflow: 'hidden',
