@@ -1,14 +1,16 @@
 const ITEMS = [
-  '90% Chat-to-Client Conversion',
-  'McCune Law Group — 70% Cost Reduction',
-  'RDK Legal — 900x ROI',
-  'Stern & Cohen — #1 Intake Channel',
-  'Live 24/7 Intake Automation',
-  'Waypoint AI Scoring',
-  'Referral Partner Management',
-  'E-Signature in Intake Flow',
-  'Filevine · LeadDocket · Litify Integration',
-  '$1M+ New Clients per Month',
+  'Stern & Cohen — 75% Chat-to-Client Conversion',
+  'McCune Law Group — 70% Increase in Conversions',
+  '90% Reduction in Case Acquisition Costs',
+  'Waypoint AI — Instant Lead Scoring & Qualification',
+  '24/7 Automated Intake — Never Miss a Lead',
+  'Mass Tort · Workers\' Comp · Landlord Tenant · PI',
+  'Referral Partner Portals & Fee Tracking',
+  'Clio · Filevine · LeadDocket · Litify Integration',
+  'E-Signature Built Into the Intake Flow',
+  'Live Transfer — Speed-to-Lead in Seconds',
+  'Full-Funnel Analytics — First Click to Signed Retainer',
+  'Dwellex — The Complete Eviction Pipeline',
 ]
 
 export default function Ticker() {
