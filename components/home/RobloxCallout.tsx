@@ -15,7 +15,7 @@ export default function RobloxCallout() {
               MDL Litigation
             </div>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', color: '#fff', lineHeight: 1.3, marginBottom: '14px' }}>
-              Roblox Addiction MDL:<br />Target minors with gaming addiction,<br />automated evidence capture.
+              Roblox Addiction MDL:<br />Gaming addiction harming children,<br />automated evidence capture.
             </h2>
             <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
               Roblox MDL litigation is targeting minors with gaming addiction and financial harm. Our intake system captures exposure data, transaction history, and behavioral indicators automatically. Get your Roblox intake live today.
