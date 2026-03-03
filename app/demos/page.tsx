@@ -246,17 +246,19 @@ export default function DemosPage() {
             letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)',
             marginBottom: '24px',
           }}>
-            Confidential — For Prospect Use Only
+            Confidential
           </div>
           <h1 style={{
             fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3rem)',
             color: '#fff', lineHeight: 1.2, marginBottom: '16px',
           }}>
             Welcome to the{' '}
-            <span style={{
-              background: 'linear-gradient(135deg, #818cf8, #4f46e5, #a78bfa)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-            }}>Case Compass</span>{' '}Demo Library
+            <span style={{ whiteSpace: 'nowrap' }}>
+              <span style={{
+                background: 'linear-gradient(135deg, #818cf8, #4f46e5, #a78bfa)',
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+              }}>Case Compass</span>{' '}Demo Library
+            </span>
           </h1>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.75 }}>
             These videos are shared exclusively for your evaluation. Please don&apos;t distribute outside your team.
