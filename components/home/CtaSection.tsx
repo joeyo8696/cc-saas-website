@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import SectionReveal from '@/components/ui/SectionReveal'
+import DemoButton from '@/components/DemoButton'
 
 export default function CtaSection() {
   return (
@@ -19,12 +20,9 @@ export default function CtaSection() {
         </SectionReveal>
         <SectionReveal delay={2}>
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link
-              href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-              style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: '#fff', padding: '16px 40px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(79,70,229,0.35)' }}
-            >
+            <DemoButton style={{ padding: '16px 40px', fontSize: '1rem' }}>
               Schedule a Demo →
-            </Link>
+            </DemoButton>
             <Link
               href="/lp/ieepa"
               style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '16px 40px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 600 }}

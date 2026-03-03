@@ -1,0 +1,708 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Check } from 'lucide-react'
+import Nav from '@/components/nav/Nav'
+import Footer from '@/components/Footer'
+import AnnouncementBanner from '@/components/AnnouncementBanner'
+import GalaxyCanvas from '@/components/home/GalaxyCanvas'
+import SectionReveal from '@/components/ui/SectionReveal'
+import DemoButton from '@/components/DemoButton'
+
+export default function AboutPage() {
+  const h1Ref = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    const h1 = h1Ref.current
+    if (!h1) return
+
+    // Set initial state
+    h1.style.opacity = '0'
+    h1.style.transform = 'translateY(20px)'
+    
+    // Animate in
+    setTimeout(() => {
+      h1.style.transition = 'opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1)'
+      h1.style.opacity = '1'
+      h1.style.transform = 'translateY(0)'
+    }, 400)
+  }, [])
+
+  return (
+    <>
+      <GalaxyCanvas />
+      <AnnouncementBanner />
+      <Nav />
+      <main style={{ position: 'relative', zIndex: 1 }}>
+        
+        {/* Hero */}
+        <section
+          style={{
+            minHeight: '75vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            padding: '140px 40px 100px',
+            position: 'relative',
+            zIndex: 1,
+          }}
+        >
+          {/* Enhanced Glow blobs */}
+          {[
+            { top: '5%', left: '10%', color: '#4f46e5', size: '600px' },
+            { top: '20%', right: '5%', color: '#7c3aed', size: '700px' },
+            { bottom: '10%', left: '30%', color: '#06b6d4', size: '500px' },
+          ].map((g, i) => (
+            <div
+              key={i}
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                width: g.size,
+                height: g.size,
+                borderRadius: '50%',
+                background: `radial-gradient(circle, ${g.color}40 0%, transparent 70%)`,
+                pointerEvents: 'none',
+                filter: 'blur(60px)',
+                animation: `float ${8 + i * 2}s ease-in-out infinite`,
+                ...g,
+              }}
+            />
+          ))}
+
+          <div style={{ position: 'relative', zIndex: 1, maxWidth: '900px' }}>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                background: 'linear-gradient(135deg, rgba(79,70,229,0.2), rgba(124,58,237,0.15))',
+                border: '1px solid rgba(129,140,248,0.3)',
+                borderRadius: '99px',
+                padding: '8px 20px',
+                marginBottom: '40px',
+                fontSize: '0.8rem',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: '#c4b5fd',
+                boxShadow: '0 4px 16px rgba(79,70,229,0.2)',
+              }}
+            >
+              <span
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #818cf8, #c4b5fd)',
+                  boxShadow: '0 0 12px #818cf8',
+                  animation: 'pulse 2s ease-in-out infinite',
+                }}
+              />
+              About Us
+            </div>
+
+            <h1
+              ref={h1Ref}
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(3rem, 7vw, 6rem)',
+                background: 'linear-gradient(135deg, #fff 0%, #e0e7ff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
+                marginBottom: '32px',
+                fontWeight: 400,
+              }}
+            >
+              A New Era of Innovation
+            </h1>
+
+            <p
+              style={{
+                fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)',
+                color: 'rgba(255,255,255,0.75)',
+                lineHeight: 1.7,
+                fontWeight: 400,
+                maxWidth: '700px',
+                margin: '0 auto',
+              }}
+            >
+              Redefining intake as the engine of growth for modern plaintiff firms
+            </p>
+          </div>
+
+          <style>{`
+            @keyframes float {
+              0%, 100% { transform: translateY(0px) scale(1); }
+              50% { transform: translateY(-20px) scale(1.05); }
+            }
+          `}</style>
+        </section>
+
+        {/* Mission Statement */}
+        <section style={{ background: 'linear-gradient(180deg, #fff 0%, #f8fafc 100%)', padding: '120px 40px' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div
+                style={{
+                  background: '#fff',
+                  borderRadius: '24px',
+                  padding: '64px 56px',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02)',
+                  border: '1px solid rgba(79,70,229,0.08)',
+                }}
+              >
+                <div
+                  style={{
+                    width: '60px',
+                    height: '4px',
+                    background: 'linear-gradient(90deg, #4f46e5, #7c3aed)',
+                    borderRadius: '2px',
+                    margin: '0 auto 32px',
+                  }}
+                />
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(2.2rem, 4vw, 3.2rem)',
+                    background: 'linear-gradient(135deg, #0f172a 0%, #475569 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    lineHeight: 1.2,
+                    textAlign: 'center',
+                    marginBottom: '40px',
+                  }}
+                >
+                  Case Compass
+                </h2>
+                <p
+                  style={{
+                    fontSize: '1.2rem',
+                    color: '#475569',
+                    lineHeight: 1.9,
+                    textAlign: 'center',
+                    marginBottom: '28px',
+                    fontWeight: 400,
+                  }}
+                >
+                  Case Compass is a smart-intake platform built exclusively for high-volume plaintiff firms, designed to turn inquiries into qualified leads and signed retainers with speed and precision. Our Smart-Intake Engine adapts instantly to changing case criteria, engages clients across web, SMS, and voice, and delivers a seamless, mobile-first experience that reduces drop-off and wasted spend.
+                </p>
+                <p
+                  style={{
+                    fontSize: '1.2rem',
+                    color: '#475569',
+                    lineHeight: 1.9,
+                    textAlign: 'center',
+                    fontWeight: 400,
+                  }}
+                >
+                  Unlike generic bots or forms, Case Compass gives firms full control, compliance-ready workflows, and real-time analytics to lower acquisition costs and scale intake without adding headcount. Already trusted across mass torts and class actions, Case Compass is redefining intake as the engine of growth for modern plaintiff firms.
+                </p>
+              </div>
+            </SectionReveal>
+          </div>
+        </section>
+
+        {/* Leadership Team */}
+        <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '72px' }}>
+              <div
+                style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, rgba(79,70,229,0.1), rgba(124,58,237,0.05))',
+                  border: '1px solid rgba(79,70,229,0.2)',
+                  borderRadius: '8px',
+                  padding: '6px 16px',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#4f46e5',
+                  marginBottom: '24px',
+                }}
+              >
+                Meet the Team
+              </div>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(2.2rem, 4vw, 3.5rem)',
+                  background: 'linear-gradient(135deg, #0f172a 0%, #475569 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  lineHeight: 1.2,
+                }}
+              >
+                Leadership Team
+              </h2>
+            </div>
+
+            {/* CEO Card */}
+            <SectionReveal>
+              <div
+                className="leader-card"
+                style={{
+                  background: '#fff',
+                  borderRadius: '24px',
+                  padding: '56px',
+                  marginBottom: '40px',
+                  border: '1px solid rgba(79,70,229,0.1)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.06)',
+                  transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)'
+                  e.currentTarget.style.boxShadow = '0 16px 48px rgba(79,70,229,0.15)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.06)'
+                }}
+              >
+                {/* Gradient accent */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '4px',
+                    background: 'linear-gradient(90deg, #4f46e5, #7c3aed)',
+                  }}
+                />
+                
+                <div style={{ display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div
+                      style={{
+                        position: 'relative',
+                        padding: '4px',
+                        background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
+                        borderRadius: '16px',
+                      }}
+                    >
+                      <Image
+                        src="/images/joey-organisciak.png"
+                        alt="Joey Organisciak"
+                        width={220}
+                        height={220}
+                        style={{
+                          width: '220px',
+                          height: '220px',
+                          borderRadius: '14px',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div style={{ flex: '1 1 350px' }}>
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.08))',
+                        border: '1px solid rgba(79,70,229,0.2)',
+                        borderRadius: '8px',
+                        padding: '6px 14px',
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
+                        color: '#4f46e5',
+                        marginBottom: '20px',
+                      }}
+                    >
+                      Chief Executive Officer
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: 'var(--font-serif)',
+                        fontSize: '2.4rem',
+                        color: '#0f172a',
+                        marginBottom: '24px',
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Joey Organisciak
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: '1.05rem',
+                        color: '#475569',
+                        lineHeight: 1.8,
+                      }}
+                    >
+                      We are excited to welcome Joey Organisciak as our new CEO. Joey brings a wealth of enterprise experience in leading multidisciplinary teams and pioneering technological advancements in both healthcare and legal tech industries. His impressive career includes significant roles at CHESS Health and Talkiatry, where he demonstrated exceptional leadership and innovation. Joey&apos;s strategic vision and hands-on approach to technology will be invaluable as we build Case Compass and drive our future growth.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+
+            {/* CFO Card */}
+            <SectionReveal>
+              <div
+                className="leader-card"
+                style={{
+                  background: '#fff',
+                  borderRadius: '24px',
+                  padding: '56px',
+                  border: '1px solid rgba(124,58,237,0.1)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.06)',
+                  transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)'
+                  e.currentTarget.style.boxShadow = '0 16px 48px rgba(124,58,237,0.15)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.06)'
+                }}
+              >
+                {/* Gradient accent */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '4px',
+                    background: 'linear-gradient(90deg, #7c3aed, #c026d3)',
+                  }}
+                />
+                
+                <div style={{ display: 'flex', gap: '48px', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div
+                      style={{
+                        position: 'relative',
+                        padding: '4px',
+                        background: 'linear-gradient(135deg, #7c3aed, #c026d3)',
+                        borderRadius: '16px',
+                      }}
+                    >
+                      <Image
+                        src="/images/bill-tilley.png"
+                        alt="Bill Tilley"
+                        width={220}
+                        height={220}
+                        style={{
+                          width: '220px',
+                          height: '220px',
+                          borderRadius: '14px',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div style={{ flex: '1 1 350px' }}>
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(192,38,211,0.08))',
+                        border: '1px solid rgba(124,58,237,0.2)',
+                        borderRadius: '8px',
+                        padding: '6px 14px',
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
+                        color: '#7c3aed',
+                        marginBottom: '20px',
+                      }}
+                    >
+                      Chief Financial Officer
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: 'var(--font-serif)',
+                        fontSize: '2.4rem',
+                        color: '#0f172a',
+                        marginBottom: '24px',
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Bill Tilley
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: '1.05rem',
+                        color: '#475569',
+                        lineHeight: 1.8,
+                      }}
+                    >
+                      Joining Joey in our executive team is Bill Tilley, who will serve as our CFO. Bill&apos;s extensive experience as President and CEO of Amicus Capital Group, LLC has made him a renowned expert in litigation finance. Over his 17 years with Amicus, Bill has provided a wide range of financial solutions tailored to the unique needs of law firms. His financial acumen and strategic insights will be crucial as we navigate the financial landscape of the legal tech industry.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
+          </div>
+        </section>
+
+        {/* Vision Section */}
+        <section
+          style={{
+            background: 'linear-gradient(135deg, #060d1f 0%, #1e1b4b 50%, #312e81 100%)',
+            padding: '120px 40px',
+            position: 'relative',
+            zIndex: 1,
+            overflow: 'hidden',
+          }}
+        >
+          {/* Decorative elements */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '20%',
+              right: '-10%',
+              width: '500px',
+              height: '500px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%)',
+              filter: 'blur(80px)',
+            }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '10%',
+              left: '-10%',
+              width: '600px',
+              height: '600px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(79,70,229,0.15) 0%, transparent 70%)',
+              filter: 'blur(80px)',
+            }}
+          />
+
+          <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+            <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+              <div
+                style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, rgba(129,140,248,0.2), rgba(196,181,253,0.15))',
+                  border: '1px solid rgba(129,140,248,0.3)',
+                  borderRadius: '8px',
+                  padding: '6px 16px',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#c4b5fd',
+                  marginBottom: '24px',
+                }}
+              >
+                Our Vision
+              </div>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
+                  background: 'linear-gradient(135deg, #fff 0%, #c4b5fd 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  lineHeight: 1.2,
+                  marginBottom: '28px',
+                }}
+              >
+                What&apos;s Next?
+              </h2>
+              <p
+                style={{
+                  fontSize: '1.2rem',
+                  color: 'rgba(255,255,255,0.75)',
+                  lineHeight: 1.8,
+                  maxWidth: '800px',
+                  margin: '0 auto',
+                }}
+              >
+                Case Compass is already powering tens of thousands of intakes across mass torts, class actions, and consumer litigation, helping firms grow without adding headcount. Our vision is clear:
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gap: '20px', marginBottom: '64px' }}>
+              {[
+                'Put intake teams in control with no-code, instantly updatable workflows.',
+                'Deliver analytics and transparency so firms know exactly where dollars convert to signed cases.',
+                'Scale smart-intake into every channel — web, SMS, and voice — with compliance and client trust at the core.',
+              ].map((item, i) => (
+                <SectionReveal key={i}>
+                  <div
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))',
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255,255,255,0.12)',
+                      borderRadius: '16px',
+                      padding: '32px 36px',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '20px',
+                      transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04))'
+                      e.currentTarget.style.borderColor = 'rgba(129,140,248,0.3)'
+                      e.currentTarget.style.transform = 'translateX(8px)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))'
+                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'
+                      e.currentTarget.style.transform = 'translateX(0)'
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '12px',
+                        background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        boxShadow: '0 4px 16px rgba(79,70,229,0.4)',
+                      }}
+                    >
+                      <Check size={22} color="#fff" strokeWidth={3} />
+                    </div>
+                    <p
+                      style={{
+                        fontSize: '1.1rem',
+                        color: 'rgba(255,255,255,0.9)',
+                        lineHeight: 1.7,
+                        fontFamily: 'var(--font-display)',
+                        fontWeight: 500,
+                      }}
+                    >
+                      {item}
+                    </p>
+                  </div>
+                </SectionReveal>
+              ))}
+            </div>
+
+            <div
+              style={{
+                background: 'linear-gradient(135deg, rgba(79,70,229,0.15), rgba(124,58,237,0.1))',
+                border: '1px solid rgba(129,140,248,0.2)',
+                borderRadius: '20px',
+                padding: '48px 56px',
+                textAlign: 'center',
+              }}
+            >
+              <p
+                style={{
+                  fontSize: '1.35rem',
+                  color: '#fff',
+                  lineHeight: 1.7,
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 600,
+                  fontStyle: 'italic',
+                }}
+              >
+                We&apos;re not just rethinking intake. We&apos;re making it the engine of growth for the next generation of plaintiff firms.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section
+          style={{
+            background: 'linear-gradient(180deg, #fff 0%, #f8fafc 100%)',
+            padding: '120px 40px',
+            textAlign: 'center',
+          }}
+        >
+          <SectionReveal>
+            <div
+              style={{
+                maxWidth: '800px',
+                margin: '0 auto',
+                background: 'linear-gradient(135deg, rgba(79,70,229,0.05), rgba(124,58,237,0.03))',
+                border: '1px solid rgba(79,70,229,0.1)',
+                borderRadius: '32px',
+                padding: '72px 56px',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              {/* Decorative gradient */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '-50%',
+                  right: '-20%',
+                  width: '400px',
+                  height: '400px',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%)',
+                  filter: 'blur(60px)',
+                }}
+              />
+              
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)',
+                    background: 'linear-gradient(135deg, #0f172a 0%, #4f46e5 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    lineHeight: 1.2,
+                    marginBottom: '24px',
+                  }}
+                >
+                  Ready to transform your intake?
+                </h2>
+                <p
+                  style={{
+                    fontSize: '1.15rem',
+                    color: '#475569',
+                    marginBottom: '40px',
+                    lineHeight: 1.7,
+                  }}
+                >
+                  Schedule a demo and see how Case Compass can help your firm scale without adding headcount.
+                </p>
+                <DemoButton style={{ padding: '18px 48px', fontSize: '1.05rem' }}>
+                  Schedule a Demo →
+                </DemoButton>
+              </div>
+            </div>
+          </SectionReveal>
+        </section>
+
+      </main>
+      <Footer />
+    </>
+  )
+}

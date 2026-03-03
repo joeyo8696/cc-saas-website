@@ -8,7 +8,8 @@ const footerLinks = [
     heading: 'Pages',
     links: [
       { label: 'Homepage', href: '/' },
-      { label: 'Blog', href: '/blog' },
+      { label: 'About', href: '/about' },
+      { label: 'Blog', href: 'https://blog.casecompass.io' },
       { label: 'Security', href: '/security' },
       { label: 'Changelog', href: 'https://www.casecompass.io/changelog' },
     ],

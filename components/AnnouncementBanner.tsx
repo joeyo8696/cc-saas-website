@@ -35,7 +35,9 @@ export default function AnnouncementBanner() {
       </span>
       <span>Waypoint AI scoring + Referral Network are now live</span>
       <Link
-        href="/blog/referrals-waypoint-launch"
+        href="https://blog.casecompass.io/posts/referrals-and-waypoint-launch"
+        target="_blank"
+        rel="noopener"
         style={{
           display: 'flex',
           alignItems: 'center',

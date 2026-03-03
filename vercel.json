@@ -2,18 +2,6 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "blog.casecompass.io" }],
-      "destination": "https://www.casecompass.io/blog/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "ieepa.casecompass.io" }],
-      "destination": "https://www.casecompass.io/lp/ieepa/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
       "has": [{ "type": "host", "value": "roblox.casecompass.io" }],
       "destination": "https://www.casecompass.io/lp/roblox/:path*",
       "permanent": true

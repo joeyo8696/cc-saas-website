@@ -10,7 +10,10 @@ import ReferralsSection from '@/components/home/ReferralsSection'
 import Stats from '@/components/home/Stats'
 import HowItWorks from '@/components/home/HowItWorks'
 import Testimonials from '@/components/home/Testimonials'
+import NotJustAChatbot from '@/components/home/NotJustAChatbot'
 import IeepaCallout from '@/components/home/IeepaCallout'
+import DepoProveraCallout from '@/components/home/DepoProveraCallout'
+import RobloxCallout from '@/components/home/RobloxCallout'
 import CtaSection from '@/components/home/CtaSection'
 
 export default function HomePage() {
@@ -22,6 +25,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Ticker />
+        <NotJustAChatbot />
         <PlatformOS />
         <WaypointSection />
         <ReferralsSection />
@@ -29,6 +33,8 @@ export default function HomePage() {
         <HowItWorks />
         <Testimonials />
         <IeepaCallout />
+        <DepoProveraCallout />
+        <RobloxCallout />
         <CtaSection />
       </main>
       <Footer />

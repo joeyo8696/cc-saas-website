@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Serif_Display, Space_Grotesk, Inter } from 'next/font/google'
 import './globals.css'
+import { DemoModalProvider } from '@/components/DemoModalProvider'
 
 const dmSerifDisplay = DM_Serif_Display({
   weight: ['400'],
@@ -90,7 +91,11 @@ export default function RootLayout({
       lang="en"
       className={`${dmSerifDisplay.variable} ${spaceGrotesk.variable} ${inter.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <DemoModalProvider>
+          {children}
+        </DemoModalProvider>
+      </body>
     </html>
   )
 }

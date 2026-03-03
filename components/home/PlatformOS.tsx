@@ -118,12 +118,15 @@ function PipelineCard({ children }: { children: React.ReactNode }) {
 
 function PipelineArrow({ delay }: { delay?: boolean }) {
   return (
-    <div style={{ position: 'relative', display: 'flex', alignItems: 'center', width: '72px', margin: '0 8px', flexShrink: 0 }}>
-      <div style={{ position: 'relative', width: '100%', height: '2px', background: '#e2e8f0', borderRadius: '2px', overflow: 'visible' }}>
-        {/* Arrow tip via CSS */}
-        <div style={{ position: 'absolute', right: '-7px', top: '50%', transform: 'translateY(-50%)', width: 0, height: 0, borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '7px solid #e2e8f0' }} />
-        <div className={`pipeline-spark${delay ? ' delay' : ''}`} />
+    <div style={{ display: 'flex', alignItems: 'center', margin: '0 8px', flexShrink: 0 }}>
+      {/* Track — overflow:hidden clips the spark to the arrow bounds */}
+      <div style={{ position: 'relative', width: '72px', height: '20px', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
+        <div style={{ width: '100%', height: '2px', background: '#e2e8f0', borderRadius: '2px', position: 'relative' }}>
+          <div className={`pipeline-spark${delay ? ' delay' : ''}`} />
+        </div>
       </div>
+      {/* Arrow tip sits outside the clipped track so it isn't cut off */}
+      <div style={{ width: 0, height: 0, borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '7px solid #e2e8f0', flexShrink: 0 }} />
     </div>
   )
 }

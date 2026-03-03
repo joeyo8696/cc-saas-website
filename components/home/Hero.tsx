@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import DemoButton from '@/components/DemoButton'
 
 const WORDS = ['Smart Intake.', 'Smarter', 'Firms.']
 const HL_WORDS = new Set(['Smarter', 'Firms.'])
@@ -136,21 +137,7 @@ export default function Hero() {
 
       {/* Buttons */}
       <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '72px' }}>
-        <Link
-          href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-          style={{
-            background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
-            color: '#fff',
-            padding: '14px 32px',
-            borderRadius: '8px',
-            fontFamily: 'var(--font-display)',
-            fontSize: '0.9rem',
-            fontWeight: 700,
-            boxShadow: '0 8px 24px rgba(79,70,229,0.35)',
-          }}
-        >
-          Schedule a Demo →
-        </Link>
+        <DemoButton>Schedule a Demo →</DemoButton>
         <Link
           href="/#features"
           style={{

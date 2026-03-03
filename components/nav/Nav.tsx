@@ -16,7 +16,10 @@ import {
   Users,
   TrendingUp,
   ArrowRight,
+  Building2,
+  HardHat,
 } from 'lucide-react'
+import DemoButton from '@/components/DemoButton'
 
 const platformLinks = {
   featured: {
@@ -25,6 +28,20 @@ const platformLinks = {
     name: 'Waypoint',
     description:
       'The AI scoring engine built for law firms. Automatically qualify, rank, and prioritize every intake — powered by your firm\'s own criteria.',
+  },
+  standalone: {
+    href: '/solutions/dwellex',
+    eyebrow: 'Landlord Tenant',
+    name: 'Dwellex',
+    description:
+      'Complete case management for landlord-tenant law. Automated workflows from intake to lockout for eviction-focused practices.',
+  },
+  workersComp: {
+    href: '/solutions/workers-comp',
+    eyebrow: 'Workers\' Compensation',
+    name: 'Workers\' Comp',
+    description:
+      'Intake qualification, speed-to-lead outreach, and document automation built for high-volume workers\' comp firms.',
   },
   columns: [
     {
@@ -130,22 +147,26 @@ export default function Nav() {
             />
           </button>
 
-          {/* Mega menu dropdown */}
+          {/* Mega menu dropdown — top:100% + paddingTop keeps hover zone gap-free */}
           <div
             style={{
               position: 'absolute',
-              top: 'calc(100% + 16px)',
+              top: '100%',
               left: '50%',
               width: '720px',
-              background: '#fff',
-              borderRadius: '16px',
-              boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)',
+              paddingTop: '16px',
               opacity: menuOpen ? 1 : 0,
               visibility: menuOpen ? 'visible' : 'hidden',
               transform: menuOpen ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(10px)',
               transition: 'opacity 0.18s, transform 0.18s, visibility 0.18s',
               pointerEvents: menuOpen ? 'all' : 'none',
               zIndex: 300,
+            }}
+          >
+          <div style={{
+              background: '#fff',
+              borderRadius: '16px',
+              boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)',
             }}
           >
             {/* Featured: Waypoint */}
@@ -192,6 +213,30 @@ export default function Nav() {
               </div>
             </Link>
 
+            {/* Industry solutions — compact row */}
+            <div style={{ display: 'flex', borderBottom: '1px solid #e8edf5', padding: '0 8px' }}>
+              {[
+                { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
+                { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: "Workers' Compensation", iconBg: 'linear-gradient(135deg, #f59e0b, #d97706)' },
+              ].map(({ href, icon: Icon, label, sub, iconBg }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', flex: 1 }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#f8fafc' }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = '' }}
+                >
+                  <div style={{ width: '30px', height: '30px', flexShrink: 0, borderRadius: '7px', background: iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon size={15} color="#fff" />
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 600, color: '#0f172a' }}>{label}</div>
+                    <div style={{ fontSize: '0.72rem', color: '#94a3b8' }}>{sub}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
             {/* 3-column grid */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', padding: '20px 20px 22px', gap: '0 12px' }}>
               {platformLinks.columns.map((col) => (
@@ -227,6 +272,7 @@ export default function Nav() {
               ))}
             </div>
           </div>
+          </div>
         </div>
 
         <Link href="/#results" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
@@ -235,40 +281,21 @@ export default function Nav() {
         >
           Results
         </Link>
-        <Link href="/blog" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
+        <Link href="/about" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
+        >
+          About
+        </Link>
+        <Link href="https://blog.casecompass.io" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
           onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
           onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
         >
           Blog
         </Link>
-        <Link
-          href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-          style={{
-            background: '#4f46e5',
-            color: '#fff',
-            padding: '9px 22px',
-            borderRadius: '6px',
-            fontFamily: 'var(--font-display)',
-            fontSize: '0.83rem',
-            fontWeight: 700,
-            letterSpacing: '0.02em',
-            transition: 'background 0.2s, transform 0.15s, box-shadow 0.2s',
-          }}
-          onMouseEnter={(e) => {
-            const el = e.currentTarget as HTMLElement
-            el.style.background = '#4338ca'
-            el.style.transform = 'translateY(-1px)'
-            el.style.boxShadow = '0 4px 16px rgba(79,70,229,0.4)'
-          }}
-          onMouseLeave={(e) => {
-            const el = e.currentTarget as HTMLElement
-            el.style.background = '#4f46e5'
-            el.style.transform = ''
-            el.style.boxShadow = ''
-          }}
-        >
+        <DemoButton style={{ padding: '9px 22px', fontSize: '0.83rem', letterSpacing: '0.02em' }}>
           Schedule Demo
-        </Link>
+        </DemoButton>
       </div>
     </nav>
   )

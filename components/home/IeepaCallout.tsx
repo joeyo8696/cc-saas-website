@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import SectionReveal from '@/components/ui/SectionReveal'
+import DemoButton from '@/components/DemoButton'
 
 export default function IeepaCallout() {
   return (
@@ -26,7 +27,7 @@ export default function IeepaCallout() {
               href="/lp/ieepa"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'linear-gradient(135deg, #dc2626, #ef4444)', color: '#fff', padding: '15px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(239,68,68,0.35)', whiteSpace: 'nowrap' }}
             >
-              See IEEPA Intake Toolkit →
+              See IEEPA Toolkit →
             </Link>
           </SectionReveal>
         </div>

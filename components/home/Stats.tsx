@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import SectionReveal from '@/components/ui/SectionReveal'
 
 const stats = [
-  { prefix: '', target: 90, suffix: '%', label: 'Chat-to-client\nconversion rate', source: "Workers' comp firm" },
-  { prefix: '', target: 70, suffix: '%', label: 'Reduction in case\nacquisition costs', source: 'McCune Law Group' },
-  { prefix: '', target: 900, suffix: 'x', label: 'Return on\ninvestment', source: 'RDK Legal' },
-  { prefix: '$', target: 1, suffix: 'M+', label: 'New clients added\nper month', source: 'Stern & Cohen' },
+  { prefix: '', target: 90, suffix: '%', label: 'Reduction in case\nacquisition costs', source: 'Nationwide mass tort firm' },
+  { prefix: '+', target: 70, suffix: '%', label: 'Increase in\nconversions', source: 'McCune Law Group' },
+  { prefix: '+', target: 75, suffix: '%', label: 'Chat-to-client\nconversion rate', source: 'Stern & Cohen' },
+  { prefix: '+', target: 25, suffix: '%', label: 'Of new clients\nsourced by Case Compass', source: 'Stern & Cohen' },
 ]
 
 function CountUp({ target, prefix = '', suffix = '' }: { target: number; prefix?: string; suffix?: string }) {
