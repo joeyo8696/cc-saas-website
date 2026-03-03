@@ -458,7 +458,7 @@ export default function QualificationsPage() {
                     pointerEvents: 'none', zIndex: 1,
                   }} />
                   <Image
-                    src="/images/Screenshot 2026-03-02 at 11.41.46 PM.png"
+                    src="/images/intake-form-builder.png"
                     alt="Intake Form Builder"
                     width={1200} height={750}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -485,7 +485,7 @@ export default function QualificationsPage() {
                     pointerEvents: 'none', zIndex: 1,
                   }} />
                   <Image
-                    src="/images/Screenshot 2026-03-02 at 11.42.38 PM.png"
+                    src="/images/timeline-builder-screenshot.png"
                     alt="Timeline Builder"
                     width={1200} height={750}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -568,7 +568,7 @@ export default function QualificationsPage() {
                     pointerEvents: 'none', zIndex: 1,
                   }} />
                   <Image
-                    src="/images/Screenshot 2026-03-02 at 11.42.11 PM.png"
+                    src="/images/waypoint-criteria.png"
                     alt="Waypoint Criteria"
                     width={1200} height={750}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -595,7 +595,7 @@ export default function QualificationsPage() {
                     pointerEvents: 'none', zIndex: 1,
                   }} />
                   <Image
-                    src="/images/Screenshot 2026-03-02 at 11.45.16 PM.png"
+                    src="/images/ai-lead-scoring.png"
                     alt="AI Lead Scoring"
                     width={1200} height={750}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
