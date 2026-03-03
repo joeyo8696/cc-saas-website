@@ -10,7 +10,6 @@ import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
-import GalaxyCanvas from '@/components/home/GalaxyCanvas'
 
 const workflowSteps = [
   {
@@ -179,16 +178,17 @@ export default function QualificationsPage() {
 
   return (
     <>
-      <GalaxyCanvas />
-      <div style={{ position: 'sticky', top: 0, zIndex: 200 }}>
-        <AnnouncementBanner />
-        <Nav />
-      </div>
+      <AnnouncementBanner />
+      <Nav />
 
-      <main style={{ position: 'relative', zIndex: 1 }}>
+      <main>
 
         {/* Hero */}
-        <section style={{ padding: '110px 40px 96px', textAlign: 'center' }}>
+        <section style={{
+          background: 'linear-gradient(160deg, #060d1f 0%, #0d1a35 55%, #111827 100%)',
+          padding: '110px 40px 96px', textAlign: 'center',
+          position: 'relative', overflow: 'hidden',
+        }}>
           <div style={{ maxWidth: '780px', margin: '0 auto' }}>
             <div style={{
               display: 'inline-block',
@@ -249,8 +249,7 @@ export default function QualificationsPage() {
 
         {/* Stats bar */}
         <section style={{
-          background: 'rgba(255,255,255,0.03)', borderTop: '1px solid rgba(255,255,255,0.07)',
-          borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '40px',
+          background: '#fff', borderBottom: '1px solid #e2e8f0', padding: '40px',
         }}>
           <div style={{
             maxWidth: '1080px', margin: '0 auto',
@@ -261,43 +260,42 @@ export default function QualificationsPage() {
               <div key={stat}>
                 <div style={{
                   fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,3vw,2.6rem)', fontWeight: 800,
-                  background: 'linear-gradient(135deg, #818cf8, #a78bfa)',
-                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                  color: '#4f46e5',
                 }}>
                   {stat}
                 </div>
-                <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5, margin: '6px 0 4px' }}>{label}</div>
-                <div style={{ fontSize: '0.73rem', color: 'rgba(255,255,255,0.3)', fontStyle: 'italic' }}>{source}</div>
+                <div style={{ fontSize: '0.85rem', color: '#334155', lineHeight: 1.5, margin: '6px 0 4px' }}>{label}</div>
+                <div style={{ fontSize: '0.73rem', color: '#94a3b8', fontStyle: 'italic' }}>{source}</div>
               </div>
             ))}
           </div>
         </section>
 
         {/* Workflow */}
-        <section id="workflow" style={{ padding: '100px 40px' }}>
+        <section id="workflow" style={{ background: '#f8fafc', padding: '100px 40px' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <SectionReveal>
               <div style={{ textAlign: 'center', marginBottom: '72px' }}>
                 <div style={{
                   display: 'inline-block',
-                  background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)',
+                  background: 'rgba(79,70,229,0.08)', border: '1px solid rgba(79,70,229,0.2)',
                   borderRadius: '100px', padding: '6px 20px', marginBottom: '20px',
                   fontSize: '0.72rem', fontFamily: 'var(--font-display)', fontWeight: 700,
-                  letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)',
+                  letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5',
                 }}>
                   How It Works
                 </div>
                 <h2 style={{
                   fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)',
-                  color: '#fff', lineHeight: 1.2, marginBottom: '16px',
+                  color: '#0f172a', lineHeight: 1.2, marginBottom: '16px',
                 }}>
                   From first click to{' '}
                   <span style={{
-                    background: 'linear-gradient(135deg, #818cf8, #a78bfa)',
+                    background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
                     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                   }}>signed retainer</span>
                 </h2>
-                <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: '540px', margin: '0 auto' }}>
+                <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.7, maxWidth: '540px', margin: '0 auto' }}>
                   Six automated steps that turn a website visitor into a signed client — with your team only touching the cases that matter most.
                 </p>
               </div>
@@ -306,7 +304,7 @@ export default function QualificationsPage() {
             {/* Animated timeline */}
             <div style={{ position: 'relative', paddingLeft: '72px' }}>
               {/* Vertical line */}
-              <div style={{ position: 'absolute', left: '21px', top: '24px', bottom: '24px', width: '2px', background: 'rgba(255,255,255,0.06)', borderRadius: '2px' }}>
+              <div style={{ position: 'absolute', left: '21px', top: '24px', bottom: '24px', width: '2px', background: '#e2e8f0', borderRadius: '2px' }}>
                 <div
                   ref={lineRef}
                   style={{
@@ -346,9 +344,10 @@ export default function QualificationsPage() {
                   {/* Card */}
                   <div style={{
                     flex: 1,
-                    background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
+                    background: '#fff', border: '1px solid #e2e8f0',
                     borderRadius: '16px', padding: '28px 32px',
                     borderLeft: `3px solid ${step.color}`,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                   }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '10px' }}>
                       <span style={{
@@ -359,16 +358,16 @@ export default function QualificationsPage() {
                       </span>
                       <h3 style={{
                         fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 700,
-                        color: '#fff', margin: 0,
+                        color: '#0f172a', margin: 0,
                       }}>
                         {step.title}
                       </h3>
                     </div>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: '12px' }}>
+                    <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.7, marginBottom: '12px' }}>
                       {step.desc}
                     </p>
                     <p style={{
-                      fontSize: '0.82rem', color: step.color, opacity: 0.8,
+                      fontSize: '0.82rem', color: step.color,
                       fontFamily: 'var(--font-display)', fontWeight: 600,
                       display: 'flex', alignItems: 'center', gap: '6px',
                     }}>
@@ -382,30 +381,30 @@ export default function QualificationsPage() {
         </section>
 
         {/* Features */}
-        <section style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '100px 40px' }}>
+        <section style={{ background: '#fff', borderTop: '1px solid #e2e8f0', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
             <SectionReveal>
               <div style={{ textAlign: 'center', marginBottom: '64px' }}>
                 <div style={{
                   display: 'inline-block',
-                  background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)',
+                  background: 'rgba(79,70,229,0.08)', border: '1px solid rgba(79,70,229,0.2)',
                   borderRadius: '100px', padding: '6px 20px', marginBottom: '20px',
                   fontSize: '0.72rem', fontFamily: 'var(--font-display)', fontWeight: 700,
-                  letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)',
+                  letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5',
                 }}>
                   Platform Features
                 </div>
                 <h2 style={{
                   fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)',
-                  color: '#fff', lineHeight: 1.2, marginBottom: '16px',
+                  color: '#0f172a', lineHeight: 1.2, marginBottom: '16px',
                 }}>
                   Everything in one{' '}
                   <span style={{
-                    background: 'linear-gradient(135deg, #818cf8, #a78bfa)',
+                    background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
                     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                   }}>intake platform</span>
                 </h2>
-                <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
+                <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
                   No patchwork of tools. No manual handoffs between systems. One platform that handles the full intake lifecycle.
                 </p>
               </div>
@@ -415,35 +414,36 @@ export default function QualificationsPage() {
               {features.map(({ icon: Icon, title, desc }, i) => (
                 <SectionReveal key={title} delay={((i % 3) + 1) as 1 | 2 | 3}>
                   <div style={{
-                    background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
+                    background: '#fff', border: '1px solid #e2e8f0',
                     borderRadius: '16px', padding: '28px 26px',
                     transition: 'all 0.3s ease',
+                    boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(99,102,241,0.08)'
-                    e.currentTarget.style.borderColor = 'rgba(99,102,241,0.25)'
+                    e.currentTarget.style.borderColor = 'rgba(79,70,229,0.3)'
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(79,70,229,0.1)'
                     e.currentTarget.style.transform = 'translateY(-3px)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
+                    e.currentTarget.style.borderColor = '#e2e8f0'
+                    e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.04)'
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                   >
                     <div style={{
                       width: '44px', height: '44px', borderRadius: '12px', marginBottom: '18px',
-                      background: 'linear-gradient(135deg, rgba(79,70,229,0.35), rgba(124,58,237,0.35))',
+                      background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.12))',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                      <Icon size={20} color="#818cf8" />
+                      <Icon size={20} color="#4f46e5" />
                     </div>
                     <h3 style={{
                       fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700,
-                      color: '#fff', marginBottom: '10px',
+                      color: '#0f172a', marginBottom: '10px',
                     }}>
                       {title}
                     </h3>
-                    <p style={{ fontSize: '0.84rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>
+                    <p style={{ fontSize: '0.84rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
                       {desc}
                     </p>
                   </div>
@@ -454,21 +454,21 @@ export default function QualificationsPage() {
         </section>
 
         {/* Why Case Compass */}
-        <section style={{ padding: '100px 40px' }}>
+        <section style={{ background: '#f8fafc', borderTop: '1px solid #e2e8f0', padding: '100px 40px' }}>
           <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
             <SectionReveal>
               <div style={{ textAlign: 'center', marginBottom: '64px' }}>
                 <h2 style={{
                   fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)',
-                  color: '#fff', lineHeight: 1.2, marginBottom: '16px',
+                  color: '#0f172a', lineHeight: 1.2, marginBottom: '16px',
                 }}>
                   Built specifically for{' '}
                   <span style={{
-                    background: 'linear-gradient(135deg, #818cf8, #a78bfa)',
+                    background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
                     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                   }}>plaintiff law firms</span>
                 </h2>
-                <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
+                <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
                   Generic intake tools weren&apos;t designed for the complexity of legal qualification. Case Compass was.
                 </p>
               </div>
@@ -478,24 +478,24 @@ export default function QualificationsPage() {
               {pillars.map(({ icon: Icon, title, desc }) => (
                 <SectionReveal key={title}>
                   <div style={{
-                    background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
+                    background: '#fff', border: '1px solid #e2e8f0',
                     borderRadius: '20px', padding: '36px 28px', textAlign: 'center',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                   }}>
                     <div style={{
                       width: '56px', height: '56px', borderRadius: '16px', margin: '0 auto 20px',
-                      background: 'linear-gradient(135deg, rgba(79,70,229,0.25), rgba(124,58,237,0.25))',
-                      border: '1px solid rgba(99,102,241,0.2)',
+                      background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.12))',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                      <Icon size={24} color="#818cf8" />
+                      <Icon size={24} color="#4f46e5" />
                     </div>
                     <h3 style={{
                       fontFamily: 'var(--font-display)', fontSize: '1.05rem', fontWeight: 700,
-                      color: '#fff', marginBottom: '12px',
+                      color: '#0f172a', marginBottom: '12px',
                     }}>
                       {title}
                     </h3>
-                    <p style={{ fontSize: '0.87rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>
+                    <p style={{ fontSize: '0.87rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
                       {desc}
                     </p>
                   </div>
@@ -507,7 +507,7 @@ export default function QualificationsPage() {
 
         {/* CTA */}
         <section style={{
-          background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.07)',
+          background: 'linear-gradient(135deg, #060d1f, #1e1b4b)',
           padding: '100px 40px', textAlign: 'center',
         }}>
           <SectionReveal>
