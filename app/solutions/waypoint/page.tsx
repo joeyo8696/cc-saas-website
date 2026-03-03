@@ -51,7 +51,7 @@ export default function WaypointPage() {
                 See Waypoint in Action →
               </Link>
               <Link
-                href="/blog/referrals-waypoint-launch"
+                href="https://blog.casecompass.io/posts/referrals-and-waypoint-launch"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600 }}
               >
                 Read the Launch Post
