@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import {
   MessageSquare, PhoneForwarded, LayoutTemplate, Zap, CheckCircle,
   Mail, BarChart3, Users, Clock, ArrowRight, Star, TrendingUp, Shield,
@@ -377,6 +378,260 @@ export default function QualificationsPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Product Tour */}
+        <section style={{ background: '#fff', borderTop: '1px solid #e2e8f0', padding: '100px 40px' }}>
+          <div style={{ maxWidth: '1160px', margin: '0 auto' }}>
+
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '72px' }}>
+                <div style={{
+                  display: 'inline-block',
+                  background: 'rgba(79,70,229,0.08)', border: '1px solid rgba(79,70,229,0.2)',
+                  borderRadius: '100px', padding: '6px 20px', marginBottom: '20px',
+                  fontSize: '0.72rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                  letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5',
+                }}>
+                  Platform Tour
+                </div>
+                <h2 style={{
+                  fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)',
+                  color: '#0f172a', lineHeight: 1.2, marginBottom: '16px',
+                }}>
+                  See it{' '}
+                  <span style={{
+                    background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
+                    WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                  }}>in action</span>
+                </h2>
+                <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
+                  Real screens from the Case Compass platform — built for how plaintiff law firms actually work.
+                </p>
+              </div>
+            </SectionReveal>
+
+            {/* Row 1: Intake Form Builder */}
+            <SectionReveal>
+              <div style={{
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
+                alignItems: 'center', marginBottom: '96px',
+              }}>
+                <div>
+                  <div style={{
+                    display: 'inline-block',
+                    background: 'rgba(79,70,229,0.08)', border: '1px solid rgba(79,70,229,0.2)',
+                    borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+                    fontSize: '0.7rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                    letterSpacing: '0.08em', textTransform: 'uppercase', color: '#4f46e5',
+                  }}>
+                    Intake Form Builder
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)',
+                    color: '#0f172a', lineHeight: 1.25, marginBottom: '16px',
+                  }}>
+                    Build any intake form — visually, in minutes
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.75, marginBottom: '20px' }}>
+                    No developers needed. Drag and drop question types — contact info, yes/no, multiple choice, file uploads, e-sign disclaimers — and wire them together with branching logic specific to your case type.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {['Contact, date, and address fields built in', 'Branching logic per case type', 'Message & disclaimer nodes for HIPAA / attorney-client', 'File and document upload support'].map(item => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.875rem', color: '#334155' }}>
+                        <CheckCircle size={15} color="#4f46e5" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{
+                  borderRadius: '16px', overflow: 'hidden',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)',
+                  border: '1px solid #e2e8f0',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    position: 'absolute', inset: 0, borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(79,70,229,0.06), rgba(124,58,237,0.04))',
+                    pointerEvents: 'none', zIndex: 1,
+                  }} />
+                  <Image
+                    src="/images/Screenshot 2026-03-02 at 11.41.46 PM.png"
+                    alt="Intake Form Builder"
+                    width={1200} height={750}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+              </div>
+            </SectionReveal>
+
+            {/* Row 2: Timeline Builder (reversed) */}
+            <SectionReveal>
+              <div style={{
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
+                alignItems: 'center', marginBottom: '96px',
+              }}>
+                <div style={{
+                  borderRadius: '16px', overflow: 'hidden',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)',
+                  border: '1px solid #e2e8f0',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    position: 'absolute', inset: 0, borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(14,165,233,0.05), rgba(99,102,241,0.04))',
+                    pointerEvents: 'none', zIndex: 1,
+                  }} />
+                  <Image
+                    src="/images/Screenshot 2026-03-02 at 11.42.38 PM.png"
+                    alt="Timeline Builder"
+                    width={1200} height={750}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+                <div>
+                  <div style={{
+                    display: 'inline-block',
+                    background: 'rgba(14,165,233,0.08)', border: '1px solid rgba(14,165,233,0.25)',
+                    borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+                    fontSize: '0.7rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                    letterSpacing: '0.08em', textTransform: 'uppercase', color: '#0284c7',
+                  }}>
+                    Timeline Builder
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)',
+                    color: '#0f172a', lineHeight: 1.25, marginBottom: '16px',
+                  }}>
+                    Automate what happens after intake — every time
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.75, marginBottom: '20px' }}>
+                    Build visual workflows that trigger automatically when a lead completes intake. Route qualified leads to e-sign, send to case management, fire off document requests — all without staff intervention.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {['Visual drag-and-drop workflow builder', 'E-sign, document, and message ending pages', 'Direct sync to Litify, Filevine, Clio, LeadDocket', 'Conditional routing based on form answers'].map(item => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.875rem', color: '#334155' }}>
+                        <CheckCircle size={15} color="#0284c7" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </SectionReveal>
+
+            {/* Row 3: Waypoint Criteria */}
+            <SectionReveal>
+              <div style={{
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
+                alignItems: 'center', marginBottom: '96px',
+              }}>
+                <div>
+                  <div style={{
+                    display: 'inline-block',
+                    background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.25)',
+                    borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+                    fontSize: '0.7rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                    letterSpacing: '0.08em', textTransform: 'uppercase', color: '#7c3aed',
+                  }}>
+                    Waypoint AI
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)',
+                    color: '#0f172a', lineHeight: 1.25, marginBottom: '16px',
+                  }}>
+                    Define exactly what makes a case worth taking
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.75, marginBottom: '20px' }}>
+                    Waypoint Criteria are your firm&apos;s SOPs — translated into AI scoring rules. Add criteria for case value, medical evidence, legal pathway, urgency flags, and red flags. Waypoint applies them to every single intake, automatically.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {['Category-based criteria: evidence, case value, eligibility, red flags', 'Applies to all intakes or specific case types', 'Full prompt preview before going live', 'Update criteria anytime — scores recalculate instantly'].map(item => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.875rem', color: '#334155' }}>
+                        <CheckCircle size={15} color="#7c3aed" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{
+                  borderRadius: '16px', overflow: 'hidden',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)',
+                  border: '1px solid #e2e8f0',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    position: 'absolute', inset: 0, borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(124,58,237,0.05), rgba(79,70,229,0.04))',
+                    pointerEvents: 'none', zIndex: 1,
+                  }} />
+                  <Image
+                    src="/images/Screenshot 2026-03-02 at 11.42.11 PM.png"
+                    alt="Waypoint Criteria"
+                    width={1200} height={750}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+              </div>
+            </SectionReveal>
+
+            {/* Row 4: AI Lead Scoring / Lead Profile (reversed) */}
+            <SectionReveal>
+              <div style={{
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
+                alignItems: 'center',
+              }}>
+                <div style={{
+                  borderRadius: '16px', overflow: 'hidden',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)',
+                  border: '1px solid #e2e8f0',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    position: 'absolute', inset: 0, borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(245,158,11,0.05), rgba(79,70,229,0.04))',
+                    pointerEvents: 'none', zIndex: 1,
+                  }} />
+                  <Image
+                    src="/images/Screenshot 2026-03-02 at 11.45.16 PM.png"
+                    alt="AI Lead Scoring"
+                    width={1200} height={750}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+                <div>
+                  <div style={{
+                    display: 'inline-block',
+                    background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.3)',
+                    borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+                    fontSize: '0.7rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                    letterSpacing: '0.08em', textTransform: 'uppercase', color: '#d97706',
+                  }}>
+                    AI Lead Scoring
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)',
+                    color: '#0f172a', lineHeight: 1.25, marginBottom: '16px',
+                  }}>
+                    Every lead scored the moment it comes in
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.75, marginBottom: '20px' }}>
+                    The moment intake is submitted, Waypoint evaluates the case across six dimensions — overall score, severity, urgency, case value, completeness, and AI confidence. Your team sees a full breakdown before they open the file.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {['Overall, severity, urgency, and case value scores', 'HIGH-VALUE CASE flag for priority leads', 'Clarification tasks auto-generated for your intake team', 'Full intake transcript alongside the score'].map(item => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.875rem', color: '#334155' }}>
+                        <CheckCircle size={15} color="#d97706" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </SectionReveal>
+
           </div>
         </section>
 
