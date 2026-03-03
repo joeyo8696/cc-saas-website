@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
@@ -9,8 +8,19 @@ export default function CtaSection() {
     >
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 40px' }}>
         <SectionReveal>
-          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', color: '#fff', lineHeight: 1.2, marginBottom: '20px' }}>
-            Your legal team&apos;s <em>true north.</em><br />Let&apos;s build it together.
+          <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', color: '#fff', lineHeight: 1.25, marginBottom: '20px' }}>
+            <span style={{ display: 'block', whiteSpace: 'nowrap', fontSize: '0.85em' }}>
+              Your legal team&apos;s{' '}
+              <em style={{
+                fontStyle: 'italic',
+                background: 'linear-gradient(135deg, #818cf8, #4f46e5, #a78bfa)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 0 18px rgba(99,102,241,0.7)) drop-shadow(0 0 40px rgba(139,92,246,0.4))',
+              }}>true north.</em>
+            </span>
+            <span style={{ display: 'block' }}>Let&apos;s build it together.</span>
           </h2>
         </SectionReveal>
         <SectionReveal delay={1}>
@@ -23,12 +33,6 @@ export default function CtaSection() {
             <DemoButton style={{ padding: '16px 40px', fontSize: '1rem' }}>
               Schedule a Demo →
             </DemoButton>
-            <Link
-              href="/lp/ieepa"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '16px 40px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 600 }}
-            >
-              IEEPA Intake Toolkit
-            </Link>
           </div>
         </SectionReveal>
       </div>
