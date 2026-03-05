@@ -11,7 +11,27 @@
       "has": [{ "type": "host", "value": "security.casecompass.io" }],
       "destination": "https://www.casecompass.io/security/:path*",
       "permanent": true
-    }
+    },
+
+    { "source": "/solutions/landlord-tenant", "destination": "/solutions/dwellex", "permanent": true },
+    { "source": "/solutions/conversions",     "destination": "/solutions/qualifications", "permanent": true },
+    { "source": "/solutions/integration",     "destination": "/solutions/qualifications", "permanent": true },
+    { "source": "/schedule-a-demo",           "destination": "/", "permanent": true },
+    { "source": "/form-success",              "destination": "/", "permanent": true },
+    { "source": "/contact",                   "destination": "/", "permanent": true },
+    { "source": "/changelog",                 "destination": "/", "permanent": true },
+    { "source": "/changelog/:slug*",          "destination": "/", "permanent": true },
+
+    { "source": "/blog/roblox-mdl-is-an-intake-problem-before-it-is-a-trial-problem", "destination": "https://blog.casecompass.io/roblox-mdl-is-an-intake-problem-before-it-is-a-trial-problem", "permanent": true },
+    { "source": "/blog/2025-was-loud.-2026-will-be-disciplined.",                      "destination": "https://blog.casecompass.io/2025-was-loud.-2026-will-be-disciplined.", "permanent": true },
+    { "source": "/blog/from-pilot-to-production-scaling-legal-ai-without-the-burnout", "destination": "https://blog.casecompass.io/from-pilot-to-production-scaling-legal-ai-without-the-burnout", "permanent": true },
+    { "source": "/blog/ai-vendor-scorecard-a-30-minute-evaluation-framework-for-legal-teams", "destination": "https://blog.casecompass.io/ai-vendor-scorecard-a-30-minute-evaluation-framework-for-legal-teams", "permanent": true },
+    { "source": "/blog/red-flag-radar-how-to-spot-over-promising-ai-vendors-in-legal-tech", "destination": "https://blog.casecompass.io/red-flag-radar-how-to-spot-over-promising-ai-vendors-in-legal-tech", "permanent": true },
+    { "source": "/blog/the-ai-wave-in-legal-promise-peril-and-a-path-forward",         "destination": "https://blog.casecompass.io/the-ai-wave-in-legal-promise-peril-and-a-path-forward", "permanent": true },
+    { "source": "/blog/bad-data-management-thats-a-case-of-missing-the-point",         "destination": "https://blog.casecompass.io/bad-data-management-thats-a-case-of-missing-the-point", "permanent": true },
+    { "source": "/blog/justice-health-a-unified-tech-focused-approach-to-accessible-services", "destination": "https://blog.casecompass.io/justice-health-a-unified-tech-focused-approach-to-accessible-services", "permanent": true },
+    { "source": "/blog/bridging-the-gap-legal-services-and-healthcare-access",         "destination": "https://blog.casecompass.io/bridging-the-gap-legal-services-and-healthcare-access", "permanent": true },
+    { "source": "/blog/:slug*",                                                         "destination": "https://blog.casecompass.io/:slug*", "permanent": true }
   ],
   "headers": [
     {
