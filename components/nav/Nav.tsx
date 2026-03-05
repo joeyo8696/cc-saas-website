@@ -239,7 +239,6 @@ export default function Nav() {
             <div style={{ display: 'flex', borderBottom: '1px solid #e8edf5', padding: '0 8px' }}>
               {[
                 { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
-                { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: "Workers' Compensation", iconBg: 'linear-gradient(135deg, #f59e0b, #d97706)' },
               ].map(({ href, icon: Icon, label, sub, iconBg }) => (
                 <Link
                   key={label}

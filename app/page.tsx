@@ -14,6 +14,7 @@ import NotJustAChatbot from '@/components/home/NotJustAChatbot'
 import IeepaCallout from '@/components/home/IeepaCallout'
 import DepoProveraCallout from '@/components/home/DepoProveraCallout'
 import RobloxCallout from '@/components/home/RobloxCallout'
+import WorkersCompCallout from '@/components/home/WorkersCompCallout'
 import CtaSection from '@/components/home/CtaSection'
 
 export default function HomePage() {
@@ -37,6 +38,7 @@ export default function HomePage() {
         <IeepaCallout />
         <DepoProveraCallout />
         <RobloxCallout />
+        <WorkersCompCallout />
         <CtaSection />
       </main>
       <Footer />
