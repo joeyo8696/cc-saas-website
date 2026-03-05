@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import SectionReveal from '@/components/ui/SectionReveal'
-import DemoButton from '@/components/DemoButton'
 
 export default function WorkersCompCallout() {
   return (
@@ -23,17 +22,12 @@ export default function WorkersCompCallout() {
           </SectionReveal>
 
           <SectionReveal delay={2}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
-              <Link
-                href="/solutions/workers-comp"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'linear-gradient(135deg, #d97706, #f59e0b)', color: '#fff', padding: '15px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(245,158,11,0.35)', whiteSpace: 'nowrap' }}
-              >
-                See Workers&apos; Comp Solution →
-              </Link>
-              <DemoButton style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', padding: '12px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
-                Schedule a Demo
-              </DemoButton>
-            </div>
+            <Link
+              href="/solutions/workers-comp"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'linear-gradient(135deg, #d97706, #f59e0b)', color: '#fff', padding: '15px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(245,158,11,0.35)', whiteSpace: 'nowrap' }}
+            >
+              See Workers&apos; Comp Solution →
+            </Link>
           </SectionReveal>
         </div>
       </div>
