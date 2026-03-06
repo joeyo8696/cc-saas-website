@@ -103,7 +103,7 @@ export default function Hero() {
             animation: 'pulse 2s ease-in-out infinite',
           }}
         />
-        AI-Powered Legal Intake Platform
+        Intake, Qualify, Convert
       </div>
 
       {/* Headline */}
