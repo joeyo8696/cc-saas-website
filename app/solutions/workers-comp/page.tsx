@@ -684,6 +684,33 @@ export default function WorkersCompPage() {
           </div>
         </section>
 
+        {/* Stern & Cohen Case Study */}
+        <section style={{ background: '#f8fafc', padding: '80px 40px' }}>
+          <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <span style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '12px' }}>
+                  Client Story
+                </span>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#0f172a', lineHeight: 1.2 }}>
+                  See it in action
+                </h2>
+              </div>
+            </SectionReveal>
+            <SectionReveal delay={1}>
+              <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 32px rgba(0,0,0,0.10)', border: '1px solid #e2e8f0', background: '#fff' }}>
+                <Image
+                  src="https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/case-study-stern-cohen.png"
+                  alt="Stern & Cohen — Chat becomes #1 highest converting intake channel with Case Compass"
+                  width={1200}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </SectionReveal>
+          </div>
+        </section>
+
         {/* CTA */}
         <section style={{ background: '#fff', padding: '120px 40px', textAlign: 'center' }}>
           <div style={{ maxWidth: '720px', margin: '0 auto' }}>
