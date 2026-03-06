@@ -24,7 +24,9 @@ export default function IeepaCallout() {
 
           <SectionReveal delay={2}>
             <Link
-              href="/lp/ieepa"
+              href="https://ieepa.casecompass.io/"
+              target="_blank"
+              rel="noopener"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'linear-gradient(135deg, #dc2626, #ef4444)', color: '#fff', padding: '15px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(239,68,68,0.35)', whiteSpace: 'nowrap' }}
             >
               See IEEPA Toolkit →
