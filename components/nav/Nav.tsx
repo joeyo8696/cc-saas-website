@@ -86,8 +86,7 @@ export default function Nav() {
   const closeMobile = () => { setMobileOpen(false); setMobilePlatformOpen(false) }
 
   return (
-    <>
-      <nav
+    <nav
         style={{
           position: 'sticky',
           top: 0,
@@ -259,18 +258,16 @@ export default function Nav() {
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </nav>
 
-      {/* ── Mobile drawer ── */}
+      {/* ── Mobile drawer — positioned absolute so it anchors to nav's own bottom ── */}
       {mobileOpen && (
         <div
-          className="nav-mobile-menu"
           style={{
-            position: 'fixed',
-            top: '64px',
+            position: 'absolute',
+            top: '100%',
             left: 0,
             right: 0,
-            bottom: 0,
+            height: 'calc(100dvh - 64px)',
             background: 'rgba(6,13,31,0.98)',
             backdropFilter: 'blur(16px)',
             WebkitBackdropFilter: 'blur(16px)',
@@ -329,6 +326,6 @@ export default function Nav() {
           </div>
         </div>
       )}
-    </>
+    </nav>
   )
 }

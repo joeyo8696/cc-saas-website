@@ -133,12 +133,19 @@ a { text-decoration: none; }
 /* Nav responsive */
 .nav-desktop-links { display: flex; }
 .nav-hamburger-btn { display: none; }
-.nav-mobile-menu   { display: none; }
 
 @media (max-width: 767px) {
   .nav-desktop-links { display: none !important; }
   .nav-hamburger-btn { display: flex !important; }
-  .nav-mobile-menu   { display: block; }
+}
+
+/* Hero headline — prevent nowrap overflow on mobile */
+@media (max-width: 767px) {
+  .hero-headline {
+    white-space: normal !important;
+    font-size: 2.4rem !important;
+    word-break: break-word;
+  }
 }
 
 /* Mobile menu link rows */

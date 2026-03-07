@@ -109,6 +109,7 @@ export default function Hero() {
       {/* Headline */}
       <h1
         ref={h1Ref}
+        className="hero-headline"
         style={{
           fontFamily: 'var(--font-serif)',
           fontSize: 'clamp(2.8rem, 6vw, 5rem)',
