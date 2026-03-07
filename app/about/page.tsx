@@ -212,92 +212,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* AI Philosophy */}
-        <section style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)', padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 65%)', pointerEvents: 'none' }} />
-          <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-
-            <SectionReveal>
-              <div style={{ textAlign: 'center', marginBottom: '72px' }}>
-                <div style={{ display: 'inline-block', background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.35)', borderRadius: '8px', padding: '6px 16px', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)', marginBottom: '24px' }}>
-                  Our Approach to AI
-                </div>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', lineHeight: 1.2, marginBottom: '24px' }}>
-                  <span style={{ background: 'linear-gradient(135deg, #fff 30%, #a5b4fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                    AI is a tool.<br />Your team is the judgment.
-                  </span>
-                </h2>
-                <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: '720px', margin: '0 auto' }}>
-                  We believe AI in legal intake should be honest about what it can and can&apos;t do — and designed accordingly.
-                </p>
-              </div>
-            </SectionReveal>
-
-            {/* Two column: value vs shortcomings */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '48px' }}>
-              <SectionReveal>
-                <div style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '20px', padding: '40px 36px', height: '100%' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Check size={18} color="#fff" strokeWidth={2.5} />
-                    </div>
-                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: '#fff', letterSpacing: '0.02em' }}>Where AI genuinely helps</h3>
-                  </div>
-                  {[
-                    { title: 'Speed at scale', body: 'AI handles thousands of simultaneous intake conversations without fatigue, delay, or inconsistency — 24/7, across every channel.' },
-                    { title: 'Consistent qualification', body: 'Every lead gets evaluated against the same criteria, every time. No variation based on who took the call or how busy the office was.' },
-                    { title: 'Pattern recognition', body: 'Waypoint surfaces signals across intake data that humans would miss at volume — flagging strong cases, weak documentation, and red flags automatically.' },
-                    { title: 'Removing low-value work', body: 'Routing, scheduling, follow-ups, and status updates don\'t need a human. AI handles the logistics so your team focuses on decisions that matter.' },
-                  ].map(({ title, body }) => (
-                    <div key={title} style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'rgba(165,180,252,0.95)', marginBottom: '6px' }}>{title}</div>
-                      <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{body}</div>
-                    </div>
-                  ))}
-                </div>
-              </SectionReveal>
-
-              <SectionReveal>
-                <div style={{ background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '20px', padding: '40px 36px', height: '100%' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
-                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #f59e0b, #ef4444)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <span style={{ color: '#fff', fontWeight: 800, fontSize: '1rem', lineHeight: 1 }}>!</span>
-                    </div>
-                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: '#fff', letterSpacing: '0.02em' }}>Where AI falls short</h3>
-                  </div>
-                  {[
-                    { title: 'Nuance and context', body: 'AI can miss the human context behind an intake — grief, urgency, confusion. It doesn\'t replace the empathy a skilled intake specialist brings to a sensitive conversation.' },
-                    { title: 'Novel situations', body: 'AI is trained on patterns. Unusual case types, edge-case fact patterns, or jurisdictional nuances can trip up models that haven\'t seen enough examples.' },
-                    { title: 'Final case decisions', body: 'Whether to take a case is a legal and business judgment. AI can inform it — with scores, flags, and summaries — but it should never make that call alone.' },
-                    { title: 'Client trust', body: 'People pursuing legal help are often in difficult moments. A purely automated experience can feel cold. The right handoff to a human, at the right time, matters.' },
-                  ].map(({ title, body }) => (
-                    <div key={title} style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'rgba(251,191,36,0.9)', marginBottom: '6px' }}>{title}</div>
-                      <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{body}</div>
-                    </div>
-                  ))}
-                </div>
-              </SectionReveal>
-            </div>
-
-            {/* Human in the loop callout */}
-            <SectionReveal>
-              <div style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1))', border: '1px solid rgba(129,140,248,0.3)', borderRadius: '20px', padding: '48px 56px', textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.8)', marginBottom: '16px' }}>
-                  Our Design Principle
-                </div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#fff', lineHeight: 1.3, marginBottom: '20px' }}>
-                  Human-in-the-loop is not a fallback.<br />It&apos;s the architecture.
-                </h3>
-                <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: '680px', margin: '0 auto' }}>
-                  Every Case Compass workflow is designed so AI handles volume, consistency, and speed — while your team retains full visibility, override authority, and final judgment on every case. Scores are transparent. Criteria are configurable. Nothing is a black box. We built it this way because we believe the firms that win long-term are the ones who use AI to amplify their team, not replace it.
-                </p>
-              </div>
-            </SectionReveal>
-
-          </div>
-        </section>
-
         {/* Leadership Team */}
         <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -570,10 +484,96 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* AI Philosophy */}
+        <section style={{ background: 'linear-gradient(180deg, #0f172a 0%, #1a1040 100%)', padding: '120px 40px', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 65%)', pointerEvents: 'none' }} />
+          <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '72px' }}>
+                <div style={{ display: 'inline-block', background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.35)', borderRadius: '8px', padding: '6px 16px', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)', marginBottom: '24px' }}>
+                  Our Approach to AI
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', lineHeight: 1.2, marginBottom: '24px' }}>
+                  <span style={{ background: 'linear-gradient(135deg, #fff 30%, #a5b4fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                    AI is a tool.<br />Your team is the judgment.
+                  </span>
+                </h2>
+                <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: '720px', margin: '0 auto' }}>
+                  We believe AI in legal intake should be honest about what it can and can&apos;t do — and designed accordingly.
+                </p>
+              </div>
+            </SectionReveal>
+
+            {/* Two column: value vs shortcomings */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '48px' }}>
+              <SectionReveal>
+                <div style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '20px', padding: '40px 36px', height: '100%' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
+                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Check size={18} color="#fff" strokeWidth={2.5} />
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: '#fff', letterSpacing: '0.02em' }}>Where AI genuinely helps</h3>
+                  </div>
+                  {[
+                    { title: 'Speed at scale', body: 'AI handles thousands of simultaneous intake conversations without fatigue, delay, or inconsistency — 24/7, across every channel.' },
+                    { title: 'Consistent qualification', body: 'Every lead gets evaluated against the same criteria, every time. No variation based on who took the call or how busy the office was.' },
+                    { title: 'Pattern recognition', body: 'Waypoint surfaces signals across intake data that humans would miss at volume — flagging strong cases, weak documentation, and red flags automatically.' },
+                    { title: 'Removing low-value work', body: "Routing, scheduling, follow-ups, and status updates don't need a human. AI handles the logistics so your team focuses on decisions that matter." },
+                  ].map(({ title, body }) => (
+                    <div key={title} style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'rgba(165,180,252,0.95)', marginBottom: '6px' }}>{title}</div>
+                      <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{body}</div>
+                    </div>
+                  ))}
+                </div>
+              </SectionReveal>
+
+              <SectionReveal>
+                <div style={{ background: 'rgba(245,158,11,0.06)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '20px', padding: '40px 36px', height: '100%' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
+                    <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'linear-gradient(135deg, #f59e0b, #ef4444)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <span style={{ color: '#fff', fontWeight: 800, fontSize: '1rem', lineHeight: 1 }}>!</span>
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: '#fff', letterSpacing: '0.02em' }}>Where AI falls short</h3>
+                  </div>
+                  {[
+                    { title: 'Nuance and context', body: "AI can miss the human context behind an intake — grief, urgency, confusion. It doesn't replace the empathy a skilled intake specialist brings to a sensitive conversation." },
+                    { title: 'Novel situations', body: "AI is trained on patterns. Unusual case types, edge-case fact patterns, or jurisdictional nuances can trip up models that haven't seen enough examples." },
+                    { title: 'Final case decisions', body: 'Whether to take a case is a legal and business judgment. AI can inform it — with scores, flags, and summaries — but it should never make that call alone.' },
+                    { title: 'Client trust', body: 'People pursuing legal help are often in difficult moments. A purely automated experience can feel cold. The right handoff to a human, at the right time, matters.' },
+                  ].map(({ title, body }) => (
+                    <div key={title} style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                      <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'rgba(251,191,36,0.9)', marginBottom: '6px' }}>{title}</div>
+                      <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>{body}</div>
+                    </div>
+                  ))}
+                </div>
+              </SectionReveal>
+            </div>
+
+            {/* Human in the loop callout */}
+            <SectionReveal>
+              <div style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1))', border: '1px solid rgba(129,140,248,0.3)', borderRadius: '20px', padding: '48px 56px', textAlign: 'center' }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.8)', marginBottom: '16px' }}>
+                  Our Design Principle
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#fff', lineHeight: 1.3, marginBottom: '20px' }}>
+                  Human-in-the-loop is not a fallback.<br />It&apos;s the architecture.
+                </h3>
+                <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: '680px', margin: '0 auto' }}>
+                  Every Case Compass workflow is designed so AI handles volume, consistency, and speed — while your team retains full visibility, override authority, and final judgment on every case. Scores are transparent. Criteria are configurable. Nothing is a black box. We built it this way because we believe the firms that win long-term are the ones who use AI to amplify their team, not replace it.
+                </p>
+              </div>
+            </SectionReveal>
+
+          </div>
+        </section>
+
         {/* Vision Section */}
         <section
           style={{
-            background: 'linear-gradient(135deg, #060d1f 0%, #1e1b4b 50%, #312e81 100%)',
+            background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%)',
             padding: '120px 40px',
             position: 'relative',
             zIndex: 1,
