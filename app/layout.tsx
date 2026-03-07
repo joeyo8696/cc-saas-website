@@ -68,6 +68,11 @@ export const metadata: Metadata = {
     title: 'Case Compass — Smart Intake. Smarter Firms.',
     description: 'Intelligent Intake, Waypoint AI scoring, and referral management for plaintiff law firms.',
   },
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   robots: {
     index: true,
     follow: true,
