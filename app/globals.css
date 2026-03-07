@@ -120,3 +120,12 @@ a { text-decoration: none; }
   from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* Related solutions card hover (used in server components) */
+.related-solution-card {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.related-solution-card:hover {
+  border-color: #a5b4fc !important;
+  box-shadow: 0 4px 20px rgba(99,102,241,0.08);
+}
