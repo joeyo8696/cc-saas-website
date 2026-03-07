@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Check } from 'lucide-react'
+import { Check, Linkedin } from 'lucide-react'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
@@ -122,7 +122,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              A New Era of Innovation
+              Built by practitioners,<br />for practitioners
             </h1>
 
             <p
@@ -182,7 +182,7 @@ export default function AboutPage() {
                     marginBottom: '40px',
                   }}
                 >
-                  Case Compass
+                  Intake is the engine.<br />We built the platform around it.
                 </h2>
                 <p
                   style={{
@@ -311,25 +311,35 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div style={{ flex: '1 1 350px' }}>
-                    <div
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.08))',
-                        border: '1px solid rgba(79,70,229,0.2)',
-                        borderRadius: '8px',
-                        padding: '6px 14px',
-                        fontFamily: 'var(--font-display)',
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                        color: '#4f46e5',
-                        marginBottom: '20px',
-                      }}
-                    >
-                      Chief Executive Officer
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
+                      <div
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(124,58,237,0.08))',
+                          border: '1px solid rgba(79,70,229,0.2)',
+                          borderRadius: '8px',
+                          padding: '6px 14px',
+                          fontFamily: 'var(--font-display)',
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.1em',
+                          textTransform: 'uppercase',
+                          color: '#4f46e5',
+                        }}
+                      >
+                        CEO &amp; Co-Founder
+                      </div>
+                      <Link
+                        href="https://www.linkedin.com/in/joseph-o-78664793/"
+                        target="_blank"
+                        rel="noopener"
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#0a66c2', fontSize: '0.82rem', fontFamily: 'var(--font-display)', fontWeight: 600, textDecoration: 'none' }}
+                      >
+                        <Linkedin size={16} />
+                        LinkedIn
+                      </Link>
                     </div>
                     <h3
                       style={{
@@ -349,7 +359,7 @@ export default function AboutPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      We are excited to welcome Joey Organisciak as our new CEO. Joey brings a wealth of enterprise experience in leading multidisciplinary teams and pioneering technological advancements in both healthcare and legal tech industries. His impressive career includes significant roles at CHESS Health and Talkiatry, where he demonstrated exceptional leadership and innovation. Joey&apos;s strategic vision and hands-on approach to technology will be invaluable as we build Case Compass and drive our future growth.
+                      Joey is the CEO and Co-Founder of Case Compass, where he leads product strategy, engineering, and go-to-market. He brings deep enterprise experience building and scaling technology platforms across healthcare and legal tech — including senior roles at CHESS Health and Talkiatry, where he led multidisciplinary teams through rapid growth. Joey founded Case Compass on the belief that intake is the most underleveraged lever in a plaintiff firm&apos;s business, and that the firms who get it right will define the next decade of plaintiff law.
                     </p>
                   </div>
                 </div>
@@ -417,25 +427,35 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div style={{ flex: '1 1 350px' }}>
-                    <div
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(192,38,211,0.08))',
-                        border: '1px solid rgba(124,58,237,0.2)',
-                        borderRadius: '8px',
-                        padding: '6px 14px',
-                        fontFamily: 'var(--font-display)',
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                        color: '#7c3aed',
-                        marginBottom: '20px',
-                      }}
-                    >
-                      Chief Financial Officer
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
+                      <div
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'linear-gradient(135deg, rgba(124,58,237,0.12), rgba(192,38,211,0.08))',
+                          border: '1px solid rgba(124,58,237,0.2)',
+                          borderRadius: '8px',
+                          padding: '6px 14px',
+                          fontFamily: 'var(--font-display)',
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.1em',
+                          textTransform: 'uppercase',
+                          color: '#7c3aed',
+                        }}
+                      >
+                        CFO &amp; Co-Founder
+                      </div>
+                      <Link
+                        href="https://www.linkedin.com/in/billtilley/"
+                        target="_blank"
+                        rel="noopener"
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#0a66c2', fontSize: '0.82rem', fontFamily: 'var(--font-display)', fontWeight: 600, textDecoration: 'none' }}
+                      >
+                        <Linkedin size={16} />
+                        LinkedIn
+                      </Link>
                     </div>
                     <h3
                       style={{
@@ -455,7 +475,7 @@ export default function AboutPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      Joining Joey in our executive team is Bill Tilley, who will serve as our CFO. Bill&apos;s extensive experience as President and CEO of Amicus Capital Group, LLC has made him a renowned expert in litigation finance. Over his 17 years with Amicus, Bill has provided a wide range of financial solutions tailored to the unique needs of law firms. His financial acumen and strategic insights will be crucial as we navigate the financial landscape of the legal tech industry.
+                      Bill is the CFO and Co-Founder of Case Compass, bringing over 17 years of litigation finance expertise as President and CEO of Amicus Capital Group. He has structured and deployed capital across hundreds of plaintiff law firms, giving him a rare vantage point on what separates high-performing practices from the rest. Bill also founded PractiPulse™ and Inspire Legal Group Ltd, and brings a practitioner&apos;s understanding of law firm economics, growth, and the operational challenges that Case Compass is built to solve.
                     </p>
                   </div>
                 </div>
@@ -532,7 +552,7 @@ export default function AboutPage() {
                   marginBottom: '28px',
                 }}
               >
-                What&apos;s Next?
+                  Where We&apos;re Going
               </h2>
               <p
                 style={{
