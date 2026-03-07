@@ -13,9 +13,12 @@ const slides = [
     href: 'https://mccunewright.com/',
   },
   {
-    image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/case-study-stern-cohen.png',
-    alt: 'Stern & Cohen — Chat becomes #1 highest converting intake channel',
-    firm: 'Stern & Cohen',
+    image: null,
+    alt: "Regional workers' comp firm — Chat becomes #1 highest converting intake channel",
+    firm: "Regional Workers' Comp Firm",
+    stat: '+75%',
+    statLabel: 'chat-to-client conversion rate',
+    quote: '"Chat became our #1 highest converting intake channel. Case Compass is now the frontline of everything we do for client intake."',
     href: null,
   },
 ]
@@ -48,8 +51,19 @@ export default function Testimonials() {
 
             {/* Slide */}
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 32px rgba(0,0,0,0.10)', border: '1px solid #e2e8f0', background: '#fff' }}>
-              {slides[active].href ? (
-                <Link href={slides[active].href} target="_blank" rel="noopener" style={{ display: 'block' }}>
+              {slides[active].image ? (
+                slides[active].href ? (
+                  <Link href={slides[active].href!} target="_blank" rel="noopener" style={{ display: 'block' }}>
+                    <Image
+                      src={slides[active].image}
+                      alt={slides[active].alt}
+                      width={1200}
+                      height={600}
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                      priority
+                    />
+                  </Link>
+                ) : (
                   <Image
                     src={slides[active].image}
                     alt={slides[active].alt}
@@ -58,16 +72,22 @@ export default function Testimonials() {
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                     priority
                   />
-                </Link>
+                )
               ) : (
-                <Image
-                  src={slides[active].image}
-                  alt={slides[active].alt}
-                  width={1200}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                  priority
-                />
+                <div style={{ padding: '64px 56px', minHeight: '320px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, color: '#4f46e5', letterSpacing: '-0.02em', marginBottom: '4px' }}>
+                    {slides[active].stat}
+                  </div>
+                  <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 500, marginBottom: '28px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                    {slides[active].statLabel}
+                  </div>
+                  <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, fontStyle: 'italic', marginBottom: '32px', maxWidth: '600px' }}>
+                    {slides[active].quote}
+                  </p>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.875rem', fontWeight: 700, color: '#0f172a' }}>{slides[active].firm}</div>
+                  </div>
+                </div>
               )}
             </div>
 

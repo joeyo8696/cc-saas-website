@@ -701,7 +701,7 @@ export default function WorkersCompPage() {
               <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 32px rgba(0,0,0,0.10)', border: '1px solid #e2e8f0', background: '#fff' }}>
                 <Image
                   src="https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/case-study-stern-cohen.png"
-                  alt="Stern & Cohen — Chat becomes #1 highest converting intake channel with Case Compass"
+                  alt="Regional workers' comp firm — Chat becomes #1 highest converting intake channel with Case Compass"
                   width={1200}
                   height={600}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
