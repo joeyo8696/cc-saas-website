@@ -16,6 +16,7 @@ import DepoProveraCallout from '@/components/home/DepoProveraCallout'
 import RobloxCallout from '@/components/home/RobloxCallout'
 import WorkersCompCallout from '@/components/home/WorkersCompCallout'
 import CtaSection from '@/components/home/CtaSection'
+import IntegrationsTicker from '@/components/home/IntegrationsTicker'
 
 export default function HomePage() {
   return (
@@ -39,6 +40,7 @@ export default function HomePage() {
         <DepoProveraCallout />
         <RobloxCallout />
         <WorkersCompCallout />
+        <IntegrationsTicker />
         <CtaSection />
       </main>
       <Footer />
