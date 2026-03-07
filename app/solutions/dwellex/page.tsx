@@ -302,78 +302,113 @@ export default function DwellexPage() {
         </section>
 
         {/* Product Screenshots */}
-        <section style={{ background: '#fff', padding: '120px 40px' }}>
-          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-            <SectionReveal>
-              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-                <span style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6366f1', marginBottom: '12px' }}>
-                  The Platform
-                </span>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.2 }}>
-                  <span style={{ background: 'linear-gradient(135deg, #0f172a 40%, #6366f1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                    Built for the full eviction lifecycle
-                  </span>
-                </h2>
-              </div>
-            </SectionReveal>
-
-            {[
-              {
-                image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-timeline.png',
-                alt: 'Dwellex case timeline tracker',
-                eyebrow: 'Case Timeline',
-                title: 'Every action item, tracked automatically',
-                body: 'A dual-column view separates client tasks from attorney tasks — so nothing falls through the cracks. Cases progress stage by stage, with automated notifications at every step.',
-              },
-              {
-                image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-courts.png',
-                alt: 'Dwellex court management',
-                eyebrow: 'Court Management',
-                title: 'Manage every court across your jurisdiction',
-                body: 'Add and organize courts by county, address, and type. Associate properties directly to courts so filings always go to the right venue — no manual lookups.',
-              },
-              {
-                image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-clio-sync.png',
-                alt: 'Dwellex Clio sync logs',
-                eyebrow: 'Clio Integration',
-                title: 'Real-time sync with zero manual entry',
-                body: 'Every intake automatically creates a matter in Clio. Sync logs give you full visibility into every matter creation, update, and status change — with timestamps and duration.',
-              },
-            ].map(({ image, alt, eyebrow, title, body }, i) => (
-              <SectionReveal key={title}>
+        {[
+          {
+            image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-timeline.png',
+            alt: 'Dwellex case timeline tracker',
+            eyebrow: 'Case Timeline',
+            title: 'Every action item, tracked automatically',
+            body: 'A dual-column view separates client tasks from attorney tasks — so nothing falls through the cracks. Cases progress stage by stage, with automated notifications at every step.',
+            accent: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+            bg: '#fafbff',
+            glow: 'rgba(99,102,241,0.08)',
+          },
+          {
+            image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-courts.png',
+            alt: 'Dwellex court management',
+            eyebrow: 'Court Management',
+            title: 'Manage every court across your jurisdiction',
+            body: 'Add and organize courts by county, address, and type. Associate properties directly to courts so filings always go to the right venue — no manual lookups.',
+            accent: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+            bg: '#f8fafc',
+            glow: 'rgba(14,165,233,0.07)',
+          },
+          {
+            image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-clio-sync.png',
+            alt: 'Dwellex Clio sync logs',
+            eyebrow: 'Clio Integration',
+            title: 'Real-time sync with zero manual entry',
+            body: 'Every intake automatically creates a matter in Clio. Sync logs give you full visibility into every matter creation, update, and status change — with timestamps and duration.',
+            accent: 'linear-gradient(135deg, #10b981, #0ea5e9)',
+            bg: '#f8fffb',
+            glow: 'rgba(16,185,129,0.07)',
+          },
+        ].map(({ image, alt, eyebrow, title, body, accent, bg, glow }, i) => (
+          <section key={title} style={{ background: bg, padding: '100px 40px', position: 'relative', overflow: 'hidden' }}>
+            {/* Ambient glow blob */}
+            <div style={{
+              position: 'absolute',
+              top: '50%', left: i % 2 === 0 ? '60%' : '20%',
+              transform: 'translate(-50%, -50%)',
+              width: '600px', height: '600px',
+              background: `radial-gradient(circle, ${glow} 0%, transparent 70%)`,
+              pointerEvents: 'none',
+            }} />
+            <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative' }}>
+              <SectionReveal>
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
-                  gap: '64px',
+                  gap: '72px',
                   alignItems: 'center',
-                  marginBottom: '100px',
                   direction: i % 2 === 1 ? 'rtl' : 'ltr',
                 }}>
+                  {/* Text */}
                   <div style={{ direction: 'ltr' }}>
-                    <span style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6366f1', marginBottom: '12px' }}>
-                      {eyebrow}
-                    </span>
-                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', color: '#0f172a', lineHeight: 1.25, marginBottom: '20px' }}>
+                    <div style={{
+                      display: 'inline-flex', alignItems: 'center', gap: '8px',
+                      marginBottom: '20px',
+                    }}>
+                      <div style={{ width: '28px', height: '3px', borderRadius: '2px', background: accent }} />
+                      <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6366f1' }}>
+                        {eyebrow}
+                      </span>
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.7rem, 2.5vw, 2.3rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '20px' }}>
                       {title}
                     </h3>
-                    <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.8, margin: 0 }}>
+                    <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.85, margin: 0 }}>
                       {body}
                     </p>
                   </div>
-                  <div style={{ direction: 'ltr', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.12)', border: '1px solid #e2e8f0' }}>
-                    <Image
-                      src={image}
-                      alt={alt}
-                      width={1024}
-                      height={700}
-                      style={{ width: '100%', height: 'auto', display: 'block' }}
-                    />
+
+                  {/* Image */}
+                  <div style={{ direction: 'ltr', position: 'relative' }}>
+                    {/* Decorative gradient border glow behind image */}
+                    <div style={{
+                      position: 'absolute', inset: '-3px',
+                      borderRadius: '20px',
+                      background: accent,
+                      opacity: 0.25,
+                      filter: 'blur(12px)',
+                      zIndex: 0,
+                    }} />
+                    <div style={{
+                      position: 'relative', zIndex: 1,
+                      borderRadius: '16px',
+                      overflow: 'hidden',
+                      boxShadow: '0 24px 60px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.06)',
+                      border: '1px solid rgba(255,255,255,0.8)',
+                      transform: i % 2 === 0 ? 'perspective(1200px) rotateY(-3deg) rotateX(1deg)' : 'perspective(1200px) rotateY(3deg) rotateX(1deg)',
+                      transition: 'transform 0.4s ease',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.01)' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = i % 2 === 0 ? 'perspective(1200px) rotateY(-3deg) rotateX(1deg)' : 'perspective(1200px) rotateY(3deg) rotateX(1deg)' }}
+                    >
+                      <Image
+                        src={image}
+                        alt={alt}
+                        width={1024}
+                        height={700}
+                        style={{ width: '100%', height: 'auto', display: 'block' }}
+                      />
+                    </div>
                   </div>
                 </div>
               </SectionReveal>
-            ))}
-          </div>
-        </section>
+            </div>
+          </section>
+        ))}
 
         {/* Features Grid */}
         <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
