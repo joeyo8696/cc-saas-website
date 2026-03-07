@@ -107,7 +107,7 @@ const globalJsonLd = {
       },
       description: 'Case Compass automates client intake, lead qualification, and case conversion for plaintiff law firms.',
       sameAs: [
-        'https://www.linkedin.com/company/casecompassio',
+        'https://www.linkedin.com/company/case-compass/',
       ],
       contactPoint: {
         '@type': 'ContactPoint',
