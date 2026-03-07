@@ -650,30 +650,12 @@ export default function QualificationsPage() {
               </div>
             </SectionReveal>
 
-            {/* Row 5: AI Lead Scoring / Lead Profile (reversed) */}
+            {/* Row 5: AI Lead Scoring */}
             <SectionReveal>
               <div style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
                 alignItems: 'center',
               }}>
-                <div style={{
-                  borderRadius: '16px', overflow: 'hidden',
-                  boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)',
-                  border: '1px solid #e2e8f0',
-                  position: 'relative',
-                }}>
-                  <div style={{
-                    position: 'absolute', inset: 0, borderRadius: '16px',
-                    background: 'linear-gradient(135deg, rgba(245,158,11,0.05), rgba(79,70,229,0.04))',
-                    pointerEvents: 'none', zIndex: 1,
-                  }} />
-                  <Image
-                    src="/images/ai-lead-scoring.png"
-                    alt="AI Lead Scoring"
-                    width={1200} height={750}
-                    style={{ width: '100%', height: 'auto', display: 'block' }}
-                  />
-                </div>
                 <div>
                   <div style={{
                     display: 'inline-block',
@@ -701,6 +683,24 @@ export default function QualificationsPage() {
                       </li>
                     ))}
                   </ul>
+                </div>
+                <div style={{
+                  borderRadius: '16px', overflow: 'hidden',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)',
+                  border: '1px solid #e2e8f0',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    position: 'absolute', inset: 0, borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(245,158,11,0.05), rgba(79,70,229,0.04))',
+                    pointerEvents: 'none', zIndex: 1,
+                  }} />
+                  <Image
+                    src="/images/ai-lead-scoring.png"
+                    alt="AI Lead Scoring"
+                    width={1200} height={750}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
                 </div>
               </div>
             </SectionReveal>
