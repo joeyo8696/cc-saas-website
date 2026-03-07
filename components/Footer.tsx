@@ -19,7 +19,7 @@ const footerLinks = [
     heading: 'Product',
     links: [
       { label: 'Waypoint AI', href: '/solutions/waypoint' },
-      { label: 'Intelligent Intake', href: '/solutions/qualifications' },
+      { label: 'Intelligent Intake', href: '/solutions/intake' },
       { label: 'Referral Network', href: '/#referrals' },
       { label: 'E-Signatures', href: '/#features' },
     ],

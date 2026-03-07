@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/solutions/qualifications`,
+      url: `${BASE_URL}/solutions/intake`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

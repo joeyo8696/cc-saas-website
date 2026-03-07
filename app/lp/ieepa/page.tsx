@@ -362,7 +362,7 @@ export default function IeepaPage() {
               Book a 30-Minute Demo →
             </Link>
             <Link
-              href="/solutions/qualifications"
+              href="/solutions/intake"
               style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '15px 36px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 600 }}
             >
               See Our Intake Solutions

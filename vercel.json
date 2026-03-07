@@ -13,9 +13,10 @@
       "permanent": true
     },
 
-    { "source": "/solutions/landlord-tenant", "destination": "/solutions/dwellex", "permanent": true },
-    { "source": "/solutions/conversions",     "destination": "/solutions/qualifications", "permanent": true },
-    { "source": "/solutions/integration",     "destination": "/solutions/qualifications", "permanent": true },
+    { "source": "/solutions/landlord-tenant",  "destination": "/solutions/dwellex", "permanent": true },
+    { "source": "/solutions/qualifications",   "destination": "/solutions/intake", "permanent": true },
+    { "source": "/solutions/conversions",      "destination": "/solutions/intake", "permanent": true },
+    { "source": "/solutions/integration",      "destination": "/solutions/intake", "permanent": true },
     { "source": "/schedule-a-demo",           "destination": "/", "permanent": true },
     { "source": "/form-success",              "destination": "/", "permanent": true },
     { "source": "/contact",                   "destination": "/", "permanent": true },

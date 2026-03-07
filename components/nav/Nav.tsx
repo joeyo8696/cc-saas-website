@@ -31,7 +31,7 @@ const platformLinks = {
       'The AI scoring engine built for law firms. Automatically qualify, rank, and prioritize every intake — powered by your firm\'s own criteria.',
   },
   intakeOS: {
-    href: '/solutions/qualifications',
+    href: '/solutions/intake',
     eyebrow: 'Core Platform',
     name: 'Intake OS',
     description:
