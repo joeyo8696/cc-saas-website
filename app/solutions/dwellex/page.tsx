@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, Landmark } from 'lucide-react'
 import Nav from '@/components/nav/Nav'
@@ -640,6 +641,31 @@ export default function DwellexPage() {
                 See Dwellex in Action →
               </DemoButton>
             </SectionReveal>
+          </div>
+        </section>
+
+        {/* Related Solutions */}
+        <section style={{ background: '#fff', padding: '80px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <SectionReveal>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94a3b8', textAlign: 'center', marginBottom: '32px' }}>
+                Related Solutions
+              </h2>
+            </SectionReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+              {[
+                { href: '/solutions/intake', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow for plaintiff firms.' },
+                { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', desc: 'Score every intake submission automatically before your team opens the file.' },
+                { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.' },
+              ].map(({ href, label, desc }) => (
+                <SectionReveal key={href}>
+                  <Link href={href} style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none' }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: '#4f46e5', marginBottom: '8px' }}>{label} →</div>
+                    <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+                  </Link>
+                </SectionReveal>
+              ))}
+            </div>
           </div>
         </section>
 

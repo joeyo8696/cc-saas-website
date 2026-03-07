@@ -7,8 +7,19 @@ import AnnouncementBanner from '@/components/AnnouncementBanner'
 import SectionReveal from '@/components/ui/SectionReveal'
 
 export const metadata: Metadata = {
-  title: 'Security',
-  description: 'How Case Compass protects your law firm\'s data — infrastructure, encryption, access controls, and AI data privacy.',
+  title: 'Security & Compliance',
+  description: 'How Case Compass protects your law firm\'s data — Azure infrastructure, AES-256 encryption, role-based access controls, and AI data privacy.',
+  alternates: {
+    canonical: 'https://www.casecompass.io/security',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.casecompass.io/security',
+    siteName: 'Case Compass',
+    title: 'Security & Compliance | Case Compass',
+    description: 'How Case Compass protects your law firm\'s data — Azure infrastructure, AES-256 encryption, role-based access controls, and AI data privacy.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass Security & Compliance' }],
+  },
 }
 
 const pillars = [

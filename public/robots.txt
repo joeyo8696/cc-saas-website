@@ -6,7 +6,7 @@ Disallow: /lp/
 # Sitemap
 Sitemap: https://www.casecompass.io/sitemap.xml
 
-# Allow all major search engines and AI crawlers
+# Major search engines
 User-agent: Googlebot
 Allow: /
 
@@ -25,11 +25,14 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# AI/LLM Crawlers
+# AI/LLM Crawlers — explicitly permitted
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: CCBot
@@ -41,12 +44,17 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Applebot
 Allow: /
 
-# Crawl delay for aggressive bots
-User-agent: *
-Crawl-delay: 1
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

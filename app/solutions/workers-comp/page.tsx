@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import {
   FileText, Bell, Clock, BarChart3, Users, Shield,
@@ -708,6 +709,56 @@ export default function WorkersCompPage() {
                 />
               </div>
             </SectionReveal>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section style={{ background: '#f8fafc', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <SectionReveal>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '48px', textAlign: 'center' }}>
+                Frequently asked questions
+              </h2>
+            </SectionReveal>
+            {[
+              { q: "What makes workers' comp intake different from other practice areas?", a: "Workers' comp intake requires capturing precise injury details, employer information, date of incident, and medical treatment history upfront. Case Compass uses branching logic to collect the right information for every workers' comp intake scenario, reducing back-and-forth with potential clients and ensuring your team has everything needed to evaluate the case immediately." },
+              { q: 'Does Case Compass handle Spanish-language intake for workers\' comp?', a: 'Yes. Case Compass supports multi-language intake flows, including Spanish. Workers\' comp firms serving Spanish-speaking communities can deploy fully bilingual intake bots and webforms, ensuring every potential client can complete the intake process in their preferred language.' },
+              { q: "How does Case Compass speed up the workers' comp retainer process?", a: 'Case Compass qualifies leads automatically through Waypoint AI scoring, then routes high-value claimants directly to live transfer or sends an automated e-sign retainer. This reduces the average time to a signed retainer from days to hours, without requiring additional staff.' },
+              { q: 'Can Case Compass handle high-volume workers\' comp lead generation?', a: "Yes. Case Compass is designed for high-volume intake. It handles unlimited simultaneous intake conversations, qualifies leads 24/7, and automatically filters out non-qualified claimants — so your staff only spends time on cases worth pursuing." },
+              { q: "How does Case Compass integrate with workers' comp case management systems?", a: 'Case Compass integrates with Clio, Filevine, SmartAdvocate, and other major case management platforms. Once a workers\' comp claimant signs a retainer, their case data is automatically pushed to your system — no manual entry, no lost paperwork.' },
+            ].map(({ q, a }) => (
+              <SectionReveal key={q}>
+                <div style={{ borderBottom: '1px solid #e2e8f0', padding: '28px 0' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>{q}</h3>
+                  <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.75, margin: 0 }}>{a}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </section>
+
+        {/* Related Solutions */}
+        <section style={{ background: '#fff', padding: '80px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <SectionReveal>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94a3b8', textAlign: 'center', marginBottom: '32px' }}>
+                Related Solutions
+              </h2>
+            </SectionReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+              {[
+                { href: '/solutions/intake', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow for plaintiff firms.' },
+                { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', desc: 'Score every intake submission automatically before your team opens the file.' },
+                { href: '/solutions/dwellex', label: 'Dwellex', desc: 'Case management for landlord-tenant and eviction law.' },
+              ].map(({ href, label, desc }) => (
+                <SectionReveal key={href}>
+                  <Link href={href} style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none' }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: '#4f46e5', marginBottom: '8px' }}>{label} →</div>
+                    <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+                  </Link>
+                </SectionReveal>
+              ))}
+            </div>
           </div>
         </section>
 

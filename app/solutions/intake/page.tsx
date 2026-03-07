@@ -833,6 +833,57 @@ export default function QualificationsPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section style={{ background: '#f8fafc', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <SectionReveal>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '48px', textAlign: 'center' }}>
+                Frequently asked questions
+              </h2>
+            </SectionReveal>
+            {[
+              { q: 'What intake channels does Case Compass support?', a: 'Case Compass supports AI-powered chatbots, custom webforms, live transfer queues, and embedded intake widgets. Each channel can be deployed independently or together, depending on your firm\'s workflow.' },
+              { q: 'How does Case Compass handle live transfers?', a: 'Live Transfer routes qualified leads directly to available staff via an intelligent queue. When a prospect scores above your threshold, they\'re connected in real time. If no one is available, the system captures their information, sends an e-sign retainer, and schedules a callback.' },
+              { q: 'Does Case Compass integrate with Clio, Filevine, or other case management software?', a: 'Yes. Case Compass integrates with Clio, Filevine, Litify, SmartAdvocate, LeadDocket, MyCase, and more. Signed cases are automatically pushed to your case management system with no manual data entry.' },
+              { q: "What's the difference between Case Compass and a basic chatbot?", a: 'A basic chatbot collects information. Case Compass qualifies, scores, routes, and converts leads — all in one automated flow. It includes Waypoint AI scoring, e-signature collection, live transfer, and CMS integration. It\'s a full intake platform, not just a chat widget.' },
+              { q: 'How quickly can we go live with Case Compass?', a: 'Most firms are live within one week. Onboarding is included — Case Compass builds your intake bot, configures Waypoint scoring for your practice area, and deploys your first automated flow.' },
+              { q: 'Is Case Compass HIPAA compliant?', a: 'Case Compass is hosted on Microsoft Azure with AES-256 encryption at rest and TLS 1.2+ in transit. The platform is designed with legal data privacy requirements in mind. Contact us for details on BAA availability.' },
+            ].map(({ q, a }) => (
+              <SectionReveal key={q}>
+                <div style={{ borderBottom: '1px solid #e2e8f0', padding: '28px 0' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>{q}</h3>
+                  <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.75, margin: 0 }}>{a}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </section>
+
+        {/* Related Solutions */}
+        <section style={{ background: '#fff', padding: '80px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <SectionReveal>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94a3b8', textAlign: 'center', marginBottom: '32px' }}>
+                Related Solutions
+              </h2>
+            </SectionReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+              {[
+                { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', desc: 'Score every intake submission automatically before your team opens the file.' },
+                { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.' },
+                { href: '/solutions/dwellex', label: 'Dwellex', desc: 'Case management for landlord-tenant and eviction law.' },
+              ].map(({ href, label, desc }) => (
+                <SectionReveal key={href}>
+                  <Link href={href} style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none', transition: 'border-color 0.2s, box-shadow 0.2s' }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: '#4f46e5', marginBottom: '8px' }}>{label} →</div>
+                    <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+                  </Link>
+                </SectionReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section style={{
           background: 'linear-gradient(135deg, #060d1f, #1e1b4b)',

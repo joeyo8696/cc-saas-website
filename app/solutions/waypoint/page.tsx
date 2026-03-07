@@ -12,6 +12,69 @@ export const metadata: Metadata = {
   title: 'Waypoint — AI Intake Scoring for Law Firms',
   description:
     'Waypoint evaluates every intake submission against your firm\'s custom criteria and surfaces a score before your team opens the file. Built for high-volume plaintiff law firms.',
+  alternates: {
+    canonical: 'https://www.casecompass.io/solutions/waypoint',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.casecompass.io/solutions/waypoint',
+    siteName: 'Case Compass',
+    title: 'Waypoint — AI Intake Scoring for Law Firms | Case Compass',
+    description: 'Waypoint scores every intake submission against your firm\'s custom criteria before your team opens the file. Consistent, defensible, AI-powered lead scoring for plaintiff law firms.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Waypoint AI Intake Scoring' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Waypoint — AI Intake Scoring for Law Firms | Case Compass',
+    description: 'Score every intake submission automatically before your team opens the file.',
+  },
+}
+
+const waypointFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How does Waypoint score leads?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Waypoint uses your firm\'s custom criteria to evaluate each intake submission across multiple dimensions: case value, liability strength, evidence quality, urgency, and any red flags you define. It returns a structured score the moment intake is complete — before your team opens the file.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I customize Waypoint\'s scoring criteria for my practice area?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Waypoint is fully customizable per practice area. You define what a strong case looks like for mass tort, workers\' comp, personal injury, or any other area. Pre-built criteria sets are also available for IEEPA tariff claims, Depo-Provera, Roblox, and other active mass torts.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does Waypoint compare to manual intake review?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Manual intake review introduces variance — different staff members evaluate cases differently, leading to inconsistent decisions. Waypoint applies the same documented, defensible evaluation standard to every intake, every time. It also scales infinitely: it evaluates as many intakes simultaneously as your firm receives, with zero delay.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Waypoint store my client data or use it to train AI models?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Waypoint uses a Bring Your Own Key (BYOK) model — it operates using your firm\'s own OpenAI API key. Your data never touches a shared model and is never used to train anyone else\'s AI. Your client information stays yours.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What practice areas does Waypoint support?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Waypoint supports any plaintiff practice area. It is currently used for mass tort, workers\' compensation, personal injury, IEEPA tariff claims, and landlord-tenant law. Custom criteria can be built for any case type in minutes.',
+      },
+    },
+  ],
 }
 
 const benefits = [
@@ -26,6 +89,10 @@ const benefits = [
 export default function WaypointPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(waypointFaqSchema) }}
+      />
       <AnnouncementBanner />
       <Nav />
       <main>
@@ -124,6 +191,57 @@ export default function WaypointPage() {
                     <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>{title}</h3>
                     <p style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.65 }}>{desc}</p>
                   </div>
+                </SectionReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section style={{ background: '#f8fafc', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <SectionReveal>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '48px', textAlign: 'center' }}>
+                Frequently asked questions
+              </h2>
+            </SectionReveal>
+            {waypointFaqSchema.mainEntity.map(({ name, acceptedAnswer }) => (
+              <SectionReveal key={name}>
+                <div style={{ borderBottom: '1px solid #e2e8f0', padding: '28px 0' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>
+                    {name}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.75, margin: 0 }}>
+                    {acceptedAnswer.text}
+                  </p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </section>
+
+        {/* Related Solutions */}
+        <section style={{ background: '#fff', padding: '80px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <SectionReveal>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94a3b8', textAlign: 'center', marginBottom: '32px' }}>
+                Related Solutions
+              </h2>
+            </SectionReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+              {[
+                { href: '/solutions/intake', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow.' },
+                { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.' },
+                { href: '/solutions/dwellex', label: 'Dwellex', desc: 'Case management for landlord-tenant and eviction law.' },
+              ].map(({ href, label, desc }) => (
+                <SectionReveal key={href}>
+                  <Link href={href} style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none', transition: 'border-color 0.2s, box-shadow 0.2s' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#a5b4fc'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(99,102,241,0.08)' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#e2e8f0'; e.currentTarget.style.boxShadow = 'none' }}
+                  >
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: '#4f46e5', marginBottom: '8px' }}>{label} →</div>
+                    <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+                  </Link>
                 </SectionReveal>
               ))}
             </div>
