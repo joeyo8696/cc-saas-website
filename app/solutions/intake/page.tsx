@@ -842,7 +842,7 @@ export default function QualificationsPage() {
               </h2>
             </SectionReveal>
             {[
-              { q: 'What intake channels does Case Compass support?', a: 'Case Compass supports AI-powered chatbots, custom webforms, live transfer queues, and embedded intake widgets. Each channel can be deployed independently or together, depending on your firm\'s workflow.' },
+              { q: 'What intake channels does Case Compass support?', a: 'Case Compass supports conversational intake bots, custom webforms, live transfer queues, and embedded intake widgets. Each channel can be deployed independently or together, depending on your firm\'s workflow.' },
               { q: 'How does Case Compass handle live transfers?', a: 'Live Transfer routes qualified leads directly to available staff via an intelligent queue. When a prospect scores above your threshold, they\'re connected in real time. If no one is available, the system captures their information, sends an e-sign retainer, and schedules a callback.' },
               { q: 'Does Case Compass integrate with Clio, Filevine, or other case management software?', a: 'Yes. Case Compass integrates with Clio, Filevine, Litify, SmartAdvocate, LeadDocket, MyCase, and more. Signed cases are automatically pushed to your case management system with no manual data entry.' },
               { q: "What's the difference between Case Compass and a basic chatbot?", a: 'A basic chatbot collects information. Case Compass qualifies, scores, routes, and converts leads — all in one automated flow. It includes Waypoint AI scoring, e-signature collection, live transfer, and CMS integration. It\'s a full intake platform, not just a chat widget.' },
