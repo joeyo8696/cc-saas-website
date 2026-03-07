@@ -49,7 +49,7 @@ const intakeFaqSchema = {
       name: 'Is Case Compass HIPAA compliant?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Case Compass is hosted on Microsoft Azure with AES-256 encryption at rest and TLS 1.2+ in transit. The platform is designed with legal data privacy requirements in mind. Contact us for details on BAA availability.',
+        text: 'Case Compass is hosted on AWS infrastructure with encryption at rest and TLS 1.2+ in transit. The platform is designed with legal data privacy requirements in mind. Contact us for details on BAA availability.',
       },
     },
   ],

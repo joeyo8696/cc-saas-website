@@ -847,7 +847,7 @@ export default function QualificationsPage() {
               { q: 'Does Case Compass integrate with Clio, Filevine, or other case management software?', a: 'Yes. Case Compass integrates with Clio, Filevine, Litify, SmartAdvocate, LeadDocket, MyCase, and more. Signed cases are automatically pushed to your case management system with no manual data entry.' },
               { q: "What's the difference between Case Compass and a basic chatbot?", a: 'A basic chatbot collects information. Case Compass qualifies, scores, routes, and converts leads — all in one automated flow. It includes Waypoint AI scoring, e-signature collection, live transfer, and CMS integration. It\'s a full intake platform, not just a chat widget.' },
               { q: 'How quickly can we go live with Case Compass?', a: 'Most firms are live within one week. Onboarding is included — Case Compass builds your intake bot, configures Waypoint scoring for your practice area, and deploys your first automated flow.' },
-              { q: 'Is Case Compass HIPAA compliant?', a: 'Case Compass is hosted on Microsoft Azure with AES-256 encryption at rest and TLS 1.2+ in transit. The platform is designed with legal data privacy requirements in mind. Contact us for details on BAA availability.' },
+              { q: 'Is Case Compass HIPAA compliant?', a: 'Case Compass is hosted on AWS infrastructure with encryption at rest and TLS 1.2+ in transit. The platform is designed with legal data privacy requirements in mind. Contact us for details on BAA availability.' },
             ].map(({ q, a }) => (
               <SectionReveal key={q}>
                 <div style={{ borderBottom: '1px solid #e2e8f0', padding: '28px 0' }}>

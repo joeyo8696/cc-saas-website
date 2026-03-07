@@ -8,7 +8,7 @@ import SectionReveal from '@/components/ui/SectionReveal'
 
 export const metadata: Metadata = {
   title: 'Security & Compliance',
-  description: 'How Case Compass protects your law firm\'s data — Azure infrastructure, AES-256 encryption, role-based access controls, and AI data privacy.',
+  description: 'How Case Compass protects your law firm\'s data — AWS infrastructure, AES-256 encryption, role-based access controls, and data privacy.',
   alternates: {
     canonical: 'https://www.casecompass.io/security',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: 'https://www.casecompass.io/security',
     siteName: 'Case Compass',
     title: 'Security & Compliance | Case Compass',
-    description: 'How Case Compass protects your law firm\'s data — Azure infrastructure, AES-256 encryption, role-based access controls, and AI data privacy.',
+    description: 'How Case Compass protects your law firm\'s data — AWS infrastructure, AES-256 encryption, role-based access controls, and data privacy.',
     images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass Security & Compliance' }],
   },
 }
@@ -26,7 +26,7 @@ const pillars = [
   {
     icon: Server,
     title: 'Cloud Infrastructure',
-    desc: 'Case Compass is hosted on Microsoft Azure, a SOC 2 Type II certified cloud provider. All data is stored in US-based data centers. Infrastructure is managed with least-privilege access controls.',
+    desc: 'Case Compass is hosted on AWS, a SOC 2 Type II certified cloud provider. All data is stored in US-based data centers. Infrastructure is managed with least-privilege access controls.',
   },
   {
     icon: Lock,
@@ -36,7 +36,7 @@ const pillars = [
   {
     icon: Key,
     title: 'Authentication & Access',
-    desc: 'Case Compass uses Azure Active Directory B2C for identity management. Multi-factor authentication is available. Role-based access controls restrict what each user can see and do.',
+    desc: 'Case Compass supports multi-factor authentication and enforces role-based access controls so each user only sees what they need. Identity management is handled through enterprise-grade authentication services.',
   },
   {
     icon: Eye,
