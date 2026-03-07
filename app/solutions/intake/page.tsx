@@ -522,7 +522,68 @@ export default function QualificationsPage() {
               </div>
             </SectionReveal>
 
-            {/* Row 3: Waypoint Criteria */}
+            {/* Row 3: Live Transfer */}
+            <SectionReveal>
+              <div style={{
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
+                alignItems: 'center', marginBottom: '96px',
+              }}>
+                <div>
+                  <div style={{
+                    display: 'inline-block',
+                    background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.25)',
+                    borderRadius: '100px', padding: '4px 14px', marginBottom: '16px',
+                    fontSize: '0.7rem', fontFamily: 'var(--font-display)', fontWeight: 700,
+                    letterSpacing: '0.08em', textTransform: 'uppercase', color: '#059669',
+                  }}>
+                    Live Transfer
+                  </div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)',
+                    color: '#0f172a', lineHeight: 1.25, marginBottom: '16px',
+                  }}>
+                    Warm handoffs at the moment of peak intent
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.75, marginBottom: '20px' }}>
+                    When a lead qualifies above your threshold, Case Compass routes them to your intake team in real time — with a full call script, intake summary, and case context already on screen. No cold calls. No callbacks. A live agent picks up exactly where the bot left off.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    {[
+                      'Configurable call scripts surfaced to agents on transfer',
+                      'Full intake transcript visible before the agent speaks',
+                      'Incoming request queue with agent assignment',
+                      'Handoff directly to e-sign — close the retainer on the call',
+                      'Transfer status tracking: incoming, in progress, completed',
+                    ].map(item => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.875rem', color: '#334155' }}>
+                        <CheckCircle size={15} color="#059669" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{
+                  borderRadius: '16px', overflow: 'hidden',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08)',
+                  border: '1px solid #e2e8f0',
+                  position: 'relative',
+                }}>
+                  <div style={{
+                    position: 'absolute', inset: 0, borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(16,185,129,0.05), rgba(14,165,233,0.04))',
+                    pointerEvents: 'none', zIndex: 1,
+                  }} />
+                  <Image
+                    src="https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/live-transfer-inbox.png"
+                    alt="Live Transfer Inbox"
+                    width={1200} height={750}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+              </div>
+            </SectionReveal>
+
+            {/* Row 4: Waypoint Criteria */}
             <SectionReveal>
               <div style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
@@ -589,7 +650,7 @@ export default function QualificationsPage() {
               </div>
             </SectionReveal>
 
-            {/* Row 4: AI Lead Scoring / Lead Profile (reversed) */}
+            {/* Row 5: AI Lead Scoring / Lead Profile (reversed) */}
             <SectionReveal>
               <div style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
