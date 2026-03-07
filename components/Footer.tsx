@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Linkedin } from 'lucide-react'
+import { Linkedin, Facebook } from 'lucide-react'
 import { useDemoModal } from './DemoModalProvider'
 
 const footerLinks = [
@@ -69,28 +69,44 @@ export default function Footer() {
               Smart intake for plaintiff law firms.<br />Powered by AI.
             </p>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-              <Link
-                href="https://www.linkedin.com/company/case-compass/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Case Compass on LinkedIn"
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  width: '36px', height: '36px', borderRadius: '8px',
-                  background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)',
-                  color: 'rgba(255,255,255,0.5)', transition: 'background 0.2s, color 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(10,102,194,0.35)'
-                  e.currentTarget.style.color = '#fff'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.07)'
-                  e.currentTarget.style.color = 'rgba(255,255,255,0.5)'
-                }}
-              >
-                <Linkedin size={16} />
-              </Link>
+              {[
+                {
+                  href: 'https://www.linkedin.com/company/case-compass/',
+                  label: 'Case Compass on LinkedIn',
+                  icon: <Linkedin size={16} />,
+                  hoverBg: 'rgba(10,102,194,0.35)',
+                },
+                {
+                  href: 'https://www.facebook.com/casecompass2024',
+                  label: 'Case Compass on Facebook',
+                  icon: <Facebook size={16} />,
+                  hoverBg: 'rgba(24,119,242,0.35)',
+                },
+              ].map(({ href, label, icon, hoverBg }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    width: '36px', height: '36px', borderRadius: '8px',
+                    background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)',
+                    color: 'rgba(255,255,255,0.5)', transition: 'background 0.2s, color 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = hoverBg
+                    e.currentTarget.style.color = '#fff'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.07)'
+                    e.currentTarget.style.color = 'rgba(255,255,255,0.5)'
+                  }}
+                >
+                  {icon}
+                </Link>
+              ))}
             </div>
           </div>
 
