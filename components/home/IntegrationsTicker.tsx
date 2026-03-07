@@ -20,7 +20,7 @@ const track = [...logos, ...logos]
 
 export default function IntegrationsTicker() {
   return (
-    <section style={{ background: '#fff', padding: '96px 0 80px', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+    <section style={{ background: '#f1f5f9', padding: '96px 0 80px', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
 
       {/* Heading + copy */}
       <SectionReveal>
@@ -32,26 +32,24 @@ export default function IntegrationsTicker() {
             Works with the tools<br />your firm already uses
           </h2>
           <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.75 }}>
-            Case Compass plugs into your existing case management, CRM, and marketing stack — so signed cases flow in automatically and nothing falls through the cracks. No double entry. No manual handoffs.
+            Case Compass plugs into your existing case management, CRM, and marketing stack — so signed cases flow in automatically and nothing falls through the cracks.
           </p>
         </div>
       </SectionReveal>
 
       {/* Ticker */}
       <div style={{ position: 'relative', overflow: 'hidden' }}>
-        {/* Fade masks — must match section background exactly */}
-        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '160px', background: 'linear-gradient(to right, #fff 40%, transparent)', zIndex: 2, pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '160px', background: 'linear-gradient(to left, #fff 40%, transparent)', zIndex: 2, pointerEvents: 'none' }} />
+        {/* Fade masks */}
+        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '120px', background: 'linear-gradient(to right, #f1f5f9, transparent)', zIndex: 2, pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '120px', background: 'linear-gradient(to left, #f1f5f9, transparent)', zIndex: 2, pointerEvents: 'none' }} />
 
         <div style={{
           display: 'flex',
-          gap: '64px',
+          gap: '16px',
           alignItems: 'center',
           width: 'max-content',
-          animation: 'ticker 32s linear infinite',
-          paddingLeft: '64px',
-          paddingTop: '8px',
-          paddingBottom: '8px',
+          animation: 'ticker 36s linear infinite',
+          paddingLeft: '16px',
         }}>
           {track.map((logo, i) => (
             <div
@@ -61,34 +59,38 @@ export default function IntegrationsTicker() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '140px',
-                height: '44px',
+                width: '160px',
+                height: '72px',
                 flexShrink: 0,
-                opacity: 0.5,
-                filter: 'grayscale(1)',
-                transition: 'opacity 0.25s ease, filter 0.25s ease',
+                background: '#fff',
+                border: '1px solid #e2e8f0',
+                borderRadius: '12px',
+                padding: '12px 20px',
+                filter: 'grayscale(1) opacity(0.55)',
+                transition: 'filter 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease',
                 cursor: 'default',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.opacity = '1'
-                e.currentTarget.style.filter = 'grayscale(0)'
+                e.currentTarget.style.filter = 'grayscale(0) opacity(1)'
+                e.currentTarget.style.borderColor = '#c7d2fe'
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(99,102,241,0.1)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.opacity = '0.5'
-                e.currentTarget.style.filter = 'grayscale(1)'
+                e.currentTarget.style.filter = 'grayscale(1) opacity(0.55)'
+                e.currentTarget.style.borderColor = '#e2e8f0'
+                e.currentTarget.style.boxShadow = 'none'
               }}
             >
               <Image
                 src={logo.src}
                 alt={logo.name}
-                width={140}
-                height={44}
+                width={120}
+                height={48}
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'contain',
                   display: 'block',
-                  mixBlendMode: 'multiply',
                 }}
               />
             </div>
