@@ -2,7 +2,13 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Linkedin, Facebook, Twitter } from 'lucide-react'
+import { Linkedin, Facebook } from 'lucide-react'
+
+const XLogo = ({ size = 16 }: { size?: number }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.26 5.632 5.904-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+)
 import { useDemoModal } from './DemoModalProvider'
 
 const footerLinks = [
@@ -85,7 +91,7 @@ export default function Footer() {
                 {
                   href: 'https://x.com/Case_Compass_',
                   label: 'Case Compass on X',
-                  icon: <Twitter size={16} />,
+                  icon: <XLogo size={16} />,
                   hoverBg: 'rgba(255,255,255,0.15)',
                 },
               ].map(({ href, label, icon, hoverBg }) => (
