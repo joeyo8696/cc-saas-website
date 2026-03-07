@@ -301,6 +301,80 @@ export default function DwellexPage() {
           </div>
         </section>
 
+        {/* Product Screenshots */}
+        <section style={{ background: '#fff', padding: '120px 40px' }}>
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+                <span style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6366f1', marginBottom: '12px' }}>
+                  The Platform
+                </span>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.2 }}>
+                  <span style={{ background: 'linear-gradient(135deg, #0f172a 40%, #6366f1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                    Built for the full eviction lifecycle
+                  </span>
+                </h2>
+              </div>
+            </SectionReveal>
+
+            {[
+              {
+                image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-timeline.png',
+                alt: 'Dwellex case timeline tracker',
+                eyebrow: 'Case Timeline',
+                title: 'Every action item, tracked automatically',
+                body: 'A dual-column view separates client tasks from attorney tasks — so nothing falls through the cracks. Cases progress stage by stage, with automated notifications at every step.',
+              },
+              {
+                image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-courts.png',
+                alt: 'Dwellex court management',
+                eyebrow: 'Court Management',
+                title: 'Manage every court across your jurisdiction',
+                body: 'Add and organize courts by county, address, and type. Associate properties directly to courts so filings always go to the right venue — no manual lookups.',
+              },
+              {
+                image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-clio-sync.png',
+                alt: 'Dwellex Clio sync logs',
+                eyebrow: 'Clio Integration',
+                title: 'Real-time sync with zero manual entry',
+                body: 'Every intake automatically creates a matter in Clio. Sync logs give you full visibility into every matter creation, update, and status change — with timestamps and duration.',
+              },
+            ].map(({ image, alt, eyebrow, title, body }, i) => (
+              <SectionReveal key={title}>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '64px',
+                  alignItems: 'center',
+                  marginBottom: '100px',
+                  direction: i % 2 === 1 ? 'rtl' : 'ltr',
+                }}>
+                  <div style={{ direction: 'ltr' }}>
+                    <span style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6366f1', marginBottom: '12px' }}>
+                      {eyebrow}
+                    </span>
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', color: '#0f172a', lineHeight: 1.25, marginBottom: '20px' }}>
+                      {title}
+                    </h3>
+                    <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.8, margin: 0 }}>
+                      {body}
+                    </p>
+                  </div>
+                  <div style={{ direction: 'ltr', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.12)', border: '1px solid #e2e8f0' }}>
+                    <Image
+                      src={image}
+                      alt={alt}
+                      width={1024}
+                      height={700}
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                    />
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </section>
+
         {/* Features Grid */}
         <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
