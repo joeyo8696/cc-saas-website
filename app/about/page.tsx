@@ -359,7 +359,7 @@ export default function AboutPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      Joey is the CEO and Co-Founder of Case Compass, where he leads product strategy, engineering, and go-to-market. He brings deep enterprise experience building and scaling technology platforms across healthcare and legal tech — including senior roles at CHESS Health and Talkiatry, where he led multidisciplinary teams through rapid growth. Joey founded Case Compass on the belief that intake is the most underleveraged lever in a plaintiff firm&apos;s business, and that the firms who get it right will define the next decade of plaintiff law.
+                      Joey joined Case Compass as CEO and Co-Founder in 2024, leading the company&apos;s expansion into a full intake and lead conversion platform. He brings deep enterprise experience building and scaling technology platforms across healthcare and legal tech — including senior roles at CHESS Health and Talkiatry, where he led multidisciplinary teams through rapid growth. Joey joined with the conviction that intake is the most underleveraged lever in a plaintiff firm&apos;s business, and that the firms who get it right will define the next decade of plaintiff law.
                     </p>
                   </div>
                 </div>
