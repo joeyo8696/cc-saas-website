@@ -13,6 +13,7 @@ const logos = [
   { name: 'Fluent Case',   src: `${BASE}/fluentcase.png` },
   { name: 'HighLevel',     src: `${BASE}/highlevel.png` },
   { name: 'MyCase',        src: `${BASE}/mycase.png` },
+  { name: 'Actionstep',   src: `${BASE}/actionstep.png` },
 ]
 
 const track = [...logos, ...logos]
