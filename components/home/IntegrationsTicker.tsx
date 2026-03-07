@@ -6,7 +6,6 @@ const BASE = 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/integra
 
 const logos = [
   { name: 'Clio',          src: `${BASE}/clio.png` },
-  { name: 'Filevine',      src: `${BASE}/filevine.png` },
   { name: 'Litify',        src: `${BASE}/litify.png` },
   { name: 'SmartAdvocate', src: `${BASE}/smartadvocate.png` },
   { name: 'LeadDocket',    src: `${BASE}/leaddocket.png` },
@@ -20,10 +19,10 @@ const track = [...logos, ...logos]
 
 export default function IntegrationsTicker() {
   return (
-    <section style={{ background: '#fff', padding: '96px 0 80px', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+    <section style={{ background: '#fff', padding: '96px 0 80px', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0', position: 'relative', zIndex: 2 }}>
 
       {/* Heading + copy */}
-      <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 56px', padding: '0 40px' }}>
+      <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 56px', padding: '0 40px', position: 'relative', zIndex: 1 }}>
         <span style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '14px' }}>
           Integrations
         </span>
@@ -48,6 +47,7 @@ export default function IntegrationsTicker() {
           width: 'max-content',
           animation: 'ticker 36s linear infinite',
           paddingLeft: '16px',
+          willChange: 'transform',
         }}>
           {track.map((logo, i) => (
             <div
