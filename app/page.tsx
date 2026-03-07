@@ -35,12 +35,12 @@ export default function HomePage() {
         <ReferralsSection />
         <Stats />
         <HowItWorks />
+        <IntegrationsTicker />
         <Testimonials />
         <IeepaCallout />
         <DepoProveraCallout />
         <RobloxCallout />
         <WorkersCompCallout />
-        <IntegrationsTicker />
         <CtaSection />
       </main>
       <Footer />
