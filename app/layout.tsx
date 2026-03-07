@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@CaseCompassIO',
+    site: '@Case_Compass_',
     title: 'Case Compass — Smart Intake. Smarter Firms.',
     description: 'Intelligent Intake, Waypoint AI scoring, and referral management for plaintiff law firms.',
   },
@@ -109,6 +109,7 @@ const globalJsonLd = {
       sameAs: [
         'https://www.linkedin.com/company/case-compass/',
         'https://www.facebook.com/casecompass2024',
+        'https://x.com/Case_Compass_',
       ],
       contactPoint: {
         '@type': 'ContactPoint',

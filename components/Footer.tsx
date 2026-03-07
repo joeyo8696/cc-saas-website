@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Linkedin, Facebook } from 'lucide-react'
+import { Linkedin, Facebook, Twitter } from 'lucide-react'
 import { useDemoModal } from './DemoModalProvider'
 
 const footerLinks = [
@@ -81,6 +81,12 @@ export default function Footer() {
                   label: 'Case Compass on Facebook',
                   icon: <Facebook size={16} />,
                   hoverBg: 'rgba(24,119,242,0.35)',
+                },
+                {
+                  href: 'https://x.com/Case_Compass_',
+                  label: 'Case Compass on X',
+                  icon: <Twitter size={16} />,
+                  hoverBg: 'rgba(255,255,255,0.15)',
                 },
               ].map(({ href, label, icon, hoverBg }) => (
                 <Link
