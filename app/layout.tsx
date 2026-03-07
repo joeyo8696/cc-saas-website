@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { DM_Serif_Display, Space_Grotesk, Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { DemoModalProvider } from '@/components/DemoModalProvider'
 
@@ -178,6 +179,7 @@ export default function RootLayout({
         <DemoModalProvider>
           {children}
         </DemoModalProvider>
+        <Analytics />
       </body>
     </html>
   )
