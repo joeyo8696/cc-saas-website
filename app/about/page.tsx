@@ -359,7 +359,7 @@ export default function AboutPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      Joey co-founded Case Compass in 2024, leading the company&apos;s expansion into a full intake and lead conversion platform for plaintiff firms. Prior to Case Compass, he served as Co-Founder &amp; CTO at CHESS Health and VP of Engineering at Talkiatry — scaling multidisciplinary engineering teams through rapid growth in highly regulated industries. Joey joined with the conviction that intake is the most underleveraged lever in a plaintiff firm&apos;s business, and that the firms who get it right will define the next decade of plaintiff law.
+                      Joey joined Case Compass in 2024 as part of the new management team, leading the company&apos;s expansion into a full intake and lead conversion platform for plaintiff firms. Prior to Case Compass, he served as Co-Founder &amp; CTO at CHESS Health and VP of Engineering at Talkiatry — scaling multidisciplinary engineering teams through rapid growth in highly regulated industries. Joey came in with the conviction that intake is the most underleveraged lever in a plaintiff firm&apos;s business, and that the firms who get it right will define the next decade of plaintiff law.
                     </p>
                   </div>
                 </div>
