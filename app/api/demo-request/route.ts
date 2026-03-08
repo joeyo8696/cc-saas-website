@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     // Send email via Resend
     const { data, error } = await resend.emails.send({
       from: 'Case Compass <noreply@casecompass.io>',
-      to: ['tcavan@casecompass.io'],
+      to: ['tcavan@casecompass.io', 'jorganisciak@casecompass.io'],
       subject: `New Demo Request from ${firmName}`,
       html: `
         <!DOCTYPE html>
