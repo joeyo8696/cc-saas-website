@@ -83,7 +83,7 @@ export default function PlatformOS() {
         </SectionReveal>
 
         {/* Feature grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }}>
+        <div className="feature-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }}>
           {features.map(({ icon, label, desc }, i) => (
             <SectionReveal key={label} delay={((i % 3) + 1) as 1 | 2 | 3}>
               <FeatureCard icon={icon} label={label} desc={desc} />

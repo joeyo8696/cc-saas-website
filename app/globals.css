@@ -175,6 +175,12 @@ a { text-decoration: none; }
 }
 .mobile-nav-sublink:hover { background: rgba(255,255,255,0.05); color: #fff; }
 
+/* 3-col feature grid → 2-col on mobile */
+.feature-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 767px) {
+  .feature-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
 /* Responsive 2-col split rows (text + image sections) */
 .split-row {
   display: grid;
