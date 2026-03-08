@@ -15,6 +15,7 @@ const logos = [
   { name: 'MyCase',        src: `${BASE}/mycase.png` },
   { name: 'Actionstep',      src: `${BASE}/actionstep.png` },
   { name: 'Practice Panther', src: `${BASE}/practicepanther.png` },
+  { name: 'Salesforce',       src: `${BASE}/salesforce.png` },
 ]
 
 const track = [...logos, ...logos]
