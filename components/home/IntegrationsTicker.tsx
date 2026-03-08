@@ -6,7 +6,7 @@ const BASE = 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/integra
 
 const logos = [
   { name: 'Clio',          src: `${BASE}/clio.png` },
-  { name: 'Filevine',      src: `${BASE}/filevine.png` },
+  { name: 'Filevine',      src: `${BASE}/filevine-v2.png` },
   { name: 'Litify',        src: `${BASE}/litify.png` },
   { name: 'SmartAdvocate', src: `${BASE}/smartadvocate.png` },
   { name: 'LeadDocket',    src: `${BASE}/leaddocket.png` },
