@@ -16,7 +16,7 @@ export default function ReferralsSection() {
       style={{ background: '#f8fafc', padding: '96px 0', position: 'relative', zIndex: 2 }}
     >
       <div style={{ maxWidth: '1120px', margin: '0 auto', padding: '0 40px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+        <div className="split-row split-row-reversed" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
 
           {/* Left: screenshots */}
           <SectionReveal>

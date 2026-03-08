@@ -17,7 +17,7 @@ export default function WaypointSection() {
       style={{ background: '#060d1f', padding: '96px 0', position: 'relative', zIndex: 2, borderTop: '1px solid rgba(255,255,255,0.06)' }}
     >
       <div style={{ maxWidth: '1120px', margin: '0 auto', padding: '0 40px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+        <div className="split-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
 
           {/* Left: copy */}
           <div>
