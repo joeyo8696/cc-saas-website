@@ -122,7 +122,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              Built by practitioners,<br />for practitioners
+              Where legal intake meets<br />intelligent growth
             </h1>
 
             <p
