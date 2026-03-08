@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionReveal from '@/components/ui/SectionReveal'
+import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
   title: 'IEEPA Tariff Refund Claims: Manage the Intake Surge | Case Compass',
@@ -40,12 +41,9 @@ export default function IeepaPage() {
         <Link href="/">
           <Image src="/images/cc-logo-white.png" alt="Case Compass" width={160} height={26} style={{ height: '26px', width: 'auto' }} />
         </Link>
-        <Link
-          href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-          style={{ background: '#4f46e5', color: '#fff', padding: '9px 20px', borderRadius: '6px', fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 700 }}
-        >
+        <DemoButton style={{ padding: '9px 20px', fontSize: '0.85rem' }}>
           Book a Demo
-        </Link>
+        </DemoButton>
       </nav>
 
       {/* Breaking bar */}
@@ -73,14 +71,9 @@ export default function IeepaPage() {
             IEEPA-related tariffs have been struck down by the Supreme Court. Every business that paid them is now a potential claimant. The firms that qualify leads fast — before competitors do — will win this wave.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link
-              href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-              target="_blank"
-              rel="noopener"
-              style={{ background: 'linear-gradient(135deg, #dc2626, #ef4444)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(239,68,68,0.35)' }}
-            >
+            <DemoButton style={{ background: 'linear-gradient(135deg, #dc2626, #ef4444)', boxShadow: '0 8px 24px rgba(239,68,68,0.35)', padding: '14px 32px', fontSize: '0.9rem' }}>
               See Case Compass in Action →
-            </Link>
+            </DemoButton>
             <Link
               href="#how-it-works"
               style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600 }}
@@ -353,14 +346,9 @@ export default function IeepaPage() {
             Firms that build a systematic intake process now will capture the most valuable IEEPA cases. Those that don&apos;t will be manually triaging inquiries while competitors are closing retainers.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link
-              href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo"
-              target="_blank"
-              rel="noopener"
-              style={{ background: 'linear-gradient(135deg, #dc2626, #ef4444)', color: '#fff', padding: '15px 36px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(239,68,68,0.35)' }}
-            >
+            <DemoButton style={{ background: 'linear-gradient(135deg, #dc2626, #ef4444)', boxShadow: '0 8px 24px rgba(239,68,68,0.35)', padding: '15px 36px', fontSize: '1rem' }}>
               Book a 30-Minute Demo →
-            </Link>
+            </DemoButton>
             <Link
               href="/solutions/intake"
               style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '15px 36px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 600 }}
