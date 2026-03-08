@@ -3,6 +3,16 @@ import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+}
+
+export async function OPTIONS() {
+  return new Response(null, { status: 204, headers: CORS_HEADERS })
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
@@ -12,7 +22,7 @@ export async function POST(request: Request) {
     if (!name || !firmName || !email || !phone) {
       return NextResponse.json(
         { error: 'All fields are required' },
-        { status: 400 }
+        { status: 400, headers: CORS_HEADERS }
       )
     }
 
@@ -141,16 +151,16 @@ export async function POST(request: Request) {
       console.error('Resend error:', error)
       return NextResponse.json(
         { error: 'Failed to send email' },
-        { status: 500 }
+        { status: 500, headers: CORS_HEADERS }
       )
     }
 
-    return NextResponse.json({ success: true, data })
+    return NextResponse.json({ success: true, data }, { headers: CORS_HEADERS })
   } catch (error) {
     console.error('API error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
-      { status: 500 }
+      { status: 500, headers: CORS_HEADERS }
     )
   }
 }
