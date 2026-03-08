@@ -506,7 +506,7 @@ export default function AboutPage() {
             </SectionReveal>
 
             {/* Two column: value vs shortcomings */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '48px' }}>
+            <div className="split-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', marginBottom: '48px' }}>
               <SectionReveal>
                 <div style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '20px', padding: '40px 36px', height: '100%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>

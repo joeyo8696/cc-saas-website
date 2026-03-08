@@ -533,7 +533,7 @@ export default function WorkersCompPage() {
             </SectionReveal>
 
             {/* Referrer Portal */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center', marginBottom: '96px' }}>
+            <div className="split-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center', marginBottom: '96px' }}>
               <SectionReveal>
                 <div>
                   <div style={{ fontSize: '0.72rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6366f1', marginBottom: '16px' }}>

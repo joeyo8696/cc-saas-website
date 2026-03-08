@@ -174,3 +174,26 @@ a { text-decoration: none; }
   transition: background 0.15s, color 0.15s;
 }
 .mobile-nav-sublink:hover { background: rgba(255,255,255,0.05); color: #fff; }
+
+/* Responsive 2-col split rows (text + image sections) */
+.split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+  .split-row {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    direction: ltr !important;
+  }
+  /* Reversed rows (image is first child in DOM) — push image below text on mobile */
+  .split-row-reversed > *:first-child { order: 2; }
+  .split-row-reversed > *:last-child  { order: 1; }
+  /* Full-width image on mobile */
+  .split-row img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+  }
+}

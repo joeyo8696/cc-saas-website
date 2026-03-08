@@ -347,7 +347,7 @@ export default function DwellexPage() {
             }} />
             <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative' }}>
               <SectionReveal>
-                <div style={{
+                <div className="split-row" style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
                   gap: '72px',

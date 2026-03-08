@@ -414,7 +414,7 @@ export default function QualificationsPage() {
 
             {/* Row 1: Intake Form Builder */}
             <SectionReveal>
-              <div style={{
+              <div className="split-row" style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
                 alignItems: 'center', marginBottom: '96px',
               }}>
@@ -469,7 +469,7 @@ export default function QualificationsPage() {
 
             {/* Row 2: Timeline Builder (reversed) */}
             <SectionReveal>
-              <div style={{
+              <div className="split-row split-row-reversed" style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
                 alignItems: 'center', marginBottom: '96px',
               }}>
@@ -524,7 +524,7 @@ export default function QualificationsPage() {
 
             {/* Row 3: Live Transfer */}
             <SectionReveal>
-              <div style={{
+              <div className="split-row" style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
                 alignItems: 'center', marginBottom: '96px',
               }}>
@@ -585,7 +585,7 @@ export default function QualificationsPage() {
 
             {/* Row 4: Waypoint Criteria */}
             <SectionReveal>
-              <div style={{
+              <div className="split-row split-row-reversed" style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
                 alignItems: 'center', marginBottom: '96px',
               }}>
@@ -652,7 +652,7 @@ export default function QualificationsPage() {
 
             {/* Row 5: AI Lead Scoring */}
             <SectionReveal>
-              <div style={{
+              <div className="split-row" style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
                 alignItems: 'center',
               }}>
