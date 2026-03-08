@@ -111,12 +111,12 @@ export default function AboutPage() {
               ref={h1Ref}
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(3rem, 7vw, 6rem)',
+                fontSize: 'clamp(2.6rem, 5.5vw, 4.8rem)',
                 background: 'linear-gradient(135deg, #fff 0%, #e0e7ff 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                lineHeight: 1.05,
+                lineHeight: 1.15,
                 letterSpacing: '-0.03em',
                 marginBottom: '32px',
                 fontWeight: 400,
