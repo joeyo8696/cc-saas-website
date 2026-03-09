@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/solutions/mass-torts`,
+      lastModified: new Date('2026-03-02'),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/solutions/dwellex`,
       lastModified: new Date('2025-01-01'),
       changeFrequency: 'monthly',
