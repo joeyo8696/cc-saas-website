@@ -11,7 +11,6 @@ import Stats from '@/components/home/Stats'
 import HowItWorks from '@/components/home/HowItWorks'
 import Testimonials from '@/components/home/Testimonials'
 import NotJustAChatbot from '@/components/home/NotJustAChatbot'
-import IeepaCallout from '@/components/home/IeepaCallout'
 import DepoProveraCallout from '@/components/home/DepoProveraCallout'
 import RobloxCallout from '@/components/home/RobloxCallout'
 import WorkersCompCallout from '@/components/home/WorkersCompCallout'
@@ -37,7 +36,6 @@ export default function HomePage() {
         <HowItWorks />
         <IntegrationsTicker />
         <Testimonials />
-        <IeepaCallout />
         <DepoProveraCallout />
         <RobloxCallout />
         <WorkersCompCallout />

@@ -47,7 +47,7 @@ const waypointFaqSchema = {
       name: 'Can I customize Waypoint\'s scoring criteria for my practice area?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Waypoint is fully customizable per practice area. You define what a strong case looks like for mass tort, workers\' comp, personal injury, or any other area. Pre-built criteria sets are also available for IEEPA tariff claims, Depo-Provera, Roblox, and other active mass torts.',
+        text: 'Yes. Waypoint is fully customizable per practice area. You define what a strong case looks like for mass tort, workers\' comp, personal injury, or any other area. Pre-built criteria sets are also available for Depo-Provera, Roblox, and other active mass torts.',
       },
     },
     {
@@ -71,7 +71,7 @@ const waypointFaqSchema = {
       name: 'What practice areas does Waypoint support?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Waypoint supports any plaintiff practice area. It is currently used for mass tort, workers\' compensation, personal injury, IEEPA tariff claims, and landlord-tenant law. Custom criteria can be built for any case type in minutes.',
+        text: 'Waypoint supports any plaintiff practice area. It is currently used for mass tort, workers\' compensation, personal injury, and landlord-tenant law. Custom criteria can be built for any case type in minutes.',
       },
     },
   ],
@@ -83,7 +83,7 @@ const benefits = [
   { icon: CheckCircle, title: 'Consistent evaluation on every intake', desc: 'No variance between staff. Every claimant gets the same documented, defensible evaluation standard.' },
   { icon: ShieldCheck, title: 'BYOK — your data stays yours', desc: 'Waypoint uses your own OpenAI API key. Your data never touches a shared model or trains anyone else\'s AI.' },
   { icon: Waypoints, title: 'Scores before your team opens the file', desc: 'The moment intake is complete, Waypoint returns a score. Your team prioritizes with confidence from day one.' },
-  { icon: BarChart3, title: 'Built for IEEPA, mass torts & beyond', desc: 'Pre-built Waypoint criteria sets available for IEEPA tariff claims, Depo-Provera, Roblox, and more.' },
+  { icon: BarChart3, title: 'Built for mass torts & beyond', desc: 'Pre-built Waypoint criteria sets available for Depo-Provera, Roblox, and more. Build custom criteria for any tort in minutes.' },
 ]
 
 export default function WaypointPage() {

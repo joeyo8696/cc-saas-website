@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'Case Compass',
     title: 'Mass Tort Intake & Lead Scoring | Case Compass',
     description: 'Score every mass tort intake automatically with Waypoint AI. Purpose-built for high-volume plaintiff firms running active tort campaigns.',
-    images: [{ url: '/images/ieepa-waypoint-criteria.png', width: 1200, height: 630, alt: 'Mass Tort Intake Scoring' }],
+    images: [{ url: '/images/waypoint-criteria-list.png', width: 1200, height: 630, alt: 'Mass Tort Intake Scoring' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -47,7 +47,7 @@ const faqSchema = {
       name: 'Can Waypoint score criteria specific to a particular mass tort?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Waypoint criteria are fully customizable per form and case type. You define what a qualified claimant looks like for your specific tort — exposure duration, diagnosis, statute of limitations, product use dates, and more. Pre-built criteria sets are available for IEEPA tariff claims, Depo-Provera, Roundup (Glyphosate), and other active mass torts.',
+        text: 'Yes. Waypoint criteria are fully customizable per form and case type. You define what a qualified claimant looks like for your specific tort — exposure duration, diagnosis, statute of limitations, product use dates, and more. Pre-built criteria sets are available for Depo-Provera, Roundup (Glyphosate), and other active mass torts.',
       },
     },
     {
@@ -63,7 +63,7 @@ const faqSchema = {
       name: 'Which active mass torts does Case Compass support?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Case Compass is currently used for IEEPA tariff refund claims, Depo-Provera, Roundup (Glyphosate), and personal injury mass tort campaigns. Because Waypoint criteria are fully custom, firms can build intake scoring for any active or emerging tort in minutes.',
+        text: 'Case Compass is currently used for Depo-Provera, Roundup (Glyphosate), and personal injury mass tort campaigns. Because Waypoint criteria are fully custom, firms can build intake scoring for any active or emerging tort in minutes.',
       },
     },
     {
@@ -116,12 +116,11 @@ const features = [
   {
     icon: CheckCircle,
     title: 'Pre-built criteria for active torts',
-    desc: 'Get started faster with pre-built Waypoint criteria sets for IEEPA tariff claims, Depo-Provera, Roundup, and more. Customize to match your exact standards.',
+    desc: 'Get started faster with pre-built Waypoint criteria sets for Depo-Provera, Roundup, and more. Customize to match your exact standards.',
   },
 ]
 
 const activeTorts = [
-  { name: 'IEEPA Tariff Refunds', tag: 'Active', desc: 'Pre-built Waypoint criteria for IEEPA Section 232/301 tariff refund claims — exposure dates, affected goods, business documentation.' },
   { name: 'Depo-Provera', tag: 'Active', desc: 'Custom scoring for meningioma diagnosis, duration of use, and treatment history.' },
   { name: 'Roundup (Glyphosate)', tag: 'Active', desc: 'Criteria covering NHL diagnosis, occupational exposure, product use timeline, and medical documentation.' },
   { name: 'Personal Injury', tag: 'Always on', desc: 'Fully configurable criteria for any PI tort campaign — liability, severity, SOL, and more.' },
@@ -173,7 +172,7 @@ export default function MassTortsPage() {
             <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 600, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.07em', marginRight: '8px' }}>
               Active tort criteria:
             </span>
-            {['IEEPA Tariff Refunds', 'Depo-Provera', 'Roundup / Glyphosate', 'Personal Injury', 'Workers\' Comp'].map(t => (
+            {['Depo-Provera', 'Roundup / Glyphosate', 'Personal Injury', 'Workers\' Comp'].map(t => (
               <span key={t} style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.25)', color: '#a5b4fc', borderRadius: '20px', padding: '4px 14px', fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 600 }}>
                 {t}
               </span>
@@ -197,7 +196,7 @@ export default function MassTortsPage() {
             <SectionReveal>
               <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 32px 80px rgba(0,0,0,0.15)', border: '1px solid #e2e8f0' }}>
                 <Image
-                  src="/images/ieepa-waypoint-criteria.png"
+                  src="/images/waypoint-criteria-list.png"
                   alt="Waypoint criteria for mass tort intake scoring"
                   width={960}
                   height={600}
