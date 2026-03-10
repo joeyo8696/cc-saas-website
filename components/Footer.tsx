@@ -72,7 +72,7 @@ export default function Footer() {
               style={{ height: '24px', width: 'auto', marginBottom: '16px' }}
             />
             <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, marginBottom: '20px' }}>
-              Smart intake for plaintiff law firms.<br />Powered by AI.
+              Smart intake for plaintiff law firms.
             </p>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
               {[
