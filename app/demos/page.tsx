@@ -36,7 +36,7 @@ const videos: VideoEntry[] = [
   },
   {
     type: 'loom',
-    id: 'LOOM_ID_4',
+    id: '3be05f8d6c214daa80cd9476fc8f547c',
     title: 'Referral Management',
     desc: 'Track referral sources, manage fee agreements, and give partners their own portal.',
   },
