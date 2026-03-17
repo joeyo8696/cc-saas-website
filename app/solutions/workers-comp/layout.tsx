@@ -69,13 +69,21 @@ export const metadata: Metadata = {
   },
 }
 
+const workersCompBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
+    { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.casecompass.io/solutions' },
+    { '@type': 'ListItem', position: 3, name: "Workers' Compensation Intake Software", item: 'https://www.casecompass.io/solutions/workers-comp' },
+  ],
+}
+
 export default function WorkersCompLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(workersCompFaqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workersCompFaqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workersCompBreadcrumb) }} />
       {children}
     </>
   )

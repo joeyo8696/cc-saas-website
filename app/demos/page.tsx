@@ -8,44 +8,68 @@ import GalaxyCanvas from '@/components/home/GalaxyCanvas'
 const DEMO_PASSWORD = 'compass2025'
 const SESSION_KEY = 'cc_demos_auth'
 
-const videos = [
+type VideoEntry = {
+  type: 'loom' | 'youtube'
+  id: string
+  title: string
+  desc: string
+  duration: string
+}
+
+const videos: VideoEntry[] = [
   {
-    id: 'YOUTUBE_ID_1',
+    type: 'loom',
+    id: '904387ad1cc4474ebe77657c544125a7',
     title: 'Platform Overview',
     desc: 'A full walkthrough of the Case Compass platform — intake, scoring, referrals, and analytics.',
     duration: '12 min',
   },
   {
-    id: 'YOUTUBE_ID_2',
+    type: 'loom',
+    id: 'LOOM_ID_2',
     title: 'Waypoint AI Scoring',
     desc: 'See how Waypoint automatically qualifies and ranks every lead against your firm\'s criteria.',
     duration: '8 min',
   },
   {
-    id: 'YOUTUBE_ID_3',
+    type: 'loom',
+    id: 'LOOM_ID_3',
     title: 'Intake Form Builder',
     desc: 'Build conversational intake bots and webforms with branching logic — no code required.',
     duration: '6 min',
   },
   {
-    id: 'YOUTUBE_ID_4',
+    type: 'loom',
+    id: 'LOOM_ID_4',
     title: 'Referral Management',
     desc: 'Track referral sources, manage fee agreements, and give partners their own portal.',
     duration: '7 min',
   },
   {
-    id: 'YOUTUBE_ID_5',
+    type: 'loom',
+    id: 'LOOM_ID_5',
     title: 'Live Transfer & Speed-to-Lead',
     desc: 'How real-time lead routing and automated follow-up sequences work end-to-end.',
     duration: '5 min',
   },
   {
-    id: 'YOUTUBE_ID_6',
+    type: 'loom',
+    id: 'LOOM_ID_6',
     title: 'Analytics & Attribution',
     desc: 'Full-funnel reporting from first click to signed retainer — by source, campaign, and case type.',
     duration: '9 min',
   },
 ]
+
+function getEmbedUrl(video: VideoEntry) {
+  if (video.type === 'loom') return `https://www.loom.com/embed/${video.id}`
+  return `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`
+}
+
+function getThumbnailUrl(video: VideoEntry) {
+  if (video.type === 'loom') return `https://cdn.loom.com/sessions/thumbnails/${video.id}-with-play.gif`
+  return `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`
+}
 
 export default function DemosPage() {
   const [authed, setAuthed] = useState(false)
@@ -283,7 +307,7 @@ export default function DemosPage() {
                 {/* Thumbnail */}
                 <div style={{ position: 'relative', paddingBottom: '56.25%', background: '#0d1a2e' }}>
                   <img
-                    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                    src={getThumbnailUrl(video)}
                     alt={video.title}
                     style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
@@ -355,13 +379,19 @@ export default function DemosPage() {
             }}
           >
             <div style={{ position: 'relative', paddingBottom: '56.25%', background: '#000' }}>
-              <iframe
-                src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1&rel=0`}
-                title={videos.find(v => v.id === activeVideo)?.title ?? 'Demo video'}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
-              />
+              {(() => {
+                const v = videos.find(v => v.id === activeVideo)
+                if (!v) return null
+                return (
+                  <iframe
+                    src={getEmbedUrl(v)}
+                    title={v.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    allowFullScreen
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+                  />
+                )
+              })()}
             </div>
           </div>
         </div>

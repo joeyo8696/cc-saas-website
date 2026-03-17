@@ -126,13 +126,21 @@ const activeTorts = [
   { name: 'Personal Injury', tag: 'Always on', desc: 'Fully configurable criteria for any PI tort campaign — liability, severity, SOL, and more.' },
 ]
 
+const massTortsBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
+    { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.casecompass.io/solutions' },
+    { '@type': 'ListItem', position: 3, name: 'Mass Tort Intake Software', item: 'https://www.casecompass.io/solutions/mass-torts' },
+  ],
+}
+
 export default function MassTortsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(massTortsBreadcrumb) }} />
       <AnnouncementBanner />
       <Nav />
       <main>

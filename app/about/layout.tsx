@@ -1,9 +1,18 @@
 import type { Metadata } from 'next'
 
+const aboutBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
+    { '@type': 'ListItem', position: 2, name: 'About Case Compass', item: 'https://www.casecompass.io/about' },
+  ],
+}
+
 export const metadata: Metadata = {
   title: 'About Us — Case Compass',
   description:
-    'Case Compass is a smart-intake platform built exclusively for high-volume plaintiff firms. Learn about our team and vision for the future of legal intake.',
+    'Case Compass is legal intake software built exclusively for high-volume plaintiff law firms. Learn about our team and our vision for the future of legal intake automation.',
   alternates: {
     canonical: 'https://www.casecompass.io/about',
   },
@@ -27,5 +36,10 @@ export default function AboutLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumb) }} />
+      {children}
+    </>
+  )
 }

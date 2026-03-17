@@ -9,9 +9,9 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Waypoint — AI Intake Scoring for Law Firms',
+  title: 'Waypoint — AI Lead Scoring for Legal Intake',
   description:
-    'Waypoint evaluates every intake submission against your firm\'s custom criteria and surfaces a score before your team opens the file. Built for high-volume plaintiff law firms.',
+    'Waypoint scores every legal intake submission against your firm\'s custom criteria before your team opens the file. AI-powered lead scoring built for high-volume plaintiff law firms.',
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/waypoint',
   },
@@ -86,13 +86,21 @@ const benefits = [
   { icon: BarChart3, title: 'Built for mass torts & beyond', desc: 'Pre-built Waypoint criteria sets available for Depo-Provera, Roblox, and more. Build custom criteria for any tort in minutes.' },
 ]
 
+const waypointBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
+    { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.casecompass.io/solutions' },
+    { '@type': 'ListItem', position: 3, name: 'Waypoint AI Lead Scoring', item: 'https://www.casecompass.io/solutions/waypoint' },
+  ],
+}
+
 export default function WaypointPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(waypointFaqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(waypointFaqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(waypointBreadcrumb) }} />
       <AnnouncementBanner />
       <Nav />
       <main>

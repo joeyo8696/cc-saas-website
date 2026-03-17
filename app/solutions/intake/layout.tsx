@@ -56,9 +56,9 @@ const intakeFaqSchema = {
 }
 
 export const metadata: Metadata = {
-  title: 'Intelligent Intake — Qualify Every Lead, Automatically',
+  title: 'Legal Intake Software — Qualify Every Lead, Automatically',
   description:
-    'Case Compass automates client intake for plaintiff law firms — chatbots, webforms, live transfer, AI scoring, and e-signatures in a single seamless flow.',
+    'Case Compass is legal intake software for plaintiff law firms. Automate client intake with AI chatbots, webforms, live transfer, Waypoint lead scoring, and e-signatures in a single seamless flow.',
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/intake',
   },
@@ -77,13 +77,21 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
+    { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.casecompass.io/solutions' },
+    { '@type': 'ListItem', position: 3, name: 'Legal Intake Software', item: 'https://www.casecompass.io/solutions/intake' },
+  ],
+}
+
 export default function QualificationsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(intakeFaqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(intakeFaqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {children}
     </>
   )
