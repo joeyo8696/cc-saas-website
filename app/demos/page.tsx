@@ -43,6 +43,7 @@ const videos: VideoEntry[] = [
     id: '3be05f8d6c214daa80cd9476fc8f547c',
     title: 'Referral Management',
     desc: 'Track referral sources, manage fee agreements, and give partners their own portal.',
+    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/3be05f8d6c214daa80cd9476fc8f547c-1c0153a0cb3c2792-full-play.gif',
   },
 ]
 
