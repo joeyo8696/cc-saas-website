@@ -40,18 +40,6 @@ const videos: VideoEntry[] = [
     title: 'Referral Management',
     desc: 'Track referral sources, manage fee agreements, and give partners their own portal.',
   },
-  {
-    type: 'loom',
-    id: 'LOOM_ID_5',
-    title: 'Live Transfer & Speed-to-Lead',
-    desc: 'How real-time lead routing and automated follow-up sequences work end-to-end.',
-  },
-  {
-    type: 'loom',
-    id: 'LOOM_ID_6',
-    title: 'Analytics & Attribution',
-    desc: 'Full-funnel reporting from first click to signed retainer — by source, campaign, and case type.',
-  },
 ]
 
 function getEmbedUrl(video: VideoEntry) {
