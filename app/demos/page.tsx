@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Lock, Play, Eye, EyeOff } from 'lucide-react'
 import GalaxyCanvas from '@/components/home/GalaxyCanvas'
 
-const DEMO_PASSWORD = 'compass2025'
+const DEMO_PASSWORD = 'compass2026'
 const SESSION_KEY = 'cc_demos_auth'
 
 type VideoEntry = {
