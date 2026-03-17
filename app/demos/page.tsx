@@ -36,6 +36,7 @@ const videos: VideoEntry[] = [
     id: '6cd9c1b141584ba6b9e5d6814fa82f89',
     title: 'Waypoint AI Scoring',
     desc: 'See how Waypoint automatically qualifies and ranks every lead against your firm\'s criteria.',
+    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/6cd9c1b141584ba6b9e5d6814fa82f89-ba6c45289d4e960f-full-play.gif',
   },
   {
     type: 'loom',
