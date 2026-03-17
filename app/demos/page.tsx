@@ -33,7 +33,7 @@ const videos: VideoEntry[] = [
   },
   {
     type: 'loom',
-    id: 'LOOM_ID_3',
+    id: '59c56b7a4be040b491cc7e1232042db7',
     title: 'Intake Form Builder',
     desc: 'Build conversational intake bots and webforms with branching logic — no code required.',
     duration: '6 min',
