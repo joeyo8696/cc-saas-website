@@ -13,7 +13,6 @@ type VideoEntry = {
   id: string
   title: string
   desc: string
-  duration: string
 }
 
 const videos: VideoEntry[] = [
@@ -22,42 +21,36 @@ const videos: VideoEntry[] = [
     id: '904387ad1cc4474ebe77657c544125a7',
     title: 'Platform Overview',
     desc: 'A full walkthrough of the Case Compass platform — intake, scoring, referrals, and analytics.',
-    duration: '12 min',
   },
   {
     type: 'loom',
     id: 'LOOM_ID_2',
     title: 'Waypoint AI Scoring',
     desc: 'See how Waypoint automatically qualifies and ranks every lead against your firm\'s criteria.',
-    duration: '8 min',
   },
   {
     type: 'loom',
     id: '59c56b7a4be040b491cc7e1232042db7',
     title: 'Intake Form Builder',
     desc: 'Build conversational intake bots and webforms with branching logic — no code required.',
-    duration: '6 min',
   },
   {
     type: 'loom',
     id: 'LOOM_ID_4',
     title: 'Referral Management',
     desc: 'Track referral sources, manage fee agreements, and give partners their own portal.',
-    duration: '7 min',
   },
   {
     type: 'loom',
     id: 'LOOM_ID_5',
     title: 'Live Transfer & Speed-to-Lead',
     desc: 'How real-time lead routing and automated follow-up sequences work end-to-end.',
-    duration: '5 min',
   },
   {
     type: 'loom',
     id: 'LOOM_ID_6',
     title: 'Analytics & Attribution',
     desc: 'Full-funnel reporting from first click to signed retainer — by source, campaign, and case type.',
-    duration: '9 min',
   },
 ]
 
@@ -327,15 +320,6 @@ export default function DemosPage() {
                     }}>
                       <Play size={22} color="#fff" fill="#fff" />
                     </div>
-                  </div>
-                  {/* Duration badge */}
-                  <div style={{
-                    position: 'absolute', bottom: '10px', right: '10px',
-                    background: 'rgba(0,0,0,0.7)', borderRadius: '6px',
-                    padding: '3px 8px', fontSize: '0.72rem',
-                    fontFamily: 'var(--font-display)', fontWeight: 600, color: '#fff',
-                  }}>
-                    {video.duration}
                   </div>
                 </div>
 
