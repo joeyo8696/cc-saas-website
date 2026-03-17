@@ -13,6 +13,7 @@ type VideoEntry = {
   id: string
   title: string
   desc: string
+  thumbnail?: string
 }
 
 const videos: VideoEntry[] = [
@@ -21,6 +22,7 @@ const videos: VideoEntry[] = [
     id: '904387ad1cc4474ebe77657c544125a7',
     title: 'Platform Overview',
     desc: 'A full walkthrough of the Case Compass platform — intake, scoring, referrals, and analytics.',
+    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/904387ad1cc4474ebe77657c544125a7-8647340805f89900-full-play.gif',
   },
   {
     type: 'loom',
@@ -48,6 +50,7 @@ function getEmbedUrl(video: VideoEntry) {
 }
 
 function getThumbnailUrl(video: VideoEntry) {
+  if (video.thumbnail) return video.thumbnail
   if (video.type === 'loom') return `https://cdn.loom.com/sessions/thumbnails/${video.id}-with-play.gif`
   return `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`
 }
