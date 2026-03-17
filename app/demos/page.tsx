@@ -24,15 +24,15 @@ const videos: VideoEntry[] = [
   },
   {
     type: 'loom',
-    id: '6cd9c1b141584ba6b9e5d6814fa82f89',
-    title: 'Waypoint AI Scoring',
-    desc: 'See how Waypoint automatically qualifies and ranks every lead against your firm\'s criteria.',
-  },
-  {
-    type: 'loom',
     id: '59c56b7a4be040b491cc7e1232042db7',
     title: 'Intake Form Builder',
     desc: 'Build conversational intake bots and webforms with branching logic — no code required.',
+  },
+  {
+    type: 'loom',
+    id: '6cd9c1b141584ba6b9e5d6814fa82f89',
+    title: 'Waypoint AI Scoring',
+    desc: 'See how Waypoint automatically qualifies and ranks every lead against your firm\'s criteria.',
   },
   {
     type: 'loom',
