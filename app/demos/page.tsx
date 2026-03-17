@@ -29,6 +29,7 @@ const videos: VideoEntry[] = [
     id: '59c56b7a4be040b491cc7e1232042db7',
     title: 'Intake Form Builder',
     desc: 'Build conversational intake bots and webforms with branching logic — no code required.',
+    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/59c56b7a4be040b491cc7e1232042db7-d64bb2e35ae0cc11-full-play.gif',
   },
   {
     type: 'loom',
