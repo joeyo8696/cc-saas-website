@@ -24,7 +24,7 @@ const videos: VideoEntry[] = [
   },
   {
     type: 'loom',
-    id: 'LOOM_ID_2',
+    id: '6cd9c1b141584ba6b9e5d6814fa82f89',
     title: 'Waypoint AI Scoring',
     desc: 'See how Waypoint automatically qualifies and ranks every lead against your firm\'s criteria.',
   },
