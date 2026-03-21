@@ -121,6 +121,52 @@ a { text-decoration: none; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Mockup browser chrome */
+.mockup-chrome {
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.mockup-url {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  font-family: monospace;
+  text-align: center;
+  margin: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+  .mockup-chrome {
+    padding: 5px 7px;
+    gap: 3px;
+  }
+  .mockup-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .mockup-url {
+    font-size: 0.55rem;
+    padding: 2px 5px;
+    margin: 0 5px;
+  }
+}
+
 /* Related solutions card hover (used in server components) */
 .related-solution-card {
   transition: border-color 0.2s, box-shadow 0.2s;

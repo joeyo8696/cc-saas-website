@@ -248,32 +248,11 @@ function MockupPanel({
         ...style,
       }}
     >
-      <div
-        style={{
-          background: 'rgba(255,255,255,0.04)',
-          borderBottom: '1px solid rgba(255,255,255,0.07)',
-          padding: '10px 14px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-        }}
-      >
+      <div className="mockup-chrome">
         {[{ bg: '#ff5f57' }, { bg: '#febc2e' }, { bg: '#28c840' }].map(({ bg }, i) => (
-          <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: bg }} />
+          <div key={i} className="mockup-dot" style={{ background: bg }} />
         ))}
-        <div
-          style={{
-            flex: 1,
-            background: 'rgba(255,255,255,0.06)',
-            borderRadius: '4px',
-            padding: '3px 10px',
-            fontSize: '0.72rem',
-            color: 'rgba(255,255,255,0.4)',
-            fontFamily: 'monospace',
-            textAlign: 'center',
-            margin: '0 10px',
-          }}
-        >
+        <div className="mockup-url">
           {url} 🔒
         </div>
       </div>
