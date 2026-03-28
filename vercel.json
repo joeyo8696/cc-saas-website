@@ -20,8 +20,6 @@
     { "source": "/schedule-a-demo",           "destination": "/", "permanent": true },
     { "source": "/form-success",              "destination": "/", "permanent": true },
     { "source": "/contact",                   "destination": "/", "permanent": true },
-    { "source": "/changelog",                 "destination": "/", "permanent": true },
-    { "source": "/changelog/:slug*",          "destination": "/", "permanent": true },
 
     { "source": "/blog/roblox-mdl-is-an-intake-problem-before-it-is-a-trial-problem", "destination": "https://blog.casecompass.io/roblox-mdl-is-an-intake-problem-before-it-is-a-trial-problem", "permanent": true },
     { "source": "/blog/2025-was-loud.-2026-will-be-disciplined.",                      "destination": "https://blog.casecompass.io/2025-was-loud.-2026-will-be-disciplined.", "permanent": true },

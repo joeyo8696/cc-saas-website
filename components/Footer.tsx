@@ -19,7 +19,7 @@ const footerLinks = [
       { label: 'About', href: '/about' },
       { label: 'Blog', href: 'https://blog.casecompass.io' },
       { label: 'Security', href: '/security' },
-      { label: 'Changelog', href: 'https://www.casecompass.io/changelog' },
+      { label: 'Changelog', href: '/changelog' },
     ],
   },
   {
