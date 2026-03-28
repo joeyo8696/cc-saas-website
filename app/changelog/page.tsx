@@ -4,6 +4,7 @@ import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import SectionReveal from '@/components/ui/SectionReveal'
+import ChangelogSidebar from '@/components/changelog/ChangelogSidebar'
 
 export const metadata: Metadata = {
   title: 'Changelog | Case Compass',
@@ -28,6 +29,7 @@ const march2026 = [
     bg: 'linear-gradient(135deg, #ede9fe, #dbeafe)',
     iconColor: '#4338ca',
     category: 'Referral Partners',
+    id: 'referral-partners',
     items: [
       {
         title: 'Automated partner onboarding',
@@ -41,6 +43,7 @@ const march2026 = [
     bg: 'linear-gradient(135deg, #ede9fe, #fdf4ff)',
     iconColor: '#7c3aed',
     category: 'Waypoint AI Scoring',
+    id: 'waypoint-ai-scoring',
     items: [
       {
         title: 'Age-based intake rules',
@@ -62,6 +65,7 @@ const march2026 = [
     bg: 'linear-gradient(135deg, #ecfeff, #e0f2fe)',
     iconColor: '#0891b2',
     category: 'Intake & Forms',
+    id: 'intake-forms',
     items: [
       {
         title: 'Export your leads',
@@ -95,6 +99,7 @@ const march2026 = [
     bg: 'linear-gradient(135deg, #ecfdf5, #d1fae5)',
     iconColor: '#059669',
     category: 'eSign',
+    id: 'esign',
     items: [
       {
         title: 'Multiple signature requests in one block',
@@ -120,6 +125,7 @@ const march2026 = [
     bg: 'linear-gradient(135deg, #fffbeb, #fef3c7)',
     iconColor: '#b45309',
     category: 'Litify Integration',
+    id: 'litify-integration',
     items: [
       {
         title: 'Richer data sync',
@@ -133,6 +139,7 @@ const march2026 = [
     bg: 'linear-gradient(135deg, #eff6ff, #dbeafe)',
     iconColor: '#0369a1',
     category: 'Webform Embed & WordPress',
+    id: 'webform-embed',
     items: [
       {
         title: 'New embed SDK',
@@ -150,6 +157,7 @@ const march2026 = [
     bg: 'linear-gradient(135deg, #f8fafc, #f1f5f9)',
     iconColor: '#64748b',
     category: 'Fixes & Polish',
+    id: 'fixes-polish',
     items: [
       { title: 'Webform back button', desc: 'Back button in intake flows now works correctly and resets progress as expected.' },
       { title: 'eSign document state', desc: 'Fixed eSign documents incorrectly showing as unsigned after signing. Resend now sends the existing signed document without regenerating it.' },
@@ -186,75 +194,82 @@ export default function ChangelogPage() {
 
         {/* March 2026 Release */}
         <section style={{ background: '#f8fafc', padding: '80px 40px' }}>
-          <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1120px', margin: '0 auto', display: 'flex', gap: '60px', alignItems: 'flex-start' }}>
 
-            {/* Release header */}
-            <SectionReveal>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '56px' }}>
-                <div style={{ flexShrink: 0, width: '48px', height: '48px', borderRadius: '12px', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <GitMerge size={22} color="#fff" />
-                </div>
-                <div>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#818cf8', marginBottom: '4px' }}>
-                    Release
+            {/* Sidebar */}
+            <ChangelogSidebar />
+
+            {/* Main content */}
+            <div style={{ flex: 1, minWidth: 0 }}>
+
+              {/* Release header */}
+              <SectionReveal>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '56px' }}>
+                  <div style={{ flexShrink: 0, width: '48px', height: '48px', borderRadius: '12px', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <GitMerge size={22} color="#fff" />
                   </div>
-                  <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#0f172a', lineHeight: 1.2 }}>
-                    March 2026
-                  </h2>
-                </div>
-                <div style={{ marginLeft: 'auto', flexShrink: 0, background: '#4f46e5', color: '#fff', fontSize: '0.75rem', fontWeight: 700, fontFamily: 'var(--font-display)', letterSpacing: '0.05em', padding: '5px 14px', borderRadius: '100px' }}>
-                  Latest
-                </div>
-              </div>
-            </SectionReveal>
-
-            {/* Category cards */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              {march2026.map(({ icon: Icon, bg, iconColor, category, items }) => (
-                <SectionReveal key={category}>
-                  <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden' }}>
-                    {/* Category header */}
-                    <div style={{ padding: '20px 28px', borderBottom: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', gap: '14px' }}>
-                      <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                        <Icon size={18} color={iconColor} />
-                      </div>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a' }}>
-                        {category}
-                      </h3>
-                      <span style={{ marginLeft: 'auto', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 600, color: '#94a3b8', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '6px', padding: '2px 10px' }}>
-                        {items.length} {items.length === 1 ? 'update' : 'updates'}
-                      </span>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#818cf8', marginBottom: '4px' }}>
+                      Release
                     </div>
-                    {/* Items */}
-                    <div style={{ padding: '8px 0' }}>
-                      {items.map((item, i) => (
-                        <div
-                          key={item.title}
-                          style={{
-                            padding: '18px 28px',
-                            borderBottom: i < items.length - 1 ? '1px solid #f8fafc' : 'none',
-                            display: 'flex',
-                            gap: '14px',
-                            alignItems: 'flex-start',
-                          }}
-                        >
-                          <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: iconColor, flexShrink: 0, marginTop: '8px' }} />
-                          <div>
-                            <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', marginBottom: '5px' }}>
-                              {item.title}
-                            </div>
-                            <div style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.7 }}>
-                              {item.desc}
+                    <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#0f172a', lineHeight: 1.2 }}>
+                      March 2026
+                    </h2>
+                  </div>
+                  <div style={{ marginLeft: 'auto', flexShrink: 0, background: '#4f46e5', color: '#fff', fontSize: '0.75rem', fontWeight: 700, fontFamily: 'var(--font-display)', letterSpacing: '0.05em', padding: '5px 14px', borderRadius: '100px' }}>
+                    Latest
+                  </div>
+                </div>
+              </SectionReveal>
+
+              {/* Category cards */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                {march2026.map(({ icon: Icon, bg, iconColor, category, id, items }) => (
+                  <SectionReveal key={category}>
+                    <div id={id} style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden', scrollMarginTop: '120px' }}>
+                      {/* Category header */}
+                      <div style={{ padding: '20px 28px', borderBottom: '1px solid #f1f5f9', display: 'flex', alignItems: 'center', gap: '14px' }}>
+                        <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <Icon size={18} color={iconColor} />
+                        </div>
+                        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a' }}>
+                          {category}
+                        </h3>
+                        <span style={{ marginLeft: 'auto', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 600, color: '#94a3b8', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '6px', padding: '2px 10px' }}>
+                          {items.length} {items.length === 1 ? 'update' : 'updates'}
+                        </span>
+                      </div>
+                      {/* Items */}
+                      <div style={{ padding: '8px 0' }}>
+                        {items.map((item, i) => (
+                          <div
+                            key={item.title}
+                            style={{
+                              padding: '18px 28px',
+                              borderBottom: i < items.length - 1 ? '1px solid #f8fafc' : 'none',
+                              display: 'flex',
+                              gap: '14px',
+                              alignItems: 'flex-start',
+                            }}
+                          >
+                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: iconColor, flexShrink: 0, marginTop: '8px' }} />
+                            <div>
+                              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', marginBottom: '5px' }}>
+                                {item.title}
+                              </div>
+                              <div style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.7 }}>
+                                {item.desc}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </SectionReveal>
-              ))}
-            </div>
+                  </SectionReveal>
+                ))}
+              </div>
 
+            </div>
           </div>
         </section>
 
