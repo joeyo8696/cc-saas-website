@@ -49,7 +49,7 @@ const platformLinks = {
       heading: 'Workflow',
       links: [
         { icon: GitBranch, label: 'Timeline Automation', href: '/solutions/intake' },
-        { icon: FileSignature, label: 'E-Signatures', href: '/solutions/intake' },
+        { icon: FileSignature, label: 'E-Signatures', href: '/solutions/esign' },
         { icon: UserCircle, label: 'Client Portal', href: '/solutions/intake' },
       ],
     },
@@ -57,7 +57,7 @@ const platformLinks = {
       heading: 'Intelligence',
       links: [
         { icon: BarChart3, label: 'Enterprise Analytics', href: '/#results' },
-        { icon: Users, label: 'Referrals', href: '/#referrals' },
+        { icon: Users, label: 'Referral Network', href: '/solutions/referrals' },
         { icon: TrendingUp, label: 'Marketing Attribution', href: '/#results' },
       ],
     },
@@ -296,6 +296,8 @@ export default function Nav() {
               {[
                 { href: platformLinks.intakeOS.href, icon: Inbox, label: 'Intake OS', sub: 'Core Platform', iconBg: 'linear-gradient(135deg, #0ea5e9, #4f46e5)' },
                 { href: platformLinks.featured.href, icon: Waypoints, label: 'Waypoint', sub: 'AI Scoring', iconBg: 'linear-gradient(135deg, #4f46e5, #818cf8)' },
+                { href: '/solutions/referrals', icon: Users, label: 'Referral Network', sub: 'Partner Management', iconBg: 'linear-gradient(135deg, #059669, #0891b2)' },
+                { href: '/solutions/esign', icon: FileSignature, label: 'E-Signatures', sub: 'Retainer Signing', iconBg: 'linear-gradient(135deg, #059669, #16a34a)' },
                 { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
                 { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: "Workers' Compensation", iconBg: 'linear-gradient(135deg, #b45309, #d97706)' },
               ].map(({ href, icon: Icon, label, sub, iconBg }) => (

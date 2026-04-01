@@ -18,6 +18,8 @@ const footerLinks = [
       { label: 'Homepage', href: '/' },
       { label: 'About', href: '/about' },
       { label: 'Blog', href: 'https://blog.casecompass.io' },
+      { label: 'Integrations', href: '/integrations' },
+      { label: 'Compare', href: '/compare' },
       { label: 'Security', href: '/security' },
       { label: 'Changelog', href: '/changelog' },
     ],
@@ -27,8 +29,10 @@ const footerLinks = [
     links: [
       { label: 'Waypoint AI', href: '/solutions/waypoint' },
       { label: 'Intelligent Intake', href: '/solutions/intake' },
-      { label: 'Referral Network', href: '/#referrals' },
-      { label: 'E-Signatures', href: '/#features' },
+      { label: 'Referral Network', href: '/solutions/referrals' },
+      { label: 'E-Signatures', href: '/solutions/esign' },
+      { label: 'Mass Torts', href: '/solutions/mass-torts' },
+      { label: 'Workers\' Comp', href: '/solutions/workers-comp' },
     ],
   },
   {

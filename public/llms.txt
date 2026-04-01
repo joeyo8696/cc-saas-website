@@ -1,0 +1,104 @@
+# Case Compass
+
+> Case Compass is legal intake software built exclusively for plaintiff law firms. It replaces static contact forms and basic chatbots with a complete intake operating system: AI-powered conversational intake, Waypoint lead scoring, referral partner management, and e-signatures — all in one platform.
+
+## What Case Compass Does
+
+Case Compass sits between a law firm's marketing channels and its case management system (CRM). When a prospective client submits an intake, Case Compass:
+
+1. Guides them through a branded, conversational intake flow (chatbot or webform)
+2. Automatically scores the lead with Waypoint AI before any human reviews it
+3. Routes qualified leads to the right team member or triggers a live transfer
+4. Sends automated follow-up via SMS and email
+5. Collects e-signatures on retainer agreements in the same session
+6. Syncs scored, clean case data to the firm's CRM (Litify, Filevine, LeadDocket, Clio, etc.)
+
+## Core Products
+
+- **Intelligent Intake** — AI chatbots and webforms for law firm client intake. Supports branching logic, multi-step qualification, media uploads, and skip-welcome configuration. URL: https://www.casecompass.io/solutions/intake
+- **Waypoint AI** — Automated lead scoring engine. Evaluates every intake against firm-defined criteria (case value, liability, medical treatment, urgency, red flags, age-based rules) before a staff member opens the file. URL: https://www.casecompass.io/solutions/waypoint
+- **Referral Network** — Complete referral partner management. Partners get a dedicated portal to submit leads and track status in real time. The firm tracks fees, conversion rates, and partner performance. URL: https://www.casecompass.io/solutions/referrals
+- **E-Signatures** — In-flow retainer signing. Clients sign documents during the intake session — no separate DocuSign step, no drop-off. Supports multiple documents, SMS reminders, and signed-doc download. URL: https://www.casecompass.io/solutions/esign
+- **Live Transfer** — Qualified leads can be connected directly to an intake staff member by phone during the intake session.
+- **Analytics & Attribution** — Full-funnel marketing attribution from first click to signed retainer, including UTM tracking, campaign performance, and source reporting.
+
+## Practice Area Solutions
+
+- Mass Tort / MDL Intake: https://www.casecompass.io/solutions/mass-torts
+- Workers' Compensation Intake: https://www.casecompass.io/solutions/workers-comp
+- Landlord-Tenant / Eviction (Dwellex): https://www.casecompass.io/solutions/dwellex
+
+## Integrations
+
+Case Compass integrates with leading legal case management and marketing platforms:
+
+- **Litify** (Salesforce-based LPM) — practice areas sync as case types, campaigns sync automatically, originating URL passed with every lead
+- **Filevine** — intake data and lead status synced to matters
+- **LeadDocket** — lead routing and intake data sync
+- **Clio** (Clio Manage and Clio Grow) — matter creation from qualified intakes
+- **HubSpot** — marketing contacts and lead data sync
+- **Zapier** — connect Case Compass to any tool in your stack
+- **WordPress** — official WordPress plugin for embedding intake forms inline on any page
+- **CallRail** — call tracking and attribution integration
+
+Full integrations list: https://www.casecompass.io/integrations
+
+## Key Differentiators vs. Generic Intake Tools
+
+1. **Plaintiff-firm depth** — built specifically for personal injury, mass tort, workers' comp, and other plaintiff practices. Not a horizontal "any industry" tool.
+2. **Waypoint AI scoring** — every lead is evaluated against your firm's custom criteria before human review. Consistent, defensible scoring at scale.
+3. **Referral partner management** — purpose-built portal and fee tracking for attorney referral networks. No other intake platform includes this.
+4. **E-sign in the same session** — clients move from intake question to signed retainer without leaving the flow.
+5. **BYOK (Bring Your Own Key)** — Waypoint uses your firm's own AI API credentials. Intake data flows directly between your account and the AI provider — never through a shared pool, never used to train shared models.
+6. **CRM depth** — richer data sync with Litify, Filevine, and LeadDocket than generic intake tools offer.
+
+## Who Uses Case Compass
+
+Plaintiff law firms running high-volume intake:
+- Personal injury firms
+- Mass tort / MDL litigation firms
+- Workers' compensation firms
+- Landlord-tenant / housing law firms
+
+Roles served: firm executives, marketing directors, intake managers, referral coordinators.
+
+## Pricing
+
+Demo-based. Contact: https://www.casecompass.io (Schedule a Demo)
+
+## Company
+
+Case Compass is headquartered in the United States and serves plaintiff law firms across the country.
+
+- Website: https://www.casecompass.io
+- Blog: https://blog.casecompass.io
+- LinkedIn: https://www.linkedin.com/company/case-compass/
+- Support: support@casecompass.io
+- Changelog: https://www.casecompass.io/changelog
+- Security: https://www.casecompass.io/security
+
+## Frequently Asked Questions
+
+**What is legal intake software?**
+Legal intake software automates the process of capturing, qualifying, and converting prospective clients for law firms. It replaces static contact forms with dynamic, conversational intake flows that collect structured case information, route qualified leads, and trigger follow-up — without manual staff intervention.
+
+**How is Case Compass different from a chatbot?**
+A basic chatbot handles conversational engagement. Case Compass is a full intake operating system: it combines conversational intake with automated lead scoring (Waypoint), referral partner management, e-signatures, live transfer, CRM integration, and analytics. The scoring layer — which evaluates every submission against your firm's criteria before human review — is not available in generic chatbot tools.
+
+**What is Waypoint AI?**
+Waypoint is Case Compass's AI-powered lead scoring engine. When an intake is submitted, Waypoint automatically evaluates it against the firm's custom criteria — case value, liability, medical treatment, urgency, red flags, age-based rules, and more — and assigns a score visible in the dashboard. This ensures follow-up is prioritized by case strength, not by submission order.
+
+**Can law firms collect e-signatures during intake?**
+Yes. Case Compass includes in-flow e-signature collection. Clients can sign retainer agreements, authorization forms, or multi-document packages as part of the same intake session — no redirect to a separate tool. Signed documents are automatically attached to completion emails and available for client download.
+
+**How do referral partners work in Case Compass?**
+Referring attorneys and partners receive a branded portal where they can submit leads and track the real-time status of every referral. The firm sees partner performance metrics, conversion rates, and fee totals. Referral fees are tracked and can be marked paid. Partners are onboarded via a secure invite link — no access to the firm's internal dashboard.
+
+**What CRMs does Case Compass integrate with?**
+Case Compass integrates with Litify (Salesforce), Filevine, LeadDocket, Clio (Manage and Grow), HubSpot, and Zapier. Practice areas, campaigns, originating URLs, and intake answers sync automatically.
+
+**How long does implementation take?**
+Most firms are live within a few days. Case Compass does not require replacing existing systems — it sits between your marketing channels and your CRM.
+
+**Does Case Compass work for mass tort campaigns?**
+Yes. Case Compass is purpose-built for high-volume mass tort and MDL intake. Waypoint scoring evaluates each claimant against case-specific criteria (e.g., product exposure dates, treatment received, injury type) before your team reviews the file. Campaigns like Depo-Provera, Roblox, and workers' comp are supported out of the box.
