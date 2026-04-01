@@ -176,6 +176,15 @@ a { text-decoration: none; }
   box-shadow: 0 4px 20px rgba(99,102,241,0.08);
 }
 
+/* Compare hub card hover */
+.compare-card {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.compare-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1) !important;
+  transform: translateY(-2px);
+}
+
 /* Nav responsive */
 .nav-desktop-links { display: flex; }
 .nav-hamburger-btn { display: none; }

@@ -110,15 +110,7 @@ export default function ComparePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '28px' }}>
               {compareCards.map(({ href, icon: Icon, color, bg, title, subtitle, desc, cta }) => (
                 <SectionReveal key={href}>
-                  <Link href={href} style={{ display: 'block', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden', textDecoration: 'none', transition: 'box-shadow 0.2s, transform 0.2s' }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.1)'
-                      ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.boxShadow = ''
-                      ;(e.currentTarget as HTMLElement).style.transform = ''
-                    }}
+                  <Link href={href} className="compare-card" style={{ display: 'block', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden', textDecoration: 'none', transition: 'box-shadow 0.2s, transform 0.2s' }}
                   >
                     <div style={{ padding: '32px 32px 28px' }}>
                       <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
