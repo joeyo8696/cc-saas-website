@@ -126,7 +126,7 @@ export default function VsWebformsPage() {
             <Link href="/compare" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.45)', fontSize: '0.8rem', fontFamily: 'var(--font-display)', fontWeight: 500, marginBottom: '20px', textDecoration: 'none' }}>
               ← Compare
             </Link>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(8,145,178,0.15)', border: '1px solid rgba(103,232,249,0.25)', borderRadius: '6px', padding: '5px 12px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#67e8f9', marginBottom: '24px', display: 'block' }}>
+            <div style={{ display: 'block', background: 'rgba(8,145,178,0.15)', border: '1px solid rgba(103,232,249,0.25)', borderRadius: '6px', padding: '5px 12px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#67e8f9', marginBottom: '24px' }}>
               Intake Platform vs. Static Web Forms
             </div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', color: '#fff', lineHeight: 1.15, marginBottom: '24px' }}>
