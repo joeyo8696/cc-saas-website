@@ -2,6 +2,12 @@
   "redirects": [
     {
       "source": "/:path*",
+      "has": [{ "type": "host", "value": "socialmedia.casecompass.io" }],
+      "destination": "https://www.casecompass.io/lp/social-media/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "roblox.casecompass.io" }],
       "destination": "https://www.casecompass.io/lp/roblox/:path*",
       "permanent": true
