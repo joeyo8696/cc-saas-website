@@ -158,11 +158,11 @@ export default function SocialMediaPage() {
               See Case Compass working social media claims
             </h2>
             <p style={{ color: '#64748b', fontSize: '1rem', marginBottom: '48px', maxWidth: '620px' }}>
-              AI scoring, Waypoint criteria, and a real-time inbox built around social media addiction litigation.
+              AI scoring, automated follow-up timelines, and Waypoint criteria — built around social media addiction litigation.
             </p>
           </SectionReveal>
 
-          <div style={{ maxWidth: '860px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <SectionReveal>
               <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
                 <Image
@@ -179,6 +179,39 @@ export default function SocialMediaPage() {
               </div>
             </SectionReveal>
 
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              <SectionReveal delay={1}>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <Image
+                    src="/images/timeline-social-media-workflow.png"
+                    alt="Case Compass Timeline Builder showing automated Social Media Addiction follow-up workflow with e-sign, delay, and case management steps"
+                    width={800}
+                    height={540}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                  <div style={{ padding: '16px 20px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', flex: 1 }}>
+                    <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>Automated Follow-Up Timeline</p>
+                    <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#64748b' }}>Social Media Addiction workflow: e-sign routing, case management sync, and drip emails — triggered automatically.</p>
+                  </div>
+                </div>
+              </SectionReveal>
+
+              <SectionReveal delay={2}>
+                <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <Image
+                    src="/images/timeline-block-types.png"
+                    alt="Case Compass Timeline Builder block types — Send Email, Send SMS, Signature Request, Med Record Retrieval, Branch Logic, Status Change, and more"
+                    width={800}
+                    height={540}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                  <div style={{ padding: '16px 20px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', flex: 1 }}>
+                    <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>No-Code Automation Blocks</p>
+                    <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#64748b' }}>Build any intake flow with email, SMS, e-sign, medical record requests, branch logic, and CRM sync — no engineering required.</p>
+                  </div>
+                </div>
+              </SectionReveal>
+            </div>
           </div>
         </div>
       </section>
