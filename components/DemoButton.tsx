@@ -1,6 +1,6 @@
 'use client'
 
-import { useDemoModal } from './DemoModalProvider'
+const CALENDLY_URL = 'https://calendly.com/casecompass/case-compass-intro'
 
 interface DemoButtonProps {
   children?: React.ReactNode
@@ -15,7 +15,6 @@ export default function DemoButton({
   className,
   variant = 'primary'
 }: DemoButtonProps) {
-  const { openModal } = useDemoModal()
 
   const baseStyle: React.CSSProperties = {
     display: 'inline-flex',
@@ -28,6 +27,7 @@ export default function DemoButton({
     fontWeight: 700,
     cursor: 'pointer',
     border: 'none',
+    textDecoration: 'none',
     transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)',
     ...style,
   }
@@ -46,8 +46,10 @@ export default function DemoButton({
   }
 
   return (
-    <button
-      onClick={openModal}
+    <a
+      href={CALENDLY_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className={className}
       style={{ ...baseStyle, ...variantStyles[variant] }}
       onMouseEnter={(e) => {
@@ -68,6 +70,6 @@ export default function DemoButton({
       }}
     >
       {children}
-    </button>
+    </a>
   )
 }
