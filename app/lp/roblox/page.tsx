@@ -81,7 +81,7 @@ export default function RobloxPage() {
             Ready to run Roblox intake at scale?
           </h2>
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '40px' }}>We&apos;ll configure your intake bot and Waypoint criteria in days.</p>
-          <Link href="https://scheduler.zoom.us/joey-organisciak/case-compass-demo" target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700 }}>
+          <Link href="https://calendly.com/sandboxunion/case-compass-demo" target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700 }}>
             Schedule a Demo →
           </Link>
         </SectionReveal>
