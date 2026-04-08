@@ -149,8 +149,57 @@ export default function SocialMediaPage() {
         </div>
       </section>
 
-      {/* Problem */}
+      {/* Product screenshots */}
       <section style={{ padding: '80px 40px', background: '#fff' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+          <SectionReveal>
+            <div style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#be185d', marginBottom: '16px' }}>Built for Social Media MDL</div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '12px' }}>
+              See Case Compass working social media claims
+            </h2>
+            <p style={{ color: '#64748b', fontSize: '1rem', marginBottom: '48px', maxWidth: '620px' }}>
+              AI scoring, Waypoint criteria, and a real-time inbox built around social media addiction litigation.
+            </p>
+          </SectionReveal>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px' }}>
+            <SectionReveal>
+              <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+                <Image
+                  src="/images/ai-lead-scoring.png"
+                  alt="Case Compass AI lead scoring for Social Media Harm — Waypoint scoring with HIGH-VALUE CASE flag and live intake conversation"
+                  width={900}
+                  height={506}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+                <div style={{ padding: '16px 20px', background: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
+                  <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>AI Lead Scoring — Social Media Harm</p>
+                  <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#64748b' }}>Waypoint scores each claim on severity, urgency, case value, and evidence completeness.</p>
+                </div>
+              </div>
+            </SectionReveal>
+
+            <SectionReveal delay={2}>
+              <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+                <Image
+                  src="/images/app-inbox-hires.png"
+                  alt="Case Compass inbox showing Social Media Victims leads being processed and routed"
+                  width={900}
+                  height={506}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+                <div style={{ padding: '16px 20px', background: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
+                  <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>Inbox — Social Media Victims Claims</p>
+                  <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#64748b' }}>Every inbound lead scored, routed, and ready for attorney review — no manual triage.</p>
+                </div>
+              </div>
+            </SectionReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem */}
+      <section style={{ padding: '80px 40px', background: '#f8fafc' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <SectionReveal>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)', color: '#0f172a', lineHeight: 1.2, textAlign: 'center', marginBottom: '12px' }}>
@@ -177,7 +226,7 @@ export default function SocialMediaPage() {
       </section>
 
       {/* Features */}
-      <section style={{ padding: '80px 40px', background: '#f8fafc' }}>
+      <section style={{ padding: '80px 40px', background: '#fff' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <SectionReveal>
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.6rem)', color: '#0f172a', lineHeight: 1.2, textAlign: 'center', marginBottom: '12px' }}>
