@@ -23,9 +23,7 @@ export default function SocialMediaCallout() {
 
           <SectionReveal delay={2}>
             <Link
-              href="https://socialmedia.casecompass.io"
-              target="_blank"
-              rel="noopener"
+              href="/lp/social-media"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'linear-gradient(135deg, #be185d, #ec4899)', color: '#fff', padding: '15px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, boxShadow: '0 8px 24px rgba(236,72,153,0.35)', whiteSpace: 'nowrap', textDecoration: 'none' }}
             >
               See Social Media Toolkit →
