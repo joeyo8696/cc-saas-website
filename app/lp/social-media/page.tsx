@@ -162,7 +162,7 @@ export default function SocialMediaPage() {
             </p>
           </SectionReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px' }}>
+          <div style={{ maxWidth: '860px' }}>
             <SectionReveal>
               <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
                 <Image
@@ -179,21 +179,6 @@ export default function SocialMediaPage() {
               </div>
             </SectionReveal>
 
-            <SectionReveal delay={2}>
-              <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #e2e8f0', boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
-                <Image
-                  src="/images/app-inbox-hires.png"
-                  alt="Case Compass inbox showing Social Media Victims leads being processed and routed"
-                  width={900}
-                  height={506}
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                />
-                <div style={{ padding: '16px 20px', background: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
-                  <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#0f172a' }}>Inbox — Social Media Victims Claims</p>
-                  <p style={{ margin: '4px 0 0', fontSize: '0.78rem', color: '#64748b' }}>Every inbound lead scored, routed, and ready for attorney review — no manual triage.</p>
-                </div>
-              </div>
-            </SectionReveal>
           </div>
         </div>
       </section>
