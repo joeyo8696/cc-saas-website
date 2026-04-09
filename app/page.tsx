@@ -12,6 +12,7 @@ import HowItWorks from '@/components/home/HowItWorks'
 import Testimonials from '@/components/home/Testimonials'
 import NotJustAChatbot from '@/components/home/NotJustAChatbot'
 import SocialMediaCallout from '@/components/home/SocialMediaCallout'
+import HairRelaxerCallout from '@/components/home/HairRelaxerCallout'
 import DepoProveraCallout from '@/components/home/DepoProveraCallout'
 import RobloxCallout from '@/components/home/RobloxCallout'
 import WorkersCompCallout from '@/components/home/WorkersCompCallout'
@@ -38,6 +39,7 @@ export default function HomePage() {
         <IntegrationsTicker />
         <Testimonials />
         <SocialMediaCallout />
+        <HairRelaxerCallout />
         <DepoProveraCallout />
         <RobloxCallout />
         <WorkersCompCallout />
