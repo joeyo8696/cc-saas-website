@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: 'https://www.casecompass.io/compare/vs-ai-intake-tools',
     siteName: 'Case Compass',
     title: 'Case Compass vs. SimplyConvert, ngage & AI Intake Tools',
-    description: 'When your intake platform is owned by a company that also sells leads, that\'s a conflict. Case Compass doesn\'t sell leads. See the full comparison.',
+    description: 'ngage is owned by the parent of Avvo and FindLaw. SimplyConvert is bundled with a lead gen agency. Case Compass does one thing: intake. See the full comparison.',
     images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass vs AI Intake Tools' }],
   },
   twitter: {
@@ -35,10 +35,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is there a conflict of interest when your intake platform is owned by a lead generation company?',
+      name: 'Does it matter who owns or backs your intake platform when they also sell law firm leads?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, and it\'s worth thinking through. ngage is owned by Internet Brands, the parent company of Avvo, FindLaw, Martindale-Hubbell, and Super Lawyers — businesses whose core revenue model is charging law firms for leads. SimplyConvert has a strategic partnership with The Search Engine Guys (TSEG) under the TruLaw brand, a law firm marketing agency that by their own description engages 130 million potential clients annually. When your intake platform has a parent company or strategic partner in the business of selling law firm leads, they have structural access to your intake funnel data. Case Compass has no lead generation business, no marketing agency partner, and no financial interest in your pipeline other than making your intake perform better.',
+        text: 'It\'s a fair question to ask. ngage is owned by Internet Brands, the parent company of Avvo, FindLaw, Martindale-Hubbell, and Super Lawyers — businesses whose core revenue model is charging law firms for leads. SimplyConvert has a strategic partnership with The Search Engine Guys (TSEG) under the TruLaw brand, a law firm marketing agency that by their own description engages 130 million potential clients annually. When your intake platform exists within the same corporate structure as lead generation businesses, or is bundled with marketing agency services, the incentive structures of those businesses are worth understanding. Case Compass has no lead generation business, no marketing agency partner, and no financial interest in your pipeline other than making your intake perform better. We think that matters.',
       },
     },
     {
@@ -224,10 +224,10 @@ export default function VsAiIntakeToolsPage() {
               Case Compass vs. AI Intake Tools
             </div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', color: '#fff', lineHeight: 1.15, marginBottom: '24px' }}>
-              Your intake platform shouldn&apos;t be in the business of <em>selling your leads.</em>
+              Know who&apos;s behind your intake platform. <em>Especially if they also sell leads.</em>
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75 }}>
-              ngage is owned by Internet Brands — the parent company of Avvo, FindLaw, and Martindale-Hubbell, whose core model is selling leads to law firms. SimplyConvert is strategically partnered with a law firm marketing agency. Case Compass does one thing: intake. No lead gen. No conflict.
+              ngage is owned by Internet Brands — the parent company of Avvo, FindLaw, and Martindale-Hubbell, whose core business is selling leads to law firms. SimplyConvert is strategically partnered under TruLaw with a law firm marketing agency. Case Compass is independent intake software. No lead gen. No agency. No bundled services.
             </p>
           </div>
         </section>
@@ -238,7 +238,7 @@ export default function VsAiIntakeToolsPage() {
             <SectionReveal>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center', marginBottom: '16px' }}>
                 <AlertTriangle size={18} color="#d97706" />
-                <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#d97706' }}>The ownership question</span>
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#d97706' }}>The business model question</span>
               </div>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, textAlign: 'center', marginBottom: '16px' }}>
                 Who owns your intake platform matters
