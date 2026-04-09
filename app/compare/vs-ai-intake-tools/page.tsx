@@ -110,7 +110,7 @@ const faqSchema = {
       name: 'Does Case Compass have MDL-specific intake toolkits?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Case Compass maintains pre-configured intake toolkits for active mass tort litigation — currently including social media addiction (MDL 3047), hair relaxer cancer claims (MDL 3060), and others. Each toolkit includes branching logic by defendant or product, evidence capture fields aligned to what the litigation currently requires, and Waypoint scoring criteria calibrated to litigability standards for that MDL. These are maintained and updated as the litigation develops. Firms don\'t have to build this from scratch or keep up with MDL developments themselves.',
+        text: 'Yes — and they\'re live and in use today. Case Compass currently has pre-configured intake toolkits for social media addiction litigation (MDL 3047, N.D. California — first bellwether verdict March 2026) and hair relaxer cancer claims (MDL 3060, N.D. Illinois — 11,000+ pending cases). Each toolkit includes defendant-specific branching logic, evidence capture fields aligned to current litigation requirements, and Waypoint scoring criteria calibrated to what makes a claimant litigable in that specific MDL. For social media, that means branching by platform (Meta, YouTube, TikTok, Snap) and capturing harm documentation. For hair relaxer, that means brand identification, diagnosis verification, and medical record collection. These toolkits are maintained as the MDLs evolve — Daubert developments, bellwether outcomes, and changing intake standards are reflected without firms needing to rebuild their forms. Neither SimplyConvert, ngage, nor Intaker offer anything comparable for active intake qualification at this level.',
       },
     },
     {
@@ -351,6 +351,47 @@ export default function VsAiIntakeToolsPage() {
                 </div>
               </SectionReveal>
             ))}
+          </div>
+        </section>
+
+        {/* MDL toolkit proof */}
+        <section style={{ background: '#f8fafc', padding: '64px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <SectionReveal>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '16px' }}>
+                Active MDL toolkits — live today
+              </p>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', color: '#0f172a', lineHeight: 1.25, marginBottom: '8px' }}>
+                Not a roadmap item. These are running right now.
+              </h3>
+              <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '32px' }}>
+                Both toolkits are live, pre-configured, and in use by firms running active intake campaigns.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <Link href="/lp/social-media" style={{ display: 'block', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '24px', textDecoration: 'none', transition: 'box-shadow 0.2s' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ec4899', boxShadow: '0 0 6px #ec4899', display: 'inline-block', flexShrink: 0 }} />
+                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#be185d' }}>MDL 3047 · N.D. California</span>
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '6px' }}>Social Media Addiction Intake</div>
+                  <p style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.6, margin: '0 0 16px' }}>Platform-specific branching (Meta, YouTube, TikTok, Snap), harm documentation capture, minor verification, and Waypoint scoring. First bellwether verdict March 2026.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--font-display)', fontSize: '0.8rem', fontWeight: 700, color: '#be185d' }}>
+                    See the toolkit <ArrowRight size={13} />
+                  </div>
+                </Link>
+                <Link href="/lp/hair-relaxer" style={{ display: 'block', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '24px', textDecoration: 'none', transition: 'box-shadow 0.2s' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f59e0b', boxShadow: '0 0 6px #f59e0b', display: 'inline-block', flexShrink: 0 }} />
+                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#b45309' }}>MDL 3060 · N.D. Illinois</span>
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '6px' }}>Hair Relaxer Cancer Claims Intake</div>
+                  <p style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.6, margin: '0 0 16px' }}>Brand identification and defendant branching (L&apos;Oreal, Revlon, Strength of Nature), diagnosis verification, medical record collection, and Waypoint scoring. 11,000+ cases pending.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--font-display)', fontSize: '0.8rem', fontWeight: 700, color: '#b45309' }}>
+                    See the toolkit <ArrowRight size={13} />
+                  </div>
+                </Link>
+              </div>
+            </SectionReveal>
           </div>
         </section>
 
