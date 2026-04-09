@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, MessageSquare, FileText, Database, TrendingUp } from 'lucide-react'
+import { ArrowRight, MessageSquare, FileText, Database, TrendingUp, Bot } from 'lucide-react'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
@@ -39,6 +39,16 @@ const compareBreadcrumb = {
 }
 
 const compareCards = [
+  {
+    href: '/compare/vs-ai-intake-tools',
+    icon: Bot,
+    color: '#0f766e',
+    bg: 'linear-gradient(135deg, #f0fdfa, #ccfbf1)',
+    title: 'Case Compass vs. AI Intake Tools',
+    subtitle: 'Full Platform vs. SimplyConvert, ngage & Others',
+    desc: 'SimplyConvert, ngage, and similar tools automate the intake conversation. Case Compass adds Waypoint scoring, MDL toolkits, referral management, medical record retrieval, and post-intake automation. See every difference.',
+    cta: 'See How Case Compass Compares →',
+  },
   {
     href: '/compare/vs-chatbots',
     icon: MessageSquare,
@@ -107,7 +117,7 @@ export default function ComparePage() {
         {/* Comparison cards */}
         <section style={{ background: '#f8fafc', padding: '96px 40px' }}>
           <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '28px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '28px', gridTemplateRows: 'auto' }}>
               {compareCards.map(({ href, icon: Icon, color, bg, title, subtitle, desc, cta }) => (
                 <SectionReveal key={href}>
                   <Link href={href} className="compare-card" style={{ display: 'block', background: '#fff', border: '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden', textDecoration: 'none', transition: 'box-shadow 0.2s, transform 0.2s' }}
