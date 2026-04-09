@@ -59,10 +59,50 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: 'Does Case Compass close retainers during intake — or do leads still fall through after the conversation?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Case Compass closes the retainer inside the intake flow itself. When a claimant qualifies, they\'re presented with the retainer agreement as the next step — they sign without leaving the session, no callback required. The gap between a completed intake conversation and a signed retainer is one of the biggest drop-off points in plaintiff intake. Most tools, including ngage and Intaker, hand off after the conversation and rely on callbacks or separate e-sign tools to close. SimplyConvert has e-sign capability. Case Compass has it natively inside the intake flow, with multi-document support, so the HIPAA auth, retainer, and any other required documents can all be captured in the same session.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does Case Compass handle intake across multiple channels — not just web chat?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Case Compass runs intake across web chat, SMS, and phone-assisted scripts from a single platform. The same intake form logic, branching, and Waypoint scoring applies regardless of how the claimant enters. Source and UTM attribution is tracked per channel so you can see exactly which campaigns are producing qualified leads versus volume. ngage and Intaker are primarily chat-first tools. SimplyConvert is chatbot-centric. If a large portion of your leads come in by phone — common in PI and mass tort — Case Compass\'s call center intake script and multi-channel design means the data captured is consistent and scoreable across all inbound paths.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can Case Compass route hot leads to live transfer or immediate attorney review?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Case Compass includes live transfer coordination as part of the intake workflow. When a lead scores above a set threshold — indicating high case value or urgency — the system can trigger an immediate live transfer to a call center agent or attorney rather than queuing the lead for follow-up. This is critical for competitive practice areas like auto accident PI, where speed-to-contact directly impacts conversion. ngage has live chat handoff but not scoring-triggered transfer. SimplyConvert doesn\'t have live transfer as a core intake feature. The difference is that Case Compass\'s routing is based on Waypoint score data, not just availability.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does Case Compass show in analytics that other tools don\'t?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Case Compass\'s intake analytics show the full funnel: where leads enter, which questions cause drop-off, completion rates by source and campaign, Waypoint score distributions, referral partner performance, e-sign conversion rates, and time-to-qualification. Most tools show volume and basic lead status. What\'s different in Case Compass is the drop-off analysis — you can see exactly which node in the intake form is losing claimants, and adjust the form logic to fix it. You can also compare performance by intake type (chatbot vs. form vs. phone) and by marketing source, so you know which ad spend is producing qualified cases, not just clicks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Case Compass integrate with our case management system?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Case Compass integrates natively with Litify, Filevine, LeadDocket, Clio, and PracticePanther, and connects to other systems via API and Zapier. What gets pushed isn\'t just a contact record — it\'s the full structured intake: answers, Waypoint score and dimension breakdown, source attribution, referral partner, e-sign documents, and case status. Your team opens a case in their CRM with everything they need, not a bare lead. SimplyConvert has CRM integrations but primarily pushes to its own internal CRM. ngage and Intaker have limited native integrations. Case Compass is CRM-agnostic by design — it\'s not trying to replace your case management system, it\'s built to feed it.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'We\'re already using SimplyConvert or ngage. Why would we switch?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The question is what your current tool isn\'t doing for you. If your team is still manually reviewing every intake file to assess case quality, you\'re missing the scoring layer. If you\'re running mass tort intake campaigns and building your own intake forms per MDL, you\'re spending time on something Case Compass maintains for you. If you\'re using a referral partner network and tracking fees in spreadsheets, there\'s a better way. And if the company that runs your intake platform also has a business interest in selling law firm leads, that\'s worth thinking about. Case Compass is purpose-built intake software, maintained by a team that does only that.',
+        text: 'Ask what your current tool isn\'t doing. If your team still manually reviews every file to assess case quality — you\'re missing Waypoint scoring. If you\'re building intake forms from scratch for every new MDL campaign — Case Compass maintains those toolkits for you. If your referral partners are asking you for status updates over email — there\'s a portal for that. If hot leads are sitting in a queue instead of going to live transfer — that\'s a conversion problem with a solution. If you don\'t know which intake questions are causing drop-off — the analytics show you. And if your intake vendor\'s parent company also sells law firm leads — that\'s a structural question worth asking. Case Compass is one thing: intake software built to make your firm better at converting cases.',
       },
     },
     {
