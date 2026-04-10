@@ -8,24 +8,35 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Compare Legal Intake Approaches — Case Compass',
+  title: 'Compare Legal Intake Software — Case Compass',
   description:
-    'See how a complete legal intake platform compares to chatbots, static web forms, and generic CRM intake. Find the right approach for your plaintiff law firm.',
+    'See how Case Compass compares to chatbots, web forms, generic CRM intake, and pre-screening tools like Lawbrokr. Find the right intake platform for your plaintiff law firm.',
   alternates: {
     canonical: 'https://www.casecompass.io/compare',
   },
+  keywords: [
+    'legal intake software comparison',
+    'plaintiff intake platform',
+    'Lawbrokr alternative',
+    'legal intake vs chatbot',
+    'law firm intake software',
+    'SimplyConvert alternative',
+    'ngage alternative',
+    'AI intake scoring',
+    'plaintiff law firm software',
+  ],
   openGraph: {
     type: 'website',
     url: 'https://www.casecompass.io/compare',
     siteName: 'Case Compass',
-    title: 'Compare Legal Intake Approaches | Case Compass',
-    description: 'How does a full intake platform compare to chatbots, web forms, and generic CRM intake? Find the right approach for your plaintiff law firm.',
-    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Compare Legal Intake Approaches' }],
+    title: 'Compare Legal Intake Software | Case Compass',
+    description: 'How does a full plaintiff intake platform compare to chatbots, web forms, CRM intake, and pre-screening tools? See every difference.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Compare Legal Intake Software' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Compare Legal Intake Approaches | Case Compass',
-    description: 'Chatbots vs. intake platforms vs. web forms — see the full comparison.',
+    title: 'Compare Legal Intake Software | Case Compass',
+    description: 'Chatbots vs. intake platforms vs. pre-screening tools — see how Case Compass compares for plaintiff firms.',
   },
 }
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 const BASE_URL = 'https://www.casecompass.io'
-const NOW = new Date('2026-03-21')
+const NOW = new Date('2026-04-04')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -85,6 +85,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: NOW,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/compare/vs-ai-intake-tools`,
+      lastModified: NOW,
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     // Content
     {
