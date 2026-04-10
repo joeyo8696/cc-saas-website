@@ -50,7 +50,7 @@ const videos: VideoEntry[] = [
     id: '602a8b86526e40d48c47d40f83588e0e',
     title: 'MDL Portfolio Management',
     desc: 'Manage mass tort caseloads — portfolio tracking, key court deadlines, PFS field mapping, and lead-level MDL tagging.',
-    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/602a8b86526e40d48c47d40f83588e0e-d1036567a3de8300.gif',
+    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/602a8b86526e40d48c47d40f83588e0e-d1036567a3de8300-full-play.gif',
   },
 ]
 
