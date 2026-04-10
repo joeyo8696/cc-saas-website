@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle, Waypoints, Users, BarChart3, Zap, Shield, TrendingUp, FileText } from 'lucide-react'
+import { CheckCircle, Waypoints, Users, BarChart3, Zap, Shield, TrendingUp, FileText, FolderOpen } from 'lucide-react'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
@@ -9,9 +9,9 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Mass Tort Intake & Lead Scoring | Case Compass',
+  title: 'Mass Tort Intake, Scoring & MDL Portfolio Management | Case Compass',
   description:
-    'Case Compass helps plaintiff firms capture, score, and convert mass tort leads at scale. Waypoint AI evaluates every intake against tort-specific criteria — before your team opens the file.',
+    'Case Compass helps plaintiff firms capture, score, and manage mass tort leads at scale. Waypoint AI scores every intake automatically. MDL Portfolios organize your entire caseload by litigation — with AI scoring dashboards, status breakdowns, and one-click export.',
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/mass-torts',
   },
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.casecompass.io/solutions/mass-torts',
     siteName: 'Case Compass',
-    title: 'Mass Tort Intake & Lead Scoring | Case Compass',
-    description: 'Score every mass tort intake automatically with Waypoint AI. Purpose-built for high-volume plaintiff firms running active tort campaigns.',
-    images: [{ url: '/images/waypoint-criteria-list.png', width: 1200, height: 630, alt: 'Mass Tort Intake Scoring' }],
+    title: 'Mass Tort Intake, Scoring & MDL Portfolio Management | Case Compass',
+    description: 'Score every mass tort intake with Waypoint AI. Group leads by MDL with portfolio dashboards. Purpose-built for plaintiff firms running active tort campaigns.',
+    images: [{ url: '/images/mdl-portfolio-stats.png', width: 1200, height: 630, alt: 'MDL Portfolio Management Dashboard' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mass Tort Intake & Lead Scoring | Case Compass',
-    description: 'Score every mass tort intake automatically with Waypoint AI.',
+    title: 'Mass Tort Intake, Scoring & MDL Portfolio Management | Case Compass',
+    description: 'Score every mass tort intake automatically with Waypoint AI. Manage your MDL caseload with portfolio dashboards.',
   },
 }
 
@@ -74,6 +74,14 @@ const faqSchema = {
         text: 'Yes. Case Compass integrates with Filevine, Clio, LeadDocket, Litify, and other case management systems. Signed clients push automatically so your team can start working the case without manual data entry.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'What is MDL Portfolio Management in Case Compass?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'MDL Portfolios let you group all leads related to a specific litigation — by intake form, marketing campaign, or both — into a named portfolio (e.g. "Hair Relaxer MDL 3060"). Each portfolio shows a live dashboard with total leads, AI-scored leads, high-value counts, average scores, a score distribution chart, and a full status breakdown. You can export all portfolio leads to CSV at any time, including AI scores and specific intake node responses as additional columns.',
+      },
+    },
   ],
 }
 
@@ -118,11 +126,18 @@ const features = [
     title: 'Pre-built criteria for active torts',
     desc: 'Get started faster with pre-built Waypoint criteria sets for Depo-Provera, Roundup, and more. Customize to match your exact standards.',
   },
+  {
+    icon: FolderOpen,
+    title: 'MDL Portfolio dashboards',
+    desc: 'Group all leads for a specific litigation into a named portfolio. Track lead counts, AI scores, high-value flags, and status breakdowns — all in one view.',
+  },
 ]
 
 const activeTorts = [
   { name: 'Depo-Provera', tag: 'Active', desc: 'Custom scoring for meningioma diagnosis, duration of use, and treatment history.' },
   { name: 'Roundup (Glyphosate)', tag: 'Active', desc: 'Criteria covering NHL diagnosis, occupational exposure, product use timeline, and medical documentation.' },
+  { name: 'Hair Relaxer (MDL 3060)', tag: 'Active', desc: 'Uterine cancer / uterine fibroids screening with NIH study benchmarks, product use history, and defendant brand matching.' },
+  { name: 'Social Media Addiction', tag: 'Active', desc: 'Child and adult injury criteria across emotional harm, physical injury, and fentanyl overdose case types.' },
   { name: 'Personal Injury', tag: 'Always on', desc: 'Fully configurable criteria for any PI tort campaign — liability, severity, SOL, and more.' },
 ]
 
@@ -154,11 +169,11 @@ export default function MassTortsPage() {
               ★ Mass Tort
             </div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.15, marginBottom: '24px' }}>
-              Score every mass tort intake<br />
-              <em>before your team opens the file</em>
+              Score every intake. Manage every MDL.<br />
+              <em>Before your team opens a single file.</em>
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '40px' }}>
-              Mass tort campaigns generate hundreds of intakes. Case Compass captures them all, scores every submission against your tort-specific criteria, and tells your team which cases are worth their time — automatically, at scale.
+              Mass tort campaigns generate hundreds of intakes across multiple active litigations. Case Compass captures them all, scores every submission with Waypoint AI, and organizes your entire caseload into MDL Portfolios — so your team always knows what to work and where each case stands.
             </p>
             <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
               <DemoButton style={{ padding: '14px 32px', borderRadius: '8px', fontSize: '0.9rem' }}>
@@ -180,7 +195,7 @@ export default function MassTortsPage() {
             <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 600, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.07em', marginRight: '8px' }}>
               Active tort criteria:
             </span>
-            {['Depo-Provera', 'Roundup / Glyphosate', 'Personal Injury', 'Workers\' Comp'].map(t => (
+            {['Depo-Provera', 'Roundup / Glyphosate', 'Hair Relaxer MDL 3060', 'Social Media Addiction', 'Personal Injury', 'Workers\' Comp'].map(t => (
               <span key={t} style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.25)', color: '#a5b4fc', borderRadius: '20px', padding: '4px 14px', fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 600 }}>
                 {t}
               </span>
@@ -340,9 +355,80 @@ export default function MassTortsPage() {
           </div>
         </section>
 
+        {/* MDL Portfolio Management */}
+        <section style={{ background: '#f8fafc', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
+          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 64px' }}>
+                <div style={{ display: 'inline-block', background: '#dbeafe', color: '#1e40af', borderRadius: '6px', padding: '4px 12px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '20px' }}>
+                  MDL Portfolio Management
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '16px' }}>
+                  Manage your entire MDL caseload — by litigation
+                </h2>
+                <p style={{ fontSize: '1rem', color: '#64748b', lineHeight: 1.7 }}>
+                  Group every lead tied to a specific MDL into a named portfolio. Get a live dashboard showing AI score distribution, status breakdowns, and high-value counts — without digging through your inbox.
+                </p>
+              </div>
+            </SectionReveal>
+
+            {/* Portfolio list screenshot */}
+            <SectionReveal>
+              <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 32px 80px rgba(0,0,0,0.12)', border: '1px solid #e2e8f0', marginBottom: '48px' }}>
+                <Image
+                  src="/images/mdl-portfolio-list.png"
+                  alt="MDL Portfolio Management — portfolio list view in Case Compass"
+                  width={1100}
+                  height={620}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            </SectionReveal>
+
+            {/* Stats screenshot + bullets */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+              <SectionReveal>
+                <div style={{ borderRadius: '14px', overflow: 'hidden', boxShadow: '0 24px 60px rgba(0,0,0,0.1)', border: '1px solid #e2e8f0' }}>
+                  <Image
+                    src="/images/mdl-portfolio-stats.png"
+                    alt="MDL Portfolio stats — AI scores, status breakdown, score distribution"
+                    width={560}
+                    height={440}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                </div>
+              </SectionReveal>
+              <SectionReveal>
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', color: '#0f172a', lineHeight: 1.3, marginBottom: '20px' }}>
+                    A dashboard for every active tort — not just a filtered inbox
+                  </h3>
+                  <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.75, marginBottom: '24px' }}>
+                    Each portfolio aggregates all the data that matters for that litigation in one place. See your total leads, how many have been AI scored, what percentage are high-value, and how your caseload breaks down by claimant status.
+                  </p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    {[
+                      'Link any intake form or marketing campaign to a portfolio',
+                      'Live stats: total leads, AI scored, high-value, avg overall score',
+                      'Score distribution bar chart (0–24, 25–49, 50–74, 75–100)',
+                      'Full status breakdown ranked by volume',
+                      'One-click export to CSV — optionally include all AI score columns',
+                      'Jump directly into a filtered Inbox view for that MDL',
+                    ].map(item => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#334155' }}>
+                        <CheckCircle size={16} color="#3b82f6" style={{ marginTop: '2px', flexShrink: 0 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </SectionReveal>
+            </div>
+          </div>
+        </section>
+
         {/* Active torts */}
-        <section style={{ background: '#fff', padding: '96px 40px' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <section style={{ background: '#fff', padding: '96px 40px' }}>          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <SectionReveal>
               <div style={{ textAlign: 'center', marginBottom: '56px' }}>
                 <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '16px' }}>

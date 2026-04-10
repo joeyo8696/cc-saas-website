@@ -6,6 +6,7 @@ import Hero from '@/components/home/Hero'
 import Ticker from '@/components/home/Ticker'
 import PlatformOS from '@/components/home/PlatformOS'
 import WaypointSection from '@/components/home/WaypointSection'
+import MdlPortfolioSection from '@/components/home/MdlPortfolioSection'
 import ReferralsSection from '@/components/home/ReferralsSection'
 import Stats from '@/components/home/Stats'
 import HowItWorks from '@/components/home/HowItWorks'
@@ -33,6 +34,7 @@ export default function HomePage() {
         <NotJustAChatbot />
         <PlatformOS />
         <WaypointSection />
+        <MdlPortfolioSection />
         <ReferralsSection />
         <Stats />
         <HowItWorks />
