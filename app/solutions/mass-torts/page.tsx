@@ -459,26 +459,20 @@ export default function MassTortsPage() {
                 </p>
               </div>
             </SectionReveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+            {/* 2x2 active torts grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginBottom: '20px' }}>
               {[
-                { name: 'Depo-Provera', tag: 'Active', desc: 'Custom scoring for meningioma diagnosis, duration of use, and treatment history.', accent: '#10b981', accentBg: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.2)', dot: '#10b981' },
-                { name: 'Roundup (Glyphosate)', tag: 'Active', desc: 'Criteria covering NHL diagnosis, occupational exposure, product use timeline, and medical documentation.', accent: '#f59e0b', accentBg: 'rgba(245,158,11,0.07)', border: 'rgba(245,158,11,0.2)', dot: '#f59e0b' },
-                { name: 'Hair Relaxer (MDL 3060)', tag: 'Active', desc: 'Uterine cancer / uterine fibroids screening with NIH study benchmarks, product use history, and defendant brand matching.', accent: '#8b5cf6', accentBg: 'rgba(139,92,246,0.08)', border: 'rgba(139,92,246,0.2)', dot: '#8b5cf6' },
-                { name: 'Social Media Addiction', tag: 'Active', desc: 'Child and adult injury criteria across emotional harm, physical injury, and fentanyl overdose case types.', accent: '#06b6d4', accentBg: 'rgba(6,182,212,0.07)', border: 'rgba(6,182,212,0.2)', dot: '#06b6d4' },
-                { name: 'Personal Injury', tag: 'Always on', desc: 'Fully configurable criteria for any PI tort campaign — liability, severity, SOL, and more.', accent: '#6366f1', accentBg: 'rgba(99,102,241,0.07)', border: 'rgba(99,102,241,0.2)', dot: '#6366f1' },
-              ].map(({ name, tag, desc, accent, accentBg, border }) => (
+                { name: 'Depo-Provera', desc: 'Custom scoring for meningioma diagnosis, duration of use, and treatment history.', accent: '#10b981', accentBg: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.2)' },
+                { name: 'Roundup (Glyphosate)', desc: 'Criteria covering NHL diagnosis, occupational exposure, product use timeline, and medical documentation.', accent: '#f59e0b', accentBg: 'rgba(245,158,11,0.07)', border: 'rgba(245,158,11,0.2)' },
+                { name: 'Hair Relaxer (MDL 3060)', desc: 'Uterine cancer / uterine fibroids screening with NIH study benchmarks, product use history, and defendant brand matching.', accent: '#8b5cf6', accentBg: 'rgba(139,92,246,0.08)', border: 'rgba(139,92,246,0.2)' },
+                { name: 'Social Media Addiction', desc: 'Child and adult injury criteria across emotional harm, physical injury, and fentanyl overdose case types.', accent: '#06b6d4', accentBg: 'rgba(6,182,212,0.07)', border: 'rgba(6,182,212,0.2)' },
+              ].map(({ name, desc, accent, accentBg, border }) => (
                 <SectionReveal key={name}>
-                  <div style={{ padding: '28px 28px 28px 32px', borderRadius: '14px', background: accentBg, border: `1px solid ${border}`, borderLeft: `3px solid ${accent}`, position: 'relative' }}>
+                  <div style={{ padding: '28px 28px 28px 32px', borderRadius: '14px', background: accentBg, border: `1px solid ${border}`, borderLeft: `3px solid ${accent}` }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                       <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.02rem', fontWeight: 700, color: '#fff', margin: 0 }}>{name}</h3>
-                      <span style={{
-                        background: tag === 'Active' ? 'rgba(16,185,129,0.15)' : 'rgba(99,102,241,0.15)',
-                        color: tag === 'Active' ? '#34d399' : '#a5b4fc',
-                        border: `1px solid ${tag === 'Active' ? 'rgba(52,211,153,0.3)' : 'rgba(165,180,252,0.3)'}`,
-                        borderRadius: '100px', padding: '2px 10px',
-                        fontFamily: 'var(--font-display)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.04em',
-                      }}>
-                        {tag}
+                      <span style={{ background: 'rgba(16,185,129,0.15)', color: '#34d399', border: '1px solid rgba(52,211,153,0.3)', borderRadius: '100px', padding: '2px 10px', fontFamily: 'var(--font-display)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.04em' }}>
+                        Active
                       </span>
                     </div>
                     <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{desc}</p>
@@ -486,6 +480,26 @@ export default function MassTortsPage() {
                 </SectionReveal>
               ))}
             </div>
+
+            {/* Personal Injury — full-width "always on" foundation banner */}
+            <SectionReveal>
+              <div style={{ borderRadius: '14px', border: '1px solid rgba(99,102,241,0.2)', background: 'rgba(99,102,241,0.06)', padding: '28px 36px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <CheckCircle size={18} color="#fff" />
+                  </div>
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.02rem', fontWeight: 700, color: '#fff', margin: 0 }}>Personal Injury</h3>
+                      <span style={{ background: 'rgba(99,102,241,0.2)', color: '#a5b4fc', border: '1px solid rgba(165,180,252,0.3)', borderRadius: '100px', padding: '2px 10px', fontFamily: 'var(--font-display)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.04em' }}>
+                        Always on
+                      </span>
+                    </div>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: 0 }}>Fully configurable criteria for any PI tort campaign — liability, severity, SOL, and more. Build your own from scratch in minutes.</p>
+                  </div>
+                </div>
+              </div>
+            </SectionReveal>
           </div>
         </section>
 
