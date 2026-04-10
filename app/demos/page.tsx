@@ -45,6 +45,13 @@ const videos: VideoEntry[] = [
     desc: 'Track referral sources, manage fee agreements, and give partners their own portal.',
     thumbnail: 'https://cdn.loom.com/sessions/thumbnails/3be05f8d6c214daa80cd9476fc8f547c-1c0153a0cb3c2792-full-play.gif',
   },
+  {
+    type: 'loom',
+    id: '602a8b86526e40d48c47d40f83588e0e',
+    title: 'MDL Portfolio Management',
+    desc: 'Manage mass tort caseloads — portfolio tracking, key court deadlines, PFS field mapping, and lead-level MDL tagging.',
+    thumbnail: 'https://cdn.loom.com/sessions/thumbnails/602a8b86526e40d48c47d40f83588e0e-with-play.gif',
+  },
 ]
 
 function getEmbedUrl(video: VideoEntry) {
