@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function CompareTeaser() {
   return (
-    <div style={{ background: '#fff', padding: '0 40px' }}>
+    <div style={{ background: '#fff', padding: '0 40px', position: 'relative', zIndex: 2 }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', paddingBottom: '40px' }}>
         <div
           style={{
