@@ -112,18 +112,23 @@ export default function VsChatbotsPage() {
       <main>
 
         {/* Hero */}
-        <section style={{ background: 'linear-gradient(135deg, #060d1f, #1e1b4b)', padding: '100px 40px 80px', textAlign: 'center' }}>
-          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
-            <Link href="/compare" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.45)', fontSize: '0.8rem', fontFamily: 'var(--font-display)', fontWeight: 500, marginBottom: '20px', textDecoration: 'none' }}>
-              ← Compare
-            </Link>
-            <div style={{ display: 'block', alignItems: 'center', gap: '8px', background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(196,181,253,0.25)', borderRadius: '6px', padding: '5px 12px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#c4b5fd', marginBottom: '24px' }}>
-              Intake Platform vs. Chatbot
+        <section style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0d1538 50%, #130f2e 100%)', padding: '120px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.1) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', top: '5%', left: '50%', transform: 'translateX(-50%)', width: '700px', height: '420px', borderRadius: '50%', background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.16) 0%, transparent 70%)', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', bottom: '-40px', left: '-60px', width: '300px', height: '300px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 65%)', pointerEvents: 'none' }} />
+          <div style={{ maxWidth: '760px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+            <div style={{ marginBottom: '28px' }}>
+              <Link href="/compare" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.38)', fontSize: '0.78rem', fontFamily: 'var(--font-display)', fontWeight: 500, textDecoration: 'none', marginBottom: '16px' }}>
+                ← All comparisons
+              </Link>
             </div>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', color: '#fff', lineHeight: 1.15, marginBottom: '24px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(124,58,237,0.12)', border: '1px solid rgba(196,181,253,0.25)', borderRadius: '100px', padding: '6px 18px', marginBottom: '24px' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, color: '#c4b5fd', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Intake Platform vs. Chatbot</span>
+            </div>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-0.02em' }}>
               A chatbot starts the conversation. <em>An intake platform finishes it.</em>
             </h1>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '640px', margin: '0 auto' }}>
               Basic chatbots capture information. A legal intake platform like Case Compass scores it, routes it, follows up on it, signs the retainer, and syncs everything to your CRM — before your team opens a single lead.
             </p>
           </div>
