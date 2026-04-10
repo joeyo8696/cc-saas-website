@@ -165,9 +165,6 @@ export default function MassTortsPage() {
           {/* subtle grid pattern */}
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.12) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
           <div style={{ maxWidth: '760px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(52,211,153,0.25)', borderRadius: '6px', padding: '5px 14px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#34d399', marginBottom: '24px' }}>
-              ★ Mass Tort
-            </div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.15, marginBottom: '24px' }}>
               Score every intake. Manage every MDL.<br />
               <em>Before your team opens a single file.</em>
