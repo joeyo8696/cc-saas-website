@@ -431,9 +431,16 @@ export default function HairRelaxerPage() {
         </SectionReveal>
       </section>
 
-      <footer style={{ background: '#060d1f', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-        <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.3)', margin: 0 }}>© {new Date().getFullYear()} Case Compass · <a href="https://www.casecompass.io" style={{ color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>casecompass.io</a></p>
-        <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', margin: 0, maxWidth: '560px', textAlign: 'right' }}>Case Compass is not a law firm and does not provide legal advice. This page is intended for law firms and legal intake operations evaluating intake automation software for hair relaxer litigation.</p>
+      <footer style={{ background: '#060d1f', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '28px 40px', flexWrap: 'wrap', gap: '12px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '12px' }}>
+          <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.3)', margin: 0 }}>© {new Date().getFullYear()} Case Compass · <a href="https://www.casecompass.io" style={{ color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>casecompass.io</a></p>
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+            <Link href="/lp/mdl-intake" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>MDL Intake Software</Link>
+            <Link href="/lp/social-media" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Social Media MDL</Link>
+            <Link href="/solutions/mass-torts" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Mass Torts</Link>
+          </div>
+        </div>
+        <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', margin: 0 }}>Case Compass is not a law firm and does not provide legal advice. This page is intended for law firms and legal intake operations evaluating intake automation software for hair relaxer litigation.</p>
       </footer>
 
     </div>

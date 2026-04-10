@@ -92,6 +92,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
+    // Landing pages — tort-specific & MDL intake
+    {
+      url: `${BASE_URL}/lp/mdl-intake`,
+      lastModified: NOW,
+      changeFrequency: 'monthly',
+      priority: 0.92,
+    },
+    {
+      url: `${BASE_URL}/lp/social-media`,
+      lastModified: NOW,
+      changeFrequency: 'monthly',
+      priority: 0.88,
+    },
+    {
+      url: `${BASE_URL}/lp/hair-relaxer`,
+      lastModified: NOW,
+      changeFrequency: 'monthly',
+      priority: 0.88,
+    },
+    {
+      url: `${BASE_URL}/lp/roblox`,
+      lastModified: NOW,
+      changeFrequency: 'monthly',
+      priority: 0.82,
+    },
     // Content
     {
       url: `${BASE_URL}/changelog`,
