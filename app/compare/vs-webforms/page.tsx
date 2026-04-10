@@ -135,7 +135,7 @@ export default function VsWebformsPage() {
               <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, color: '#67e8f9', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Intake Platform vs. Static Web Forms</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-              Five things your contact form <em>can&apos;t do</em>
+              Five things your contact form<br /><em>can&apos;t do</em>
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '620px', margin: '0 auto' }}>
               Web forms collect information. That&apos;s where their job ends. For plaintiff firms managing intake volume, what happens after the submission is where cases are won or lost.

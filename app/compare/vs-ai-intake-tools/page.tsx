@@ -229,7 +229,7 @@ export default function VsAiIntakeToolsPage() {
               <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, color: '#c4b5fd', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Case Compass vs. AI Intake Tools</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-              Know who&apos;s behind your intake platform. <em>Especially if they also sell leads.</em>
+              Know who&apos;s behind your intake platform.<br /><em>Especially if they also sell leads.</em>
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '680px', margin: '0 auto' }}>
               ngage is owned by Internet Brands — the parent company of Avvo, FindLaw, and Martindale-Hubbell, whose core business is selling leads to law firms. SimplyConvert is strategically partnered under TruLaw with a law firm marketing agency. Case Compass is independent intake software. No lead gen. No agency. No bundled services.

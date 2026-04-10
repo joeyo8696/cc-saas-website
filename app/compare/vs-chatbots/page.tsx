@@ -126,7 +126,7 @@ export default function VsChatbotsPage() {
               <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, color: '#c4b5fd', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Intake Platform vs. Chatbot</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.3rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-              A chatbot starts the conversation. <em>An intake platform finishes it.</em>
+              A chatbot starts the conversation.<br /><em>An intake platform finishes it.</em>
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '640px', margin: '0 auto' }}>
               Basic chatbots capture information. A legal intake platform like Case Compass scores it, routes it, follows up on it, signs the retainer, and syncs everything to your CRM — before your team opens a single lead.
