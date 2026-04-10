@@ -441,28 +441,47 @@ export default function MassTortsPage() {
         </section>
 
         {/* Active torts */}
-        <section style={{ background: '#fff', padding: '96px 40px' }}>          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <section style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0d1538 60%, #0a1628 100%)', padding: '100px 40px', position: 'relative', overflow: 'hidden' }}>
+          {/* background texture */}
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.07) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', top: '20%', right: '-100px', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 65%)', pointerEvents: 'none' }} />
+          <div style={{ maxWidth: '1060px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <SectionReveal>
-              <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '16px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '100px', padding: '5px 16px', marginBottom: '20px' }}>
+                  <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, color: '#a5b4fc', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Waypoint Criteria Sets</span>
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: '#fff', lineHeight: 1.15, marginBottom: '16px' }}>
                   Pre-built criteria for active torts
                 </h2>
-                <p style={{ fontSize: '1rem', color: '#64748b', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
-                  Hit the ground running with Waypoint criteria sets built for today&apos;s most active mass tort campaigns. Customize further, or build your own from scratch.
+                <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
+                  Hit the ground running. Customize further, or build your own criteria from scratch.
                 </p>
               </div>
             </SectionReveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
-              {activeTorts.map(({ name, tag, desc }) => (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+              {[
+                { name: 'Depo-Provera', tag: 'Active', desc: 'Custom scoring for meningioma diagnosis, duration of use, and treatment history.', accent: '#10b981', accentBg: 'rgba(16,185,129,0.08)', border: 'rgba(16,185,129,0.2)', dot: '#10b981' },
+                { name: 'Roundup (Glyphosate)', tag: 'Active', desc: 'Criteria covering NHL diagnosis, occupational exposure, product use timeline, and medical documentation.', accent: '#f59e0b', accentBg: 'rgba(245,158,11,0.07)', border: 'rgba(245,158,11,0.2)', dot: '#f59e0b' },
+                { name: 'Hair Relaxer (MDL 3060)', tag: 'Active', desc: 'Uterine cancer / uterine fibroids screening with NIH study benchmarks, product use history, and defendant brand matching.', accent: '#8b5cf6', accentBg: 'rgba(139,92,246,0.08)', border: 'rgba(139,92,246,0.2)', dot: '#8b5cf6' },
+                { name: 'Social Media Addiction', tag: 'Active', desc: 'Child and adult injury criteria across emotional harm, physical injury, and fentanyl overdose case types.', accent: '#06b6d4', accentBg: 'rgba(6,182,212,0.07)', border: 'rgba(6,182,212,0.2)', dot: '#06b6d4' },
+                { name: 'Personal Injury', tag: 'Always on', desc: 'Fully configurable criteria for any PI tort campaign — liability, severity, SOL, and more.', accent: '#6366f1', accentBg: 'rgba(99,102,241,0.07)', border: 'rgba(99,102,241,0.2)', dot: '#6366f1' },
+              ].map(({ name, tag, desc, accent, accentBg, border }) => (
                 <SectionReveal key={name}>
-                  <div style={{ padding: '28px', border: '1px solid #e2e8f0', borderRadius: '14px', background: '#fafafa' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
-                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>{name}</h3>
-                      <span style={{ background: tag === 'Active' ? '#dcfce7' : '#ede9fe', color: tag === 'Active' ? '#166534' : '#5b21b6', borderRadius: '12px', padding: '2px 10px', fontFamily: 'var(--font-display)', fontSize: '0.7rem', fontWeight: 700 }}>
+                  <div style={{ padding: '28px 28px 28px 32px', borderRadius: '14px', background: accentBg, border: `1px solid ${border}`, borderLeft: `3px solid ${accent}`, position: 'relative' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.02rem', fontWeight: 700, color: '#fff', margin: 0 }}>{name}</h3>
+                      <span style={{
+                        background: tag === 'Active' ? 'rgba(16,185,129,0.15)' : 'rgba(99,102,241,0.15)',
+                        color: tag === 'Active' ? '#34d399' : '#a5b4fc',
+                        border: `1px solid ${tag === 'Active' ? 'rgba(52,211,153,0.3)' : 'rgba(165,180,252,0.3)'}`,
+                        borderRadius: '100px', padding: '2px 10px',
+                        fontFamily: 'var(--font-display)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.04em',
+                      }}>
                         {tag}
                       </span>
                     </div>
-                    <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.65, margin: 0 }}>{desc}</p>
+                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: 0 }}>{desc}</p>
                   </div>
                 </SectionReveal>
               ))}
