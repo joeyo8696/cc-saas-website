@@ -161,42 +161,58 @@ export default function MassTortsPage() {
       <main>
 
         {/* Hero */}
-        <section style={{ background: 'linear-gradient(135deg, #060d1f, #0c1a3a)', padding: '100px 40px 80px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-          {/* subtle grid pattern */}
-          <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.12) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
-          <div style={{ maxWidth: '760px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.15, marginBottom: '24px' }}>
-              Score every intake. Manage every MDL.<br />
-              <em>Before your team opens a single file.</em>
+        <section style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0d1538 50%, #0c1a3a 100%)', padding: '120px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+          {/* dot grid */}
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.1) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
+          {/* central glow orb */}
+          <div style={{ position: 'absolute', top: '10%', left: '50%', transform: 'translateX(-50%)', width: '700px', height: '500px', borderRadius: '50%', background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.18) 0%, rgba(79,70,229,0.08) 40%, transparent 70%)', pointerEvents: 'none', filter: 'blur(2px)' }} />
+          {/* top-left accent */}
+          <div style={{ position: 'absolute', top: '-80px', left: '-80px', width: '360px', height: '360px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 65%)', pointerEvents: 'none' }} />
+          {/* bottom-right accent */}
+          <div style={{ position: 'absolute', bottom: '-60px', right: '-60px', width: '300px', height: '300px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 65%)', pointerEvents: 'none' }} />
+
+          <div style={{ maxWidth: '820px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+            {/* Eyebrow pill */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '28px', background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '100px', padding: '6px 18px 6px 10px' }}>
+              <span style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', borderRadius: '100px', padding: '2px 10px', fontFamily: 'var(--font-display)', fontSize: '0.62rem', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>New</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 500, color: 'rgba(255,255,255,0.65)', letterSpacing: '0.03em' }}>MDL Portfolio Management · Waypoint AI</span>
+            </div>
+
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', color: '#fff', lineHeight: 1.1, marginBottom: '28px', letterSpacing: '-0.02em' }}>
+              Score every intake.<br />
+              Manage every MDL.
             </h1>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '40px' }}>
+            <p style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.15rem, 2vw, 1.45rem)', color: 'rgba(255,255,255,0.55)', fontStyle: 'italic', marginBottom: '24px', lineHeight: 1.4 }}>
+              Before your team opens a single file.
+            </p>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: '44px', maxWidth: '640px', margin: '0 auto 44px' }}>
               Mass tort campaigns generate hundreds of intakes across multiple active litigations. Case Compass captures them all, scores every submission with Waypoint AI, and organizes your entire caseload into MDL Portfolios — so your team always knows what to work and where each case stands.
             </p>
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <DemoButton style={{ padding: '14px 32px', borderRadius: '8px', fontSize: '0.9rem' }}>
+            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '60px' }}>
+              <DemoButton style={{ padding: '15px 36px', borderRadius: '8px', fontSize: '0.92rem' }}>
                 See It in Action →
               </DemoButton>
               <Link
                 href="/solutions/waypoint"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none' }}
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.14)', color: 'rgba(255,255,255,0.8)', padding: '15px 36px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.92rem', fontWeight: 600, textDecoration: 'none', backdropFilter: 'blur(8px)' }}
               >
                 About Waypoint →
               </Link>
             </div>
-          </div>
-        </section>
 
-        {/* Active torts badges */}
-        <section style={{ background: '#0f172a', padding: '28px 40px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 600, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.07em', marginRight: '8px' }}>
-              Active tort criteria:
-            </span>
-            {['Depo-Provera', 'Roundup / Glyphosate', 'Hair Relaxer MDL 3060', 'Social Media Addiction', 'Personal Injury', 'Workers\' Comp'].map(t => (
-              <span key={t} style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.25)', color: '#a5b4fc', borderRadius: '20px', padding: '4px 14px', fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 600 }}>
-                {t}
-              </span>
-            ))}
+            {/* Active tort badges — now inside the hero */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '32px' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '14px' }}>
+                Active Tort Criteria
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
+                {['Depo-Provera', 'Roundup / Glyphosate', 'Hair Relaxer MDL 3060', 'Social Media Addiction', 'Personal Injury', "Workers' Comp"].map(t => (
+                  <span key={t} style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.22)', color: '#a5b4fc', borderRadius: '100px', padding: '5px 14px', fontFamily: 'var(--font-display)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.01em' }}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

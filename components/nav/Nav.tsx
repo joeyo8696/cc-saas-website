@@ -7,7 +7,7 @@ import {
   ChevronDown, Menu, X,
   Waypoints, MessageSquare, PhoneForwarded, LayoutTemplate,
   GitBranch, FileSignature, UserCircle, BarChart3, Users,
-  TrendingUp, Building2, HardHat, Inbox,
+  TrendingUp, Building2, HardHat, Inbox, Scale,
 } from 'lucide-react'
 import DemoButton from '@/components/DemoButton'
 
@@ -35,6 +35,12 @@ const platformLinks = {
     eyebrow: 'Workers\' Compensation',
     name: 'Workers\' Comp',
     description: 'Intake qualification, speed-to-lead outreach, and document automation built for high-volume workers\' comp firms.',
+  },
+  massTorts: {
+    href: '/solutions/mass-torts',
+    eyebrow: 'Mass Tort',
+    name: 'Mass Torts',
+    description: 'Score every intake and manage every MDL with portfolio dashboards, AI lead scoring, and campaign-level analytics.',
   },
   columns: [
     {
@@ -187,6 +193,7 @@ export default function Nav() {
                   {[
                     { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
                     { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: 'Workers\' Compensation', iconBg: 'linear-gradient(135deg, #b45309, #d97706)' },
+                    { href: platformLinks.massTorts.href, icon: Scale, label: 'Mass Torts', sub: 'MDL Portfolio Mgmt', iconBg: 'linear-gradient(135deg, #7c3aed, #4f46e5)' },
                   ].map(({ href, icon: Icon, label, sub, iconBg }) => (
                     <Link key={label} href={href}
                       style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', flex: 1 }}
@@ -300,6 +307,7 @@ export default function Nav() {
                 { href: '/solutions/esign', icon: FileSignature, label: 'E-Signatures', sub: 'Retainer Signing', iconBg: 'linear-gradient(135deg, #059669, #16a34a)' },
                 { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
                 { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: "Workers' Compensation", iconBg: 'linear-gradient(135deg, #b45309, #d97706)' },
+                { href: platformLinks.massTorts.href, icon: Scale, label: 'Mass Torts', sub: 'MDL Portfolio Mgmt', iconBg: 'linear-gradient(135deg, #7c3aed, #4f46e5)' },
               ].map(({ href, icon: Icon, label, sub, iconBg }) => (
                 <Link key={href} href={href} className="mobile-nav-sublink" onClick={closeMobile}
                   style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255,255,255,0.04)' }}
