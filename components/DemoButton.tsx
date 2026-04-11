@@ -1,6 +1,6 @@
 'use client'
 
-const CALENDLY_URL = 'https://calendly.com/casecompass/case-compass-intro'
+const CALENDLY_URL = 'https://scheduler.zoom.us/case-compass/case-compass-demo'
 
 interface DemoButtonProps {
   children?: React.ReactNode

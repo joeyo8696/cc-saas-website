@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'Intake automation for hair relaxer MDL 3060 litigation. Qualify uterine cancer and ovarian cancer claims against L\'Oreal, Revlon, and Strength of Nature — with product usage history, medical record collection, and AI scoring.',
 }
 
-const DEMO_URL = 'https://calendly.com/casecompass/case-compass-intro'
+const DEMO_URL = 'https://scheduler.zoom.us/case-compass/case-compass-demo'
 
 const stats = [
   { value: '11,000+', label: 'Pending cases in MDL 3060 (N.D. Illinois)' },

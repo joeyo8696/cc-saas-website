@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
 }
 
-const DEMO_URL = 'https://calendly.com/casecompass/case-compass-intro'
+const DEMO_URL = 'https://scheduler.zoom.us/case-compass/case-compass-demo'
 
 const stats = [
   { value: '4', label: 'Active MDL toolkits (social media, hair relaxer, Depo-Provera, Roundup)' },

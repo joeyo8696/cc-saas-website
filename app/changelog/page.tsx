@@ -283,7 +283,7 @@ export default function ChangelogPage() {
               Our team is happy to walk you through any of these updates on a call.
             </p>
             <a
-              href="https://calendly.com/casecompass/case-compass-intro"
+              href="https://scheduler.zoom.us/case-compass/case-compass-demo"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#4f46e5', color: '#fff', padding: '13px 28px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none' }}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'Intake automation for social media addiction MDL 3047 litigation. Qualify minors\' claims against Meta, YouTube, TikTok, and Snap — with evidence capture, AI scoring, and automated routing.',
 }
 
-const DEMO_URL = 'https://calendly.com/casecompass/case-compass-intro'
+const DEMO_URL = 'https://scheduler.zoom.us/case-compass/case-compass-demo'
 
 const stats = [
   { value: '10,000+', label: 'Individual cases pending in MDL 3047' },
