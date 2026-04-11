@@ -128,13 +128,13 @@ export default function ComparePage() {
         </section>
 
         {/* Comparison cards */}
-        <section style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0d1538 60%, #0a1628 100%)', padding: '80px 40px 100px', position: 'relative', overflow: 'hidden' }}>
+        <section className="px-section" style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0d1538 60%, #0a1628 100%)', padding: '80px 40px 100px', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.07) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', bottom: '10%', left: '-80px', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(79,70,229,0.1) 0%, transparent 65%)', pointerEvents: 'none' }} />
           <div style={{ maxWidth: '1060px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
             {/* 2x2 grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', marginBottom: '20px' }}>
+            <div className="compare-hub-grid">
               {[
                 { href: '/compare/vs-ai-intake-tools', icon: Bot, accent: '#0d9488', accentBg: 'rgba(13,148,136,0.07)', border: 'rgba(13,148,136,0.2)', title: 'Case Compass vs. AI Intake Tools', subtitle: 'Full Platform vs. SimplyConvert, ngage & Others', desc: 'SimplyConvert, ngage, and similar tools automate the intake conversation. Case Compass adds Waypoint scoring, MDL toolkits, referral management, and post-intake automation.', cta: 'See How Case Compass Compares' },
                 { href: '/compare/vs-chatbots', icon: MessageSquare, accent: '#7c3aed', accentBg: 'rgba(124,58,237,0.07)', border: 'rgba(124,58,237,0.2)', title: 'Case Compass vs. Basic Chatbots', subtitle: 'Legal Intake Platform vs. Chatbot', desc: "Basic chatbots are great at conversation — but they don't score leads, track referral fees, sync to Litify, or close retainers.", cta: 'Compare Chatbot vs. Intake Platform' },

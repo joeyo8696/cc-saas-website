@@ -112,7 +112,7 @@ export default function VsChatbotsPage() {
       <main>
 
         {/* Hero */}
-        <section style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0d1538 50%, #130f2e 100%)', padding: '120px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <section className="compare-hero" style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0d1538 50%, #130f2e 100%)', padding: '120px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(99,102,241,0.1) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', top: '5%', left: '50%', transform: 'translateX(-50%)', width: '700px', height: '420px', borderRadius: '50%', background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.16) 0%, transparent 70%)', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', bottom: '-40px', left: '-60px', width: '300px', height: '300px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 65%)', pointerEvents: 'none' }} />
@@ -135,7 +135,7 @@ export default function VsChatbotsPage() {
         </section>
 
         {/* Comparison table */}
-        <section style={{ background: '#fff', padding: '96px 40px' }}>
+        <section className="px-section" style={{ background: '#fff', padding: '96px 40px' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto' }}>
             <SectionReveal>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, textAlign: 'center', marginBottom: '48px' }}>
@@ -143,6 +143,7 @@ export default function VsChatbotsPage() {
               </h2>
             </SectionReveal>
 
+            <div className="compare-table-wrap">
             {/* Table header */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 140px 140px', gap: '0', marginBottom: '8px' }}>
               <div />
@@ -168,18 +169,19 @@ export default function VsChatbotsPage() {
                 </div>
               </SectionReveal>
             ))}
+            </div> {/* /compare-table-wrap */}
           </div>
         </section>
 
         {/* Key differences */}
-        <section style={{ background: '#f8fafc', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
+        <section className="px-section" style={{ background: '#f8fafc', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
           <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
             <SectionReveal>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, textAlign: 'center', marginBottom: '56px' }}>
                 The three gaps that matter most
               </h2>
             </SectionReveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px' }}>
+            <div className="compare-3col">
               {[
                 {
                   num: '01',
@@ -210,7 +212,7 @@ export default function VsChatbotsPage() {
         </section>
 
         {/* FAQ */}
-        <section style={{ background: '#fff', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
+        <section className="px-section" style={{ background: '#fff', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <SectionReveal>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '48px', textAlign: 'center' }}>
@@ -229,7 +231,7 @@ export default function VsChatbotsPage() {
         </section>
 
         {/* Related comparisons */}
-        <section style={{ background: '#f8fafc', padding: '64px 40px', borderTop: '1px solid #e2e8f0' }}>
+        <section className="px-section" style={{ background: '#f8fafc', padding: '64px 40px', borderTop: '1px solid #e2e8f0' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <SectionReveal>
               <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94a3b8', marginBottom: '20px' }}>

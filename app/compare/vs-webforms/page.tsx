@@ -121,7 +121,7 @@ export default function VsWebformsPage() {
       <main>
 
         {/* Hero */}
-        <section style={{ background: 'linear-gradient(160deg, #060d1f 0%, #071828 50%, #0a1f2e 100%)', padding: '120px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <section className="compare-hero" style={{ background: 'linear-gradient(160deg, #060d1f 0%, #071828 50%, #0a1f2e 100%)', padding: '120px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(6,182,212,0.08) 1px, transparent 0)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', top: '5%', left: '50%', transform: 'translateX(-50%)', width: '700px', height: '420px', borderRadius: '50%', background: 'radial-gradient(ellipse at center, rgba(8,145,178,0.15) 0%, transparent 70%)', pointerEvents: 'none' }} />
           <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '320px', height: '320px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(6,182,212,0.08) 0%, transparent 65%)', pointerEvents: 'none' }} />
@@ -144,7 +144,7 @@ export default function VsWebformsPage() {
         </section>
 
         {/* Five things */}
-        <section style={{ background: '#f8fafc', padding: '96px 40px' }}>
+        <section className="px-section" style={{ background: '#f8fafc', padding: '96px 40px' }}>
           <div style={{ maxWidth: '860px', margin: '0 auto' }}>
             <SectionReveal>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, textAlign: 'center', marginBottom: '64px' }}>
@@ -180,7 +180,7 @@ export default function VsWebformsPage() {
         </section>
 
         {/* FAQ */}
-        <section style={{ background: '#fff', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
+        <section className="px-section" style={{ background: '#fff', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <SectionReveal>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '48px', textAlign: 'center' }}>
@@ -199,7 +199,7 @@ export default function VsWebformsPage() {
         </section>
 
         {/* Related comparisons */}
-        <section style={{ background: '#f8fafc', padding: '64px 40px', borderTop: '1px solid #e2e8f0' }}>
+        <section className="px-section" style={{ background: '#f8fafc', padding: '64px 40px', borderTop: '1px solid #e2e8f0' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <SectionReveal>
               <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94a3b8', marginBottom: '20px' }}>
