@@ -19,8 +19,6 @@ import RobloxCallout from '@/components/home/RobloxCallout'
 import WorkersCompCallout from '@/components/home/WorkersCompCallout'
 import CtaSection from '@/components/home/CtaSection'
 import IntegrationsTicker from '@/components/home/IntegrationsTicker'
-import CompareTeaser from '@/components/home/CompareTeaser'
-
 export default function HomePage() {
   return (
     <>
@@ -39,7 +37,6 @@ export default function HomePage() {
         <ReferralsSection />
         <Stats />
         <HowItWorks />
-        <CompareTeaser />
         <IntegrationsTicker />
         <Testimonials />
         <SocialMediaCallout />

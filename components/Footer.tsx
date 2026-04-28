@@ -19,7 +19,6 @@ const footerLinks = [
       { label: 'About', href: '/about' },
       { label: 'Blog', href: 'https://blog.casecompass.io' },
       { label: 'Integrations', href: '/integrations' },
-      { label: 'Compare', href: '/compare' },
       { label: 'Security', href: '/security' },
       { label: 'Changelog', href: '/changelog' },
     ],

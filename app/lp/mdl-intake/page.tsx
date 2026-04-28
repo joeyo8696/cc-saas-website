@@ -289,7 +289,6 @@ export default function MdlIntakePage() {
           <Link href="/solutions/mass-torts" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Mass Torts</Link>
           <Link href="/lp/social-media" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Social Media MDL</Link>
           <Link href="/lp/hair-relaxer" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Hair Relaxer MDL</Link>
-          <Link href="/compare/vs-ai-intake-tools" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Compare</Link>
           <Link href="/privacy" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Privacy</Link>
         </div>
       </footer>
