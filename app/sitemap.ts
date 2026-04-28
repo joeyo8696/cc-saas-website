@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 const BASE_URL = 'https://www.casecompass.io'
-const NOW = new Date('2026-04-04')
+const NOW = new Date('2026-04-28')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -67,31 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
-    // Compare hub and sub-pages
-    {
-      url: `${BASE_URL}/compare`,
-      lastModified: NOW,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${BASE_URL}/compare/vs-chatbots`,
-      lastModified: NOW,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/compare/vs-webforms`,
-      lastModified: NOW,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/compare/vs-ai-intake-tools`,
-      lastModified: NOW,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
     // Landing pages — tort-specific & MDL intake
     {
       url: `${BASE_URL}/lp/mdl-intake`,
@@ -116,6 +91,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: NOW,
       changeFrequency: 'monthly',
       priority: 0.82,
+    },
+    // Blog
+    {
+      url: 'https://blog.casecompass.io/posts/legal-intake-software-guide.html',
+      lastModified: NOW,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
+      url: 'https://blog.casecompass.io/posts/5-signs-your-law-firm-has-outgrown-its-contact-form.html',
+      lastModified: NOW,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
     },
     // Content
     {
