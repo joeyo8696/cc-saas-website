@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import SectionReveal from '@/components/ui/SectionReveal'
 import ChangelogSidebar from '@/components/changelog/ChangelogSidebar'
+import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
   title: 'Changelog | Case Compass',
@@ -282,14 +283,9 @@ export default function ChangelogPage() {
             <p style={{ fontSize: '1rem', color: '#64748b', marginBottom: '32px', maxWidth: '480px', margin: '0 auto 32px' }}>
               Our team is happy to walk you through any of these updates on a call.
             </p>
-            <a
-              href="https://scheduler.zoom.us/case-compass/case-compass-demo"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#4f46e5', color: '#fff', padding: '13px 28px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none' }}
-            >
+            <DemoButton style={{ padding: '13px 28px', fontSize: '0.9rem' }}>
               Schedule a Demo
-            </a>
+            </DemoButton>
           </SectionReveal>
         </section>
 

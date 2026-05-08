@@ -11,8 +11,6 @@ export const metadata: Metadata = {
     'Intake automation for hair relaxer MDL 3060 litigation. Qualify uterine cancer and ovarian cancer claims against L\'Oreal, Revlon, and Strength of Nature — with product usage history, medical record collection, and AI scoring.',
 }
 
-const DEMO_URL = 'https://scheduler.zoom.us/case-compass/case-compass-demo'
-
 const stats = [
   { value: '11,000+', label: 'Pending cases in MDL 3060 (N.D. Illinois)' },
   { value: '2.55×', label: 'Higher uterine cancer risk — NIH Sister Study' },
@@ -137,12 +135,12 @@ export default function HairRelaxerPage() {
             Case Compass qualifies uterine cancer and ovarian cancer claims against L&apos;Oreal, Revlon, Strength of Nature, and Dabur — capturing product usage history, medical documentation, and provider information automatically, then scoring and routing every lead.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #b45309, #f59e0b)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 8px 28px rgba(245,158,11,0.4)', textDecoration: 'none' }}>
+            <DemoButton style={{ background: 'linear-gradient(135deg, #b45309, #f59e0b)', boxShadow: '0 8px 28px rgba(245,158,11,0.4)' }}>
               See the Intake Flow →
-            </Link>
-            <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none' }}>
+            </DemoButton>
+            <DemoButton style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)' }}>
               Talk to a Specialist
-            </Link>
+            </DemoButton>
           </div>
           <p style={{ marginTop: '20px', fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)' }}>CRM and case management agnostic · Works with your existing stack</p>
         </div>
@@ -425,9 +423,9 @@ export default function HairRelaxerPage() {
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', marginBottom: '44px', maxWidth: '540px', margin: '0 auto 44px' }}>
             We&apos;ll configure your intake flow and Waypoint scoring criteria for MDL 3060 — in days, not weeks.
           </p>
-          <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #b45309, #f59e0b)', color: '#fff', padding: '16px 40px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, boxShadow: '0 8px 28px rgba(245,158,11,0.4)', textDecoration: 'none' }}>
+          <DemoButton style={{ background: 'linear-gradient(135deg, #b45309, #f59e0b)', padding: '16px 40px', fontSize: '1rem', boxShadow: '0 8px 28px rgba(245,158,11,0.4)' }}>
             Request a Demo →
-          </Link>
+          </DemoButton>
         </SectionReveal>
       </section>
 

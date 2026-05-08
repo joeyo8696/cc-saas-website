@@ -11,8 +11,6 @@ export const metadata: Metadata = {
     'Intake automation for social media addiction MDL 3047 litigation. Qualify minors\' claims against Meta, YouTube, TikTok, and Snap — with evidence capture, AI scoring, and automated routing.',
 }
 
-const DEMO_URL = 'https://scheduler.zoom.us/case-compass/case-compass-demo'
-
 const stats = [
   { value: '10,000+', label: 'Individual cases pending in MDL 3047' },
   { value: '$3–6M', label: 'First bellwether verdict, March 2026' },
@@ -105,12 +103,12 @@ export default function SocialMediaPage() {
             Case Compass qualifies minors&apos; claims against Meta, YouTube, TikTok, and Snap — capturing platform usage, harm documentation, and medical records automatically, then scoring and routing every lead.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #be185d, #ec4899)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 8px 28px rgba(236,72,153,0.4)', textDecoration: 'none' }}>
+            <DemoButton style={{ background: 'linear-gradient(135deg, #be185d, #ec4899)', boxShadow: '0 8px 28px rgba(236,72,153,0.4)' }}>
               See the Intake Flow →
-            </Link>
-            <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none' }}>
+            </DemoButton>
+            <DemoButton style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)' }}>
               Talk to a Specialist
-            </Link>
+            </DemoButton>
           </div>
           <p style={{ marginTop: '20px', fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)' }}>CRM and case management agnostic · Works with your existing stack</p>
         </div>
@@ -363,9 +361,9 @@ export default function SocialMediaPage() {
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', marginBottom: '44px', maxWidth: '540px', margin: '0 auto 44px' }}>
             We&apos;ll configure your intake flow and Waypoint scoring criteria for the platforms you&apos;re targeting — in days, not weeks.
           </p>
-          <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #be185d, #ec4899)', color: '#fff', padding: '16px 40px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, boxShadow: '0 8px 28px rgba(236,72,153,0.4)', textDecoration: 'none' }}>
+          <DemoButton style={{ background: 'linear-gradient(135deg, #be185d, #ec4899)', padding: '16px 40px', fontSize: '1rem', boxShadow: '0 8px 28px rgba(236,72,153,0.4)' }}>
             Request a Demo →
-          </Link>
+          </DemoButton>
         </SectionReveal>
       </section>
 

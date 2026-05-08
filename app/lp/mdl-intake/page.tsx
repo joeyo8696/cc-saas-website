@@ -34,8 +34,6 @@ export const metadata: Metadata = {
   },
 }
 
-const DEMO_URL = 'https://scheduler.zoom.us/case-compass/case-compass-demo'
-
 const stats = [
   { value: '4', label: 'Active MDL toolkits (social media, hair relaxer, Depo-Provera, Roundup)' },
   { value: '85+', label: 'PFS fields mapped for MDL 3047 from official court document' },
@@ -159,9 +157,9 @@ export default function MdlIntakePage() {
             Case Compass captures, scores, and organizes mass tort claimants — by MDL, by tort, by lead quality. Built-in PFS field mapping. Deadline tracking. Court-ready exports. Everything intake to be ready for litigation.
           </p>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, boxShadow: '0 8px 28px rgba(79,70,229,0.45)', textDecoration: 'none' }}>
+            <DemoButton style={{ boxShadow: '0 8px 28px rgba(79,70,229,0.45)' }}>
               See MDL Portfolios in Action →
-            </Link>
+            </DemoButton>
             <Link href="/solutions/mass-torts" style={{ display: 'inline-block', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.18)', color: '#fff', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, textDecoration: 'none' }}>
               Mass Torts Overview
             </Link>
@@ -275,9 +273,9 @@ export default function MdlIntakePage() {
           <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, marginBottom: '40px' }}>
             We'll show you the MDL portfolio setup, PFS mapping, and Waypoint scoring live — configured for your active torts.
           </p>
-          <Link href={DEMO_URL} target="_blank" rel="noopener" style={{ display: 'inline-block', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: '#fff', padding: '16px 40px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, boxShadow: '0 12px 32px rgba(99,102,241,0.45)', textDecoration: 'none' }}>
+          <DemoButton style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', padding: '16px 40px', fontSize: '1rem', boxShadow: '0 12px 32px rgba(99,102,241,0.45)' }}>
             Book a Demo →
-          </Link>
+          </DemoButton>
           <p style={{ marginTop: '16px', fontSize: '0.78rem', color: 'rgba(255,255,255,0.25)' }}>No commitment · 30 minutes · We come prepared with your tort mix</p>
         </div>
       </section>
