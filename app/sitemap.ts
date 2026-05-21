@@ -56,9 +56,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/solutions/dwellex`,
-      lastModified: NOW,
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      lastModified: new Date('2026-05-21'),
+      changeFrequency: 'weekly',
+      priority: 0.95,
     },
     // Integrations hub
     {

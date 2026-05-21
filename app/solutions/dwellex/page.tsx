@@ -2,14 +2,109 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef } from 'react'
-import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, Landmark } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown } from 'lucide-react'
+
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 import GalaxyCanvas from '@/components/home/GalaxyCanvas'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Dwellex',
+      applicationCategory: 'LegalSoftware',
+      operatingSystem: 'Web',
+      url: 'https://www.casecompass.io/solutions/dwellex',
+      description:
+        'Dwellex is eviction case management software built for landlord-tenant law firms. It automates intake, tracks full case timelines from filing to lockout, generates court documents, and integrates with Clio, Practice Panther, and Rent Manager.',
+      offers: {
+        '@type': 'Offer',
+        category: 'Legal Practice Management Software',
+      },
+      featureList: [
+        'Landlord intake portal with e-signature',
+        'Automated eviction case timeline tracking',
+        'Dual-column client and attorney task management',
+        'Auto-generated court documents — summons, complaints, sheriff info sheets',
+        'Clio integration with bidirectional matter sync',
+        'Court date tracking and marshal coordination',
+        'Lockout scheduling and notifications',
+        'SMS and email automated reminders',
+        'Case templates for Non-Payment, For-Cause, and custom case types',
+        'Drag-and-drop intake form builder',
+        'Practice Panther and Rent Manager integrations',
+      ],
+      audience: {
+        '@type': 'Audience',
+        audienceType: 'Landlord-tenant law firms, eviction attorneys, property managers',
+      },
+      provider: {
+        '@type': 'Organization',
+        name: 'Case Compass',
+        url: 'https://www.casecompass.io',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is Dwellex?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex is eviction case management software built specifically for landlord-tenant law firms. It automates the full eviction workflow — from landlord intake to lockout scheduling — including document generation, court date tracking, Clio integration, and automated client notifications.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What eviction software works with Clio?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex integrates directly with Clio via OAuth 2.0. Every new intake automatically creates a matter in Clio, and documents, case stages, and status updates sync bidirectionally in real time. Practice Panther and Rent Manager integrations are also available.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the best landlord-tenant software for law firms?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex by Case Compass is purpose-built landlord-tenant software for law firms handling high-volume eviction caseloads. It combines intake automation, case timeline tracking, court document generation, and integrations with Clio and Practice Panther — replacing spreadsheets, manual follow-ups, and disconnected tools.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does Dwellex automate eviction case management?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex automates eviction case management through: (1) online landlord intake portals with document upload and e-signature, (2) automatic case creation with step-by-step timeline templates for Non-Payment, For-Cause, and custom case types, (3) auto-generated court documents populated from case data, (4) SMS and email notifications at every stage, and (5) real-time Clio sync for matter creation and document uploads.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can Dwellex generate eviction court documents automatically?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Dwellex automatically generates eviction court documents including summons, complaints, motions to show cause, orders to show cause, sheriff tenant info sheets, and fair debt letters. Documents are populated from case and intake data — no manual editing required.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is Dwellex suitable for high-volume eviction practices?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Dwellex is designed for law firms handling dozens to hundreds of eviction cases per month. Automation of intake, document generation, case tracking, and court coordination allows firms to scale their eviction practice without adding headcount.',
+          },
+        },
+      ],
+    },
+  ],
+}
 
 const features = [
   { 
@@ -71,6 +166,113 @@ const audience = [
   { icon: Users, label: 'Landlords', desc: 'Submit intake, track status, and receive updates automatically' },
 ]
 
+const faqs = [
+  {
+    q: 'What is Dwellex?',
+    a: 'Dwellex is eviction case management software built specifically for landlord-tenant law firms. It automates the full eviction workflow — from landlord intake to lockout scheduling — including document generation, court date tracking, Clio integration, and automated client notifications.',
+  },
+  {
+    q: 'What eviction software integrates with Clio?',
+    a: 'Dwellex integrates directly with Clio via OAuth 2.0. Every new intake automatically creates a matter in Clio, and documents, case stages, and status updates sync bidirectionally in real time. Practice Panther and Rent Manager integrations are also available.',
+  },
+  {
+    q: 'What is the best landlord-tenant software for law firms?',
+    a: 'Dwellex is purpose-built landlord-tenant software for firms handling high-volume eviction caseloads. It combines intake automation, case timeline tracking, court document generation, and Clio/Practice Panther integrations — replacing spreadsheets, manual follow-ups, and disconnected tools.',
+  },
+  {
+    q: 'Can Dwellex automatically generate eviction court documents?',
+    a: 'Yes. Dwellex auto-generates summons, complaints, motions to show cause, orders to show cause, sheriff tenant info sheets, and fair debt letters. Documents are populated directly from case and intake data — no manual editing required.',
+  },
+  {
+    q: 'How does Dwellex automate eviction case management?',
+    a: 'Dwellex automates eviction cases through: (1) online landlord intake portals with document upload and e-signature, (2) automatic case creation with step-by-step timeline templates for Non-Payment, For-Cause, and custom case types, (3) auto-generated court documents, (4) SMS and email notifications at every stage, and (5) real-time Clio sync for matter creation and document uploads.',
+  },
+  {
+    q: 'Is Dwellex suitable for high-volume eviction practices?',
+    a: 'Yes. Dwellex is designed for firms handling dozens to hundreds of eviction cases per month. Automation of intake, document generation, case tracking, and court coordination lets practices scale without adding headcount.',
+  },
+]
+
+function FaqSection() {
+  const [open, setOpen] = useState<number | null>(null)
+
+  return (
+    <section style={{ background: '#fff', padding: '100px 40px', borderTop: '1px solid #f1f5f9' }}>
+      <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <SectionReveal>
+          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <div style={{
+              display: 'inline-block',
+              background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))',
+              border: '1px solid rgba(99,102,241,0.2)',
+              borderRadius: '8px',
+              padding: '6px 16px',
+              fontSize: '0.75rem',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase' as const,
+              color: '#6366f1',
+              marginBottom: '20px',
+            }}>
+              FAQ
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, color: '#0f172a', marginBottom: '12px' }}>
+              Common questions about Dwellex
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.7 }}>
+              Everything landlord-tenant law firms need to know about eviction case management software.
+            </p>
+          </div>
+        </SectionReveal>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+          {faqs.map(({ q, a }, i) => (
+            <SectionReveal key={i}>
+              <div style={{ borderBottom: '1px solid #f1f5f9' }}>
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '24px 0',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    gap: '24px',
+                    textAlign: 'left' as const,
+                  }}
+                >
+                  <span style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', lineHeight: 1.4 }}>
+                    {q}
+                  </span>
+                  <span style={{
+                    flexShrink: 0,
+                    color: '#6366f1',
+                    transition: 'transform 0.25s ease',
+                    transform: open === i ? 'rotate(180deg)' : 'rotate(0deg)',
+                    display: 'flex',
+                  }}>
+                    <ChevronDown size={20} />
+                  </span>
+                </button>
+                {open === i && (
+                  <div style={{ paddingBottom: '24px' }}>
+                    <p style={{ fontSize: '0.97rem', color: '#475569', lineHeight: 1.85, margin: 0 }}>
+                      {a}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </SectionReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export default function DwellexPage() {
   const lineRef = useRef<HTMLDivElement>(null)
   const stepsRef = useRef<(HTMLDivElement | null)[]>([])
@@ -113,6 +315,10 @@ export default function DwellexPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <GalaxyCanvas />
       <AnnouncementBanner />
       <Nav />
@@ -305,8 +511,8 @@ export default function DwellexPage() {
         {/* Product Screenshots */}
         {[
           {
-            image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-timeline.png',
-            alt: 'Dwellex case timeline tracker',
+            image: '/images/dwellex-case-timeline.png',
+            alt: 'Dwellex case timeline tracker showing step-by-step progress',
             eyebrow: 'Case Timeline',
             title: 'Every action item, tracked automatically',
             body: 'A dual-column view separates client tasks from attorney tasks — so nothing falls through the cracks. Cases progress stage by stage, with automated notifications at every step.',
@@ -315,22 +521,52 @@ export default function DwellexPage() {
             glow: 'rgba(99,102,241,0.08)',
           },
           {
-            image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-courts.png',
-            alt: 'Dwellex court management',
-            eyebrow: 'Court Management',
-            title: 'Manage every court across your jurisdiction',
-            body: 'Add and organize courts by county, address, and type. Associate properties directly to courts so filings always go to the right venue — no manual lookups.',
+            image: '/images/dwellex-form-builder.png',
+            alt: 'Dwellex intake form builder with drag-and-drop fields',
+            eyebrow: 'Form Builder',
+            title: 'Build intake forms without writing a line of code',
+            body: 'Drag-and-drop fields, pre-built section blocks, and a live preview — create custom intake forms for every case type. Publish with one click and share a link directly with clients.',
             accent: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
             bg: '#f8fafc',
             glow: 'rgba(14,165,233,0.07)',
           },
           {
-            image: 'https://pub-1df858d7ebe84a6ab2a2a110462ab2b3.r2.dev/assets/dwellex-clio-sync.png',
-            alt: 'Dwellex Clio sync logs',
+            image: '/images/dwellex-clio-integration.png',
+            alt: 'Dwellex Clio integration showing connected status and sync options',
             eyebrow: 'Clio Integration',
             title: 'Real-time sync with zero manual entry',
-            body: 'Every intake automatically creates a matter in Clio. Sync logs give you full visibility into every matter creation, update, and status change — with timestamps and duration.',
+            body: 'Connect your Clio account via OAuth and let Dwellex handle the rest. Full sync, document uploads, and per-intake sync — with live status, auto-sync toggle, and last-run timestamps.',
             accent: 'linear-gradient(135deg, #10b981, #0ea5e9)',
+            bg: '#f8fffb',
+            glow: 'rgba(16,185,129,0.07)',
+          },
+          {
+            image: '/images/dwellex-cases-list.png',
+            alt: 'Dwellex cases list showing all open eviction cases with court dates',
+            eyebrow: 'Case Management',
+            title: 'Every case, at a glance',
+            body: 'A clean list view of all open and closed cases — searchable, sortable by court date, and filterable by status. See property, court date, and labels in one place without opening a single file.',
+            accent: 'linear-gradient(135deg, #f59e0b, #6366f1)',
+            bg: '#fafbff',
+            glow: 'rgba(99,102,241,0.08)',
+          },
+          {
+            image: '/images/dwellex-case-templates.png',
+            alt: 'Dwellex case templates showing workflow step templates and generated documents',
+            eyebrow: 'Case Templates',
+            title: 'Standardize your workflows once, run them every time',
+            body: 'Define multi-step case workflows for Non-Payment, For-Cause, and custom case types. Attach auto-generated document templates — summons, motions, sheriff sheets — that populate from case data automatically.',
+            accent: 'linear-gradient(135deg, #8b5cf6, #0ea5e9)',
+            bg: '#f8fafc',
+            glow: 'rgba(139,92,246,0.07)',
+          },
+          {
+            image: '/images/dwellex-form-blocks.png',
+            alt: 'Dwellex form blocks showing pre-built intake sections like tenant info and ledger table',
+            eyebrow: 'Smart Form Blocks',
+            title: 'Pre-built sections for complex intake data',
+            body: 'Toggle on blocks for tenant information, ledger tables, notice type checkboxes, and file uploads — each fully configurable. No custom coding needed to collect multi-tenant leases, month-by-month charge breakdowns, or signed documents.',
+            accent: 'linear-gradient(135deg, #10b981, #8b5cf6)',
             bg: '#f8fffb',
             glow: 'rgba(16,185,129,0.07)',
           },
@@ -562,6 +798,9 @@ export default function DwellexPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ — AIO + People Also Ask */}
+        <FaqSection />
 
         {/* Target Audience */}
         <section style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)', padding: '120px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
