@@ -855,7 +855,6 @@ export default function DwellexPage() {
                 <tbody>
                   {[
                     ['Purpose-built for landlord-tenant law', true, true, false],
-                    ['Online client suit list submission', true, true, false],
                     ['E-signature in intake', true, false, false],
                     ['Conditional field logic in forms', true, false, false],
                     ['Drag-and-drop form builder', true, false, false],
