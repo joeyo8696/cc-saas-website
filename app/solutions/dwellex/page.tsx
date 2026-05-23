@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown } from 'lucide-react'
+import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown, Landmark, Monitor, BarChart2 } from 'lucide-react'
 
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
@@ -31,17 +31,22 @@ const jsonLd = {
         category: 'Legal Practice Management Software',
       },
       featureList: [
-        'Landlord intake portal with e-signature',
-        'Automated eviction case timeline tracking',
+        'Landlord intake portal with e-signature and conditional field logic',
+        'Staff intake review and approval workflow',
+        'Automated eviction case timeline tracking with step assignment',
         'Dual-column client and attorney task management',
-        'Auto-generated court documents — summons, complaints, sheriff info sheets',
+        'Trial Lists — county-grouped AM/PM court schedules with Word export',
+        'Auto-generated court documents — summons, complaints, sheriff info sheets, notices',
+        'Drag-and-drop form builder with conditional logic',
+        'Client portal with case timeline visibility and document upload',
+        'Case templates with ordered action steps and due date rules',
         'Clio integration with bidirectional matter sync',
+        'Practice Panther and Rent Manager integrations',
         'Court date tracking and marshal coordination',
         'Lockout scheduling and notifications',
         'SMS and email automated reminders',
-        'Case templates for Non-Payment, For-Cause, and custom case types',
-        'Drag-and-drop intake form builder',
-        'Practice Panther and Rent Manager integrations',
+        'Role-based access control (admin, staff, client)',
+        'Analytics dashboard and per-case ledger tracking',
       ],
       audience: {
         '@type': 'Audience',
@@ -129,26 +134,32 @@ const features = [
   { 
     icon: FileText, 
     title: 'Landlord Intake Portal', 
-    desc: 'Landlords submit cases online, upload lease agreements, rent ledgers, and notices. E-signature support built in — no manual data entry required.',
+    desc: 'Branded public intake forms with conditional logic, document upload, and e-signature. Staff review and approval workflow before any case is created.',
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
   },
   { 
     icon: CheckCircle, 
     title: 'Case Timeline Tracker', 
-    desc: 'Dual-column action item tracker shows client tasks and attorney tasks side-by-side. Cases progress automatically as stages complete.',
+    desc: 'Step-by-step action item tracker with client and attorney task columns. Automated step assignment, due dates, and case notes — all in one view.',
     gradient: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
   },
   { 
-    icon: Bell, 
-    title: 'Automated Notifications', 
-    desc: 'Email + SMS alerts at every stage: court dates, lockout scheduling, adjournments, and case updates. Zero manual follow-ups needed.',
-    gradient: 'linear-gradient(135deg, #10b981, #0ea5e9)',
+    icon: Landmark, 
+    title: 'Trial Lists & Court Prep', 
+    desc: 'County-grouped AM/PM court schedules for all upcoming hearings. Filter by date and county, then download a formatted Word doc with one click.',
+    gradient: 'linear-gradient(135deg, #0f172a, #475569)',
   },
   { 
     icon: FileText, 
     title: 'Document Automation', 
-    desc: 'Auto-generates Sheriff Info Sheets, summons, complaints, and court filings. Templates customized to your jurisdiction and practice.',
+    desc: 'One-click generation of summons, notices, complaints, and court filings. Documents are built from case data — no copy-paste, no manual edits.',
     gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+  },
+  { 
+    icon: Monitor, 
+    title: 'Client Portal', 
+    desc: 'Clients see their own case timeline, document status, and can upload requested files directly — no phone calls, no email back-and-forth.',
+    gradient: 'linear-gradient(135deg, #10b981, #0ea5e9)',
   },
   { 
     icon: FolderSync, 
@@ -157,10 +168,22 @@ const features = [
     gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
   },
   { 
+    icon: Bell, 
+    title: 'Automated Notifications', 
+    desc: 'Email + SMS alerts at every stage: court dates, lockout scheduling, adjournments, and case updates. Zero manual follow-ups needed.',
+    gradient: 'linear-gradient(135deg, #10b981, #6366f1)',
+  },
+  { 
+    icon: BarChart2, 
+    title: 'Staff & Analytics', 
+    desc: 'Role-based access for admins, staff, and clients. Analytics dashboard with case volume and activity metrics. Per-case ledger with installment payment tracking.',
+    gradient: 'linear-gradient(135deg, #f59e0b, #6366f1)',
+  },
+  { 
     icon: Calendar, 
     title: 'Marshal & Court Coordination', 
     desc: 'Built-in court date tracking, marshal assignment, and lockout scheduling. Manage the full eviction timeline from filing to possession.',
-    gradient: 'linear-gradient(135deg, #0f172a, #475569)',
+    gradient: 'linear-gradient(135deg, #475569, #0f172a)',
   },
 ]
 
@@ -597,6 +620,16 @@ export default function DwellexPage() {
             glow: 'rgba(16,185,129,0.07)',
           },
           {
+            image: '/images/dwellex-trial-lists.png',
+            alt: 'Dwellex Trial Lists — county-grouped AM/PM court schedules with docket numbers and case financials',
+            eyebrow: 'Court Preparation',
+            title: 'Every hearing. Every county. Ready before court.',
+            body: 'Trial Lists group all upcoming cases by county and AM/PM session — docket number, case name, balance, base rent, and late fees all in one view. Filter by date and county, then download a formatted Word doc for court in one click.',
+            accent: 'linear-gradient(135deg, #0f172a, #6366f1)',
+            bg: '#f8fafc',
+            glow: 'rgba(99,102,241,0.07)',
+          },
+          {
             image: '/images/dwellex-cases-list.png',
             alt: 'Dwellex cases list showing all open eviction cases with court dates',
             eyebrow: 'Case Management',
@@ -824,15 +857,18 @@ export default function DwellexPage() {
                     ['Purpose-built for landlord-tenant law', true, false, false],
                     ['Online landlord intake portal', true, false, false],
                     ['E-signature in intake', true, false, false],
+                    ['Conditional field logic in forms', true, false, false],
                     ['Automated case timeline with templates', true, false, false],
                     ['Auto-generated court documents', true, false, false],
+                    ['Trial Lists (county-grouped, Word export)', true, false, false],
+                    ['Client portal with document upload', true, false, false],
                     ['Drag-and-drop form builder', true, false, false],
                     ['SMS + email automated notifications', true, false, 'Add-on'],
                     ['Clio bidirectional sync', true, false, 'Native'],
                     ['Practice Panther integration', true, false, false],
                     ['Rent Manager integration', true, false, false],
                     ['Marshal & lockout coordination', true, false, false],
-                    ['Court date tracking', true, false, 'Manual'],
+                    ['Role-based access (staff, admin, client)', true, false, 'Partial'],
                     ['Per-case pricing (no per-seat lock-in)', true, false, false],
                   ].map(([feat, dwellex, ea, generic], i) => {
                     const cell = (val: boolean | string) => {
@@ -888,12 +924,16 @@ export default function DwellexPage() {
                 <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '14px', marginBottom: '36px' }}>
                   {[
                     'Unlimited users — no per-seat fees',
-                    'Full intake portal + form builder',
+                    'Full intake portal + form builder with conditional logic',
                     'Automated case timelines & templates',
+                    'Trial Lists with Word doc export',
                     'Court document generation',
+                    'Client portal with document upload',
                     'Clio, Practice Panther & Rent Manager sync',
                     'SMS + email notifications',
                     'Marshal & lockout coordination',
+                    'Role-based access (admin, staff, client)',
+                    'Analytics dashboard + per-case ledger',
                     'Ongoing support included',
                   ].map(item => (
                     <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
