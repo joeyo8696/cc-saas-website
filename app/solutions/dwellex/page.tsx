@@ -25,6 +25,9 @@ const jsonLd = {
         'Dwellex is eviction case management software built for landlord-tenant law firms. It automates intake, tracks full case timelines from filing to lockout, generates court documents, and integrates with Clio, Practice Panther, and Rent Manager.',
       offers: {
         '@type': 'Offer',
+        price: '399',
+        priceCurrency: 'USD',
+        description: '$399/month platform fee plus $8 per case created. No per-seat fees.',
         category: 'Legal Practice Management Software',
       },
       featureList: [
@@ -99,6 +102,22 @@ const jsonLd = {
           acceptedAnswer: {
             '@type': 'Answer',
             text: 'Yes. Dwellex is designed for law firms handling dozens to hundreds of eviction cases per month. Automation of intake, document generation, case tracking, and court coordination allows firms to scale their eviction practice without adding headcount.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does eviction case management software cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex is priced at $399/month plus $8 per case created with no per-seat fees. Implementation, training, and custom integrations are scoped per project. Volume pricing is available for firms running 100+ cases/month.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What states does Dwellex support?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex supports eviction workflows across 15+ states. Court document templates, notice types, and case workflows are configured per jurisdiction during implementation.',
           },
         },
       ],
@@ -190,6 +209,22 @@ const faqs = [
   {
     q: 'Is Dwellex suitable for high-volume eviction practices?',
     a: 'Yes. Dwellex is designed for firms handling dozens to hundreds of eviction cases per month. Automation of intake, document generation, case tracking, and court coordination lets practices scale without adding headcount.',
+  },
+  {
+    q: 'What states does Dwellex support?',
+    a: 'Dwellex supports eviction workflows across 15+ states with jurisdiction-configurable court document templates and notice type settings. Case templates, notice periods, and court document formats are customized to your jurisdiction during implementation.',
+  },
+  {
+    q: 'Does Dwellex work for both residential and commercial evictions?',
+    a: 'Yes. Dwellex supports both residential and commercial landlord-tenant cases. Case templates, intake forms, and document sets can be configured separately for each case type.',
+  },
+  {
+    q: 'Can multiple staff members work on cases simultaneously?',
+    a: 'Yes. Dwellex is a multi-user platform with no per-seat fees. Your entire team — attorneys, paralegals, intake staff — can work on cases simultaneously. Role-based task assignment separates attorney tasks from client tasks in the case timeline view.',
+  },
+  {
+    q: 'How much does Dwellex cost?',
+    a: 'Dwellex is priced at $399/month plus $8 per case created — no per-seat fees. Implementation and training are scoped and priced per project depending on your firm\'s existing systems, caseload, and jurisdiction setup. Volume pricing is available for firms running 100+ cases/month.',
   },
 ]
 
@@ -367,6 +402,27 @@ export default function DwellexPage() {
             <DemoButton style={{ padding: '16px 40px', fontSize: '1rem' }}>
               Request a Demo →
             </DemoButton>
+          </div>
+        </section>
+
+        {/* Stats Bar */}
+        <section style={{ background: '#fff', borderTop: '1px solid #f1f5f9', borderBottom: '1px solid #f1f5f9', padding: '0 40px' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
+            {[
+              { value: '500+', label: 'Cases managed monthly' },
+              { value: '2.4 hrs', label: 'Saved per case' },
+              { value: '98%', label: 'Intake completion rate' },
+              { value: '6 steps', label: 'Intake to lockout, automated' },
+            ].map(({ value, label }, i) => (
+              <div key={label} style={{
+                padding: '36px 24px',
+                textAlign: 'center',
+                borderRight: i < 3 ? '1px solid #f1f5f9' : 'none',
+              }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 800, color: '#6366f1', marginBottom: '6px', letterSpacing: '-0.02em' }}>{value}</div>
+                <div style={{ fontSize: '0.85rem', color: '#94a3b8', lineHeight: 1.5 }}>{label}</div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -647,6 +703,21 @@ export default function DwellexPage() {
           </section>
         ))}
 
+        {/* Mid-page demo CTA */}
+        <section style={{ background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)', padding: '56px 40px', textAlign: 'center' }}>
+          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+            <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.65)', marginBottom: '14px' }}>
+              See it live
+            </p>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#fff', lineHeight: 1.25, marginBottom: '28px', margin: '0 auto 28px' }}>
+              Ready to see how Dwellex handles your eviction caseload?
+            </h2>
+            <DemoButton style={{ padding: '15px 40px', fontSize: '1rem', background: '#fff', color: '#4f46e5' }}>
+              Request a Demo →
+            </DemoButton>
+          </div>
+        </section>
+
         {/* Features Grid */}
         <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -718,6 +789,144 @@ export default function DwellexPage() {
                   </div>
                 </SectionReveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Table */}
+        <section style={{ background: '#fff', padding: '120px 40px' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+                <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '8px', padding: '6px 16px', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#6366f1', marginBottom: '20px' }}>
+                  How We Compare
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, color: '#0f172a', marginBottom: '12px' }}>
+                  Built for eviction. Not bolted on.
+                </h2>
+                <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.7, maxWidth: '580px', margin: '0 auto' }}>
+                  Generic legal software and lightweight alternatives leave your team managing eviction workflows in spreadsheets. Dwellex was purpose-built for this.
+                </p>
+              </div>
+            </SectionReveal>
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.92rem' }}>
+                <thead>
+                  <tr>
+                    <th style={{ padding: '16px 20px', textAlign: 'left', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: '#94a3b8', letterSpacing: '0.06em', textTransform: 'uppercase' as const, borderBottom: '2px solid #f1f5f9', width: '36%' }}>Feature</th>
+                    <th style={{ padding: '16px 20px', textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem', color: '#6366f1', borderBottom: '2px solid #6366f1', background: 'rgba(99,102,241,0.04)', borderRadius: '12px 12px 0 0' }}>Dwellex</th>
+                    <th style={{ padding: '16px 20px', textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: '#94a3b8', borderBottom: '2px solid #f1f5f9' }}>Eviction Assistant</th>
+                    <th style={{ padding: '16px 20px', textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: '#94a3b8', borderBottom: '2px solid #f1f5f9' }}>Clio / Generic LPM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Purpose-built for landlord-tenant law', true, false, false],
+                    ['Online landlord intake portal', true, false, false],
+                    ['E-signature in intake', true, false, false],
+                    ['Automated case timeline with templates', true, false, false],
+                    ['Auto-generated court documents', true, false, false],
+                    ['Drag-and-drop form builder', true, false, false],
+                    ['SMS + email automated notifications', true, false, 'Add-on'],
+                    ['Clio bidirectional sync', true, false, 'Native'],
+                    ['Practice Panther integration', true, false, false],
+                    ['Rent Manager integration', true, false, false],
+                    ['Marshal & lockout coordination', true, false, false],
+                    ['Court date tracking', true, false, 'Manual'],
+                    ['Per-case pricing (no per-seat lock-in)', true, false, false],
+                  ].map(([feat, dwellex, ea, generic], i) => {
+                    const cell = (val: boolean | string) => {
+                      if (val === true) return <span style={{ color: '#10b981', fontWeight: 700, fontSize: '1.1rem' }}>✓</span>
+                      if (val === false) return <span style={{ color: '#e2e8f0', fontSize: '1.1rem' }}>—</span>
+                      return <span style={{ color: '#f59e0b', fontSize: '0.82rem', fontWeight: 600 }}>{val}</span>
+                    }
+                    return (
+                      <tr key={String(feat)} style={{ background: i % 2 === 0 ? '#fafbff' : '#fff', borderBottom: '1px solid #f1f5f9' }}>
+                        <td style={{ padding: '14px 20px', color: '#334155', fontWeight: 500 }}>{feat as string}</td>
+                        <td style={{ padding: '14px 20px', textAlign: 'center', background: i % 2 === 0 ? 'rgba(99,102,241,0.05)' : 'rgba(99,102,241,0.02)' }}>{cell(dwellex as boolean | string)}</td>
+                        <td style={{ padding: '14px 20px', textAlign: 'center' }}>{cell(ea as boolean | string)}</td>
+                        <td style={{ padding: '14px 20px', textAlign: 'center' }}>{cell(generic as boolean | string)}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+                <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '8px', padding: '6px 16px', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#6366f1', marginBottom: '20px' }}>
+                  Pricing
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, color: '#0f172a', marginBottom: '12px' }}>
+                  Simple, transparent pricing
+                </h2>
+                <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto' }}>
+                  One plan. No per-seat fees. You only pay more as you grow.
+                </p>
+              </div>
+            </SectionReveal>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }}>
+              {/* Main pricing card */}
+              <div style={{ background: '#fff', border: '2px solid #6366f1', borderRadius: '24px', padding: '48px 44px', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }} />
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#6366f1', marginBottom: '20px' }}>Dwellex Platform</div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '6px' }}>
+                  <span style={{ fontFamily: 'var(--font-display)', fontSize: '3.2rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em' }}>$399</span>
+                  <span style={{ fontSize: '1rem', color: '#94a3b8' }}>/month</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginBottom: '32px', paddingBottom: '32px', borderBottom: '1px solid #f1f5f9' }}>
+                  <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 700, color: '#6366f1' }}>+ $8</span>
+                  <span style={{ fontSize: '0.9rem', color: '#64748b' }}>per case created</span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '14px', marginBottom: '36px' }}>
+                  {[
+                    'Unlimited users — no per-seat fees',
+                    'Full intake portal + form builder',
+                    'Automated case timelines & templates',
+                    'Court document generation',
+                    'Clio, Practice Panther & Rent Manager sync',
+                    'SMS + email notifications',
+                    'Marshal & lockout coordination',
+                    'Ongoing support included',
+                  ].map(item => (
+                    <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ color: '#10b981', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                      <span style={{ fontSize: '0.92rem', color: '#334155' }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <DemoButton style={{ width: '100%', padding: '15px', fontSize: '0.95rem', textAlign: 'center' as const }}>
+                  Request a Demo →
+                </DemoButton>
+              </div>
+
+              {/* Add-ons / note card */}
+              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
+                <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>Implementation & Training</div>
+                  <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
+                    Scoped and priced per project. We handle data migration, workflow configuration, jurisdiction setup, and staff onboarding. Timeline and cost depend on your firm's existing systems and caseload.
+                  </p>
+                </div>
+                <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
+                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>Custom Integrations</div>
+                  <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
+                    Need a connection to your property management system, court filing portal, or other tooling? Custom integrations are available and scoped per engagement.
+                  </p>
+                </div>
+                <div style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.15)', borderRadius: '20px', padding: '28px 32px' }}>
+                  <div style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.75 }}>
+                    <strong style={{ color: '#4f46e5' }}>High-volume firms:</strong> Running 100+ cases/month? Talk to us about volume pricing — we have options for larger practices that cap your per-case cost.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
