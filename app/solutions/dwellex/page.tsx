@@ -428,27 +428,6 @@ export default function DwellexPage() {
           </div>
         </section>
 
-        {/* Stats Bar */}
-        <section style={{ background: '#fff', borderTop: '1px solid #f1f5f9', borderBottom: '1px solid #f1f5f9', padding: '0 40px' }}>
-          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
-            {[
-              { value: '500+', label: 'Cases managed monthly' },
-              { value: '2.4 hrs', label: 'Saved per case' },
-              { value: '98%', label: 'Intake completion rate' },
-              { value: '6 steps', label: 'Intake to lockout, automated' },
-            ].map(({ value, label }, i) => (
-              <div key={label} style={{
-                padding: '36px 24px',
-                textAlign: 'center',
-                borderRight: i < 3 ? '1px solid #f1f5f9' : 'none',
-              }}>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 800, color: '#6366f1', marginBottom: '6px', letterSpacing: '-0.02em' }}>{value}</div>
-                <div style={{ fontSize: '0.85rem', color: '#94a3b8', lineHeight: 1.5 }}>{label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Workflow */}
         <section style={{ background: 'linear-gradient(180deg, #fff 0%, #f8fafc 100%)', padding: '120px 40px' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
@@ -849,7 +828,7 @@ export default function DwellexPage() {
                     <th style={{ padding: '16px 20px', textAlign: 'left', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', color: '#94a3b8', letterSpacing: '0.06em', textTransform: 'uppercase' as const, borderBottom: '2px solid #f1f5f9', width: '36%' }}>Feature</th>
                     <th style={{ padding: '16px 20px', textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '0.85rem', color: '#6366f1', borderBottom: '2px solid #6366f1', background: 'rgba(99,102,241,0.04)', borderRadius: '12px 12px 0 0' }}>Dwellex</th>
                     <th style={{ padding: '16px 20px', textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: '#94a3b8', borderBottom: '2px solid #f1f5f9' }}>Eviction Assistant</th>
-                    <th style={{ padding: '16px 20px', textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: '#94a3b8', borderBottom: '2px solid #f1f5f9' }}>Clio / Generic LPM</th>
+                    <th style={{ padding: '16px 20px', textAlign: 'center', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.85rem', color: '#94a3b8', borderBottom: '2px solid #f1f5f9' }}>Generic LPM + Spreadsheets</th>
                   </tr>
                 </thead>
                 <tbody>
