@@ -838,7 +838,7 @@ export default function DwellexPage() {
                   Built for eviction. Not bolted on.
                 </h2>
                 <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.7, maxWidth: '580px', margin: '0 auto' }}>
-                  Generic legal software and lightweight alternatives leave your team managing eviction workflows in spreadsheets. Dwellex was purpose-built for this.
+                  Eviction Assistant handles the basics. Dwellex takes it further — modern UI, form builder, case playbooks, Clio sync, SMS, and Trial Lists, all in one platform.
                 </p>
               </div>
             </SectionReveal>
@@ -854,21 +854,21 @@ export default function DwellexPage() {
                 </thead>
                 <tbody>
                   {[
-                    ['Purpose-built for landlord-tenant law', true, false, false],
-                    ['Online landlord intake portal', true, false, false],
+                    ['Purpose-built for landlord-tenant law', true, true, false],
+                    ['Online client suit list submission', true, true, false],
                     ['E-signature in intake', true, false, false],
                     ['Conditional field logic in forms', true, false, false],
-                    ['Automated case timeline with templates', true, false, false],
-                    ['Auto-generated court documents', true, false, false],
-                    ['Trial Lists (county-grouped, Word export)', true, false, false],
-                    ['Client portal with document upload', true, false, false],
                     ['Drag-and-drop form builder', true, false, false],
-                    ['SMS + email automated notifications', true, false, 'Add-on'],
+                    ['Step-by-step case timeline + playbooks', true, false, false],
+                    ['Auto-generated court documents', true, true, 'Manual'],
+                    ['Trial Lists (county-grouped, Word export)', true, false, false],
+                    ['Client portal with case timeline visibility', true, 'Partial', false],
+                    ['SMS + email automated notifications', true, 'Email only', 'Add-on'],
                     ['Clio bidirectional sync', true, false, 'Native'],
                     ['Practice Panther integration', true, false, false],
-                    ['Rent Manager integration', true, false, false],
-                    ['Marshal & lockout coordination', true, false, false],
-                    ['Role-based access (staff, admin, client)', true, false, 'Partial'],
+                    ['Rent Manager integration', true, true, false],
+                    ['Role-based access control', true, true, 'Partial'],
+                    ['Modern browser-based UI (no Windows app required)', true, 'Partial', true],
                     ['Per-case pricing (no per-seat lock-in)', true, false, false],
                   ].map(([feat, dwellex, ea, generic], i) => {
                     const cell = (val: boolean | string) => {
