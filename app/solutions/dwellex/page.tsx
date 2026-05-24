@@ -122,7 +122,7 @@ const jsonLd = {
           name: 'What states does Dwellex support?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex supports eviction workflows across 15+ states. Court document templates, notice types, and case workflows are configured per jurisdiction during implementation.',
+            text: 'Dwellex supports eviction workflows across all 50 states. Case templates, intake forms, and court document formats are fully customizable per jurisdiction — configured to match your state during implementation.',
           },
         },
       ],
@@ -235,7 +235,7 @@ const faqs = [
   },
   {
     q: 'What states does Dwellex support?',
-    a: 'Dwellex supports eviction workflows across 15+ states with jurisdiction-configurable court document templates and notice type settings. Case templates, notice periods, and court document formats are customized to your jurisdiction during implementation.',
+    a: 'Dwellex supports eviction workflows across all 50 states. Case templates, intake forms, and court document formats are fully customizable per jurisdiction — your workflows and documents are configured to match your state during implementation.',
   },
   {
     q: 'Does Dwellex work for both residential and commercial evictions?',
