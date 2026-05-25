@@ -17,6 +17,12 @@ export const metadata: Metadata = {
     'legal software for eviction cases',
     'eviction intake software',
     'clio eviction integration',
+    'EasyEviction alternative',
+    'eviction software alternative',
+    'best eviction software for law firms',
+    'eviction management software comparison',
+    'eviction software with Clio integration',
+    'eviction software per case pricing',
   ],
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/dwellex',

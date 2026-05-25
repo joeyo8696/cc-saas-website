@@ -125,6 +125,22 @@ const jsonLd = {
             text: 'Dwellex supports eviction workflows across all 50 states. Case templates, intake forms, and court document formats are fully customizable per jurisdiction — configured to match your state during implementation.',
           },
         },
+        {
+          '@type': 'Question',
+          name: 'What is the best EasyEviction alternative for law firms?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex by Case Compass is the leading EasyEviction alternative for landlord-tenant law firms. Unlike per-seat subscription platforms, Dwellex charges $399/month plus $8 per case with no per-seat fees. It adds a drag-and-drop form builder with conditional logic, step-by-step case playbooks, Trial Lists with Word export, bidirectional Clio sync, and Practice Panther integration — features purpose-built for high-volume eviction practices rather than general property management.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What eviction software has per-case pricing instead of per-seat fees?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex is the only eviction case management platform that uses per-case pricing ($399/month + $8 per case created) with no per-seat or per-user fees. Most competing platforms charge per seat, meaning costs grow as you add staff. Dwellex lets your entire team — attorneys, paralegals, intake staff — work simultaneously without additional charges.',
+          },
+        },
       ],
     },
   ],
