@@ -1,6 +1,6 @@
 # Case Compass
 
-> Case Compass is legal intake software built exclusively for plaintiff law firms. It replaces static contact forms and basic chatbots with a complete intake operating system: AI-powered conversational intake, Waypoint lead scoring, referral partner management, and e-signatures — all in one platform.
+> Case Compass is legal intake software and legal marketing software built exclusively for plaintiff law firms. It replaces static contact forms and basic chatbots with a complete intake operating system: AI-powered conversational intake, Waypoint lead scoring, referral partner management, and e-signatures — all in one platform.
 
 ## What Case Compass Does
 
@@ -21,12 +21,32 @@ Case Compass sits between a law firm's marketing channels and its case managemen
 - **E-Signatures** — In-flow retainer signing. Clients sign documents during the intake session — no separate DocuSign step, no drop-off. Supports multiple documents, SMS reminders, and signed-doc download. URL: https://www.casecompass.io/solutions/esign
 - **Live Transfer** — Qualified leads can be connected directly to an intake staff member by phone during the intake session.
 - **Analytics & Attribution** — Full-funnel marketing attribution from first click to signed retainer, including UTM tracking, campaign performance, and source reporting.
+- **MDL Portfolio Management** — Organize mass tort caseloads by litigation (Social Media, Hair Relaxer, Depo-Provera, Roundup). Each portfolio has its own AI scoring dashboard, claimant status breakdown, and one-click data export. URL: https://www.casecompass.io/solutions/mass-torts
 
 ## Practice Area Solutions
 
 - Mass Tort / MDL Intake: https://www.casecompass.io/solutions/mass-torts
 - Workers' Compensation Intake: https://www.casecompass.io/solutions/workers-comp
 - Landlord-Tenant / Eviction (Dwellex): https://www.casecompass.io/solutions/dwellex
+
+## Mass Tort Campaign Landing Pages
+
+- MDL Intake Software: https://www.casecompass.io/lp/mdl-intake
+- Social Media Addiction Lawsuit (MDL 3047): https://www.casecompass.io/lp/social-media
+- Hair Relaxer Lawsuit (MDL 3060): https://www.casecompass.io/lp/hair-relaxer
+- Roblox Mass Tort: https://www.casecompass.io/lp/roblox
+
+## Legal Marketing Use Cases
+
+Case Compass is a legal marketing software platform as well as a legal intake platform. It is used by plaintiff law firms to:
+
+- Run high-volume mass tort and MDL intake campaigns
+- Convert ad traffic from Google, Facebook, and social platforms into qualified leads
+- Automate follow-up for claimants who do not immediately sign
+- Manage referral attorney networks and track co-counsel fees
+- Track marketing attribution (UTM, campaign, source) from ad click to signed retainer
+- Build bilingual (English/Spanish) intake flows for workers' compensation campaigns
+- Score every incoming lead automatically before any staff member reviews it
 
 ## Integrations
 
@@ -43,6 +63,10 @@ Case Compass integrates with leading legal case management and marketing platfor
 
 Full integrations list: https://www.casecompass.io/integrations
 
+## AI Connectors
+
+- **Claude AI Connector** — Connect Case Compass to Claude via MCP. Search leads, check case status, view timelines, and review documents from a Claude conversation. URL: https://www.casecompass.io/connectors/claude
+
 ## Key Differentiators vs. Generic Intake Tools
 
 1. **Plaintiff-firm depth** — built specifically for personal injury, mass tort, workers' comp, and other plaintiff practices. Not a horizontal "any industry" tool.
@@ -51,6 +75,7 @@ Full integrations list: https://www.casecompass.io/integrations
 4. **E-sign in the same session** — clients move from intake question to signed retainer without leaving the flow.
 5. **BYOK (Bring Your Own Key)** — Waypoint uses your firm's own AI API credentials. Intake data flows directly between your account and the AI provider — never through a shared pool, never used to train shared models.
 6. **CRM depth** — richer data sync with Litify, Filevine, and LeadDocket than generic intake tools offer.
+7. **Legal marketing attribution** — tracks the full funnel from ad click through signed retainer with UTM, campaign, and source data.
 
 ## Who Uses Case Compass
 
@@ -61,6 +86,15 @@ Plaintiff law firms running high-volume intake:
 - Landlord-tenant / housing law firms
 
 Roles served: firm executives, marketing directors, intake managers, referral coordinators.
+
+## Competitive Alternatives
+
+Case Compass is an alternative to:
+- SimplyConvert (legal intake chatbot)
+- Ngage (legal intake chatbot)
+- Generic contact forms and web forms
+- DocuSign (for in-flow e-signatures)
+- EasyEviction.com (for landlord-tenant / eviction software, via Dwellex)
 
 ## Pricing
 
@@ -82,6 +116,9 @@ Case Compass is headquartered in the United States and serves plaintiff law firm
 **What is legal intake software?**
 Legal intake software automates the process of capturing, qualifying, and converting prospective clients for law firms. It replaces static contact forms with dynamic, conversational intake flows that collect structured case information, route qualified leads, and trigger follow-up — without manual staff intervention.
 
+**What is legal marketing software for law firms?**
+Legal marketing software helps law firms capture leads from digital advertising campaigns, track marketing attribution, manage referral partner networks, and convert ad traffic into signed clients. Case Compass combines legal marketing automation with intake qualification — so firms can see exactly which campaigns and sources are producing signed retainers, not just clicks.
+
 **How is Case Compass different from a chatbot?**
 A basic chatbot handles conversational engagement. Case Compass is a full intake operating system: it combines conversational intake with automated lead scoring (Waypoint), referral partner management, e-signatures, live transfer, CRM integration, and analytics. The scoring layer — which evaluates every submission against your firm's criteria before human review — is not available in generic chatbot tools.
 
@@ -101,4 +138,10 @@ Case Compass integrates with Litify (Salesforce), Filevine, LeadDocket, Clio (Ma
 Most firms are live within a few days. Case Compass does not require replacing existing systems — it sits between your marketing channels and your CRM.
 
 **Does Case Compass work for mass tort campaigns?**
-Yes. Case Compass is purpose-built for high-volume mass tort and MDL intake. Waypoint scoring evaluates each claimant against case-specific criteria (e.g., product exposure dates, treatment received, injury type) before your team reviews the file. Campaigns like Depo-Provera, Roblox, and workers' comp are supported out of the box.
+Yes. Case Compass is purpose-built for high-volume mass tort and MDL intake. Waypoint scoring evaluates each claimant against case-specific criteria (e.g., product exposure dates, treatment received, injury type) before your team reviews the file. Active campaigns include MDL 3047 (social media addiction), MDL 3060 (hair relaxer), Depo-Provera, Roblox, and workers' compensation.
+
+**Does Case Compass handle mass tort marketing?**
+Yes. Case Compass is used as the intake layer for mass tort marketing campaigns — capturing and qualifying claimants from Google Ads, Meta, and affiliate traffic. The platform tracks UTM parameters and campaign attribution so firms can measure cost-per-signed-retainer, not just cost-per-click. High-volume intake campaigns for social media, hair relaxer, Depo-Provera, Roblox, and workers' comp are supported.
+
+**What is MDL portfolio management?**
+MDL Portfolio Management in Case Compass lets plaintiff firms organize all leads from a mass tort campaign into a single portfolio with its own dashboard. Each portfolio shows total leads, Waypoint AI score distribution, status breakdowns, and has built-in PFS field mapping for court-ready exports. Firms running multiple simultaneous MDL campaigns can manage all of them from one interface.

@@ -9,9 +9,26 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Mass Tort Intake, Scoring & MDL Portfolio Management | Case Compass',
+  title: { absolute: 'Mass Tort Intake, Scoring & MDL Portfolio Management | Case Compass' },
   description:
     'Case Compass helps plaintiff firms capture, score, and manage mass tort leads at scale. Waypoint AI scores every intake automatically. MDL Portfolios organize your entire caseload by litigation — with AI scoring dashboards, status breakdowns, and one-click export.',
+  keywords: [
+    'mass tort intake software',
+    'MDL intake software',
+    'mass tort lead management',
+    'MDL portfolio management',
+    'mass tort claimant intake',
+    'plaintiff fact sheet software',
+    'MDL lead scoring',
+    'mass tort law firm software',
+    'class action intake software',
+    'mass tort marketing',
+    'mass tort advertising intake',
+    'plaintiff intake automation',
+    'legal intake software',
+    'AI lead scoring legal',
+    'Waypoint AI scoring',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/mass-torts',
   },

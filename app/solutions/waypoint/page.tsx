@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   title: 'Waypoint — AI Lead Scoring for Legal Intake',
   description:
     'Waypoint scores every legal intake submission against your firm\'s custom criteria before your team opens the file. AI-powered lead scoring built for high-volume plaintiff law firms.',
+  keywords: [
+    'AI lead scoring law firm',
+    'legal lead scoring software',
+    'Waypoint AI scoring',
+    'plaintiff intake scoring',
+    'AI case evaluation software',
+    'law firm lead qualification',
+    'automated lead scoring legal',
+    'intake lead scoring',
+    'BYOK AI legal intake',
+    'legal AI intake scoring',
+    'mass tort lead scoring',
+    'personal injury lead scoring',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/waypoint',
   },

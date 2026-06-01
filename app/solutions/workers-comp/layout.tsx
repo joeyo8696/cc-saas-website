@@ -48,9 +48,23 @@ const workersCompFaqSchema = {
 }
 
 export const metadata: Metadata = {
-  title: 'Workers\' Compensation Intake Software | Case Compass',
+  title: { absolute: 'Workers\' Compensation Intake Software | Case Compass' },
   description:
     'Case Compass automates intake qualification, speed-to-lead outreach, and document generation for workers\' comp firms. Sign more cases, work fewer hours.',
+  keywords: [
+    'workers compensation intake software',
+    'workers comp intake automation',
+    'work injury intake software',
+    'workers comp lead qualification',
+    'injured worker intake',
+    'workers compensation law firm software',
+    'workers comp claimant intake',
+    'Spanish workers comp intake',
+    'bilingual legal intake',
+    'speed to lead workers comp',
+    'plaintiff intake automation',
+    'legal intake software',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/workers-comp',
   },

@@ -10,7 +10,7 @@ const aboutBreadcrumb = {
 }
 
 export const metadata: Metadata = {
-  title: 'About Us — Case Compass',
+  title: { absolute: 'About Us — Case Compass' },
   description:
     'Case Compass is legal intake software built exclusively for high-volume plaintiff law firms. Learn about our team and our vision for the future of legal intake automation.',
   alternates: {

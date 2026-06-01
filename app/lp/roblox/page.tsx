@@ -6,9 +6,39 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Roblox Mass Tort Litigation Software | Case Compass',
+  title: { absolute: 'Roblox Mass Tort Litigation Software | Case Compass' },
   description:
     'Intelligent intake automation for Roblox MDL litigation. Double your conversion rates, reduce intake costs by 90%, and automate evidence validation with Case Compass.',
+  keywords: [
+    'Roblox mass tort intake',
+    'Roblox lawsuit intake software',
+    'Roblox MDL claimant intake',
+    'mass tort intake software',
+    'child gaming addiction lawsuit',
+    'Roblox minor harm intake',
+    'mass tort lead qualification',
+    'plaintiff intake automation',
+    'legal intake software',
+    'MDL claimant intake',
+    'mass tort litigation software',
+  ],
+  alternates: {
+    canonical: 'https://www.casecompass.io/lp/roblox',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.casecompass.io/lp/roblox',
+    siteName: 'Case Compass',
+    title: 'Roblox Mass Tort Litigation Software | Case Compass',
+    description: 'Automate Roblox MDL claimant intake. Double conversion rates, cut intake costs 90%, validate evidence automatically — powered by Waypoint AI.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Roblox Mass Tort Litigation Intake — Case Compass' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Case_Compass_',
+    title: 'Roblox Mass Tort Litigation Software | Case Compass',
+    description: 'Automate Roblox MDL intake. Qualify claimants 24/7, validate evidence, sign retainers in-flow.',
+  },
 }
 
 const features = [

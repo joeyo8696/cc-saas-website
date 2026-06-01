@@ -6,9 +6,40 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Hair Relaxer Lawsuit Intake Software | Case Compass',
+  title: { absolute: 'Hair Relaxer Lawsuit Intake Software | Case Compass' },
   description:
     'Intake automation for hair relaxer MDL 3060 litigation. Qualify uterine cancer and ovarian cancer claims against L\'Oreal, Revlon, and Strength of Nature — with product usage history, medical record collection, and AI scoring.',
+  keywords: [
+    'hair relaxer lawsuit intake',
+    'MDL 3060 intake software',
+    'hair relaxer cancer lawsuit intake',
+    'mass tort intake software',
+    'uterine cancer lawsuit qualification',
+    "L'Oreal hair relaxer lawsuit",
+    'Revlon hair relaxer lawsuit',
+    'chemical hair relaxer MDL intake',
+    'mass tort lead management',
+    'plaintiff intake automation',
+    'legal intake software',
+    'MDL claimant intake',
+  ],
+  alternates: {
+    canonical: 'https://www.casecompass.io/lp/hair-relaxer',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.casecompass.io/lp/hair-relaxer',
+    siteName: 'Case Compass',
+    title: 'Hair Relaxer Lawsuit Intake Software | Case Compass',
+    description: 'Qualify MDL 3060 uterine and ovarian cancer claims against L\'Oreal, Revlon, and Strength of Nature — product history, medical docs, Waypoint AI scoring.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Hair Relaxer Lawsuit Intake — Case Compass' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Case_Compass_',
+    title: 'Hair Relaxer Lawsuit Intake | Case Compass',
+    description: 'Automate MDL 3060 hair relaxer claimant intake. Qualify cancer claims 24/7 with Waypoint AI scoring.',
+  },
 }
 
 const stats = [

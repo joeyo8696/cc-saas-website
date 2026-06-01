@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   title: 'Legal Referral Network Software — Partner Portals, Co-Counsel Agreements & Fee Tracking',
   description:
     'Case Compass gives law firms a complete two-way referral network: accept leads from partner attorneys, refer cases out with auto-generated co-counsel agreements, track every fee, and close the loop — without spreadsheets.',
+  keywords: [
+    'legal referral network software',
+    'attorney referral portal',
+    'co-counsel agreement software',
+    'referral fee tracking law firm',
+    'legal referral partner management',
+    'law firm referral software',
+    'attorney referral tracking',
+    'legal marketing referral software',
+    'plaintiff firm referral network',
+    'case referral management',
+    'legal intake referral',
+    'law firm lead referral',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/referrals',
   },

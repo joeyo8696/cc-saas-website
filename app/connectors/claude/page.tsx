@@ -8,9 +8,19 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Claude AI Connector — Case Compass in Claude',
+  title: { absolute: 'Claude AI Connector — Case Compass in Claude' },
   description:
     'Connect Case Compass to Claude AI. Search leads, check case status, view timeline progress, and review documents — all from a Claude conversation.',
+  keywords: [
+    'Case Compass Claude connector',
+    'legal intake AI connector',
+    'Claude MCP legal software',
+    'AI assistant law firm',
+    'MCP legal intake',
+    'Claude legal data integration',
+    'AI legal intake assistant',
+    'law firm AI tools',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/connectors/claude',
   },
@@ -21,6 +31,12 @@ export const metadata: Metadata = {
     title: 'Claude AI Connector | Case Compass',
     description: 'Ask Claude about your leads, cases, and intake timelines — directly connected to your Case Compass data.',
     images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass Claude Connector' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Case_Compass_',
+    title: 'Claude AI Connector | Case Compass',
+    description: 'Ask Claude about your leads, cases, and intake timelines — connected to your Case Compass data via MCP.',
   },
 }
 

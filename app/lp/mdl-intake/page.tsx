@@ -6,7 +6,7 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'MDL Intake Software for Plaintiff Firms | Case Compass',
+  title: { absolute: 'MDL Intake Software for Plaintiff Firms | Case Compass' },
   description:
     'Case Compass is purpose-built MDL intake software for plaintiff law firms. Qualify mass tort claimants, organize leads by MDL portfolio, map PFS fields, and export court-ready data — all in one platform.',
   alternates: {
@@ -31,6 +31,12 @@ export const metadata: Metadata = {
     title: 'MDL Intake Software for Plaintiff Firms | Case Compass',
     description: 'Qualify claimants, organize MDL portfolios, map PFS fields, and export court-ready data. Purpose-built for firms running active mass tort campaigns.',
     images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'MDL Intake Software — Case Compass' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Case_Compass_',
+    title: 'MDL Intake Software for Plaintiff Firms | Case Compass',
+    description: 'Qualify MDL claimants, organize portfolios, map PFS fields, and export court-ready data — purpose-built for mass tort plaintiff firms.',
   },
 }
 

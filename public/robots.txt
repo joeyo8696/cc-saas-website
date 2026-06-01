@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /demos
-Disallow: /lp/
 
 # Sitemap
 Sitemap: https://www.casecompass.io/sitemap.xml

@@ -6,9 +6,40 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Social Media Addiction Lawsuit Intake Software | Case Compass',
+  title: { absolute: 'Social Media Addiction Lawsuit Intake Software | Case Compass' },
   description:
     'Intake automation for social media addiction MDL 3047 litigation. Qualify minors\' claims against Meta, YouTube, TikTok, and Snap — with evidence capture, AI scoring, and automated routing.',
+  keywords: [
+    'social media addiction lawsuit intake',
+    'MDL 3047 intake software',
+    'social media MDL claimant intake',
+    'mass tort intake software',
+    'social media lawsuit qualification',
+    'Meta lawsuit intake',
+    'TikTok lawsuit intake',
+    'YouTube addiction lawsuit',
+    'child social media harm intake',
+    'mass tort lead management',
+    'plaintiff intake automation',
+    'legal intake software',
+  ],
+  alternates: {
+    canonical: 'https://www.casecompass.io/lp/social-media',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.casecompass.io/lp/social-media',
+    siteName: 'Case Compass',
+    title: 'Social Media Addiction Lawsuit Intake Software | Case Compass',
+    description: 'Qualify minors\' MDL 3047 claims against Meta, YouTube, TikTok, and Snap — with evidence capture, Waypoint AI scoring, and automated routing.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Social Media Addiction Lawsuit Intake — Case Compass' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Case_Compass_',
+    title: 'Social Media Addiction Lawsuit Intake | Case Compass',
+    description: 'Automate MDL 3047 claimant intake. Qualify minors\' social media harm claims 24/7 with Waypoint AI scoring.',
+  },
 }
 
 const stats = [

@@ -9,6 +9,16 @@ import SectionReveal from '@/components/ui/SectionReveal'
 export const metadata: Metadata = {
   title: 'Security & Compliance',
   description: 'How Case Compass protects your law firm\'s data — AWS infrastructure, AES-256 encryption, role-based access controls, and data privacy.',
+  keywords: [
+    'legal intake software security',
+    'law firm data security',
+    'legal software compliance',
+    'HIPAA legal intake',
+    'AES-256 legal software',
+    'AWS legal software',
+    'law firm data privacy',
+    'secure legal intake platform',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/security',
   },
@@ -19,6 +29,12 @@ export const metadata: Metadata = {
     title: 'Security & Compliance | Case Compass',
     description: 'How Case Compass protects your law firm\'s data — AWS infrastructure, AES-256 encryption, role-based access controls, and data privacy.',
     images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass Security & Compliance' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Case_Compass_',
+    title: 'Security & Compliance | Case Compass',
+    description: 'How Case Compass protects your law firm\'s data — AWS, AES-256 encryption, MFA, and role-based access controls.',
   },
 }
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 const BASE_URL = 'https://www.casecompass.io'
-const NOW = new Date('2026-04-28')
+const NOW = new Date('2026-05-31')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -56,16 +56,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/solutions/dwellex`,
-      lastModified: new Date('2026-05-21'),
+      lastModified: NOW,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
-    // Integrations hub
+    // Integrations & connectors
     {
       url: `${BASE_URL}/integrations`,
       lastModified: NOW,
       changeFrequency: 'monthly',
       priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/connectors/claude`,
+      lastModified: NOW,
+      changeFrequency: 'monthly',
+      priority: 0.75,
     },
     // Landing pages — tort-specific & MDL intake
     {

@@ -8,8 +8,14 @@ import ChangelogSidebar from '@/components/changelog/ChangelogSidebar'
 import DemoButton from '@/components/DemoButton'
 
 export const metadata: Metadata = {
-  title: 'Changelog | Case Compass',
+  title: { absolute: 'Changelog | Case Compass' },
   description: 'Release notes and product updates for Case Compass — new features, improvements, and bug fixes.',
+  keywords: [
+    'Case Compass updates',
+    'legal intake software updates',
+    'Case Compass changelog',
+    'legal intake platform releases',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/changelog',
   },
@@ -20,6 +26,12 @@ export const metadata: Metadata = {
     title: 'Changelog | Case Compass',
     description: 'Release notes and product updates for Case Compass.',
     images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass Changelog' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@Case_Compass_',
+    title: 'Changelog | Case Compass',
+    description: 'Release notes and product updates for Case Compass.',
   },
 }
 

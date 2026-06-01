@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   title: 'E-Signatures in Legal Intake — Close Retainers in the Same Session',
   description:
     'Case Compass lets clients sign retainer agreements, authorization forms, and multi-document packages during the intake session — no redirect, no DocuSign handoff, no drop-off. E-signatures built for plaintiff law firms.',
+  keywords: [
+    'legal e-signature software',
+    'law firm e-signature intake',
+    'sign retainer online',
+    'legal intake e-sign',
+    'DocuSign alternative law firm',
+    'in-flow retainer signing',
+    'retainer agreement software',
+    'plaintiff intake retainer',
+    'legal intake signing',
+    'online retainer signing',
+    'e-signature legal intake',
+    'law firm digital signature',
+  ],
   alternates: {
     canonical: 'https://www.casecompass.io/solutions/esign',
   },
