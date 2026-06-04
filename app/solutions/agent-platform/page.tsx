@@ -2,11 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState, useEffect, useCallback } from 'react'
 import {
   PhoneCall, PhoneIncoming, PhoneOutgoing, Users, BarChart3,
   ClipboardList, Clock, Zap, CheckCircle, ArrowRight,
   Headphones, TrendingUp, Calendar, Radio, Shield, Target,
-  Activity, Bell, Star, ChevronRight,
+  Activity, Bell, Star, ChevronRight, X, ZoomIn,
 } from 'lucide-react'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
@@ -49,14 +50,20 @@ const faq = [
   },
 ]
 
-function ScreenshotFrame({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+type LightboxOpener = (src: string, alt: string) => void
+
+function ScreenshotFrame({ src, alt, caption, onOpen }: { src: string; alt: string; caption?: string; onOpen?: LightboxOpener }) {
   return (
-    <div style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', background: '#0f172a' }}>
+    <div
+      onClick={() => onOpen?.(src, alt)}
+      style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', background: '#0f172a', cursor: onOpen ? 'zoom-in' : 'default', position: 'relative' }}
+    >
       <div style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.07)', display: 'flex', alignItems: 'center', gap: 6 }}>
         {['#ef4444', '#f59e0b', '#10b981'].map(c => (
           <div key={c} style={{ width: 10, height: 10, borderRadius: 999, background: c, opacity: 0.7 }} />
         ))}
         <div style={{ flex: 1, marginLeft: 8, height: 18, borderRadius: 6, background: 'rgba(255,255,255,0.06)', maxWidth: 280 }} />
+        {onOpen && <ZoomIn size={14} color="rgba(255,255,255,0.35)" />}
       </div>
       <Image src={src} alt={alt} width={1024} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
       {caption && (
@@ -66,14 +73,18 @@ function ScreenshotFrame({ src, alt, caption }: { src: string; alt: string; capt
   )
 }
 
-function LightScreenshotFrame({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+function LightScreenshotFrame({ src, alt, caption, onOpen }: { src: string; alt: string; caption?: string; onOpen?: LightboxOpener }) {
   return (
-    <div style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid #e2e8f0', background: '#fff' }}>
+    <div
+      onClick={() => onOpen?.(src, alt)}
+      style={{ borderRadius: 16, overflow: 'hidden', border: '1px solid #e2e8f0', background: '#fff', cursor: onOpen ? 'zoom-in' : 'default', position: 'relative' }}
+    >
       <div style={{ padding: '10px 14px', borderBottom: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', gap: 6, background: '#f8fafc' }}>
         {['#ef4444', '#f59e0b', '#10b981'].map(c => (
           <div key={c} style={{ width: 10, height: 10, borderRadius: 999, background: c, opacity: 0.7 }} />
         ))}
         <div style={{ flex: 1, marginLeft: 8, height: 18, borderRadius: 6, background: '#e2e8f0', maxWidth: 280 }} />
+        {onOpen && <ZoomIn size={14} color="#94a3b8" />}
       </div>
       <Image src={src} alt={alt} width={1024} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
       {caption && (
@@ -84,8 +95,66 @@ function LightScreenshotFrame({ src, alt, caption }: { src: string; alt: string;
 }
 
 export default function AgentPlatformPage() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+  const openLightbox = useCallback<LightboxOpener>((src, alt) => setLightbox({ src, alt }), [])
+  const closeLightbox = useCallback(() => setLightbox(null), [])
+
+  useEffect(() => {
+    if (!lightbox) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeLightbox() }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [lightbox, closeLightbox])
+
   return (
     <>
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          onClick={closeLightbox}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 9999,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            padding: 24,
+            background: 'rgba(0,0,0,0.75)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            cursor: 'zoom-out',
+          }}
+        >
+          <button
+            aria-label="Close image"
+            onClick={closeLightbox}
+            style={{
+              position: 'fixed', top: 20, right: 24, zIndex: 10000,
+              background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)',
+              borderRadius: 999, width: 40, height: 40,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', color: '#fff',
+            }}
+          >
+            <X size={18} />
+          </button>
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{
+              maxWidth: '90vw', maxHeight: '90vh',
+              borderRadius: 16, overflow: 'hidden',
+              boxShadow: '0 40px 120px rgba(0,0,0,0.6)',
+              border: '1px solid rgba(255,255,255,0.1)',
+            }}
+          >
+            <Image
+              src={lightbox.src}
+              alt={lightbox.alt}
+              width={1440}
+              height={900}
+              style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '90vh', objectFit: 'contain' }}
+            />
+          </div>
+        </div>
+      )}
+
       <GalaxyCanvas />
       <AnnouncementBanner />
       <Nav />
@@ -155,6 +224,7 @@ export default function AgentPlatformPage() {
                 src="/images/agent-platform-live-transfer-inbox.png"
                 alt="Case Compass Live Transfer Inbox showing real-time queue with 29 in-progress transfers, wait times, agent assignments, and one-click call actions"
                 caption="Live Transfer Inbox — real-time queue with status badges, wait times, agent assignments, and instant call actions"
+                onOpen={openLightbox}
               />
             </SectionReveal>
 
@@ -214,6 +284,7 @@ export default function AgentPlatformPage() {
                   src="/images/agent-platform-lead-profile-lt.png"
                   alt="Case Compass lead profile showing live transfer panel with agent live chat, client answers from chatbot, phone call history with recordings, and SOPs and checklists embedded inline"
                   caption="Lead profile during a live transfer — chatbot answers, call history, SOPs, and live agent chat in one view"
+                  onOpen={openLightbox}
                 />
               </SectionReveal>
             </div>
@@ -229,6 +300,7 @@ export default function AgentPlatformPage() {
                   src="/images/agent-platform-sop-editor.png"
                   alt="Case Compass Agent SOP editor showing a Live Transfer Empathy and Compliance Script with Document type selected, markdown content with opening script and call guidelines, and form assignment tags including Personal Injury, Social Media, and Live Transfer forms"
                   caption="SOP editor — Document or Checklist type, rich content, form-level assignment"
+                  onOpen={openLightbox}
                 />
               </SectionReveal>
               <SectionReveal style={{ flex: 1 }}>
@@ -282,11 +354,12 @@ export default function AgentPlatformPage() {
                 src="/images/agent-platform-speed-dashboard.png"
                 alt="Case Compass Speed-to-Lead Dashboard showing 76 minute 57 second average response time, 54% under 5-minute SLA, response time distribution histogram, daily average response time chart, and agent leaderboard with Alex Rivera, Sam Patel, Jordan Kim, and SBU Admin showing calls, average response, SLA percentage, conversions, and conversion rate"
                 caption="Speed-to-Lead Dashboard — avg response time, SLA %, response distribution, daily trend, and agent leaderboard"
+                onOpen={openLightbox}
               />
             </SectionReveal>
 
             <SectionReveal>
-              <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
+              <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
                 {[
                   { icon: Clock, label: 'Avg. response time', detail: 'Track how long leads wait before first agent contact — across today, week, month, or a custom date range.' },
                   { icon: Zap, label: 'SLA compliance %', detail: 'Set a target window (e.g. under 5 min) and see live what percentage of leads are being reached within it.' },
@@ -346,6 +419,7 @@ export default function AgentPlatformPage() {
                   src="/images/agent-platform-callback-queue.png"
                   alt="Case Compass Outbound Callback Queue showing Pending tab with Lisa Lee and Michelle Harris callbacks, Schedule Outbound Callback modal open with lead selector, scheduled date and time, agent dropdown showing Alex Rivera, Jordan Kim, and Sam Patel options, and notes field"
                   caption="Outbound Callback Queue — scheduled callbacks, agent assignment, and one-click dial"
+                  onOpen={openLightbox}
                 />
               </SectionReveal>
             </div>
@@ -361,6 +435,7 @@ export default function AgentPlatformPage() {
                   src="/images/agent-platform-ringcentral-settings.png"
                   alt="Case Compass RingCentral integration settings modal showing server credentials configured status, dial mode set to Browser softphone, inbound main number plus 1 650 587 0453, no call queue found, call recording toggle enabled, outbound default caller ID, and number attribution section"
                   caption="RingCentral integration — configure inbound number, dial mode, caller ID, and call recording in minutes"
+                  onOpen={openLightbox}
                 />
               </SectionReveal>
               <SectionReveal style={{ flex: 1 }}>
