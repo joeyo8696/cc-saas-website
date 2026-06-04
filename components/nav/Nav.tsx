@@ -24,6 +24,12 @@ const platformLinks = {
     name: 'Intake OS',
     description: 'The complete intake system — chatbots, webforms, live transfer, e-signatures, and automated nurture. From first click to signed retainer.',
   },
+  agentPlatform: {
+    href: '/solutions/agent-platform',
+    eyebrow: 'New',
+    name: 'Agent Platform',
+    description: 'Live transfer inbox, browser softphone, agent SOPs, speed-to-lead dashboards, and outbound callback queues — built for high-performance intake teams.',
+  },
   standalone: {
     href: '/solutions/dwellex',
     eyebrow: 'Landlord Tenant',
@@ -49,7 +55,6 @@ const platformLinks = {
         { icon: MessageSquare, label: 'Intelligent Intake', href: '/solutions/intake' },
         { icon: PhoneForwarded, label: 'Live Transfer', href: '/solutions/intake' },
         { icon: LayoutTemplate, label: 'Intake Form Builder', href: '/solutions/intake' },
-        { icon: Headphones, label: 'Agent Platform', href: '/solutions/agent-platform' },
       ],
     },
     {
@@ -148,7 +153,7 @@ export default function Nav() {
             <div
               style={{
                 position: 'absolute', top: '100%', left: '50%',
-                width: '720px', paddingTop: '16px',
+                width: '820px', paddingTop: '16px',
                 opacity: menuOpen ? 1 : 0,
                 visibility: menuOpen ? 'visible' : 'hidden',
                 transform: menuOpen ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(10px)',
@@ -158,33 +163,50 @@ export default function Nav() {
               }}
             >
               <div style={{ background: '#fff', borderRadius: '16px', boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)' }}>
-                {/* Featured: Intake OS + Waypoint */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderRadius: '16px 16px 0 0', overflow: 'hidden', borderBottom: '1px solid #e8edf5' }}>
-                  <Link href={platformLinks.intakeOS.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', padding: '20px', background: 'linear-gradient(135deg, #f0fdf4, #eff6ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
+                {/* Featured: Intake OS + Waypoint + Agent Platform */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderRadius: '16px 16px 0 0', overflow: 'hidden', borderBottom: '1px solid #e8edf5' }}>
+                  <Link href={platformLinks.intakeOS.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f0fdf4, #eff6ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #dcfce7, #dbeafe)' }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f0fdf4, #eff6ff)' }}
                   >
-                    <div style={{ width: '40px', height: '40px', flexShrink: 0, background: 'linear-gradient(135deg, #0ea5e9, #4f46e5)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Inbox size={20} color="#fff" />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #0ea5e9, #4f46e5)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Inbox size={17} color="#fff" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0284c7', marginBottom: '3px' }}>{platformLinks.intakeOS.eyebrow}</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.intakeOS.name}</div>
-                      <div style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.intakeOS.description}</div>
+                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0284c7', marginBottom: '3px' }}>{platformLinks.intakeOS.eyebrow}</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.intakeOS.name}</div>
+                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.intakeOS.description}</div>
                     </div>
                   </Link>
 
-                  <Link href={platformLinks.featured.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', padding: '20px', background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)', textDecoration: 'none' }}
+                  <Link href={platformLinks.featured.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eff6ff)' }}
                   >
-                    <div style={{ width: '40px', height: '40px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Waypoints size={20} color="#fff" />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Waypoints size={17} color="#fff" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>{platformLinks.featured.eyebrow}</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.featured.name}</div>
-                      <div style={{ fontSize: '0.78rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.featured.description}</div>
+                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>{platformLinks.featured.eyebrow}</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.featured.name}</div>
+                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.featured.description}</div>
+                    </div>
+                  </Link>
+
+                  <Link href={platformLinks.agentPlatform.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #fdf4ff, #f5f3ff)', textDecoration: 'none', position: 'relative' }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #fae8ff, #ede9fe)' }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #fdf4ff, #f5f3ff)' }}
+                  >
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #7c3aed, #6366f1)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Headphones size={17} color="#fff" />
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: '3px' }}>
+                        <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#7c3aed' }}>New</span>
+                        <span style={{ fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#7c3aed', color: '#fff', borderRadius: 3, padding: '1px 5px' }}>Just launched</span>
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.agentPlatform.name}</div>
+                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.agentPlatform.description}</div>
                     </div>
                   </Link>
                 </div>
