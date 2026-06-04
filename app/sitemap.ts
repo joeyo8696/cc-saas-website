@@ -60,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.95,
     },
+    {
+      url: `${BASE_URL}/solutions/agent-platform`,
+      lastModified: NOW,
+      changeFrequency: 'monthly',
+      priority: 0.92,
+    },
     // Integrations & connectors
     {
       url: `${BASE_URL}/integrations`,

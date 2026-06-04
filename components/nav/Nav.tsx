@@ -7,7 +7,7 @@ import {
   ChevronDown, Menu, X,
   Waypoints, MessageSquare, PhoneForwarded, LayoutTemplate,
   GitBranch, FileSignature, UserCircle, BarChart3, Users,
-  TrendingUp, Building2, HardHat, Inbox, Scale,
+  TrendingUp, Building2, HardHat, Inbox, Scale, Headphones,
 } from 'lucide-react'
 import DemoButton from '@/components/DemoButton'
 
@@ -49,6 +49,7 @@ const platformLinks = {
         { icon: MessageSquare, label: 'Intelligent Intake', href: '/solutions/intake' },
         { icon: PhoneForwarded, label: 'Live Transfer', href: '/solutions/intake' },
         { icon: LayoutTemplate, label: 'Intake Form Builder', href: '/solutions/intake' },
+        { icon: Headphones, label: 'Agent Platform', href: '/solutions/agent-platform' },
       ],
     },
     {
@@ -303,6 +304,7 @@ export default function Nav() {
               {[
                 { href: platformLinks.intakeOS.href, icon: Inbox, label: 'Intake OS', sub: 'Core Platform', iconBg: 'linear-gradient(135deg, #0ea5e9, #4f46e5)' },
                 { href: platformLinks.featured.href, icon: Waypoints, label: 'Waypoint', sub: 'AI Scoring', iconBg: 'linear-gradient(135deg, #4f46e5, #818cf8)' },
+                { href: '/solutions/agent-platform', icon: Headphones, label: 'Agent Platform', sub: 'Live Transfer & Calls', iconBg: 'linear-gradient(135deg, #6366f1, #818cf8)' },
                 { href: '/solutions/referrals', icon: Users, label: 'Referral Network', sub: 'Partner Management', iconBg: 'linear-gradient(135deg, #059669, #0891b2)' },
                 { href: '/solutions/esign', icon: FileSignature, label: 'E-Signatures', sub: 'Retainer Signing', iconBg: 'linear-gradient(135deg, #059669, #16a34a)' },
                 { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
