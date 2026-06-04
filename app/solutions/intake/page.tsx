@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {
   MessageSquare, PhoneForwarded, LayoutTemplate, Zap, CheckCircle,
-  Mail, BarChart3, Users, Clock, ArrowRight, Star, TrendingUp, Shield,
+  Mail, BarChart3, Users, Clock, ArrowRight, Star, TrendingUp, Shield, Headphones,
 } from 'lucide-react'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
@@ -526,7 +526,7 @@ export default function QualificationsPage() {
             <SectionReveal>
               <div className="split-row" style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px',
-                alignItems: 'center', marginBottom: '96px',
+                alignItems: 'center', marginBottom: '40px',
               }}>
                 <div>
                   <div style={{
@@ -549,11 +549,12 @@ export default function QualificationsPage() {
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {[
-                      'Configurable call scripts surfaced to agents on transfer',
+                      'Real-time queue with agent assignment and wait-time tracking',
                       'Full intake transcript visible before the agent speaks',
-                      'Incoming request queue with agent assignment',
+                      'Agent SOPs and compliance checklists surface automatically on pickup',
+                      'Browser softphone via RingCentral — no separate dialer needed',
+                      'Speed-to-lead dashboard with SLA tracking and agent leaderboard',
                       'Handoff directly to e-sign — close the retainer on the call',
-                      'Transfer status tracking: incoming, in progress, completed',
                     ].map(item => (
                       <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.875rem', color: '#334155' }}>
                         <CheckCircle size={15} color="#059669" style={{ marginTop: '2px', flexShrink: 0 }} />
@@ -580,6 +581,43 @@ export default function QualificationsPage() {
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                   />
                 </div>
+              </div>
+            </SectionReveal>
+
+            {/* Agent Platform callout */}
+            <SectionReveal>
+              <div style={{
+                marginBottom: '96px',
+                borderRadius: '16px',
+                background: 'linear-gradient(135deg, #fdf4ff, #f5f3ff)',
+                border: '1px solid #e9d5ff',
+                padding: '28px 32px',
+                display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap',
+              }}>
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: 'linear-gradient(135deg, #7c3aed, #6366f1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Headphones size={22} color="#fff" />
+                </div>
+                <div style={{ flex: 1, minWidth: 200 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a' }}>Agent Platform</span>
+                    <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#7c3aed', color: '#fff', borderRadius: 4, padding: '2px 7px' }}>New</span>
+                  </div>
+                  <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                    The full agent workforce suite — live transfer inbox, browser softphone with RingCentral, agent SOPs &amp; checklists, speed-to-lead dashboards, and outbound callback queues. Everything your team needs from the moment the call connects.
+                  </p>
+                </div>
+                <Link href="/solutions/agent-platform" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6, flexShrink: 0,
+                  padding: '11px 22px', borderRadius: 9,
+                  background: 'linear-gradient(135deg, #7c3aed, #6366f1)',
+                  color: '#fff', textDecoration: 'none',
+                  fontFamily: 'var(--font-display)', fontSize: '0.875rem', fontWeight: 700,
+                  whiteSpace: 'nowrap',
+                }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.9' }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1' }}>
+                  Explore Agent Platform <ArrowRight size={15} />
+                </Link>
               </div>
             </SectionReveal>
 
@@ -867,15 +905,21 @@ export default function QualificationsPage() {
                 Related Solutions
               </h2>
             </SectionReveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
               {[
-                { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', desc: 'Score every intake submission automatically before your team opens the file.' },
-                { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.' },
-                { href: '/solutions/dwellex', label: 'Dwellex', desc: 'Case management for landlord-tenant and eviction law.' },
-              ].map(({ href, label, desc }) => (
+                { href: '/solutions/agent-platform', label: 'Agent Platform', desc: 'Live transfer inbox, browser softphone, agent SOPs, speed dashboards, and outbound callback queues.', badge: 'New', color: '#7c3aed' },
+                { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', desc: 'Score every intake submission automatically before your team opens the file.', color: '#4f46e5' },
+                { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.', color: '#4f46e5' },
+                { href: '/solutions/esign', label: 'E-Signatures', desc: 'Send pre-filled retainer agreements for signature in the same intake session.', color: '#4f46e5' },
+              ].map(({ href, label, desc, badge, color }) => (
                 <SectionReveal key={href}>
-                  <Link href={href} style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none', transition: 'border-color 0.2s, box-shadow 0.2s' }}>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: '#4f46e5', marginBottom: '8px' }}>{label} →</div>
+                  <Link href={href} style={{ display: 'block', padding: '24px', border: `1px solid ${badge ? '#e9d5ff' : '#e2e8f0'}`, borderRadius: '12px', textDecoration: 'none', transition: 'border-color 0.2s, box-shadow 0.2s', background: badge ? 'linear-gradient(135deg, #fdf4ff, #faf5ff)' : '#fff' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 16px rgba(79,70,229,0.1)' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = 'none' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: '8px' }}>
+                      <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color }}>{label} →</span>
+                      {badge && <span style={{ fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#7c3aed', color: '#fff', borderRadius: 3, padding: '1px 6px' }}>{badge}</span>}
+                    </div>
                     <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{desc}</p>
                   </Link>
                 </SectionReveal>
