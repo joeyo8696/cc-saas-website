@@ -231,7 +231,7 @@ export default function AgentPlatformPage() {
             <SectionReveal>
               <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
                 {[
-                  { icon: Bell, title: 'WebSocket real-time updates', body: 'The queue refreshes live via WebSocket — no page refresh. New transfers appear the instant a lead hits the request button.' },
+                  { icon: Bell, title: 'Instant, live updates', body: 'The queue refreshes the moment something changes — no page refresh needed. New transfers appear the instant a lead hits the request button.' },
                   { icon: PhoneIncoming, title: 'One-click claim & answer', body: 'Agents click "Chat with client" or "Call" to claim and answer a transfer. They\'re immediately taken to the full lead profile.' },
                   { icon: Users, title: 'Full lead context on pickup', body: 'Lead name, intake form, wait time, conversation history, and SOPs are all pre-loaded. Agents walk into every call prepared.' },
                   { icon: Radio, title: 'Waiting · In Progress · Completed', body: 'Live counters above the queue show how many leads are waiting, in progress, and completed today — across all agents.' },
