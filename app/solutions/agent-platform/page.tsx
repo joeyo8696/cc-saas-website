@@ -30,7 +30,7 @@ const faq = [
   },
   {
     q: 'How does Case Compass integrate with RingCentral?',
-    a: 'Case Compass connects natively to RingCentral. Agents use a browser-based WebRTC softphone or RingOut to their desk phone — directly inside the dashboard. Every call is automatically logged, recorded, and attributed to the correct lead and marketing source. No separate dialer app is needed.',
+    a: 'Case Compass connects natively to RingCentral. Agents make and receive calls directly in the browser, or bridge through their desk or mobile phone via RingOut — no separate dialer app needed. Every call is automatically logged, recorded, and attributed to the correct lead and marketing source.',
   },
   {
     q: 'What are Agent SOPs and how do they help intake teams?',
@@ -444,11 +444,11 @@ export default function AgentPlatformPage() {
                   Your phone system, inside your intake dashboard
                 </h2>
                 <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.7, marginBottom: 32 }}>
-                  Connect Case Compass to RingCentral in minutes. Choose Browser Softphone (WebRTC) to talk directly in the browser, or RingOut to bridge calls through your desk or mobile phone. Every call is automatically logged, recorded, and attributed — regardless of dial mode.
+                  Connect Case Compass to RingCentral in minutes. Choose Browser Softphone to talk directly in the browser, or RingOut to bridge calls through your desk or mobile phone. Every call is automatically logged, recorded, and attributed — regardless of dial mode.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {[
-                    { mode: 'Browser softphone (WebRTC)', color: '#10b981', points: ['Talk in any browser — no app required', 'Floating panel visible across every page', 'Mute, hold, DTMF, blind transfer built-in', 'Automatic routing to lead profile or Call Intake'] },
+                    { mode: 'Browser softphone', color: '#10b981', points: ['Talk in any browser — no app required', 'Floating panel visible across every page', 'Mute, hold, transfer built-in', 'Automatic routing to lead profile or Call Intake'] },
                     { mode: 'RingOut', color: '#f59e0b', points: ['Agent\'s desk or mobile phone bridges to lead', 'Works with any existing handset', 'All calls still logged and attributed', 'Call routing notification pushed to dashboard'] },
                   ].map(m => (
                     <div key={m.mode} style={{ padding: '18px 20px', borderRadius: 12, border: `1px solid ${m.color}30`, background: `${m.color}08` }}>

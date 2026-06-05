@@ -17,7 +17,7 @@ const faqSchema = {
       name: 'How does Case Compass integrate with RingCentral?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Case Compass has a native RingCentral integration that connects your phone system directly to the agent dashboard. Agents can make and receive calls using a browser-based WebRTC softphone or through RingOut to their desk phone — no separate dialer app required. Every call is automatically logged, recorded, and attributed to the correct lead and marketing source.',
+        text: 'Case Compass has a native RingCentral integration that connects your phone system directly to the agent dashboard. Agents can make and receive calls directly in the browser, or bridge through their desk or mobile phone via RingOut — no separate dialer app required. Every call is automatically logged, recorded, and attributed to the correct lead and marketing source.',
       },
     },
     {
@@ -76,7 +76,7 @@ const softwareSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
   featureList: [
     'Live transfer inbox with real-time queue management',
-    'Browser-based WebRTC softphone via RingCentral',
+    'Browser softphone via RingCentral',
     'Agent SOPs and compliance checklists',
     'Speed-to-lead dashboard and SLA tracking',
     'Outbound callback queue with agent assignment',
