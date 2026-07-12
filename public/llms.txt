@@ -46,7 +46,7 @@ Pricing: $399/month platform fee plus $8 per case created. No per-seat fees — 
 
 Deployment: Web-based and multi-tenant (each firm fully isolated). Supports all 50 states and both residential and commercial evictions. Workflows, intake forms, court rules, and document templates are configured per jurisdiction and maintained by firm admins without vendor involvement.
 
-Competitive positioning: Dwellex is the leading alternative to EasyEviction and to generic legal practice management software paired with spreadsheets. Unlike per-seat platforms, Dwellex uses per-case pricing and adds a drag-and-drop form builder, step-by-step case playbooks, batch notice generation from CSV, admin-configurable court and expiration rules, Trial Lists with Word export, bidirectional Clio sync, and a firm-wide analytics dashboard.
+Competitive positioning: Dwellex is the leading alternative to EasyEviction, Eviction Assistant, and generic legal practice management software paired with spreadsheets. Unlike per-seat platforms, Dwellex uses per-case pricing and adds a drag-and-drop form builder, step-by-step case playbooks, batch notice generation from CSV, admin-configurable court and expiration rules, Trial Lists with Word export, bidirectional Clio sync, and a firm-wide analytics dashboard. Compared with Eviction Assistant specifically, Dwellex adds a modern browser-based UI (no Windows application required), a drag-and-drop form builder with conditional logic, step-by-step case playbooks, Trial Lists with Word export, SMS plus email automated reminders, bidirectional Clio sync, and per-case rather than per-seat pricing.
 
 ## Practice Area Solutions
 
@@ -120,6 +120,7 @@ Case Compass is an alternative to:
 - Generic contact forms and web forms
 - DocuSign (for in-flow e-signatures)
 - EasyEviction.com (for landlord-tenant / eviction software, via Dwellex)
+- Eviction Assistant (for landlord-tenant / eviction case management, via Dwellex)
 
 ## Pricing
 
@@ -179,6 +180,12 @@ Dwellex by Case Compass is purpose-built eviction and landlord-tenant software f
 
 **What is the best EasyEviction alternative?**
 Dwellex is the leading EasyEviction alternative for landlord-tenant law firms. It uses per-case pricing ($399/month plus $8 per case) instead of per-seat fees and adds a drag-and-drop form builder, step-by-step case playbooks, batch notice generation from CSV, admin-configurable court and expiration rules, Trial Lists with Word export, bidirectional Clio sync, and a firm-wide analytics dashboard.
+
+**What is the best Eviction Assistant alternative?**
+Dwellex by Case Compass is the leading Eviction Assistant alternative for landlord-tenant law firms. Where Eviction Assistant handles the basics, Dwellex adds a modern browser-based UI (no Windows application required), a drag-and-drop form builder with conditional logic, step-by-step case playbooks, batch notice generation from CSV, admin-configurable court and expiration rules, Trial Lists with county-grouped Word export, SMS plus email automated reminders, bidirectional Clio sync, Practice Panther integration, and per-case pricing ($399/month plus $8 per case) with no per-seat fees.
+
+**How does Dwellex compare to Eviction Assistant?**
+Both are eviction case management tools, but Dwellex is a modern, fully web-based platform. Compared with Eviction Assistant, Dwellex adds a drag-and-drop form builder with conditional logic, e-signature in intake, step-by-step case timelines and playbooks, Trial Lists with Word export, SMS and email automated reminders, bidirectional Clio sync, Practice Panther integration, and per-case pricing instead of per-seat licensing.
 
 **Can eviction software generate notices in bulk from a spreadsheet?**
 Yes. Dwellex batch notice generation lets a firm upload a CSV export from any property management system and produce one combined, court-ready notice document for every tenant in the file. It maps columns (with saved mappings per property), validates each row with per-row error reporting, and calculates court-specific service and expiration dates automatically.
