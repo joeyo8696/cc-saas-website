@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injured at Work? | Harbor Law Group</title>
+    <meta name="description" content="Hurt on the job? Harbor Law Group fights for injured workers across California. Free case evaluation — no fees unless we win.">
+    <meta name="robots" content="noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0f2444;
+            --navy-mid: #1a3a6b;
+            --gold: #c9a84c;
+            --gold-light: #e8c97a;
+            --white: #ffffff;
+            --off-white: #f8f7f4;
+            --gray: #6b7280;
+            --light-gray: #f1f0ed;
+            --border: #e5e3de;
+            --text: #1a1a2e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            background: var(--white);
+            padding: 4px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo-img {
+            height: 80px;
+            width: auto;
+            max-width: 400px;
+        }
+
+        .nav-firm-name {
+            color: var(--navy);
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-firm-sub {
+            color: var(--gray);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 1px;
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover { background: var(--gold-light); }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e4a8a 100%);
+            padding: 80px 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding-bottom: 60px;
+            padding-top: 20px;
+        }
+
+        .hero-photo-wrap {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .hero-photo-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            right: -10px;
+            bottom: 0;
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero-photo {
+            width: 100%;
+            max-width: 560px;
+            border-radius: 14px;
+            display: block;
+            object-fit: cover;
+            object-position: top center;
+            height: 480px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 3px rgba(201,168,76,0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero-photo-wrap { display: none; }
+            .hero-content { padding-bottom: 60px; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(201,168,76,0.15);
+            border: 1px solid rgba(201,168,76,0.35);
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 4vw, 54px);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: rgba(255,255,255,0.75);
+            max-width: 520px;
+            margin: 0 0 40px;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 16px;
+            padding: 16px 34px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 34px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .hero-trust {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.65);
+            font-size: 13.5px;
+            font-weight: 500;
+        }
+
+        .trust-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        /* STATS BAND */
+        .stats-band {
+            background: var(--off-white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* SECTIONS */
+        section { padding: 80px 40px; }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            font-size: 17px;
+            color: var(--gray);
+            max-width: 580px;
+            line-height: 1.7;
+        }
+
+        /* HOW IT WORKS */
+        .how-bg { background: var(--white); }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 52px;
+        }
+
+        .step-card {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 32px 28px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            color: var(--gold);
+            font-weight: 800;
+            font-size: 16px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .step-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .step-desc {
+            font-size: 14.5px;
+            color: var(--gray);
+            line-height: 1.65;
+        }
+
+        /* WHY US */
+        .why-bg { background: var(--off-white); }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 52px;
+        }
+
+        .why-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .why-card:hover {
+            box-shadow: 0 8px 28px rgba(15,36,68,0.08);
+            transform: translateY(-2px);
+        }
+
+        .why-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(15,36,68,0.06);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .why-icon svg {
+            width: 22px;
+            height: 22px;
+            color: var(--navy);
+        }
+
+        .why-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 7px;
+        }
+
+        .why-desc {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.65;
+        }
+
+        /* TYPES OF CASES */
+        .cases-bg { background: var(--white); }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 52px;
+        }
+
+        .case-pill {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--navy);
+            transition: all 0.2s;
+        }
+
+        .case-pill:hover {
+            background: var(--navy);
+            color: var(--white);
+            border-color: var(--navy);
+        }
+
+        .case-pill:hover svg { color: var(--gold); }
+
+        .case-pill svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+            padding: 90px 40px;
+            text-align: center;
+        }
+
+        .cta-section .section-title { color: var(--white); }
+        .cta-section .section-sub { color: rgba(255,255,255,0.7); margin: 0 auto 40px; }
+
+        /* FAQ */
+        .faq-bg { background: var(--off-white); }
+
+        .faq-list {
+            margin-top: 52px;
+            max-width: 760px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .faq-q {
+            padding: 20px 24px;
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq-q svg { flex-shrink: 0; color: var(--gold); transition: transform 0.2s; }
+        .faq-item.open .faq-q svg { transform: rotate(45deg); }
+
+        .faq-a {
+            display: none;
+            padding: 0 24px 20px;
+            font-size: 14.5px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-a { display: block; }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.5);
+            padding: 36px 40px;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer strong { color: rgba(255,255,255,0.8); }
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(10,20,40,0.65);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: var(--white);
+            border-radius: 18px;
+            width: 100%;
+            max-width: 560px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+        }
+
+        .modal-header {
+            background: var(--navy);
+            padding: 28px 32px 24px;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--white);
+            margin-bottom: 6px;
+        }
+
+        .modal-header p {
+            font-size: 13.5px;
+            color: rgba(255,255,255,0.65);
+        }
+
+        .modal-body { padding: 28px 32px 32px; }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--navy);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 15px;
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 6px;
+            transition: background 0.2s;
+        }
+
+        .form-submit:hover { background: var(--navy-mid); }
+
+        .modal-close {
+            float: right;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+            padding: 4px;
+            margin-top: -4px;
+        }
+
+        .form-consent {
+            font-size: 11.5px;
+            color: var(--gray);
+            text-align: center;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        /* BOT CONTAINER */
+        #bot {
+            position: fixed !important;
+            bottom: 0 !important;
+            right: 0 !important;
+            width: auto !important;
+            height: auto !important;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        #bot > * {
+            pointer-events: all;
+        }
+
+        /* BOT GLOW */
+        @keyframes chatGlow {
+            0%    { box-shadow: 0 0 0 0   rgba(201,168,76,0),    0 12px 40px rgba(0,0,0,0.15); }
+            8%    { box-shadow: 0 0 0 10px rgba(201,168,76,0.9),  0 0 60px 20px rgba(201,168,76,0.5), 0 12px 40px rgba(0,0,0,0.15); }
+            18%   { box-shadow: 0 0 0 0   rgba(201,168,76,0),    0 12px 40px rgba(0,0,0,0.15); }
+            28%   { box-shadow: 0 0 0 10px rgba(201,168,76,0.75), 0 0 60px 20px rgba(201,168,76,0.4), 0 12px 40px rgba(0,0,0,0.15); }
+            40%   { box-shadow: 0 0 0 0   rgba(201,168,76,0),    0 12px 40px rgba(0,0,0,0.15); }
+            52%   { box-shadow: 0 0 0 10px rgba(201,168,76,0.55), 0 0 60px 20px rgba(201,168,76,0.25), 0 12px 40px rgba(0,0,0,0.15); }
+            100%  { box-shadow: 0 0 0 0   rgba(201,168,76,0),    0 12px 40px rgba(0,0,0,0.15); }
+        }
+
+        @keyframes shimmerSweep {
+            0%   { left: -60%; opacity: 0; }
+            10%  { opacity: 0.9; }
+            90%  { opacity: 0.5; }
+            100% { left: 130%; opacity: 0; }
+        }
+
+        .wc-chatview-panel.bot-glow {
+            animation: chatGlow 3.8s ease-out forwards !important;
+        }
+
+        .wc-chatview-panel.bot-glow .wc-app::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(105deg, transparent, rgba(255,255,255,0.22), transparent);
+            animation: shimmerSweep 2.2s ease-in-out 0.3s forwards;
+            pointer-events: none;
+            z-index: 99999;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { padding: 16px 20px; }
+            .hero { padding: 60px 20px; }
+            section { padding: 60px 20px; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .cases-grid { grid-template-columns: 1fr 1fr; }
+            .stats-band { gap: 32px; padding: 32px 20px; }
+            .form-row { grid-template-columns: 1fr; }
+            .modal-body { padding: 20px; }
+            .modal-header { padding: 22px 20px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-logo">
+        <img src="logo.png" alt="Harbor Law Group" class="nav-logo-img">
+    </div>
+    <a href="#" class="nav-cta" onclick="openModal(); return false;">Free Case Review</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i data-lucide="shield-check" style="width:13px;height:13px;"></i>
+                No Fee Unless We Win
+            </div>
+            <h1>Hurt at Work?<br>You Deserve <span>Full Compensation.</span></h1>
+            <p class="hero-sub">Harbor Law Group has recovered millions for injured workers across California. Get a free case review in minutes — no paperwork, no hassle.</p>
+            <div class="hero-actions">
+                <a href="#" class="btn-primary" onclick="glowBot(); return false;">
+                    <i data-lucide="clipboard-check" style="width:18px;height:18px;"></i>
+                    Start My Free Case Review
+                </a>
+                <a href="tel:+18005550100" class="btn-secondary">
+                    <i data-lucide="phone" style="width:18px;height:18px;"></i>
+                    Call (800) 555-0100
+                </a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <i data-lucide="check-circle"></i>
+                    Free consultation
+                </div>
+                <div class="trust-item">
+                    <i data-lucide="check-circle"></i>
+                    No upfront costs
+                </div>
+                <div class="trust-item">
+                    <i data-lucide="check-circle"></i>
+                    Available 24/7
+                </div>
+                <div class="trust-item">
+                    <i data-lucide="check-circle"></i>
+                    Se habla español
+                </div>
+            </div>
+        </div>
+        <div class="hero-photo-wrap">
+            <img src="team-photo.png" alt="Harbor Law Group attorneys" class="hero-photo">
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+    <div class="stat-item">
+        <div class="stat-number">$180M+</div>
+        <div class="stat-label">Recovered for clients</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">4,200+</div>
+        <div class="stat-label">Cases won</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Client satisfaction</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">22 yrs</div>
+        <div class="stat-label">Fighting for workers</div>
+    </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg">
+    <div class="section-inner">
+        <div class="section-label">The Process</div>
+        <h2 class="section-title">Simple. Fast. On Your Side.</h2>
+        <p class="section-sub">From your first call to your final settlement, we handle everything so you can focus on recovering.</p>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-title">Tell Us What Happened</div>
+                <p class="step-desc">Complete our quick online intake — takes about 2 minutes. Tell us about your injury, your employer, and your treatment so far.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-title">We Review Your Claim</div>
+                <p class="step-desc">An attorney reviews your case within 24 hours and contacts you directly. We'll tell you exactly what your claim is worth and how to proceed.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-title">We Fight. You Recover.</div>
+                <p class="step-desc">We handle the insurance company, the paperwork, and the legal process. You focus on healing. We don't get paid unless you do.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY HARBOR -->
+<section class="why-bg">
+    <div class="section-inner">
+        <div class="section-label">Why Harbor Law Group</div>
+        <h2 class="section-title">We Know Workers' Comp.<br>Inside and Out.</h2>
+        <p class="section-sub">Insurance companies have lawyers working against you from day one. You need someone in your corner who knows the system.</p>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon"><i data-lucide="gavel"></i></div>
+                <div>
+                    <div class="why-title">Exclusively Workers' Comp</div>
+                    <p class="why-desc">We don't dabble. Workers' compensation is all we do — which means we know every tactic insurers use to deny or reduce your benefits.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon"><i data-lucide="clock"></i></div>
+                <div>
+                    <div class="why-title">Fast Response, Every Time</div>
+                    <p class="why-desc">You'll hear from a real attorney within 24 hours of submitting your case. No call centers, no runaround.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon"><i data-lucide="file-text"></i></div>
+                <div>
+                    <div class="why-title">We Handle the Paperwork</div>
+                    <p class="why-desc">Medical records, employer notices, DWC filings — we collect and manage everything so nothing falls through the cracks.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon"><i data-lucide="trending-up"></i></div>
+                <div>
+                    <div class="why-title">Maximum Compensation</div>
+                    <p class="why-desc">We fight for every dollar — lost wages, medical treatment, permanent disability, and vocational rehabilitation when applicable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CASE TYPES -->
+<section class="cases-bg">
+    <div class="section-inner">
+        <div class="section-label">Cases We Handle</div>
+        <h2 class="section-title">All Types of Workplace Injuries</h2>
+        <p class="section-sub">If you were hurt on the job, we can help — regardless of how the injury happened.</p>
+
+        <div class="cases-grid">
+            <div class="case-pill"><i data-lucide="zap"></i> Slip & Fall Injuries</div>
+            <div class="case-pill"><i data-lucide="activity"></i> Repetitive Stress Injuries</div>
+            <div class="case-pill"><i data-lucide="settings"></i> Machinery Accidents</div>
+            <div class="case-pill"><i data-lucide="truck"></i> Vehicle Accidents on the Job</div>
+            <div class="case-pill"><i data-lucide="wind"></i> Toxic Exposure</div>
+            <div class="case-pill"><i data-lucide="heart-pulse"></i> Occupational Disease</div>
+            <div class="case-pill"><i data-lucide="hard-hat"></i> Construction Accidents</div>
+            <div class="case-pill"><i data-lucide="brain"></i> Psychological Injuries</div>
+            <div class="case-pill"><i data-lucide="bone"></i> Back & Spine Injuries</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="section-inner">
+        <div class="section-label" style="color: var(--gold-light);">Get Started Today</div>
+        <h2 class="section-title">Don't Wait. Deadlines Apply.</h2>
+        <p class="section-sub">California workers' comp claims have strict filing deadlines. The sooner you act, the stronger your case.</p>
+        <a href="#" class="btn-primary" onclick="openModal(); return false;" style="font-size:17px; padding: 18px 40px;">
+            <i data-lucide="clipboard-check" style="width:20px;height:20px;"></i>
+            Start My Free Case Review
+        </a>
+        <p style="color: rgba(255,255,255,0.45); font-size: 13px; margin-top: 18px;">No fees. No obligation. Results in 24 hours.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-bg">
+    <div class="section-inner">
+        <div class="section-label">Common Questions</div>
+        <h2 class="section-title">We've Heard It Before.<br>Here Are the Answers.</h2>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    Do I have to pay anything upfront?
+                    <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                </div>
+                <div class="faq-a">No. Harbor Law Group works on a contingency fee basis — we only get paid if we win your case. There are no upfront costs, no retainer fees, and no out-of-pocket expenses.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    What if my employer says the injury was my fault?
+                    <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                </div>
+                <div class="faq-a">California workers' comp is a no-fault system. Even if you contributed to the accident, you are generally still entitled to benefits. Don't let your employer or their insurer discourage you from filing.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    How long do I have to file a claim?
+                    <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                </div>
+                <div class="faq-a">In California, you generally have one year from the date of injury to file a workers' comp claim. However, you should report the injury to your employer within 30 days to avoid complications. Contact us as soon as possible.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    What benefits can I receive?
+                    <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                </div>
+                <div class="faq-a">You may be entitled to: medical treatment coverage, temporary disability payments (while you can't work), permanent disability benefits, supplemental job displacement benefits, and death benefits for dependents in fatal cases.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    My employer doesn't have workers' comp insurance. What now?
+                    <i data-lucide="plus" style="width:20px;height:20px;"></i>
+                </div>
+                <div class="faq-a">You still have options. California's Uninsured Employers Benefits Trust Fund (UEBTF) may cover your claim. You may also have grounds for a civil lawsuit against your employer. Contact us — we'll figure out the best path forward.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <strong>Harbor Law Group</strong><br>
+    1200 Harbor Blvd, Suite 800, Los Angeles, CA 90017 &nbsp;|&nbsp; (800) 555-0100 &nbsp;|&nbsp; info@harborlawgroup.com<br><br>
+    © 2026 Harbor Law Group. All rights reserved. Attorney advertising. Prior results do not guarantee a similar outcome.<br>
+    Harbor Law Group is a fictitious firm created for demonstration purposes only.
+</footer>
+
+
+<script>
+    function glowBot() {
+        // Target the chat panel if open, otherwise the floating button
+        const panel = document.querySelector('.wc-chatview-panel');
+        const target = (panel && panel.offsetHeight > 0) ? panel : document.querySelector('.wc-floating');
+        if (target) {
+            target.classList.remove('bot-glow');
+            void target.offsetWidth;
+            target.classList.add('bot-glow');
+            setTimeout(() => target.classList.remove('bot-glow'), 4200);
+        }
+    }
+
+    function openModal() { glowBot(); }
+
+    function toggleFaq(el) {
+        el.parentElement.classList.toggle('open');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+
+        // Pulse the bot after it loads to draw attention
+        const waitForBot = setInterval(() => {
+            const wrap = document.querySelector('.wc-floating-wrap, #bot');
+            if (wrap && document.querySelector('.wc-floating')) {
+                clearInterval(waitForBot);
+                setTimeout(() => glowBot(), 500);
+            }
+        }, 300);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('.step-card, .why-card, .case-pill, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+            observer.observe(el);
+        });
+    });
+</script>
+<!-- Case Compass Intake Bot -->
+<script>
+   !function()
+     {
+        var t=document.createElement("script");
+        t.src="https://d2pq0k5qg2gmsf.cloudfront.net/chatbot-saas/botchat.js";
+        var e=document.createElement("link");
+        e.setAttribute("rel","stylesheet"),
+        e.setAttribute("type","text/css"),
+        e.setAttribute("href","https://d2pq0k5qg2gmsf.cloudfront.net/chatbot-saas/botchat.css"),
+        document.getElementsByTagName("head")[0].appendChild(e);
+
+        var d=document.createElement("div");
+        d.setAttribute("id","bot"),
+        document.body.appendChild(d),
+        t.onload=t=>{
+          BotChat.App({
+            directLine:{secret:"GaRM_zwyAjE.cwA.1P8.fJCcDyzL3-X3YKbCMPMD2mn1OrHBa9WZzipWvvVAAsw"},
+            gid:"https://api.casecompass.io",
+            tenant: "portal",
+            form_id: 14
+          },
+          document.getElementById("bot"))},
+          document.getElementsByTagName("head")[0].appendChild(t)
+        }();
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://blog.casecompass.io/sitemap.xml
+
+# Crawl-delay (optional, for polite crawlers)
+Crawl-delay: 5

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown, Landmark, Monitor, BarChart2 } from 'lucide-react'
+import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown, Landmark, Monitor, BarChart2, Briefcase, ClipboardCheck, Files, CalendarClock, MessageSquare, Settings } from 'lucide-react'
 
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
@@ -32,21 +32,29 @@ const jsonLd = {
       },
       featureList: [
         'Landlord intake portal with e-signature and conditional field logic',
-        'Staff intake review and approval workflow',
+        'Staff intake review and approval workflow with a centralized review queue',
+        'Bulk CSV intake and batch notice generation from any PMS export',
+        'Saved column mappings and per-row structural validation',
         'Automated eviction case timeline tracking with step assignment',
+        'Conditional workflow branching based on case outcomes',
         'Dual-column client and attorney task management',
         'Trial Lists — county-grouped AM/PM court schedules with Word export',
         'Auto-generated court documents — summons, complaints, sheriff info sheets, notices',
+        'Court-specific, holiday-aware expiration date calculation',
+        'Admin-configurable court directory and per-notice expiration rules',
         'Drag-and-drop form builder with conditional logic',
         'Client portal with case timeline visibility and document upload',
         'Case templates with ordered action steps and due date rules',
-        'Clio integration with bidirectional matter sync',
+        'Clio integration with bidirectional matter and document sync',
         'Practice Panther and Rent Manager integrations',
         'Court date tracking and marshal coordination',
         'Lockout scheduling and notifications',
-        'SMS and email automated reminders',
-        'Role-based access control (admin, staff, client)',
-        'Analytics dashboard and per-case ledger tracking',
+        'Case-linked messaging with email threading and auto-filed attachments',
+        'Configurable SMS and email automated reminder rules',
+        'Role-based access control (admin, supervisor, staff, trainer/QA, client)',
+        'Firm-wide analytics dashboard with intake, case, and financial metrics',
+        'Client-facing report suite with CSV and XLSX export',
+        'Multi-tenant architecture with firm-managed configuration',
       ],
       audience: {
         '@type': 'Audience',
@@ -57,6 +65,14 @@ const jsonLd = {
         name: 'Case Compass',
         url: 'https://www.casecompass.io',
       },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
+        { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.casecompass.io/solutions' },
+        { '@type': 'ListItem', position: 3, name: 'Dwellex', item: 'https://www.casecompass.io/solutions/dwellex' },
+      ],
     },
     {
       '@type': 'FAQPage',
@@ -123,6 +139,38 @@ const jsonLd = {
           acceptedAnswer: {
             '@type': 'Answer',
             text: 'Dwellex supports eviction workflows across all 50 states. Case templates, intake forms, and court document formats are fully customizable per jurisdiction — configured to match your state during implementation.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can Dwellex generate eviction notices in bulk from a spreadsheet?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Dwellex batch notice generation lets you upload a CSV export from any property management system and produce one combined, court-ready notice document for every tenant in the file. It maps columns (with saved mappings per property), validates each row with per-row error reporting, and calculates court-specific service and expiration dates automatically.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does Dwellex calculate notice expiration dates?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex calculates expiration dates automatically from the service date using per-court, per-notice-type rules — calendar days or business days, with federal and state holidays accounted for. Firm admins configure the court directory and rules themselves, and staff can review or override any calculated date before a notice goes out.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can Dwellex automate eviction reminders and follow-ups?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Dwellex includes a configurable reminder engine. You build rules tied to case milestones — send before, after, or on a due date, over email, SMS, or both — choose the send time and template, and Dwellex sends every reminder automatically so no statutory deadline is missed.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What reporting and analytics does Dwellex provide?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dwellex includes a firm-wide analytics dashboard tracking active cases, pending intakes, rent at risk, and average days to close, plus breakdowns for case volume, the intake funnel, cases by county, and violation types. A client-facing report suite with roughly 20 filterable fields exports to CSV and XLSX.',
           },
         },
         {
@@ -224,6 +272,144 @@ const audience = [
   { icon: Users, label: 'Landlords', desc: 'Submit intake, track status, and receive updates automatically' },
 ]
 
+const capabilities = [
+  {
+    icon: Briefcase,
+    title: 'Case Management',
+    items: [
+      'Full case lifecycle tracking from intake to resolution',
+      'Configurable action-item pipeline per case type',
+      'Conditional workflow branching on outcomes',
+      'Color-coded status, labels, and custom tagging',
+      'Bulk case reassignment across staff',
+      'Closed & withdrawn archive with full history',
+    ],
+  },
+  {
+    icon: FileText,
+    title: 'Intake',
+    items: [
+      'Mobile-friendly, client-facing intake forms',
+      'Bankruptcy hard-stop and HAP/voucher flags',
+      'Bulk CSV intake from any PMS export',
+      'Saved column mappings per property',
+      'Structural validation with per-row errors',
+      'Auto-fill from property defaults',
+    ],
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Review Queue',
+    items: [
+      'Centralized queue for all pending intakes',
+      'Four-action approval workflow',
+      'Confirm notice type, court, service date & template',
+      'Deep filters — assignee, court, status, flags, dates',
+      'Bulk reassignment in a single action',
+    ],
+  },
+  {
+    icon: Files,
+    title: 'Document Generation',
+    items: [
+      'Batch notice generation from CSV',
+      'Court-specific, holiday-aware expiration math',
+      'Envelopes and process-server routing sheets',
+      'Document preview & QC before finalizing',
+      'Regenerate and replace after corrections',
+      'Eviction complaint generation by jurisdiction',
+    ],
+  },
+  {
+    icon: Landmark,
+    title: 'Court & Jurisdiction',
+    items: [
+      'Full court directory with jurisdiction details',
+      'Per-court, per-notice expiration rules',
+      'Admin-configurable — no vendor needed',
+      'Clio folder routing by service date',
+      'In-platform folder name editing',
+    ],
+  },
+  {
+    icon: FolderSync,
+    title: 'Clio Integration',
+    items: [
+      'Full matter sync with custom field values',
+      'General Service File folder routing',
+      'Bidirectional task & activity sync',
+      'Parent/child property manager mapping',
+      'Sync-scope & document visibility controls',
+    ],
+  },
+  {
+    icon: CalendarClock,
+    title: 'Expiration & Signed Notices',
+    items: [
+      'Automatic expiration from service date + rules',
+      'Staff review and override of calculated dates',
+      'One-click client notification with spreadsheet',
+      'Signed-notice upload to General Service File',
+      'Case-manager confirmation before client notice',
+    ],
+  },
+  {
+    icon: Monitor,
+    title: 'Client Portal',
+    items: [
+      'Secure login with role-based access',
+      'Dashboard grouped by practice area',
+      'Upcoming court & hearing dates at a glance',
+      'Case timeline with current step & status',
+      '~20-field report suite, CSV & XLSX export',
+      'Submit new notice requests from the portal',
+    ],
+  },
+  {
+    icon: MessageSquare,
+    title: 'Communications',
+    items: [
+      'Case-linked, multi-participant threads',
+      'File attachments auto-filed to the matter',
+      'Inbound email threading into the portal',
+      'Emailed document attachments auto-filed',
+    ],
+  },
+  {
+    icon: Users,
+    title: 'Staff & Roles',
+    items: [
+      'Admin, Supervisor, Staff, Trainer/QA, Client roles',
+      'Case assignment with visibility scoping',
+      'Per-staff queue views and filters',
+      'Coverage / out-of-office access grants',
+      'Supervisor reassignment across the queue',
+    ],
+  },
+  {
+    icon: Building2,
+    title: 'Property & Client Profiles',
+    items: [
+      'Rich profiles — gate codes, contacts, recipients',
+      'Clio General Service File link per property',
+      'Default court & notice type auto-fill',
+      'HAP flag & per-client export preferences',
+      'Admin self-maintenance after go-live',
+    ],
+  },
+  {
+    icon: Settings,
+    title: 'Platform & Administration',
+    items: [
+      'Multi-tenant architecture — full firm isolation',
+      'Firm-admin-managed workflow configuration',
+      'Word template management by document type',
+      'Configurable reminder triggers & timing',
+      'Audit trail and activity logging',
+    ],
+  },
+]
+
 const faqs = [
   {
     q: 'What is Dwellex?',
@@ -252,6 +438,22 @@ const faqs = [
   {
     q: 'What states does Dwellex support?',
     a: 'Dwellex supports eviction workflows across all 50 states. Case templates, intake forms, and court document formats are fully customizable per jurisdiction — your workflows and documents are configured to match your state during implementation.',
+  },
+  {
+    q: 'Can Dwellex generate notices in bulk from a spreadsheet?',
+    a: 'Yes. Dwellex batch notice generation lets you upload a CSV export from any property management system and produce one combined, court-ready notice document for every tenant in the file. It maps columns (with saved mappings per property), validates each row with per-row error reporting, and calculates court-specific service and expiration dates automatically.',
+  },
+  {
+    q: 'How does Dwellex calculate notice expiration dates?',
+    a: 'Dwellex calculates expiration dates automatically from the service date using per-court, per-notice-type rules — calendar days or business days, with federal and state holidays accounted for. Firm admins configure the court directory and rules themselves, and staff can review or override any calculated date before a notice goes out.',
+  },
+  {
+    q: 'Can I automate reminders and follow-ups in Dwellex?',
+    a: 'Yes. Dwellex includes a configurable reminder engine. You build rules tied to case milestones — send before, after, or on a due date, over email, SMS, or both — choose the send time and template, and Dwellex sends every reminder automatically so no statutory deadline is missed.',
+  },
+  {
+    q: 'What reporting and analytics does Dwellex provide?',
+    a: 'Dwellex includes a firm-wide analytics dashboard tracking active cases, pending intakes, rent at risk, and average days to close, plus breakdowns for case volume, the intake funnel, cases by county, and violation types. A client-facing report suite with roughly 20 filterable fields exports to CSV and XLSX.',
   },
   {
     q: 'Does Dwellex work for both residential and commercial evictions?',
@@ -402,7 +604,7 @@ export default function DwellexPage() {
         <section style={{ background: 'transparent', padding: '100px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <Image
-              src="/images/dwellex_logo.png"
+              src="/images/dwellex_logo_white.png"
               alt="Dwellex"
               width={400}
               height={174}
@@ -441,6 +643,44 @@ export default function DwellexPage() {
             <DemoButton style={{ padding: '16px 40px', fontSize: '1rem' }}>
               Request a Demo →
             </DemoButton>
+          </div>
+        </section>
+
+        {/* Quick Facts — answer-first summary for AI engines & skimmers */}
+        <section style={{ background: 'transparent', padding: '0 40px 100px', position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: '920px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '20px',
+                padding: '40px 44px',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+              }}>
+                <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)', marginBottom: '14px' }}>
+                  The short version
+                </div>
+                <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.82)', lineHeight: 1.75, margin: '0 0 28px' }}>
+                  <strong style={{ color: '#fff' }}>Dwellex is eviction case management software built for landlord-tenant law firms.</strong> It automates the full eviction workflow — client intake, staff review, batch notice generation from CSV, court-specific expiration calculation, document generation, case timeline tracking, and client communication — and syncs bidirectionally with Clio. It is priced at $399/month plus $8 per case created, with no per-seat fees.
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px 32px' }}>
+                  {[
+                    { k: 'What it is', v: 'Eviction & landlord-tenant case management software' },
+                    { k: 'Built for', v: 'Eviction law firms, landlord-tenant attorneys & property managers' },
+                    { k: 'Pricing', v: '$399/month + $8 per case — no per-seat fees' },
+                    { k: 'Integrates with', v: 'Clio, Practice Panther, Rent Manager' },
+                    { k: 'Coverage', v: 'All 50 states — residential & commercial' },
+                    { k: 'Best-known alternative to', v: 'EasyEviction and generic LPM + spreadsheets' },
+                  ].map(({ k, v }) => (
+                    <div key={k}>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.75)', marginBottom: '6px' }}>{k}</div>
+                      <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.5 }}>{v}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
           </div>
         </section>
 
@@ -654,6 +894,56 @@ export default function DwellexPage() {
             bg: '#f8fffb',
             glow: 'rgba(16,185,129,0.07)',
           },
+          {
+            image: '/images/dwellex-batch-notices.png',
+            alt: 'Dwellex batch notice generator — upload a PMS CSV to produce one combined notice document for multiple tenants',
+            eyebrow: 'Batch Notices',
+            title: 'Hundreds of notices from a single CSV',
+            body: 'Upload any property management export and Dwellex maps the columns, validates every row, and generates one combined, court-ready notice document for every tenant in the file — with per-row service dates and court-specific expiration math. Saved column mappings mean you never remap the same property twice.',
+            accent: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+            bg: '#fffdf8',
+            glow: 'rgba(245,158,11,0.08)',
+          },
+          {
+            image: '/images/dwellex-court-management.png',
+            alt: 'Dwellex court management — edit court details including court type, jurisdiction, and per-notice expiration rules',
+            eyebrow: 'Court & Jurisdiction',
+            title: 'Configure courts and expiration rules yourself',
+            body: 'Maintain a full court directory with jurisdiction, court type, and per-notice-type expiration rules — calendar days or business days, federal and state holiday-aware. Firm admins add courts and change rules directly, with no vendor involvement.',
+            accent: 'linear-gradient(135deg, #0f172a, #475569)',
+            bg: '#f8fafc',
+            glow: 'rgba(15,23,42,0.06)',
+          },
+          {
+            image: '/images/dwellex-reminder-rules.png',
+            alt: 'Dwellex reminder rules editor — automated email and SMS reminders based on notice deadlines',
+            eyebrow: 'Automated Reminders',
+            title: 'Deadline-driven reminders on autopilot',
+            body: 'Build reminder rules tied to any case milestone — send before, after, or on the due date, over email, SMS, or both. Set the send time, choose a template, and Dwellex handles every follow-up so nothing slips past a statutory deadline.',
+            accent: 'linear-gradient(135deg, #10b981, #6366f1)',
+            bg: '#f8fffb',
+            glow: 'rgba(16,185,129,0.07)',
+          },
+          {
+            image: '/images/dwellex-communications.png',
+            alt: 'Dwellex communications — case-linked message threads between firm staff and clients',
+            eyebrow: 'Communications',
+            title: 'Every client conversation, linked to the case',
+            body: 'Case-linked message threads keep firm staff and client contacts on the same page. Attachments file straight to the matter, and client replies to notification emails thread back into the portal automatically — no more digging through inboxes.',
+            accent: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+            bg: '#f8fafc',
+            glow: 'rgba(14,165,233,0.07)',
+          },
+          {
+            image: '/images/dwellex-analytics.png',
+            alt: 'Dwellex analytics dashboard — firm-wide case, intake, and financial metrics including rent at risk and days to close',
+            eyebrow: 'Reporting & Analytics',
+            title: 'Firm-wide metrics, at a glance',
+            body: 'Track active cases, pending intakes, rent at risk, and average days to close in real time. Drill into case volume, the intake funnel, cases by county, and violation-type breakdowns — then export client-ready reports to CSV or XLSX.',
+            accent: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+            bg: '#fafbff',
+            glow: 'rgba(139,92,246,0.07)',
+          },
         ].map(({ image, alt, eyebrow, title, body, accent, bg, glow }, i) => (
           <section key={title} style={{ background: bg, padding: '100px 40px', position: 'relative', overflow: 'hidden' }}>
             {/* Ambient glow blob */}
@@ -821,8 +1111,49 @@ export default function DwellexPage() {
           </div>
         </section>
 
+        {/* Complete Capabilities */}
+        <section style={{ background: '#fff', padding: '120px 40px', borderTop: '1px solid #f1f5f9' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 64px' }}>
+                <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '8px', padding: '6px 16px', fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#6366f1', marginBottom: '20px' }}>
+                  Full Feature Set
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, color: '#0f172a', marginBottom: '12px' }}>
+                  Everything a landlord-tenant practice runs on
+                </h2>
+                <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.7 }}>
+                  From first intake to signed notice, Dwellex covers the entire eviction workflow — organized so your whole team works from one system of record.
+                </p>
+              </div>
+            </SectionReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+              {capabilities.map(({ icon: Icon, title, items }) => (
+                <SectionReveal key={title}>
+                  <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '18px', padding: '30px', height: '100%', boxShadow: '0 4px 16px rgba(0,0,0,0.03)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '18px' }}>
+                      <div style={{ width: '40px', height: '40px', borderRadius: '11px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <Icon size={19} color="#fff" strokeWidth={2} />
+                      </div>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.02rem', fontWeight: 700, color: '#0f172a', margin: 0 }}>{title}</h3>
+                    </div>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      {items.map((item) => (
+                        <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#475569', lineHeight: 1.5 }}>
+                          <CheckCircle size={15} color="#10b981" strokeWidth={2.5} style={{ flexShrink: 0, marginTop: '2px' }} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </SectionReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Comparison Table */}
-        <section style={{ background: '#fff', padding: '120px 40px' }}>
+        <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
           <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
             <SectionReveal>
               <div style={{ textAlign: 'center', marginBottom: '56px' }}>
@@ -855,6 +1186,9 @@ export default function DwellexPage() {
                     ['Drag-and-drop form builder', true, false, false],
                     ['Step-by-step case timeline + playbooks', true, false, false],
                     ['Auto-generated court documents', true, true, 'Manual'],
+                    ['Bulk CSV / batch notice generation', true, 'Partial', 'Manual'],
+                    ['Admin-configurable court & expiration rules', true, false, false],
+                    ['Firm-wide analytics dashboard', true, 'Partial', false],
                     ['Trial Lists (county-grouped, Word export)', true, false, false],
                     ['Client portal with case timeline visibility', true, 'Partial', false],
                     ['SMS + email automated notifications', true, 'Email only', 'Add-on'],
@@ -886,7 +1220,7 @@ export default function DwellexPage() {
         </section>
 
         {/* Pricing */}
-        <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
+        <section style={{ background: '#fff', padding: '120px 40px' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <SectionReveal>
               <div style={{ textAlign: 'center', marginBottom: '56px' }}>
@@ -946,7 +1280,7 @@ export default function DwellexPage() {
                 <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>Implementation & Training</div>
                   <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
-                    Scoped and priced per project. We handle data migration, workflow configuration, jurisdiction setup, and staff onboarding. Timeline and cost depend on your firm's existing systems and caseload.
+                    Scoped and priced per project. We handle data migration, workflow configuration, jurisdiction setup, and staff onboarding. Timeline and cost depend on your firm&apos;s existing systems and caseload.
                   </p>
                 </div>
                 <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
@@ -966,7 +1300,7 @@ export default function DwellexPage() {
         </section>
 
         {/* Integrations */}
-        <section style={{ background: '#fff', padding: '120px 40px' }}>
+        <section style={{ background: '#f8fafc', padding: '120px 40px' }}>
           <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
             <SectionReveal>
               <div style={{
@@ -1065,7 +1399,7 @@ export default function DwellexPage() {
                 color: 'rgba(165,180,252,0.9)',
                 marginBottom: '24px',
               }}>
-                Who It's For
+                Who It&apos;s For
               </div>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', lineHeight: 1.2, marginBottom: '16px' }}>
                 <span style={{

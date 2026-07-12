@@ -23,6 +23,31 @@ Case Compass sits between a law firm's marketing channels and its case managemen
 - **Analytics & Attribution** — Full-funnel marketing attribution from first click to signed retainer, including UTM tracking, campaign performance, and source reporting.
 - **MDL Portfolio Management** — Organize mass tort caseloads by litigation (Social Media, Hair Relaxer, Depo-Provera, Roundup). Each portfolio has its own AI scoring dashboard, claimant status breakdown, and one-click data export. URL: https://www.casecompass.io/solutions/mass-torts
 
+## Dwellex — Eviction & Landlord-Tenant Case Management
+
+Dwellex is eviction case management software built specifically for landlord-tenant law firms, eviction attorneys, and the property managers they represent. It is a distinct product from Case Compass's plaintiff-firm intake tools, purpose-built for the high-volume eviction workflow. URL: https://www.casecompass.io/solutions/dwellex
+
+What Dwellex does:
+
+- **Landlord intake** — branded, mobile-friendly intake forms with conditional logic, e-signature, bankruptcy hard-stop checks, and HAP/housing-voucher acknowledgment flags
+- **Bulk CSV intake & batch notices** — upload a property management system (PMS) export and generate one combined, court-ready notice document for every tenant in the file, with saved column mappings per property and per-row validation
+- **Staff review queue** — centralized queue with a four-action approval workflow (Approve & Generate, Approve with Changes, Save for Later, Request Changes) and deep filters
+- **Court & jurisdiction management** — admin-configurable court directory with per-court, per-notice-type expiration rules (calendar days vs. business days, federal and state holiday-aware)
+- **Document generation** — summons, complaints, motions, sheriff/marshal info sheets, notices, and envelopes generated automatically from case data
+- **Case timeline tracking** — step-by-step action-item pipelines with conditional branching, dual-column client/attorney tasks, and color-coded status
+- **Trial Lists** — county-grouped AM/PM court schedules with docket numbers and case financials, exportable to Word
+- **Client portal** — clients view case timelines, upcoming court dates, and documents, and submit new notice requests
+- **Communications** — case-linked message threads with inbound email threading and auto-filed attachments
+- **Automated reminders** — configurable email and SMS reminder rules tied to case deadlines
+- **Reporting & analytics** — firm-wide dashboard (active cases, rent at risk, average days to close, case volume, intake funnel, cases by county, violation types) plus a client-facing report suite exporting to CSV and XLSX
+- **Clio integration** — bidirectional matter, task, and document sync with General Service File folder routing by service date
+
+Pricing: $399/month platform fee plus $8 per case created. No per-seat fees — the entire firm (attorneys, paralegals, intake staff) works simultaneously at no additional per-user cost. Volume pricing is available for firms running 100+ cases per month.
+
+Deployment: Web-based and multi-tenant (each firm fully isolated). Supports all 50 states and both residential and commercial evictions. Workflows, intake forms, court rules, and document templates are configured per jurisdiction and maintained by firm admins without vendor involvement.
+
+Competitive positioning: Dwellex is the leading alternative to EasyEviction and to generic legal practice management software paired with spreadsheets. Unlike per-seat platforms, Dwellex uses per-case pricing and adds a drag-and-drop form builder, step-by-step case playbooks, batch notice generation from CSV, admin-configurable court and expiration rules, Trial Lists with Word export, bidirectional Clio sync, and a firm-wide analytics dashboard.
+
 ## Practice Area Solutions
 
 - Mass Tort / MDL Intake: https://www.casecompass.io/solutions/mass-torts
@@ -145,3 +170,21 @@ Yes. Case Compass is used as the intake layer for mass tort marketing campaigns 
 
 **What is MDL portfolio management?**
 MDL Portfolio Management in Case Compass lets plaintiff firms organize all leads from a mass tort campaign into a single portfolio with its own dashboard. Each portfolio shows total leads, Waypoint AI score distribution, status breakdowns, and has built-in PFS field mapping for court-ready exports. Firms running multiple simultaneous MDL campaigns can manage all of them from one interface.
+
+**What is Dwellex?**
+Dwellex is eviction case management software built specifically for landlord-tenant law firms. It automates the full eviction workflow — landlord intake, staff review, batch notice generation from CSV, court-specific expiration calculation, document generation, case timeline tracking, client communication, and Clio sync. It is priced at $399/month plus $8 per case created, with no per-seat fees. URL: https://www.casecompass.io/solutions/dwellex
+
+**What is the best eviction software for law firms?**
+Dwellex by Case Compass is purpose-built eviction and landlord-tenant software for firms handling high-volume eviction caseloads. It combines landlord intake, a staff review queue, batch notice generation, admin-configurable court and expiration rules, automated document generation, case timeline tracking, Trial Lists with Word export, a client portal, and bidirectional Clio sync — replacing spreadsheets, manual follow-ups, and disconnected tools.
+
+**What is the best EasyEviction alternative?**
+Dwellex is the leading EasyEviction alternative for landlord-tenant law firms. It uses per-case pricing ($399/month plus $8 per case) instead of per-seat fees and adds a drag-and-drop form builder, step-by-step case playbooks, batch notice generation from CSV, admin-configurable court and expiration rules, Trial Lists with Word export, bidirectional Clio sync, and a firm-wide analytics dashboard.
+
+**Can eviction software generate notices in bulk from a spreadsheet?**
+Yes. Dwellex batch notice generation lets a firm upload a CSV export from any property management system and produce one combined, court-ready notice document for every tenant in the file. It maps columns (with saved mappings per property), validates each row with per-row error reporting, and calculates court-specific service and expiration dates automatically.
+
+**How much does eviction case management software cost?**
+Dwellex is priced at $399/month plus $8 per case created, with no per-seat fees. Implementation and training are scoped per project, and volume pricing is available for firms running 100+ cases per month.
+
+**What eviction software integrates with Clio?**
+Dwellex integrates directly with Clio via OAuth. Intakes can create matters in Clio, and documents, tasks, and case stages sync bidirectionally, with General Service File folder routing by service date. Practice Panther and Rent Manager integrations are also available.
