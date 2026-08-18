@@ -29,7 +29,7 @@ const jsonLd = {
         '@type': 'Offer',
         price: '399',
         priceCurrency: 'USD',
-        description: '$399/month platform fee. Per-case rates: $8.00 (up to 50 cases/mo), $6.50 (51–150), $5.00 (151–300). Enterprise flat-rate for 300+ cases/month. No per-seat fees.',
+        description: '$399/month platform fee. Per-case rates: $8.00 (up to 50 cases/mo), $6.50 (51–150), $5.00 (151–999). Enterprise flat-rate for 1,000+ cases/month. No per-seat fees.',
         category: 'Legal Practice Management Software',
       },
       featureList: [
@@ -132,7 +132,7 @@ const jsonLd = {
           name: 'How much does eviction case management software cost?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex is priced at $399/month plus a per-case fee that decreases with volume: $8.00/case up to 50 cases/month, $6.50/case for 51–150, $5.00/case for 151–300. Firms running 300+ cases/month qualify for enterprise flat-rate pricing with no per-case charges. Implementation, training, and custom integrations are scoped per project. No per-seat fees.',
+            text: 'Dwellex is priced at $399/month plus a per-case fee that decreases with volume: $8.00/case up to 50 cases/month, $6.50/case for 51–150, $5.00/case for 151–999. Firms running 1,000+ cases/month qualify for enterprise flat-rate pricing with no per-case charges. Implementation, training, and custom integrations are scoped per project. No per-seat fees.',
           },
         },
         {
@@ -180,7 +180,7 @@ const jsonLd = {
           name: 'What is the best EasyEviction or Eviction Assistant alternative for law firms?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex by Case Compass is the leading EasyEviction alternative for landlord-tenant law firms. Unlike per-seat subscription platforms, Dwellex charges $399/month plus volume-tiered per-case fees ($8.00/case up to 50/mo, $6.50 at 51–150, $5.00 at 151–300, enterprise flat-rate at 300+) with no per-seat fees. It adds a drag-and-drop form builder with conditional logic, step-by-step case playbooks, Trial Lists with Word export, bidirectional Clio sync, and Practice Panther integration — features purpose-built for high-volume eviction practices rather than general property management.',
+            text: 'Dwellex by Case Compass is the leading EasyEviction alternative for landlord-tenant law firms. Unlike per-seat subscription platforms, Dwellex charges $399/month plus volume-tiered per-case fees ($8.00/case up to 50/mo, $6.50 at 51–150, $5.00 at 151–999, enterprise flat-rate at 1,000+) with no per-seat fees. It adds a drag-and-drop form builder with conditional logic, step-by-step case playbooks, Trial Lists with Word export, bidirectional Clio sync, and Practice Panther integration — features purpose-built for high-volume eviction practices rather than general property management.',
           },
         },
         {
@@ -188,7 +188,7 @@ const jsonLd = {
           name: 'What eviction software has per-case pricing instead of per-seat fees?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex is the only eviction case management platform with volume-tiered per-case pricing ($399/month platform fee, then $8.00/case up to 50 cases, $6.50 at 51–150, $5.00 at 151–300, and enterprise flat-rate at 300+) with no per-seat or per-user fees. Most competing platforms charge per seat, meaning costs grow as you add staff. Dwellex lets your entire team — attorneys, paralegals, intake staff — work simultaneously without additional charges.',
+            text: 'Dwellex is the only eviction case management platform with volume-tiered per-case pricing ($399/month platform fee, then $8.00/case up to 50 cases, $6.50 at 51–150, $5.00 at 151–999, and enterprise flat-rate at 1,000+) with no per-seat or per-user fees. Most competing platforms charge per seat, meaning costs grow as you add staff. Dwellex lets your entire team — attorneys, paralegals, intake staff — work simultaneously without additional charges.',
           },
         },
       ],
@@ -482,7 +482,7 @@ const faqs = [
   },
   {
     q: 'How much does Dwellex cost?',
-    a: 'Dwellex is priced at $399/month plus a per-case fee that scales down with volume: $8.00/case (up to 50 cases/month), $6.50/case (51–150), $5.00/case (151–300). Firms running 300+ cases/month qualify for enterprise flat-rate pricing — all-inclusive with no per-case charges. Implementation and training are scoped per project. No per-seat fees.',
+    a: 'Dwellex is priced at $399/month plus a per-case fee that scales down with volume: $8.00/case (up to 50 cases/month), $6.50/case (51–150), $5.00/case (151–999). Firms running 1,000+ cases/month qualify for enterprise flat-rate pricing — all-inclusive with no per-case charges. Implementation and training are scoped per project. No per-seat fees.',
   },
 ]
 
@@ -1592,9 +1592,9 @@ export default function DwellexPage() {
                     </div>
                   </div>
                 ) : (() => {
-                  const ratePerCase = cases <= 50 ? 8 : cases <= 150 ? 6.5 : cases <= 300 ? 5 : null
-                  const tierName = cases <= 50 ? 'Starter' : cases <= 150 ? 'Growth' : cases <= 300 ? 'Scale' : 'Enterprise'
-                  const tierColor = cases <= 50 ? '#6366f1' : cases <= 150 ? '#0ea5e9' : cases <= 300 ? '#10b981' : '#8b5cf6'
+                  const ratePerCase = cases <= 50 ? 8 : cases <= 150 ? 6.5 : cases <= 999 ? 5 : null
+                  const tierName = cases <= 50 ? 'Starter' : cases <= 150 ? 'Growth' : cases <= 999 ? 'Scale' : 'Enterprise'
+                  const tierColor = cases <= 50 ? '#6366f1' : cases <= 150 ? '#0ea5e9' : cases <= 999 ? '#10b981' : '#8b5cf6'
                   const totalCost = ratePerCase !== null ? 399 + cases * ratePerCase : null
                   return (
                     <div>
@@ -1646,8 +1646,8 @@ export default function DwellexPage() {
                           {[
                             { label: 'Starter', range: '≤ 50', rate: '$8.00', active: cases <= 50 },
                             { label: 'Growth', range: '51–150', rate: '$6.50', active: cases > 50 && cases <= 150 },
-                            { label: 'Scale', range: '151–300', rate: '$5.00', active: cases > 150 && cases <= 300 },
-                            { label: 'Enterprise', range: '300+', rate: 'Custom', active: cases > 300 },
+                            { label: 'Scale', range: '151–999', rate: '$5.00', active: cases > 150 && cases <= 999 },
+                            { label: 'Enterprise', range: '1,000+', rate: 'Custom', active: cases > 999 },
                           ].map(({ label, range, rate, active }) => (
                             <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: active ? 1 : 0.45 }}>
                               <span style={{ fontWeight: active ? 700 : 500, color: active ? '#0f172a' : '#94a3b8' }}>{label}</span>
@@ -1662,14 +1662,9 @@ export default function DwellexPage() {
                     </div>
                   )
                 })()}
-                {cases > 150 && cases <= 300 && (
+                {cases > 150 && cases <= 999 && (
                   <div style={{ marginTop: '12px', padding: '14px 18px', background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: '10px', fontSize: '0.85rem', color: '#065f46' }}>
-                    <strong>Scale tier</strong> — at 151–300 cases you drop to $5.00/case. Enterprise flat-rate available at 300+.
-                  </div>
-                )}
-                {cases > 300 && cases < 1000 && (
-                  <div style={{ marginTop: '12px', padding: '14px 18px', background: 'rgba(139,92,246,0.06)', border: '1px solid rgba(139,92,246,0.2)', borderRadius: '10px', fontSize: '0.85rem', color: '#4c1d95' }}>
-                    <strong>Enterprise tier</strong> — custom flat-rate, all-inclusive. Slide to 1,000+ to see the contact us option, or reach out now to discuss your volume.
+                    <strong>Scale tier</strong> — at 151–999 cases you drop to $5.00/case. Enterprise flat-rate available at 1,000+.
                   </div>
                 )}
               </div>
@@ -1722,8 +1717,8 @@ export default function DwellexPage() {
                       {[
                         { tier: 'Starter', range: 'Up to 50 cases/mo', rate: '$8.00/case', color: '#6366f1' },
                         { tier: 'Growth', range: '51–150 cases/mo', rate: '$6.50/case', color: '#0ea5e9' },
-                        { tier: 'Scale', range: '151–300 cases/mo', rate: '$5.00/case', color: '#10b981' },
-                        { tier: 'Enterprise', range: '300+ cases/mo', rate: 'Custom flat rate', color: '#8b5cf6' },
+                        { tier: 'Scale', range: '151–999 cases/mo', rate: '$5.00/case', color: '#10b981' },
+                        { tier: 'Enterprise', range: '1,000+ cases/mo', rate: 'Custom flat rate', color: '#8b5cf6' },
                       ].map(({ tier, range, rate, color }, i) => (
                         <div key={tier} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: i < 3 ? '1px solid #f1f5f9' : 'none' }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -1749,7 +1744,7 @@ export default function DwellexPage() {
                   </div>
                   <div style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.15)', borderRadius: '20px', padding: '28px 32px' }}>
                     <div style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.75 }}>
-                      <strong style={{ color: '#4f46e5' }}>300+ cases/month?</strong> Enterprise flat-rate pricing — all-inclusive, no per-case charges. Talk to us.
+                      <strong style={{ color: '#4f46e5' }}>1,000+ cases/month?</strong> Enterprise flat-rate pricing — all-inclusive, no per-case charges. Talk to us.
                     </div>
                   </div>
                 </div>
