@@ -976,8 +976,9 @@ export default function DwellexPage() {
                       <Icon size={22} color="#fff" />
                     </div>
                     <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: '#0f172a', marginBottom: '12px' }}>{label}</div>
-                    <div style={{ fontSize: '0.9rem', color: '#94a3b8', lineHeight: 1.65, marginBottom: '16px', fontStyle: 'italic', borderLeft: '3px solid #e2e8f0', paddingLeft: '12px' }}>
-                      &ldquo;{pain}&rdquo;
+                    <div style={{ fontSize: '0.78rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#f59e0b', marginBottom: '8px' }}>The challenge</div>
+                    <div style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.65, marginBottom: '16px' }}>
+                      {pain}
                     </div>
                     <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.7, margin: 0 }}>{desc}</p>
                   </div>
