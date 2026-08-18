@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown, Landmark, Monitor, BarChart2, Briefcase, ClipboardCheck, Files, CalendarClock, MessageSquare, Settings, Shield, Lock, Zap, TrendingUp, Play } from 'lucide-react'
+import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown, Landmark, Monitor, BarChart2, Briefcase, ClipboardCheck, Files, CalendarClock, MessageSquare, Settings, Shield, Lock, Zap, TrendingUp } from 'lucide-react'
 
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
@@ -862,70 +862,6 @@ export default function DwellexPage() {
                       <div style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.72)', lineHeight: 1.5 }}>{v}</div>
                     </div>
                   ))}
-                </div>
-              </div>
-            </SectionReveal>
-          </div>
-        </section>
-
-        {/* Demo Video Placeholder */}
-        <section style={{ background: '#fff', padding: '100px 40px 0' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <SectionReveal>
-              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <div style={{
-                  display: 'inline-block',
-                  background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))',
-                  border: '1px solid rgba(99,102,241,0.2)',
-                  borderRadius: '8px',
-                  padding: '6px 16px',
-                  fontSize: '0.75rem',
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 700,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase' as const,
-                  color: '#6366f1',
-                  marginBottom: '20px',
-                }}>
-                  Product Walkthrough
-                </div>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#0f172a', lineHeight: 1.2 }}>
-                  See Dwellex in 90 seconds
-                </h2>
-              </div>
-            </SectionReveal>
-            {/* Video embed — replace src with your video URL */}
-            <SectionReveal>
-              <div style={{
-                position: 'relative',
-                borderRadius: '20px',
-                overflow: 'hidden',
-                background: 'linear-gradient(135deg, #0f172a, #1e1b4b)',
-                aspectRatio: '16/9',
-                border: '1px solid rgba(99,102,241,0.2)',
-                boxShadow: '0 24px 80px rgba(0,0,0,0.18)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-              }}>
-                {/* Placeholder until video is recorded — swap out iframe once ready */}
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{
-                    width: '80px', height: '80px',
-                    borderRadius: '50%',
-                    background: 'rgba(99,102,241,0.9)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 20px',
-                    boxShadow: '0 0 0 12px rgba(99,102,241,0.2)',
-                  }}>
-                    <Play size={32} color="#fff" fill="#fff" />
-                  </div>
-                  <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.95rem', fontFamily: 'var(--font-display)', fontWeight: 600 }}>
-                    Demo video coming soon
-                  </p>
                 </div>
               </div>
             </SectionReveal>
