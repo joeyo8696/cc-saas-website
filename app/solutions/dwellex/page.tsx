@@ -12,6 +12,8 @@ import SectionReveal from '@/components/ui/SectionReveal'
 import DemoButton from '@/components/DemoButton'
 import GalaxyCanvas from '@/components/home/GalaxyCanvas'
 
+const DEMO_URL = 'https://scheduler.zoom.us/case-compass/dwellex-demo'
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -664,7 +666,7 @@ export default function DwellexPage() {
               From landlord intake to lockout scheduling — automated. Built specifically for landlord-tenant law firms handling high-volume eviction caseloads.
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-              <DemoButton style={{ padding: '16px 40px', fontSize: '1rem' }}>
+              <DemoButton href={DEMO_URL} style={{ padding: '16px 40px', fontSize: '1rem' }}>
                 Request a Demo →
               </DemoButton>
               <a href="#how-it-works" style={{
@@ -1339,7 +1341,7 @@ export default function DwellexPage() {
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: '#fff', lineHeight: 1.25, marginBottom: '28px', margin: '0 auto 28px' }}>
               Ready to see how Dwellex handles your eviction caseload?
             </h2>
-            <DemoButton style={{ padding: '15px 40px', fontSize: '1rem', background: '#fff', color: '#4f46e5' }}>
+            <DemoButton href={DEMO_URL} style={{ padding: '15px 40px', fontSize: '1rem', background: '#fff', color: '#4f46e5' }}>
               Request a Demo →
             </DemoButton>
           </div>
@@ -1592,7 +1594,7 @@ export default function DwellexPage() {
                       <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6, margin: '0 0 20px' }}>
                         1,000+ cases/month: all-inclusive, no per-case charges. Let&apos;s talk about your firm&apos;s volume.
                       </p>
-                      <DemoButton style={{ padding: '12px 32px', fontSize: '0.92rem' }}>
+                      <DemoButton href={DEMO_URL} style={{ padding: '12px 32px', fontSize: '0.92rem' }}>
                         Contact Us →
                       </DemoButton>
                     </div>
@@ -1715,7 +1717,7 @@ export default function DwellexPage() {
                     </div>
                   ))}
                 </div>
-                <DemoButton style={{ width: '100%', padding: '15px', fontSize: '0.95rem', textAlign: 'center' as const }}>
+                <DemoButton href={DEMO_URL} style={{ width: '100%', padding: '15px', fontSize: '0.95rem', textAlign: 'center' as const }}>
                   Request a Demo →
                 </DemoButton>
               </div>
@@ -1856,7 +1858,7 @@ export default function DwellexPage() {
               <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '40px' }}>
                 See how Dwellex handles your caseload — from intake to lockout — in a live demo built around your firm&apos;s workflow.
               </p>
-              <DemoButton style={{ padding: '18px 48px', fontSize: '1.05rem' }}>
+              <DemoButton href={DEMO_URL} style={{ padding: '18px 48px', fontSize: '1.05rem' }}>
                 Request a Demo →
               </DemoButton>
             </SectionReveal>
@@ -1900,7 +1902,7 @@ export default function DwellexPage() {
           animation: 'fadeInDown 0.25s ease',
         }}>
           <style>{`@keyframes fadeInDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }`}</style>
-          <DemoButton style={{ padding: '10px 24px', fontSize: '0.88rem', boxShadow: '0 8px 32px rgba(99,102,241,0.35)' }}>
+          <DemoButton href={DEMO_URL} style={{ padding: '10px 24px', fontSize: '0.88rem', boxShadow: '0 8px 32px rgba(99,102,241,0.35)' }}>
             Request a Demo →
           </DemoButton>
         </div>

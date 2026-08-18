@@ -7,13 +7,15 @@ interface DemoButtonProps {
   style?: React.CSSProperties
   className?: string
   variant?: 'primary' | 'secondary'
+  href?: string
 }
 
 export default function DemoButton({ 
   children = 'Schedule a Demo →', 
   style,
   className,
-  variant = 'primary'
+  variant = 'primary',
+  href,
 }: DemoButtonProps) {
   const { openModal } = useDemoModal()
 
@@ -45,27 +47,49 @@ export default function DemoButton({
     },
   }
 
+  const combinedStyle = { ...baseStyle, ...variantStyles[variant], ...style }
+
+  const hoverIn = (e: React.MouseEvent<HTMLElement>) => {
+    if (variant === 'primary') {
+      e.currentTarget.style.transform = 'translateY(-2px)'
+      e.currentTarget.style.boxShadow = '0 12px 32px rgba(79,70,229,0.45)'
+    } else {
+      e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
+    }
+  }
+
+  const hoverOut = (e: React.MouseEvent<HTMLElement>) => {
+    if (variant === 'primary') {
+      e.currentTarget.style.transform = 'translateY(0)'
+      e.currentTarget.style.boxShadow = '0 8px 24px rgba(79,70,229,0.35)'
+    } else {
+      e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+    }
+  }
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        style={combinedStyle}
+        onMouseEnter={hoverIn}
+        onMouseLeave={hoverOut}
+      >
+        {children}
+      </a>
+    )
+  }
+
   return (
     <button
       onClick={openModal}
       className={className}
-      style={{ ...baseStyle, ...variantStyles[variant], ...style }}
-      onMouseEnter={(e) => {
-        if (variant === 'primary') {
-          e.currentTarget.style.transform = 'translateY(-2px)'
-          e.currentTarget.style.boxShadow = '0 12px 32px rgba(79,70,229,0.45)'
-        } else {
-          e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (variant === 'primary') {
-          e.currentTarget.style.transform = 'translateY(0)'
-          e.currentTarget.style.boxShadow = '0 8px 24px rgba(79,70,229,0.35)'
-        } else {
-          e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-        }
-      }}
+      style={combinedStyle}
+      onMouseEnter={hoverIn}
+      onMouseLeave={hoverOut}
     >
       {children}
     </button>
