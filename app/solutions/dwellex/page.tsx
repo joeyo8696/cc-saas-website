@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown, Landmark, Monitor, BarChart2, Briefcase, ClipboardCheck, Files, CalendarClock, MessageSquare, Settings } from 'lucide-react'
+import { CheckCircle, FileText, Bell, Calendar, FolderSync, Scale, Building2, Users, ChevronDown, Landmark, Monitor, BarChart2, Briefcase, ClipboardCheck, Files, CalendarClock, MessageSquare, Settings, Shield, Lock, Zap, TrendingUp, Play } from 'lucide-react'
 
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
@@ -27,7 +27,7 @@ const jsonLd = {
         '@type': 'Offer',
         price: '399',
         priceCurrency: 'USD',
-        description: '$399/month platform fee plus $8 per case created. No per-seat fees.',
+        description: '$399/month platform fee. Per-case rates: $8.00 (up to 50 cases/mo), $6.50 (51–150), $5.00 (151–300). Enterprise flat-rate for 300+ cases/month. No per-seat fees.',
         category: 'Legal Practice Management Software',
       },
       featureList: [
@@ -130,7 +130,7 @@ const jsonLd = {
           name: 'How much does eviction case management software cost?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex is priced at $399/month plus $8 per case created with no per-seat fees. Implementation, training, and custom integrations are scoped per project. Volume pricing is available for firms running 100+ cases/month.',
+            text: 'Dwellex is priced at $399/month plus a per-case fee that decreases with volume: $8.00/case up to 50 cases/month, $6.50/case for 51–150, $5.00/case for 151–300. Firms running 300+ cases/month qualify for enterprise flat-rate pricing with no per-case charges. Implementation, training, and custom integrations are scoped per project. No per-seat fees.',
           },
         },
         {
@@ -175,10 +175,10 @@ const jsonLd = {
         },
         {
           '@type': 'Question',
-          name: 'What is the best EasyEviction alternative for law firms?',
+          name: 'What is the best EasyEviction or Eviction Assistant alternative for law firms?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex by Case Compass is the leading EasyEviction alternative for landlord-tenant law firms. Unlike per-seat subscription platforms, Dwellex charges $399/month plus $8 per case with no per-seat fees. It adds a drag-and-drop form builder with conditional logic, step-by-step case playbooks, Trial Lists with Word export, bidirectional Clio sync, and Practice Panther integration — features purpose-built for high-volume eviction practices rather than general property management.',
+            text: 'Dwellex by Case Compass is the leading EasyEviction alternative for landlord-tenant law firms. Unlike per-seat subscription platforms, Dwellex charges $399/month plus volume-tiered per-case fees ($8.00/case up to 50/mo, $6.50 at 51–150, $5.00 at 151–300, enterprise flat-rate at 300+) with no per-seat fees. It adds a drag-and-drop form builder with conditional logic, step-by-step case playbooks, Trial Lists with Word export, bidirectional Clio sync, and Practice Panther integration — features purpose-built for high-volume eviction practices rather than general property management.',
           },
         },
         {
@@ -186,7 +186,7 @@ const jsonLd = {
           name: 'What eviction software has per-case pricing instead of per-seat fees?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex is the only eviction case management platform that uses per-case pricing ($399/month + $8 per case created) with no per-seat or per-user fees. Most competing platforms charge per seat, meaning costs grow as you add staff. Dwellex lets your entire team — attorneys, paralegals, intake staff — work simultaneously without additional charges.',
+            text: 'Dwellex is the only eviction case management platform with volume-tiered per-case pricing ($399/month platform fee, then $8.00/case up to 50 cases, $6.50 at 51–150, $5.00 at 151–300, and enterprise flat-rate at 300+) with no per-seat or per-user fees. Most competing platforms charge per seat, meaning costs grow as you add staff. Dwellex lets your entire team — attorneys, paralegals, intake staff — work simultaneously without additional charges.',
           },
         },
       ],
@@ -267,9 +267,24 @@ const integrations = [
 ]
 
 const audience = [
-  { icon: Scale, label: 'Law Firms', desc: 'Handle high-volume eviction caseloads without adding headcount' },
-  { icon: Building2, label: 'Property Managers', desc: 'Coordinate directly with your legal team from a single portal' },
-  { icon: Users, label: 'Landlords', desc: 'Submit intake, track status, and receive updates automatically' },
+  {
+    icon: Scale,
+    label: 'Landlord-Tenant Law Firms',
+    pain: 'Managing eviction caseloads across spreadsheets, inboxes, and a generic case manager that was never built for this',
+    desc: 'Automate intake, document generation, court tracking, and Clio sync — handle more cases with the same team.',
+  },
+  {
+    icon: Building2,
+    label: 'Property Managers',
+    pain: 'Cases get stuck in email chains and you have no visibility into where things stand until it\'s too late',
+    desc: 'Submit intake directly, track every case in real time, and get automatic updates at each stage — no phone calls required.',
+  },
+  {
+    icon: Users,
+    label: 'Landlords',
+    pain: 'Your attorney is hard to reach and you\'re left guessing what\'s happening with your eviction case',
+    desc: 'Submit intake, upload documents, and follow your case timeline in a secure client portal — no chasing anyone down.',
+  },
 ]
 
 const capabilities = [
@@ -465,7 +480,7 @@ const faqs = [
   },
   {
     q: 'How much does Dwellex cost?',
-    a: 'Dwellex is priced at $399/month plus $8 per case created — no per-seat fees. Implementation and training are scoped and priced per project depending on your firm\'s existing systems, caseload, and jurisdiction setup. Volume pricing is available for firms running 100+ cases/month.',
+    a: 'Dwellex is priced at $399/month plus a per-case fee that scales down with volume: $8.00/case (up to 50 cases/month), $6.50/case (51–150), $5.00/case (151–300). Firms running 300+ cases/month qualify for enterprise flat-rate pricing — all-inclusive with no per-case charges. Implementation and training are scoped per project. No per-seat fees.',
   },
 ]
 
@@ -552,6 +567,14 @@ function FaqSection() {
 export default function DwellexPage() {
   const lineRef = useRef<HTMLDivElement>(null)
   const stepsRef = useRef<(HTMLDivElement | null)[]>([])
+  const [showSticky, setShowSticky] = useState(false)
+  const [cases, setCases] = useState(50)
+
+  useEffect(() => {
+    const handleScroll = () => setShowSticky(window.scrollY > 700)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const line = lineRef.current
@@ -601,8 +624,8 @@ export default function DwellexPage() {
       <main style={{ position: 'relative', zIndex: 1 }}>
 
         {/* Hero */}
-        <section style={{ background: 'transparent', padding: '100px 40px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+        <section style={{ background: 'transparent', padding: '100px 40px 80px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ maxWidth: '960px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <Image
               src="/images/dwellex_logo_white.png"
               alt="Dwellex"
@@ -627,27 +650,130 @@ export default function DwellexPage() {
             }}>
               Landlord-Tenant Case Management
             </div>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', lineHeight: 1.15, marginBottom: '24px' }}>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', lineHeight: 1.1, marginBottom: '24px' }}>
               <span style={{
                 background: 'linear-gradient(135deg, #fff 30%, rgba(165,180,252,0.9))',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                Streamline Your Landlord-Tenant Practice
+                Your entire eviction practice,<br />in one portal
               </span>
             </h1>
-            <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, maxWidth: '680px', margin: '0 auto 44px' }}>
-              Comprehensive case management and communication tools designed specifically for landlord-tenant law and eviction proceedings.
+            <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, maxWidth: '660px', margin: '0 auto 44px' }}>
+              From landlord intake to lockout scheduling — automated. Built specifically for landlord-tenant law firms handling high-volume eviction caseloads.
             </p>
-            <DemoButton style={{ padding: '16px 40px', fontSize: '1rem' }}>
-              Request a Demo →
-            </DemoButton>
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+              <DemoButton style={{ padding: '16px 40px', fontSize: '1rem' }}>
+                Request a Demo →
+              </DemoButton>
+              <a href="#how-it-works" style={{
+                padding: '15px 28px',
+                fontSize: '1rem',
+                color: 'rgba(255,255,255,0.75)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 600,
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(8px)',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = '#fff'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; }}
+              >
+                See how it works ↓
+              </a>
+            </div>
+
+            {/* Hero product screenshot — browser chrome mockup */}
+            <div style={{ marginTop: '72px', position: 'relative' }}>
+              {/* Ambient glow */}
+              <div style={{
+                position: 'absolute',
+                inset: '-40px',
+                borderRadius: '32px',
+                background: 'radial-gradient(ellipse at 50% 60%, rgba(99,102,241,0.35) 0%, transparent 70%)',
+                filter: 'blur(32px)',
+                pointerEvents: 'none',
+              }} />
+              {/* Browser chrome */}
+              <div style={{
+                position: 'relative',
+                borderRadius: '14px',
+                overflow: 'hidden',
+                boxShadow: '0 48px 120px rgba(0,0,0,0.55), 0 8px 32px rgba(0,0,0,0.3)',
+                border: '1px solid rgba(255,255,255,0.12)',
+              }}>
+                {/* Browser toolbar */}
+                <div style={{
+                  background: '#1e1e2e',
+                  padding: '11px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  borderBottom: '1px solid rgba(255,255,255,0.07)',
+                }}>
+                  {/* Traffic lights */}
+                  <div style={{ display: 'flex', gap: '6px', flexShrink: 0 }}>
+                    {['#ff5f57', '#febc2e', '#28c840'].map((c) => (
+                      <div key={c} style={{ width: '12px', height: '12px', borderRadius: '50%', background: c }} />
+                    ))}
+                  </div>
+                  {/* URL bar */}
+                  <div style={{
+                    flex: 1,
+                    background: 'rgba(255,255,255,0.07)',
+                    borderRadius: '6px',
+                    padding: '5px 12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    maxWidth: '420px',
+                    margin: '0 auto',
+                  }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-display)', letterSpacing: '0.01em' }}>
+                      app.dwellex.com
+                    </span>
+                  </div>
+                </div>
+                {/* Screenshot */}
+                <div style={{ display: 'block', lineHeight: 0 }}>
+                  <Image
+                    src="/images/dwellex-landing.png"
+                    alt="Dwellex batch notice review — approve and generate court-ready notices from a CSV intake"
+                    width={1280}
+                    height={760}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust signals bar */}
+        <section style={{ background: 'rgba(255,255,255,0.04)', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '20px 40px', position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap', alignItems: 'center' }}>
+            {[
+              { icon: Lock, label: 'Data encrypted at rest & in transit' },
+              { icon: Shield, label: 'Role-based access control' },
+              { icon: CheckCircle, label: 'All 50 states supported' },
+              { icon: Users, label: 'Unlimited users — no per-seat fees' },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Icon size={15} color="rgba(165,180,252,0.8)" strokeWidth={2} />
+                <span style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--font-display)', fontWeight: 600 }}>{label}</span>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Quick Facts — answer-first summary for AI engines & skimmers */}
-        <section style={{ background: 'transparent', padding: '0 40px 100px', position: 'relative', zIndex: 1 }}>
+        <section style={{ background: 'transparent', padding: '80px 40px 100px', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '920px', margin: '0 auto' }}>
             <SectionReveal>
               <div style={{
@@ -662,16 +788,16 @@ export default function DwellexPage() {
                   The short version
                 </div>
                 <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.82)', lineHeight: 1.75, margin: '0 0 28px' }}>
-                  <strong style={{ color: '#fff' }}>Dwellex is eviction case management software built for landlord-tenant law firms.</strong> It automates the full eviction workflow — client intake, staff review, batch notice generation from CSV, court-specific expiration calculation, document generation, case timeline tracking, and client communication — and syncs bidirectionally with Clio. It is priced at $399/month plus $8 per case created, with no per-seat fees.
+                  <strong style={{ color: '#fff' }}>Dwellex is eviction case management software built for landlord-tenant law firms.</strong> It automates the full eviction workflow — client intake, staff review, batch notice generation from CSV, court-specific expiration calculation, document generation, case timeline tracking, and client communication — and syncs bidirectionally with Clio. It is priced at $399/month plus volume-tiered per-case fees (starting at $8.00/case), with no per-seat fees.
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px 32px' }}>
                   {[
                     { k: 'What it is', v: 'Eviction & landlord-tenant case management software' },
                     { k: 'Built for', v: 'Eviction law firms, landlord-tenant attorneys & property managers' },
-                    { k: 'Pricing', v: '$399/month + $8 per case — no per-seat fees' },
+                    { k: 'Pricing', v: '$399/mo + per-case (starts $8, scales down to $5 at volume)' },
                     { k: 'Integrates with', v: 'Clio, Practice Panther, Rent Manager' },
                     { k: 'Coverage', v: 'All 50 states — residential & commercial' },
-                    { k: 'Best-known alternative to', v: 'EasyEviction and generic LPM + spreadsheets' },
+                    { k: 'Best-known alternative to', v: 'EasyEviction, Eviction Assistant, and generic LPM + spreadsheets' },
                   ].map(({ k, v }) => (
                     <div key={k}>
                       <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.75)', marginBottom: '6px' }}>{k}</div>
@@ -684,8 +810,191 @@ export default function DwellexPage() {
           </div>
         </section>
 
+        {/* Demo Video Placeholder */}
+        <section style={{ background: '#fff', padding: '100px 40px 0' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <div style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))',
+                  border: '1px solid rgba(99,102,241,0.2)',
+                  borderRadius: '8px',
+                  padding: '6px 16px',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase' as const,
+                  color: '#6366f1',
+                  marginBottom: '20px',
+                }}>
+                  Product Walkthrough
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', color: '#0f172a', lineHeight: 1.2 }}>
+                  See Dwellex in 90 seconds
+                </h2>
+              </div>
+            </SectionReveal>
+            {/* Video embed — replace src with your video URL */}
+            <SectionReveal>
+              <div style={{
+                position: 'relative',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                background: 'linear-gradient(135deg, #0f172a, #1e1b4b)',
+                aspectRatio: '16/9',
+                border: '1px solid rgba(99,102,241,0.2)',
+                boxShadow: '0 24px 80px rgba(0,0,0,0.18)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+              }}>
+                {/* Placeholder until video is recorded — swap out iframe once ready */}
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{
+                    width: '80px', height: '80px',
+                    borderRadius: '50%',
+                    background: 'rgba(99,102,241,0.9)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 20px',
+                    boxShadow: '0 0 0 12px rgba(99,102,241,0.2)',
+                  }}>
+                    <Play size={32} color="#fff" fill="#fff" />
+                  </div>
+                  <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.95rem', fontFamily: 'var(--font-display)', fontWeight: 600 }}>
+                    Demo video coming soon
+                  </p>
+                </div>
+              </div>
+            </SectionReveal>
+          </div>
+        </section>
+
+        {/* ROI Stats */}
+        <section style={{ background: '#fff', padding: '80px 40px' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+                <div style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))',
+                  border: '1px solid rgba(99,102,241,0.2)',
+                  borderRadius: '8px',
+                  padding: '6px 16px',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase' as const,
+                  color: '#6366f1',
+                  marginBottom: '20px',
+                }}>
+                  Why Dwellex
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, color: '#0f172a' }}>
+                  Less time on admin. More cases handled.
+                </h2>
+              </div>
+            </SectionReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
+              {[
+                { icon: Zap, stat: '< 60 sec', label: 'To generate a court-ready notice from intake data', color: '#6366f1' },
+                { icon: TrendingUp, stat: '4×', label: 'More cases handled with the same team size', color: '#10b981' },
+                { icon: CheckCircle, stat: '0', label: 'Missed statutory deadlines with automated reminders', color: '#0ea5e9' },
+                { icon: BarChart2, stat: '$0', label: 'Per-seat fees — unlimited users on one flat plan', color: '#8b5cf6' },
+              ].map(({ icon: Icon, stat, label, color }) => (
+                <SectionReveal key={stat + label}>
+                  <div style={{
+                    background: '#fff',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '20px',
+                    padding: '36px 28px',
+                    textAlign: 'center',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(0,0,0,0.08)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.03)'; }}
+                  >
+                    <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: `${color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                      <Icon size={24} color={color} strokeWidth={2} />
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 800, color, letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '12px' }}>
+                      {stat}
+                    </div>
+                    <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{label}</p>
+                  </div>
+                </SectionReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Who It's For */}
+        <section style={{ background: '#f8fafc', padding: '100px 40px', borderTop: '1px solid #f1f5f9' }}>
+          <div style={{ maxWidth: '1060px', margin: '0 auto' }}>
+            <SectionReveal>
+              <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+                <div style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.07))',
+                  border: '1px solid rgba(99,102,241,0.2)',
+                  borderRadius: '8px',
+                  padding: '6px 16px',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-display)',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase' as const,
+                  color: '#6366f1',
+                  marginBottom: '20px',
+                }}>
+                  Who It&apos;s For
+                </div>
+                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, color: '#0f172a', marginBottom: '12px' }}>
+                  Built for the people who run evictions
+                </h2>
+                <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.7, maxWidth: '560px', margin: '0 auto' }}>
+                  Whether you process 10 cases a month or 500, Dwellex replaces the spreadsheets, emails, and workarounds with one system.
+                </p>
+              </div>
+            </SectionReveal>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+              {audience.map(({ icon: Icon, label, pain, desc }) => (
+                <SectionReveal key={label}>
+                  <div style={{
+                    background: '#fff',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '20px',
+                    padding: '36px 32px',
+                    height: '100%',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 16px 40px rgba(99,102,241,0.1)'; e.currentTarget.style.borderColor = 'rgba(99,102,241,0.2)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.03)'; e.currentTarget.style.borderColor = '#e2e8f0'; }}
+                  >
+                    <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                      <Icon size={22} color="#fff" />
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', color: '#0f172a', marginBottom: '12px' }}>{label}</div>
+                    <div style={{ fontSize: '0.9rem', color: '#94a3b8', lineHeight: 1.65, marginBottom: '16px', fontStyle: 'italic', borderLeft: '3px solid #e2e8f0', paddingLeft: '12px' }}>
+                      &ldquo;{pain}&rdquo;
+                    </div>
+                    <p style={{ fontSize: '0.92rem', color: '#475569', lineHeight: 1.7, margin: 0 }}>{desc}</p>
+                  </div>
+                </SectionReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Workflow */}
-        <section style={{ background: 'linear-gradient(180deg, #fff 0%, #f8fafc 100%)', padding: '120px 40px' }}>
+        <section id="how-it-works" style={{ background: 'linear-gradient(180deg, #fff 0%, #f8fafc 100%)', padding: '120px 40px' }}>
           <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 80px' }}>
               <SectionReveal>
@@ -1236,6 +1545,142 @@ export default function DwellexPage() {
               </div>
             </SectionReveal>
 
+            {/* Pricing Calculator */}
+            <SectionReveal>
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(139,92,246,0.04))',
+                border: '1px solid rgba(99,102,241,0.15)',
+                borderRadius: '20px',
+                padding: '40px 44px',
+                marginBottom: '32px',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px' }}>
+                  <BarChart2 size={20} color="#6366f1" />
+                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: '#0f172a' }}>
+                    Estimate your monthly cost
+                  </span>
+                </div>
+                <div style={{ marginBottom: '20px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                    <label style={{ fontSize: '0.9rem', color: '#475569', fontFamily: 'var(--font-display)', fontWeight: 600 }}>
+                      Cases per month
+                    </label>
+                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: '#6366f1' }}>
+                      {cases >= 1000 ? '1,000+' : cases}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={10}
+                    max={1050}
+                    step={10}
+                    value={cases}
+                    onChange={(e) => setCases(Number(e.target.value))}
+                    style={{ width: '100%', accentColor: '#6366f1', cursor: 'pointer' }}
+                  />
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#94a3b8', marginTop: '6px' }}>
+                    <span>10 cases</span>
+                    <span>1,000+ cases</span>
+                  </div>
+                </div>
+                {cases >= 1000 ? (
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.05))', border: '2px solid rgba(99,102,241,0.25)', borderRadius: '14px', padding: '32px 28px', flexWrap: 'wrap', gap: '24px' }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '8px' }}>
+                        Enterprise — custom flat rate
+                      </div>
+                      <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6, margin: '0 0 20px' }}>
+                        1,000+ cases/month: all-inclusive, no per-case charges. Let&apos;s talk about your firm&apos;s volume.
+                      </p>
+                      <DemoButton style={{ padding: '12px 32px', fontSize: '0.92rem' }}>
+                        Contact Us →
+                      </DemoButton>
+                    </div>
+                  </div>
+                ) : (() => {
+                  const ratePerCase = cases <= 50 ? 8 : cases <= 150 ? 6.5 : cases <= 300 ? 5 : null
+                  const tierName = cases <= 50 ? 'Starter' : cases <= 150 ? 'Growth' : cases <= 300 ? 'Scale' : 'Enterprise'
+                  const tierColor = cases <= 50 ? '#6366f1' : cases <= 150 ? '#0ea5e9' : cases <= 300 ? '#10b981' : '#8b5cf6'
+                  const totalCost = ratePerCase !== null ? 399 + cases * ratePerCase : null
+                  return (
+                    <div>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '12px' }}>
+                        <div style={{ background: '#fff', borderRadius: '14px', padding: '20px 24px', border: `2px solid ${tierColor}` }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                            <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: tierColor }}>
+                              Dwellex
+                            </div>
+                            <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-display)', fontWeight: 700, background: `${tierColor}18`, color: tierColor, padding: '2px 8px', borderRadius: '6px' }}>{tierName}</span>
+                          </div>
+                          {totalCost !== null ? (
+                            <>
+                              <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.03em' }}>
+                                ${totalCost.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                                <span style={{ fontSize: '0.9rem', fontWeight: 500, color: '#94a3b8' }}>/mo</span>
+                              </div>
+                              <div style={{ fontSize: '0.78rem', color: '#64748b', marginTop: '6px' }}>
+                                $399 flat + {cases} cases × ${ratePerCase}/case
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', fontWeight: 800, color: '#8b5cf6', letterSpacing: '-0.02em', marginBottom: '6px' }}>
+                                Custom flat rate
+                              </div>
+                              <div style={{ fontSize: '0.78rem', color: '#64748b' }}>
+                                All-inclusive — no per-case charges
+                              </div>
+                            </>
+                          )}
+                        </div>
+                        <div style={{ background: '#fff', borderRadius: '14px', padding: '20px 24px', border: '1px solid #e2e8f0' }}>
+                          <div style={{ fontSize: '0.75rem', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#94a3b8', marginBottom: '8px' }}>
+                            Typical per-seat SaaS
+                          </div>
+                          <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 800, color: '#94a3b8', letterSpacing: '-0.03em' }}>
+                            ${(Math.ceil(cases / 10) * 89 + 299).toLocaleString()}
+                            <span style={{ fontSize: '0.9rem', fontWeight: 500, color: '#cbd5e1' }}>/mo</span>
+                          </div>
+                          <div style={{ fontSize: '0.78rem', color: '#94a3b8', marginTop: '6px' }}>
+                            Est. {Math.ceil(cases / 10)} users × ~$89/seat + base
+                          </div>
+                        </div>
+                      </div>
+                      {/* Tier progress */}
+                      <div style={{ background: '#f8fafc', borderRadius: '10px', padding: '12px 16px', fontSize: '0.8rem', color: '#64748b' }}>
+                        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                          {[
+                            { label: 'Starter', range: '≤ 50', rate: '$8.00', active: cases <= 50 },
+                            { label: 'Growth', range: '51–150', rate: '$6.50', active: cases > 50 && cases <= 150 },
+                            { label: 'Scale', range: '151–300', rate: '$5.00', active: cases > 150 && cases <= 300 },
+                            { label: 'Enterprise', range: '300+', rate: 'Custom', active: cases > 300 },
+                          ].map(({ label, range, rate, active }) => (
+                            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: active ? 1 : 0.45 }}>
+                              <span style={{ fontWeight: active ? 700 : 500, color: active ? '#0f172a' : '#94a3b8' }}>{label}</span>
+                              <span style={{ color: '#cbd5e1' }}>·</span>
+                              <span>{range} cases</span>
+                              <span style={{ color: '#cbd5e1' }}>·</span>
+                              <span style={{ fontWeight: 600, color: active ? '#6366f1' : '#94a3b8' }}>{rate}/case</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })()}
+                {cases > 150 && cases <= 300 && (
+                  <div style={{ marginTop: '12px', padding: '14px 18px', background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: '10px', fontSize: '0.85rem', color: '#065f46' }}>
+                    <strong>Scale tier</strong> — at 151–300 cases you drop to $5.00/case. Enterprise flat-rate available at 300+.
+                  </div>
+                )}
+                {cases > 300 && cases < 1000 && (
+                  <div style={{ marginTop: '12px', padding: '14px 18px', background: 'rgba(139,92,246,0.06)', border: '1px solid rgba(139,92,246,0.2)', borderRadius: '10px', fontSize: '0.85rem', color: '#4c1d95' }}>
+                    <strong>Enterprise tier</strong> — custom flat-rate, all-inclusive. Slide to 1,000+ to see the contact us option, or reach out now to discuss your volume.
+                  </div>
+                )}
+              </div>
+            </SectionReveal>
+
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'start' }}>
               {/* Main pricing card */}
               <div style={{ background: '#fff', border: '2px solid #6366f1', borderRadius: '24px', padding: '48px 44px', position: 'relative', overflow: 'hidden' }}>
@@ -1276,25 +1721,44 @@ export default function DwellexPage() {
               </div>
 
               {/* Add-ons / note card */}
-              <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
                 <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>Implementation & Training</div>
-                  <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
-                    Scoped and priced per project. We handle data migration, workflow configuration, jurisdiction setup, and staff onboarding. Timeline and cost depend on your firm&apos;s existing systems and caseload.
-                  </p>
-                </div>
-                <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
-                  <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>Custom Integrations</div>
-                  <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
-                    Need a connection to your property management system, court filing portal, or other tooling? Custom integrations are available and scoped per engagement.
-                  </p>
-                </div>
-                <div style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.15)', borderRadius: '20px', padding: '28px 32px' }}>
-                  <div style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.75 }}>
-                    <strong style={{ color: '#4f46e5' }}>High-volume firms:</strong> Running 100+ cases/month? Talk to us about volume pricing — we have options for larger practices that cap your per-case cost.
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '16px' }}>Per-Case Volume Tiers</div>
+                    <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0' }}>
+                      {[
+                        { tier: 'Starter', range: 'Up to 50 cases/mo', rate: '$8.00/case', color: '#6366f1' },
+                        { tier: 'Growth', range: '51–150 cases/mo', rate: '$6.50/case', color: '#0ea5e9' },
+                        { tier: 'Scale', range: '151–300 cases/mo', rate: '$5.00/case', color: '#10b981' },
+                        { tier: 'Enterprise', range: '300+ cases/mo', rate: 'Custom flat rate', color: '#8b5cf6' },
+                      ].map(({ tier, range, rate, color }, i) => (
+                        <div key={tier} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: i < 3 ? '1px solid #f1f5f9' : 'none' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                            <span style={{ fontSize: '0.7rem', fontFamily: 'var(--font-display)', fontWeight: 700, background: `${color}18`, color, padding: '2px 8px', borderRadius: '6px', minWidth: '70px', textAlign: 'center' as const }}>{tier}</span>
+                            <span style={{ fontSize: '0.85rem', color: '#64748b' }}>{range}</span>
+                          </div>
+                          <span style={{ fontSize: '0.88rem', fontFamily: 'var(--font-display)', fontWeight: 700, color: '#0f172a' }}>{rate}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>Implementation & Training</div>
+                    <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
+                      Scoped and priced per project. We handle data migration, workflow configuration, jurisdiction setup, and staff onboarding. Timeline and cost depend on your firm&apos;s existing systems and caseload.
+                    </p>
+                  </div>
+                  <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '20px', padding: '32px 36px' }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>Custom Integrations</div>
+                    <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.7, margin: 0 }}>
+                      Need a connection to your property management system, court filing portal, or other tooling? Custom integrations are available and scoped per engagement.
+                    </p>
+                  </div>
+                  <div style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.15)', borderRadius: '20px', padding: '28px 32px' }}>
+                    <div style={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.75 }}>
+                      <strong style={{ color: '#4f46e5' }}>300+ cases/month?</strong> Enterprise flat-rate pricing — all-inclusive, no per-case charges. Talk to us.
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </section>
@@ -1379,82 +1843,21 @@ export default function DwellexPage() {
         {/* FAQ — AIO + People Also Ask */}
         <FaqSection />
 
-        {/* Target Audience */}
-        <section style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)', padding: '120px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-          {/* Decorative glow */}
+        {/* Closing CTA */}
+        <section style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)', padding: '100px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)', pointerEvents: 'none' }} />
-          <div style={{ maxWidth: '960px', margin: '0 auto', position: 'relative' }}>
+          <div style={{ maxWidth: '680px', margin: '0 auto', position: 'relative' }}>
             <SectionReveal>
-              <div style={{
-                display: 'inline-block',
-                background: 'rgba(99,102,241,0.15)',
-                border: '1px solid rgba(99,102,241,0.35)',
-                borderRadius: '8px',
-                padding: '6px 16px',
-                fontSize: '0.75rem',
-                fontFamily: 'var(--font-display)',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'rgba(165,180,252,0.9)',
-                marginBottom: '24px',
-              }}>
-                Who It&apos;s For
-              </div>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', lineHeight: 1.2, marginBottom: '16px' }}>
-                <span style={{
-                  background: 'linear-gradient(135deg, #fff 30%, #a5b4fc)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>
-                  Built for Eviction-Focused Practices
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.2, marginBottom: '16px' }}>
+                <span style={{ background: 'linear-gradient(135deg, #fff 30%, #a5b4fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  Ready to scale your eviction practice?
                 </span>
               </h2>
-              <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '56px', maxWidth: '640px', margin: '0 auto 56px' }}>
-                Whether you handle dozens or hundreds of eviction cases per month, Dwellex gives you the automation and transparency to scale without adding headcount.
+              <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '40px' }}>
+                See how Dwellex handles your caseload — from intake to lockout — in a live demo built around your firm&apos;s workflow.
               </p>
-            </SectionReveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginBottom: '56px' }}>
-              {audience.map(({ icon: Icon, label, desc }) => (
-                <SectionReveal key={label}>
-                  <div style={{
-                    background: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    borderRadius: '16px',
-                    padding: '32px 28px',
-                    textAlign: 'left',
-                    transition: 'all 0.3s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(99,102,241,0.12)'
-                    e.currentTarget.style.borderColor = 'rgba(99,102,241,0.3)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
-                  }}>
-                    <div style={{
-                      width: '44px', height: '44px', borderRadius: '12px',
-                      background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      marginBottom: '16px',
-                    }}>
-                      <Icon size={20} color="#fff" />
-                    </div>
-                    <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: '#fff', marginBottom: '8px' }}>
-                      {label}
-                    </div>
-                    <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>
-                      {desc}
-                    </div>
-                  </div>
-                </SectionReveal>
-              ))}
-            </div>
-            <SectionReveal>
-              <DemoButton style={{ padding: '16px 44px', fontSize: '1rem' }}>
-                See Dwellex in Action →
+              <DemoButton style={{ padding: '18px 48px', fontSize: '1.05rem' }}>
+                Request a Demo →
               </DemoButton>
             </SectionReveal>
           </div>
@@ -1487,6 +1890,21 @@ export default function DwellexPage() {
 
       </main>
       <Footer />
+      {/* Sticky CTA */}
+      {showSticky && (
+        <div style={{
+          position: 'fixed',
+          top: '16px',
+          right: '24px',
+          zIndex: 1000,
+          animation: 'fadeInDown 0.25s ease',
+        }}>
+          <style>{`@keyframes fadeInDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }`}</style>
+          <DemoButton style={{ padding: '10px 24px', fontSize: '0.88rem', boxShadow: '0 8px 32px rgba(99,102,241,0.35)' }}>
+            Request a Demo →
+          </DemoButton>
+        </div>
+      )}
     </>
   )
 }
