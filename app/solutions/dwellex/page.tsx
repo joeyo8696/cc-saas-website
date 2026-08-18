@@ -124,7 +124,7 @@ const jsonLd = {
           name: 'Is Dwellex suitable for high-volume eviction practices?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. Dwellex is designed for law firms handling dozens to hundreds of eviction cases per month. Automation of intake, document generation, case tracking, and court coordination allows firms to scale their eviction practice without adding headcount.',
+            text: 'Yes. Dwellex is built for firms handling hundreds to thousands of eviction cases and notices per month. Automation of intake, document generation, case tracking, and court coordination lets practices scale without adding headcount — and volume-tiered pricing means your per-case cost drops as you grow.',
           },
         },
         {
@@ -450,7 +450,7 @@ const faqs = [
   },
   {
     q: 'Is Dwellex suitable for high-volume eviction practices?',
-    a: 'Yes. Dwellex is designed for firms handling dozens to hundreds of eviction cases per month. Automation of intake, document generation, case tracking, and court coordination lets practices scale without adding headcount.',
+    a: 'Yes. Dwellex is built for firms handling hundreds to thousands of eviction cases and notices per month. Automation of intake, document generation, case tracking, and court coordination lets practices scale without adding headcount — and volume-tiered pricing means your per-case cost drops as you grow.',
   },
   {
     q: 'What states does Dwellex support?',
