@@ -782,7 +782,7 @@ export default function DwellexPage() {
                   }}>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(165,180,252,0.7)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                     <span style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-display)', letterSpacing: '0.02em' }}>
-                      app.dwellex.com
+                      app.dwellex.io
                     </span>
                   </div>
                   {/* Spacer to balance traffic lights */}
