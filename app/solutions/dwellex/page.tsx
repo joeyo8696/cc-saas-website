@@ -626,7 +626,7 @@ export default function DwellexPage() {
       <main style={{ position: 'relative', zIndex: 1 }}>
 
         {/* Hero */}
-        <section style={{ background: 'transparent', padding: '100px 40px 80px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <section style={{ background: 'transparent', padding: '100px 40px 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ maxWidth: '960px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
             <Image
               src="/images/dwellex_logo_white.png"
@@ -690,67 +690,123 @@ export default function DwellexPage() {
             </div>
 
             {/* Hero product screenshot — browser chrome mockup */}
-            <div style={{ marginTop: '72px', position: 'relative' }}>
-              {/* Ambient glow */}
+            <div style={{ marginTop: '64px', position: 'relative', width: 'calc(100% + 80px)', marginLeft: '-40px', marginRight: '-40px' }}>
+              <style>{`
+                @keyframes heroGlowPulse {
+                  0%, 100% { opacity: 0.55; transform: scale(1); }
+                  50% { opacity: 0.9; transform: scale(1.04); }
+                }
+                @keyframes heroRingPulse {
+                  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.92); }
+                  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.18); }
+                }
+              `}</style>
+
+              {/* Pulsing glow rings */}
+              {[0, 0.7, 1.4].map((delay) => (
+                <div key={delay} style={{
+                  position: 'absolute',
+                  top: '45%', left: '50%',
+                  width: '70%', height: '140px',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(ellipse, rgba(99,102,241,0.45) 0%, transparent 70%)',
+                  filter: 'blur(24px)',
+                  animation: `heroRingPulse 2.8s ease-out ${delay}s infinite`,
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }} />
+              ))}
+
+              {/* Main ambient glow blob */}
               <div style={{
                 position: 'absolute',
-                inset: '-40px',
-                borderRadius: '32px',
-                background: 'radial-gradient(ellipse at 50% 60%, rgba(99,102,241,0.35) 0%, transparent 70%)',
-                filter: 'blur(32px)',
+                top: '30%', left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '80%', height: '300px',
+                background: 'radial-gradient(ellipse, rgba(99,102,241,0.5) 0%, rgba(139,92,246,0.25) 40%, transparent 70%)',
+                filter: 'blur(48px)',
+                animation: 'heroGlowPulse 3.5s ease-in-out infinite',
                 pointerEvents: 'none',
+                zIndex: 0,
               }} />
+
               {/* Browser chrome */}
               <div style={{
                 position: 'relative',
-                borderRadius: '14px',
+                zIndex: 1,
+                borderRadius: '16px 16px 0 0',
                 overflow: 'hidden',
-                boxShadow: '0 48px 120px rgba(0,0,0,0.55), 0 8px 32px rgba(0,0,0,0.3)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                boxShadow: '0 -4px 80px rgba(99,102,241,0.3), 0 40px 120px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.13)',
+                borderBottom: 'none',
+                transform: 'perspective(1400px) rotateX(3deg)',
+                transformOrigin: 'bottom center',
               }}>
                 {/* Browser toolbar */}
                 <div style={{
-                  background: '#1e1e2e',
-                  padding: '11px 16px',
+                  background: 'linear-gradient(180deg, #252535 0%, #1e1e2e 100%)',
+                  padding: '12px 18px',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '12px',
+                  gap: '14px',
                   borderBottom: '1px solid rgba(255,255,255,0.07)',
+                  userSelect: 'none',
                 }}>
                   {/* Traffic lights */}
-                  <div style={{ display: 'flex', gap: '6px', flexShrink: 0 }}>
-                    {['#ff5f57', '#febc2e', '#28c840'].map((c) => (
-                      <div key={c} style={{ width: '12px', height: '12px', borderRadius: '50%', background: c }} />
+                  <div style={{ display: 'flex', gap: '7px', flexShrink: 0 }}>
+                    {[
+                      { bg: '#ff5f57', shadow: 'rgba(255,95,87,0.5)' },
+                      { bg: '#febc2e', shadow: 'rgba(254,188,46,0.5)' },
+                      { bg: '#28c840', shadow: 'rgba(40,200,64,0.5)' },
+                    ].map(({ bg, shadow }) => (
+                      <div key={bg} style={{ width: '13px', height: '13px', borderRadius: '50%', background: bg, boxShadow: `0 0 6px ${shadow}` }} />
                     ))}
+                  </div>
+                  {/* Nav arrows */}
+                  <div style={{ display: 'flex', gap: '10px', opacity: 0.3 }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M9 18l6-6-6-6"/></svg>
                   </div>
                   {/* URL bar */}
                   <div style={{
                     flex: 1,
-                    background: 'rgba(255,255,255,0.07)',
-                    borderRadius: '6px',
-                    padding: '5px 12px',
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    borderRadius: '7px',
+                    padding: '6px 14px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '7px',
-                    maxWidth: '420px',
+                    gap: '8px',
+                    maxWidth: '480px',
                     margin: '0 auto',
                   }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-display)', letterSpacing: '0.01em' }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(165,180,252,0.7)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <span style={{ fontSize: '0.76rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-display)', letterSpacing: '0.02em' }}>
                       app.dwellex.com
                     </span>
                   </div>
+                  {/* Spacer to balance traffic lights */}
+                  <div style={{ width: '80px' }} />
                 </div>
+
                 {/* Screenshot */}
-                <div style={{ display: 'block', lineHeight: 0 }}>
+                <div style={{ display: 'block', lineHeight: 0, position: 'relative' }}>
                   <Image
                     src="/images/dwellex-landing.png"
                     alt="Dwellex batch notice review — approve and generate court-ready notices from a CSV intake"
-                    width={1280}
-                    height={760}
+                    width={1440}
+                    height={860}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                     priority
                   />
+                  {/* Bottom fade mask */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0, left: 0, right: 0,
+                    height: '45%',
+                    background: 'linear-gradient(to bottom, transparent 0%, rgba(10,8,30,0.7) 70%, rgba(10,8,30,0.97) 100%)',
+                    pointerEvents: 'none',
+                  }} />
                 </div>
               </div>
             </div>
