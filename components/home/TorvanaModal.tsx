@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { X, ArrowRight, Activity } from 'lucide-react'
+import { X, ArrowRight } from 'lucide-react'
 
 export default function TorvanaModal() {
   const [visible, setVisible] = useState(false)
@@ -62,7 +62,7 @@ export default function TorvanaModal() {
           width: 6px; height: 6px; border-radius: 50%; background: #504ce2;
           box-shadow: 0 0 0 3px rgba(80,76,226,0.2);
         }
-        .tv-intro-logo { margin-bottom: 20px; }
+        .tv-intro-logo { margin-bottom: 24px; text-align: center; }
         .tv-intro-headline {
           font-size: 1.65rem; font-weight: 600; color: #0f172a;
           line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 14px;
@@ -116,18 +116,13 @@ export default function TorvanaModal() {
             <X size={15} />
           </button>
 
-          <div className="tv-intro-badge">
-            <Activity size={12} />
-            Introducing
-          </div>
-
           <div className="tv-intro-logo">
             <Image
               src="/images/Torvana-Illustrator-Master.svg"
               alt="Torvana"
-              width={180} height={44}
+              width={320} height={78}
               unoptimized placeholder="empty"
-              style={{ width: 'auto', height: '38px' }}
+              style={{ width: 'auto', height: '72px' }}
             />
           </div>
 
