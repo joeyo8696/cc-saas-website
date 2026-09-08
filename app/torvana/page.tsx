@@ -514,7 +514,7 @@ export default function TorvanaPage() {
                 {/* Center: Torvana */}
                 <div className="tv-flow-center-box">
                   <div className="tv-flow-center-logo">
-                    <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={140} height={34} unoptimized placeholder="empty" style={{ width: 'auto', height: '28px' }} />
+                    <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={140} height={34} unoptimized placeholder="empty" style={{ width: 'auto', height: '28px', filter: 'brightness(0) invert(1)' }} />
                   </div>
                   <div className="tv-flow-modules-grid">
                     {[
