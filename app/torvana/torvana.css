@@ -64,7 +64,7 @@
 .tv-icon-button { display: grid; place-items: center; width: 32px; height: 32px; background: transparent; color: #79738b; border: 1px solid #e5e2ec; border-radius: 4px; }
 
 /* Hero */
-.tv-hero { display: grid; grid-template-columns: 1.13fr 1fr; gap: 70px; padding-block: 90px 80px; align-items: flex-start; }
+.tv-hero { display: grid; grid-template-columns: 1.13fr 1fr; gap: 70px; padding-block: 90px 80px; align-items: center; }
 .tv-hero h1 { font-size: clamp(48px, 4.6vw, 70px); margin-top: 28px; letter-spacing: -0.06em; line-height: 1.08; white-space: nowrap; }
 .tv-hero h1 em { color: #504ce2; letter-spacing: -0.055em; }
 .tv-hero-lede { margin-top: 25px; max-width: 440px; font-size: 17px; line-height: 1.7; }
@@ -227,12 +227,13 @@
 .tv-flow-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .tv-flow-list li { font-size: 13px; color: #4a4760; }
 .tv-flow-center-box { background: #0e1a35; border-radius: 10px; padding: 24px 22px; }
-.tv-flow-center-logo { margin-bottom: 20px; display: flex; justify-content: center; }
+.tv-flow-center-logo { margin-bottom: 16px; display: flex; justify-content: center; }
+.tv-flow-modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
 .tv-flow-module { background: white; border-radius: 5px; padding: 11px 10px; font-size: 12px; font-weight: 500; color: #2a2550; text-align: center; transition: background 0.3s, color 0.3s, box-shadow 0.3s; line-height: 1.3; }
 .tv-flow-module.active { background: #504ce2; color: white; box-shadow: 0 0 0 2px #8b87f0; }
 .tv-flow-center-note { font-size: 10px; color: #8a85a8; margin-top: 14px; line-height: 1.5; text-align: center; }
-.tv-flow-arrows-col { display: flex; flex-direction: column; justify-content: space-around; padding: 28px 4px; }
-.tv-flow-arrow { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.tv-flow-arrows-col { display: flex; flex-direction: column; justify-content: space-between; padding: 36px 4px; gap: 8px; }
+.tv-flow-arrow { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; justify-content: center; }
 .tv-arrow-label { font-size: 10px; color: #9a93b0; letter-spacing: 0.02em; text-align: center; transition: color 0.3s; line-height: 1.35; word-break: break-word; }
 .tv-flow-arrow.active .tv-arrow-label { color: #504ce2; }
 .tv-arrow-track { position: relative; height: 16px; width: 100%; display: flex; align-items: center; overflow: visible; }

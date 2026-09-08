@@ -243,7 +243,7 @@ export default function TorvanaPage() {
 
         {/* Hero */}
         <section className="tv-hero tv-shell" id="top">
-          <div className="tv-hero-copy">
+          <div className="tv-hero-copy" style={{ alignSelf: 'flex-start', paddingTop: '8px' }}>
             <div style={{ marginBottom: '16px', marginTop: '-40px' }}>
               <Image
                 src="/images/Torvana-Illustrator-Master.svg"
