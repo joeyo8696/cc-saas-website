@@ -394,6 +394,30 @@ export default function TorvanaPage() {
           </div>
         </section>
 
+        {/* Custom Intake Portal section */}
+        <section className="tv-intake-showcase tv-shell">
+          <div className="tv-intake-showcase-inner">
+            <div className="tv-intake-showcase-copy">
+              <span className="tv-eyebrow"><span />Your brand. Your portal.</span>
+              <h2>Intake that looks like<br /><em>your practice.</em></h2>
+              <p>Torvana builds a branded intake experience for your center — your logo, your colors, your exam types. Patients get a text link, pick their slot, complete health history and sign HIPAA authorization before they walk in. No app, no password, no paper.</p>
+              <ul className="tv-intake-bullets">
+                <li><Check size={14} /> ~5 minute intake on any phone</li>
+                <li><Check size={14} /> Exam type, body region, implant screening captured</li>
+                <li><Check size={14} /> HIPAA authorization signed and stored</li>
+                <li><Check size={14} /> Appointment confirmation writes back to your scheduler</li>
+              </ul>
+            </div>
+            <div className="tv-browser-frame tv-intake-showcase-frame">
+              <div className="tv-browser-bar">
+                <div className="tv-browser-dots"><span /><span /><span /></div>
+                <div className="tv-browser-url"><span className="tv-browser-url-dot" />rochesterimageassociates.com</div>
+              </div>
+              <Image src="/images/torvana-intake-portal.png" alt="Branded patient intake portal — Rochester Image Associates" width={860} height={580} style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
+          </div>
+        </section>
+
         {/* Screenshot showcase */}
         <section className="tv-screenshot-section">
           <div className="tv-shell tv-screenshot-inner">
@@ -402,7 +426,6 @@ export default function TorvanaPage() {
               {[
                 'Referring Providers',
                 'AI Medical Chronology',
-                'Patient Intake Portal',
                 'Workflow Automation',
               ].map((label, i) => (
                 <button
@@ -420,7 +443,7 @@ export default function TorvanaPage() {
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/referring-providers</div>
                 </div>
-                <Image src="/images/Screenshot 2026-09-08 at 3.15.58 AM.png" alt="Torvana — Referring Providers dashboard" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <Image src="/images/torvana-referring-providers.png" alt="Torvana — Referring Providers dashboard" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
             {screenshotTab === 1 && (
@@ -429,32 +452,22 @@ export default function TorvanaPage() {
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/medical-records</div>
                 </div>
-                <Image src="/images/Screenshot 2026-09-08 at 3.16.38 AM.png" alt="Torvana — AI medical chronology and records" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <Image src="/images/torvana-ai-chronology.png" alt="Torvana — AI medical chronology and records" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
             {screenshotTab === 2 && (
               <div className="tv-browser-frame">
                 <div className="tv-browser-bar">
                   <div className="tv-browser-dots"><span /><span /><span /></div>
-                  <div className="tv-browser-url"><span className="tv-browser-url-dot" />rochesterimageassociates.com</div>
-                </div>
-                <Image src="/images/Screenshot 2026-09-08 at 3.17.51 AM.png" alt="Torvana — Patient intake portal for imaging center" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
-              </div>
-            )}
-            {screenshotTab === 3 && (
-              <div className="tv-browser-frame">
-                <div className="tv-browser-bar">
-                  <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/timeline-builder</div>
                 </div>
-                <Image src="/images/Screenshot 2026-09-08 at 3.20.14 AM.png" alt="Torvana — Intake workflow automation timeline builder" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <Image src="/images/torvana-timeline-builder.png" alt="Torvana — Intake workflow automation timeline builder" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
             <p className="tv-screenshot-caption">
               {screenshotTab === 0 && 'Manage every referring provider and patient in one queue — track intake status, leads and outreach from a single view.'}
               {screenshotTab === 1 && 'Retrieved records are assembled into a dated AI chronology with record flags, diagnoses and billing totals — delivered back to the referrer automatically.'}
-              {screenshotTab === 2 && 'A branded intake portal for your practice. Patients complete intake on their phone before they arrive — exam type, body region, implant screening and HIPAA authorization.'}
-              {screenshotTab === 3 && 'Visual workflow automation for every referral path. Build intake sequences, scheduling triggers, appointment reminders and EHR push steps — no code required.'}
+              {screenshotTab === 2 && 'Visual workflow automation for every referral path. Build intake sequences, scheduling triggers, appointment reminders and EHR push steps — no code required.'}
             </p>
           </div>
         </section>
