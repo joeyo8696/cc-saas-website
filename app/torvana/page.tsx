@@ -245,7 +245,7 @@ export default function TorvanaPage() {
                 height={58}
                 unoptimized
                 placeholder="empty"
-                style={{ width: 'auto', height: '52px' }}
+                style={{ width: 'auto', height: '80px' }}
               />
             </div>
             <div className="tv-eyebrow"><span /> Connected Care. Clear Progress.</div>
