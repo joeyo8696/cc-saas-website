@@ -18,6 +18,7 @@
   background-color: #ffffff;
   background-image: radial-gradient(circle, rgba(80,76,226,0.09) 1.5px, transparent 1.5px);
   background-size: 28px 28px;
+  overflow-x: clip;
 }
 
 .tv-root *, .tv-root *::before, .tv-root *::after { box-sizing: border-box; }
@@ -66,7 +67,7 @@
 .tv-icon-button { display: grid; place-items: center; width: 32px; height: 32px; background: transparent; color: #79738b; border: 1px solid #e5e2ec; border-radius: 4px; }
 
 /* Hero */
-.tv-hero-section { position: relative; overflow: hidden; }
+.tv-hero-section { position: relative; }
 .tv-hero-section::before {
   content: '';
   position: absolute;
@@ -174,7 +175,7 @@
 .tv-conversation-note { display: flex; align-items: center; gap: 7px; color: #a196b7; font-size: 11px; margin: 20px 0 0 40px; animation: tv-bubble-in 0.5s 1.2s both; }
 
 /* Platform section */
-.tv-platform { padding-block: 90px; position: relative; overflow: hidden; }
+.tv-platform { padding-block: 90px; position: relative; }
 .tv-platform::after {
   content: '';
   position: absolute;
@@ -320,7 +321,7 @@
 .tv-screenshot-tab.active { background: #504ce2; border-color: #504ce2; color: white; }
 
 /* Contact */
-.tv-contact { padding-block: 90px; position: relative; overflow: hidden; }
+.tv-contact { padding-block: 90px; position: relative; }
 .tv-contact::before {
   content: '';
   position: absolute;
