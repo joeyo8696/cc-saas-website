@@ -413,7 +413,7 @@ export default function TorvanaPage() {
                 <div className="tv-browser-dots"><span /><span /><span /></div>
                 <div className="tv-browser-url"><span className="tv-browser-url-dot" />rochesterimageassociates.com</div>
               </div>
-              <Image src="/images/torvana-intake-portal.png" alt="Branded patient intake portal — Rochester Image Associates" width={860} height={580} unoptimized style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src="/images/torvana-intake-portal.png" alt="Branded patient intake portal — Rochester Image Associates" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </div>
         </section>
@@ -444,7 +444,7 @@ export default function TorvanaPage() {
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/referring-providers</div>
                 </div>
-                <Image src="/images/torvana-referring-providers.png" alt="Torvana — Referring Providers dashboard" width={1120} height={640} unoptimized style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/images/torvana-referring-providers.png" alt="Torvana — Referring Providers dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
             {screenshotTab === 1 && (
@@ -453,7 +453,7 @@ export default function TorvanaPage() {
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/medical-records</div>
                 </div>
-                <Image src="/images/torvana-ai-chronology.png" alt="Torvana — AI medical chronology and records" width={1120} height={640} unoptimized style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/images/torvana-ai-chronology.png" alt="Torvana — AI medical chronology and records" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
             {screenshotTab === 2 && (
@@ -462,7 +462,7 @@ export default function TorvanaPage() {
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/timeline-builder</div>
                 </div>
-                <Image src="/images/torvana-timeline-builder.png" alt="Torvana — Intake workflow automation timeline builder" width={1120} height={640} unoptimized style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/images/torvana-timeline-builder.png" alt="Torvana — Intake workflow automation timeline builder" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
             {screenshotTab === 3 && (
@@ -471,7 +471,7 @@ export default function TorvanaPage() {
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/analytics</div>
                 </div>
-                <Image src="/images/torvana-analytics.png" alt="Torvana — Referral intake analytics and marketing funnel" width={1120} height={640} unoptimized style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <img src="/images/torvana-analytics.png" alt="Torvana — Referral intake analytics and marketing funnel" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
             <p className="tv-screenshot-caption">
