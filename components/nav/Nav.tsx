@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -83,6 +84,8 @@ const platformLinks = {
 }
 
 export default function Nav() {
+  const pathname = usePathname()
+  const isTorvana = pathname === '/torvana'
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -273,9 +276,20 @@ export default function Nav() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
           >Blog</Link>
-          <DemoButton style={{ padding: '9px 22px', fontSize: '0.83rem', letterSpacing: '0.02em' }}>
-            Schedule Demo
-          </DemoButton>
+          {isTorvana ? (
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('torvana:open-modal'))}
+              style={{ padding: '9px 22px', fontSize: '0.83rem', letterSpacing: '0.02em', display: 'inline-flex', alignItems: 'center', gap: '8px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontWeight: 700, cursor: 'pointer', border: 'none', background: 'linear-gradient(135deg, #504ce2, #8b87f0)', color: '#fff', boxShadow: '0 8px 24px rgba(80,76,226,0.35)', transition: 'all 0.3s cubic-bezier(0.16,1,0.3,1)' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = 'translateY(0)' }}
+            >
+              Let&apos;s talk
+            </button>
+          ) : (
+            <DemoButton style={{ padding: '9px 22px', fontSize: '0.83rem', letterSpacing: '0.02em' }}>
+              Schedule Demo
+            </DemoButton>
+          )}
         </div>
 
         {/* ── Hamburger button (mobile only) ── */}

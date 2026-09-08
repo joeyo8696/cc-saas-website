@@ -213,6 +213,12 @@ export default function TorvanaPage() {
   const [screenshotTab, setScreenshotTab] = useState(0)
 
   useEffect(() => {
+    const handler = () => setModalOpen(true)
+    window.addEventListener('torvana:open-modal', handler)
+    return () => window.removeEventListener('torvana:open-modal', handler)
+  }, [])
+
+  useEffect(() => {
     if (compareMode !== 'connected') return
     const t = setInterval(() => setWorkflowStage(s => (s + 1) % 3), 4000)
     return () => clearInterval(t)
