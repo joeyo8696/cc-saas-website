@@ -210,6 +210,7 @@ export default function TorvanaPage() {
   const [downloaded, setDownloaded] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
+  const [screenshotTab, setScreenshotTab] = useState(0)
 
   useEffect(() => {
     if (compareMode !== 'connected') return
@@ -393,22 +394,56 @@ export default function TorvanaPage() {
           </div>
         </section>
 
-        {/* Portal screenshot */}
+        {/* Screenshot showcase */}
         <section className="tv-screenshot-section">
           <div className="tv-shell tv-screenshot-inner">
-            <p className="tv-screenshot-label">Referring Attorney Portal — Patient Status View</p>
-            <div className="tv-screenshot-frame">
-              <Image
-                src="/images/referrer-portal.png"
-                alt="Torvana referring attorney portal — real-time patient intake and appointment status"
-                width={1080}
-                height={620}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-                priority
-              />
+            <p className="tv-screenshot-label">The platform in action</p>
+            <div className="tv-screenshot-tabs">
+              {[
+                'Referring Providers',
+                'AI Medical Chronology',
+                'Patient Intake Portal',
+              ].map((label, i) => (
+                <button
+                  key={label}
+                  className={`tv-screenshot-tab${screenshotTab === i ? ' active' : ''}`}
+                  onClick={() => setScreenshotTab(i)}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
+            {screenshotTab === 0 && (
+              <div className="tv-browser-frame">
+                <div className="tv-browser-bar">
+                  <div className="tv-browser-dots"><span /><span /><span /></div>
+                  <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/referring-providers</div>
+                </div>
+                <Image src="/images/Screenshot 2026-09-08 at 3.15.58 AM.png" alt="Torvana — Referring Providers dashboard" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
+            )}
+            {screenshotTab === 1 && (
+              <div className="tv-browser-frame">
+                <div className="tv-browser-bar">
+                  <div className="tv-browser-dots"><span /><span /><span /></div>
+                  <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/medical-records</div>
+                </div>
+                <Image src="/images/Screenshot 2026-09-08 at 3.16.38 AM.png" alt="Torvana — AI medical chronology and records" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
+            )}
+            {screenshotTab === 2 && (
+              <div className="tv-browser-frame">
+                <div className="tv-browser-bar">
+                  <div className="tv-browser-dots"><span /><span /><span /></div>
+                  <div className="tv-browser-url"><span className="tv-browser-url-dot" />rochesterimageassociates.com</div>
+                </div>
+                <Image src="/images/Screenshot 2026-09-08 at 3.17.51 AM.png" alt="Torvana — Patient intake portal for imaging center" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
+            )}
             <p className="tv-screenshot-caption">
-              Referring attorneys see intake status, confirmed appointments and record availability for every patient they referred — scoped to their firm only.
+              {screenshotTab === 0 && 'Manage every referring provider and patient in one queue — track intake status, leads and outreach from a single view.'}
+              {screenshotTab === 1 && 'Retrieved records are assembled into a dated AI chronology with record flags, diagnoses and billing totals — delivered back to the referrer automatically.'}
+              {screenshotTab === 2 && 'A branded intake portal for your practice. Patients complete intake on their phone before they arrive — exam type, body region, implant screening and HIPAA authorization.'}
             </p>
           </div>
         </section>

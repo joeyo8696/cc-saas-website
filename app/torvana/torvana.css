@@ -189,12 +189,82 @@
 .tv-torvana-node { padding: 14px 19px; border: 1px solid #d5cce9; background: #eeebf6; border-radius: 5px; }
 .tv-torvana-node img { width: 99px; height: auto; }
 
-/* Portal screenshot section */
-.tv-screenshot-section { background: white; padding: 80px 0; }
-.tv-screenshot-inner { max-width: 1080px; margin: 0 auto; }
+/* Screenshot showcase section */
+.tv-screenshot-section { padding: 80px 0 90px; }
+.tv-screenshot-inner { max-width: 1120px; margin: 0 auto; }
 .tv-screenshot-label { text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; margin-bottom: 24px; }
-.tv-screenshot-frame { border-radius: 14px; overflow: hidden; box-shadow: 0 28px 70px rgba(0,0,0,0.12); border: 1px solid #e2e8f0; }
 .tv-screenshot-caption { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 16px; line-height: 1.6; }
+
+/* Faux browser chrome */
+.tv-browser-frame {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.07);
+}
+.tv-browser-bar {
+  background: #f0f0f2;
+  border-bottom: 1px solid #d8d8de;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tv-browser-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.tv-browser-dots span {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+}
+.tv-browser-dots span:nth-child(1) { background: #ff5f57; }
+.tv-browser-dots span:nth-child(2) { background: #febc2e; }
+.tv-browser-dots span:nth-child(3) { background: #28c840; }
+.tv-browser-url {
+  flex: 1;
+  background: #e2e2e6;
+  border-radius: 6px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 11px;
+  color: #888;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 6px;
+}
+.tv-browser-url-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #28c840;
+  flex-shrink: 0;
+}
+.tv-browser-frame img { display: block; width: 100%; height: auto; }
+
+/* Screenshot tabs */
+.tv-screenshot-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.tv-screenshot-tab {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: transparent;
+  border: 1px solid #dddae8;
+  color: #8a84a0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.tv-screenshot-tab:hover { background: #f5f3ff; border-color: #c5bef7; color: #504ce2; }
+.tv-screenshot-tab.active { background: #504ce2; border-color: #504ce2; color: white; }
 
 /* Contact */
 .tv-contact { padding-block: 90px; }
