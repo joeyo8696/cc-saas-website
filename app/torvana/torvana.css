@@ -15,7 +15,9 @@
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  background: white;
+  background-color: #ffffff;
+  background-image: radial-gradient(circle, rgba(80,76,226,0.09) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
 }
 
 .tv-root *, .tv-root *::before, .tv-root *::after { box-sizing: border-box; }
@@ -170,7 +172,7 @@
 .tv-module-row small { margin-left: auto; font-size: 9px; color: #8d829f; }
 
 /* Fit section */
-.tv-fit-section { background: #f6f6f8; border-block: 1px solid var(--tv-line); padding: 75px 0 55px; }
+.tv-fit-section { background-color: #f6f6f8; background-image: radial-gradient(circle, rgba(80,76,226,0.06) 1.5px, transparent 1.5px); background-size: 28px 28px; border-block: 1px solid var(--tv-line); padding: 75px 0 55px; }
 .tv-fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; margin-top: 49px; }
 .tv-fit-grid > div > p { max-width: 370px; margin-top: 23px; font-size: 16px; line-height: 1.7; }
 .tv-principles article { display: flex; gap: 22px; padding: 23px 0; border-bottom: 1px solid #dfdde6; }
