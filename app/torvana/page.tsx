@@ -235,6 +235,7 @@ export default function TorvanaPage() {
 
   return (
     <div className="tv-root">
+      <style>{`.tv-root nav[style] { background: rgba(6,13,31,0.97) !important; }`}</style>
       <a className="tv-skip" href="#main">Skip to content</a>
       <Nav />
 
@@ -513,7 +514,7 @@ export default function TorvanaPage() {
                 {/* Center: Torvana */}
                 <div className="tv-flow-center-box">
                   <div className="tv-flow-center-logo">
-                    <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={140} height={34} unoptimized placeholder="empty" style={{ width: 'auto', height: '28px' }} />
+                    <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={140} height={34} unoptimized placeholder="empty" style={{ width: 'auto', height: '84px' }} />
                   </div>
                   <div className="tv-flow-modules-grid">
                     {[
