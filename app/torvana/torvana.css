@@ -239,7 +239,7 @@
 .tv-arrow-track { position: relative; height: 16px; width: 100%; display: flex; align-items: center; overflow: visible; }
 .tv-arrow-track::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #d8d4e8; transform: translateY(-50%); transition: background 0.3s; }
 .tv-flow-arrow.active .tv-arrow-track::before { background: #504ce2; }
-.tv-arrow-head, .tv-arrow-head-l { font-size: 18px; color: #c5bfe0; line-height: 1; position: absolute; transition: color 0.3s; z-index: 1; }
+.tv-arrow-head, .tv-arrow-head-l { font-size: 18px; color: #c5bfe0; line-height: 1; position: absolute; top: 50%; transform: translateY(-50%); transition: color 0.3s; z-index: 1; }
 .tv-arrow-head { right: -4px; }
 .tv-arrow-head-l { left: -4px; }
 .tv-flow-arrow.active .tv-arrow-head,
