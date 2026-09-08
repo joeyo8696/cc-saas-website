@@ -7,6 +7,7 @@ import {
   Pause, Play, Plus, Minus, FileText, CalendarDays,
   Smartphone, Bell, Menu, X,
 } from 'lucide-react'
+import Footer from '@/components/Footer'
 
 const stages = [
   {
@@ -490,11 +491,7 @@ export default function TorvanaPage() {
       </main>
 
       {/* Footer */}
-      <footer className="tv-footer tv-shell">
-        <Brand />
-        <span>© 2026 Torvana</span>
-        <a href="#top">Back to top <ArrowUpRight size={14} /></a>
-      </footer>
+      <Footer />
 
       {/* Walkthrough modal */}
       {modalOpen && (
