@@ -244,7 +244,7 @@ export default function TorvanaPage() {
         {/* Hero */}
         <section className="tv-hero tv-shell" id="top">
           <div className="tv-hero-copy">
-            <div className="tv-eyebrow"><span /> CARE MOVES FORWARD</div>
+            <div className="tv-eyebrow"><span /> Connected Care. Clear Progress.</div>
             <h1>The referral moves.<br /><em>Everyone knows.</em></h1>
             <p className="tv-hero-lede">
               Connect your patients, your practice and the attorneys who refer to you. From the first intake form to the latest case update.
