@@ -200,6 +200,7 @@ export default function TorvanaPage() {
   const [activeModule, setActiveModule] = useState(3)
   const [compareMode, setCompareMode] = useState<'before' | 'connected'>('connected')
   const [workflowStage, setWorkflowStage] = useState(0)
+  const [flowStep, setFlowStep] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
   const [practice, setPractice] = useState('')
   const [challenge, setChallenge] = useState('')
@@ -210,6 +211,11 @@ export default function TorvanaPage() {
     const t = setInterval(() => setWorkflowStage(s => (s + 1) % 3), 4000)
     return () => clearInterval(t)
   }, [compareMode])
+
+  useEffect(() => {
+    const t = setInterval(() => setFlowStep(s => (s + 1) % 4), 2200)
+    return () => clearInterval(t)
+  }, [])
 
   const ws = stages[workflowStage]
 
@@ -478,16 +484,77 @@ export default function TorvanaPage() {
                 </article>
               </div>
             </div>
-            <div className="tv-system-map">
-              <div className="tv-system-label">YOUR EXISTING SYSTEMS</div>
-              <div className="tv-systems"><span>PACS</span><span>RIS</span><span>EHR</span></div>
-              <div className="tv-system-connector" />
-              <div className="tv-torvana-node">
-                <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={120} height={29} unoptimized placeholder="empty" style={{ width: 'auto', height: '24px', display: 'block' }} />
-              </div>
-              <div className="tv-system-connector" />
-              <div className="tv-systems" style={{ justifyContent: 'center' }}>
-                <span>Patient</span><span>Practice</span><span>Referring firm</span>
+            <div className="tv-flow-diagram">
+              <div className="tv-flow-diagram-label">HOW IT WORKS — ONE LOOP AROUND THE VISIT</div>
+              <div className="tv-flow-row">
+
+                {/* Left: Referral Sources */}
+                <div className="tv-flow-side-box">
+                  <div className="tv-flow-box-title">REFERRAL SOURCES</div>
+                  <ul className="tv-flow-list">
+                    <li>Attorney firms</li>
+                    <li>Referring providers</li>
+                    <li>Case &amp; records status</li>
+                  </ul>
+                </div>
+
+                {/* Left arrows */}
+                <div className="tv-flow-arrows-col">
+                  <div className={`tv-flow-arrow right${flowStep === 0 ? ' active' : ''}`}>
+                    <span className="tv-arrow-label">Refers patient</span>
+                    <div className="tv-arrow-track"><span className="tv-arrow-dot" /><span className="tv-arrow-head">›</span></div>
+                  </div>
+                  <div className={`tv-flow-arrow left${flowStep === 3 ? ' active' : ''}`}>
+                    <div className="tv-arrow-track"><span className="tv-arrow-head-l">‹</span><span className="tv-arrow-dot" /></div>
+                    <span className="tv-arrow-label">Chronology + status</span>
+                  </div>
+                </div>
+
+                {/* Center: Torvana */}
+                <div className="tv-flow-center-box">
+                  <div className="tv-flow-center-logo">
+                    <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={140} height={34} unoptimized placeholder="empty" style={{ width: 'auto', height: '28px' }} />
+                  </div>
+                  <div className="tv-flow-modules-grid">
+                    {[
+                      { name: 'Referral Portal', step: 0 },
+                      { name: 'Intake Chatbot', step: 0 },
+                      { name: 'HIPAA Auth + E-Sign', step: null },
+                      { name: 'Scheduling + Recall', step: 1 },
+                      { name: 'Record Retrieval', step: 2 },
+                      { name: 'AI Chronology', step: 3 },
+                    ].map(m => (
+                      <div key={m.name} className={`tv-flow-module${flowStep === m.step ? ' active' : ''}`}>
+                        {m.name}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="tv-flow-center-note">Writes back to your scheduling system, PACS, or RIS — nothing gets replaced</div>
+                </div>
+
+                {/* Right arrows */}
+                <div className="tv-flow-arrows-col">
+                  <div className={`tv-flow-arrow right${flowStep === 1 ? ' active' : ''}`}>
+                    <span className="tv-arrow-label">Books + intakes</span>
+                    <div className="tv-arrow-track"><span className="tv-arrow-dot" /><span className="tv-arrow-head">›</span></div>
+                  </div>
+                  <div className={`tv-flow-arrow left${flowStep === 2 ? ' active' : ''}`}>
+                    <div className="tv-arrow-track"><span className="tv-arrow-head-l">‹</span><span className="tv-arrow-dot" /></div>
+                    <span className="tv-arrow-label">Sends records</span>
+                  </div>
+                </div>
+
+                {/* Right: Your Center */}
+                <div className="tv-flow-side-box">
+                  <div className="tv-flow-box-title">YOUR CENTER</div>
+                  <ul className="tv-flow-list">
+                    <li>Patient intake</li>
+                    <li>Scheduling system</li>
+                    <li>Follow-up recall</li>
+                    <li>Medical records</li>
+                  </ul>
+                </div>
+
               </div>
             </div>
           </div>

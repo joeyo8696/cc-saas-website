@@ -218,6 +218,51 @@
 .tv-modal-close { position: absolute; top: 13px; right: 13px; background: white; color: #898094; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 4px; border: 1px solid #e5e2ec; cursor: pointer; }
 .tv-modal-close:hover { background: #f3f2ff; }
 
+/* Flow diagram */
+.tv-flow-diagram { margin-top: 60px; border-top: 1px solid #dddae5; padding-top: 36px; }
+.tv-flow-diagram-label { font-size: 10px; letter-spacing: 0.12em; color: #958ca6; margin-bottom: 28px; }
+.tv-flow-row { display: grid; grid-template-columns: 1fr 80px 1.8fr 80px 1fr; align-items: center; gap: 0; }
+.tv-flow-side-box { border: 1px solid #dddae5; border-radius: 8px; padding: 20px 22px; background: white; }
+.tv-flow-box-title { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; color: #958ca6; margin-bottom: 12px; }
+.tv-flow-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.tv-flow-list li { font-size: 13px; color: #4a4760; }
+.tv-flow-center-box { background: #0e1a35; border-radius: 10px; padding: 22px 20px; }
+.tv-flow-center-logo { margin-bottom: 18px; }
+.tv-flow-modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.tv-flow-module { background: white; border-radius: 5px; padding: 10px 12px; font-size: 12px; font-weight: 500; color: #2a2550; text-align: center; transition: background 0.3s, color 0.3s, box-shadow 0.3s; }
+.tv-flow-module.active { background: #504ce2; color: white; box-shadow: 0 0 0 2px #8b87f0; }
+.tv-flow-center-note { font-size: 10px; color: #8a85a8; margin-top: 13px; line-height: 1.5; text-align: center; }
+.tv-flow-arrows-col { display: flex; flex-direction: column; gap: 20px; align-items: stretch; padding: 0 4px; }
+.tv-flow-arrow { display: flex; flex-direction: column; gap: 5px; }
+.tv-arrow-label { font-size: 10px; color: #9a93b0; letter-spacing: 0.03em; text-align: center; transition: color 0.3s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tv-flow-arrow.active .tv-arrow-label { color: #504ce2; }
+.tv-arrow-track { position: relative; height: 14px; display: flex; align-items: center; overflow: hidden; }
+.tv-arrow-track::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #d8d4e8; transform: translateY(-50%); transition: background 0.3s; }
+.tv-flow-arrow.active .tv-arrow-track::before { background: #504ce2; }
+.tv-arrow-head, .tv-arrow-head-l { font-size: 18px; color: #c5bfe0; line-height: 1; position: absolute; transition: color 0.3s; }
+.tv-arrow-head { right: 0; }
+.tv-arrow-head-l { left: 0; }
+.tv-flow-arrow.active .tv-arrow-head,
+.tv-flow-arrow.active .tv-arrow-head-l { color: #504ce2; }
+.tv-arrow-dot { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #504ce2; top: 50%; transform: translateY(-50%); opacity: 0; }
+.tv-flow-arrow.right.active .tv-arrow-dot { animation: tv-flow-right 2.2s ease-in-out infinite; }
+.tv-flow-arrow.left.active .tv-arrow-dot { animation: tv-flow-left 2.2s ease-in-out infinite; }
+@keyframes tv-flow-right { 0% { left: 0; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes tv-flow-left { 0% { right: 0; left: auto; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { right: calc(100% - 7px); left: auto; opacity: 0; } }
+
+/* Responsive flow diagram */
+@media (max-width: 900px) {
+  .tv-flow-row { grid-template-columns: 1fr 60px 1.6fr 60px 1fr; }
+  .tv-flow-module { font-size: 11px; padding: 8px 8px; }
+  .tv-arrow-label { font-size: 9px; }
+}
+@media (max-width: 650px) {
+  .tv-flow-row { grid-template-columns: 1fr; gap: 12px; }
+  .tv-flow-arrows-col { flex-direction: row; justify-content: space-around; padding: 0; }
+  .tv-flow-arrow { flex: 1; }
+  .tv-arrow-track { display: none; }
+}
+
 /* Workflow stage pills */
 .tv-workflow-stage-pills { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
 .tv-stage-pill { display: flex; align-items: center; gap: 6px; font-size: 11px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #a89ec7; padding: 6px 10px; border-radius: 4px; cursor: pointer; transition: background 0.2s, color 0.2s; }
