@@ -403,6 +403,7 @@ export default function TorvanaPage() {
                 'Referring Providers',
                 'AI Medical Chronology',
                 'Patient Intake Portal',
+                'Workflow Automation',
               ].map((label, i) => (
                 <button
                   key={label}
@@ -440,10 +441,20 @@ export default function TorvanaPage() {
                 <Image src="/images/Screenshot 2026-09-08 at 3.17.51 AM.png" alt="Torvana — Patient intake portal for imaging center" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
             )}
+            {screenshotTab === 3 && (
+              <div className="tv-browser-frame">
+                <div className="tv-browser-bar">
+                  <div className="tv-browser-dots"><span /><span /><span /></div>
+                  <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/timeline-builder</div>
+                </div>
+                <Image src="/images/Screenshot 2026-09-08 at 3.20.14 AM.png" alt="Torvana — Intake workflow automation timeline builder" width={1120} height={640} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              </div>
+            )}
             <p className="tv-screenshot-caption">
               {screenshotTab === 0 && 'Manage every referring provider and patient in one queue — track intake status, leads and outreach from a single view.'}
               {screenshotTab === 1 && 'Retrieved records are assembled into a dated AI chronology with record flags, diagnoses and billing totals — delivered back to the referrer automatically.'}
               {screenshotTab === 2 && 'A branded intake portal for your practice. Patients complete intake on their phone before they arrive — exam type, body region, implant screening and HIPAA authorization.'}
+              {screenshotTab === 3 && 'Visual workflow automation for every referral path. Build intake sequences, scheduling triggers, appointment reminders and EHR push steps — no code required.'}
             </p>
           </div>
         </section>
