@@ -5,9 +5,10 @@ import Image from 'next/image'
 import {
   ArrowUpRight, ArrowRight, Check, LockKeyhole,
   Pause, Play, Plus, Minus, FileText, CalendarDays,
-  Smartphone, Bell, Menu, X,
+  Smartphone, Bell, X,
 } from 'lucide-react'
 import Footer from '@/components/Footer'
+import Nav from '@/components/nav/Nav'
 
 const stages = [
   {
@@ -199,7 +200,6 @@ export default function TorvanaPage() {
   const [activeModule, setActiveModule] = useState(3)
   const [compareMode, setCompareMode] = useState<'before' | 'connected'>('connected')
   const [modalOpen, setModalOpen] = useState(false)
-  const [navOpen, setNavOpen] = useState(false)
   const [practice, setPractice] = useState('')
   const [challenge, setChallenge] = useState('')
   const [downloaded, setDownloaded] = useState(false)
@@ -221,24 +221,7 @@ export default function TorvanaPage() {
   return (
     <div className="tv-root">
       <a className="tv-skip" href="#main">Skip to content</a>
-
-      {/* Header */}
-      <header className="tv-header">
-        <div className="tv-nav-shell">
-          <Brand />
-          <nav className={`tv-navigation${navOpen ? ' mobile-open' : ''}`} aria-label="Main navigation">
-            <a href="#workflow" onClick={() => setNavOpen(false)}>The workflow</a>
-            <a href="#platform" onClick={() => setNavOpen(false)}>The platform</a>
-            <a href="#fit" onClick={() => setNavOpen(false)}>Built for your practice</a>
-          </nav>
-          <button className="tv-nav-cta" onClick={() => setModalOpen(true)}>
-            Let&apos;s talk <ArrowUpRight size={17} />
-          </button>
-          <button className="tv-menu-toggle" onClick={() => setNavOpen(!navOpen)} aria-label="Toggle menu" aria-expanded={navOpen}>
-            {navOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-      </header>
+      <Nav />
 
       <main id="main">
 
