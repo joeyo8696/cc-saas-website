@@ -204,7 +204,12 @@ export default function TorvanaPage() {
   const [modalOpen, setModalOpen] = useState(false)
   const [practice, setPractice] = useState('')
   const [challenge, setChallenge] = useState('')
+  const [contactName, setContactName] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [contactPhone, setContactPhone] = useState('')
   const [downloaded, setDownloaded] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   useEffect(() => {
     if (compareMode !== 'connected') return
@@ -219,16 +224,35 @@ export default function TorvanaPage() {
 
   const ws = stages[workflowStage]
 
-  function download() {
-    const blob = new Blob([
-      `TORVANA — WALKTHROUGH BRIEF\n\nPractice: ${practice || 'To discuss'}\nWorkflow priorities: ${challenge || 'Intake, scheduling, attorney status visibility and record retrieval.'}\n\nDiscussion points\n• Current referral volume and referring firms\n• Existing PACS, RIS or EHR\n• Intake, scheduling and records handoffs\n• Firm-level case access and lien tracking\n• Integration scope and next steps\n`,
-    ], { type: 'text/plain' })
+  async function download() {
+    if (!contactName || !contactEmail || !contactPhone || !practice) {
+      setSubmitError('Please fill in your name, email, phone and practice name.')
+      return
+    }
+    setSubmitError('')
+    setSubmitting(true)
+    try {
+      await fetch('/api/torvana-brief', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: contactName,
+          email: contactEmail,
+          phone: contactPhone,
+          practiceName: practice,
+          challenge,
+        }),
+      })
+    } catch (_e) {
+      // non-blocking — still download even if email fails
+    }
     const a = document.createElement('a')
-    a.href = URL.createObjectURL(blob)
-    a.download = 'torvana-walkthrough-brief.txt'
+    a.href = 'https://p9ymirxlwqlorquv.public.blob.vercel-storage.com/torvana-case-compass-brief.pdf'
+    a.download = 'torvana-case-compass-brief.pdf'
+    a.target = '_blank'
     a.click()
-    URL.revokeObjectURL(a.href)
     setDownloaded(true)
+    setSubmitting(false)
   }
 
   const mod = modules[activeModule]
@@ -590,7 +614,19 @@ export default function TorvanaPage() {
             </button>
             <span className="tv-eyebrow">YOUR PRACTICE, IN FOCUS</span>
             <h2 className="tv-modal-title" id="tv-modal-title">Start with the handoffs.</h2>
-            <p className="tv-modal-desc">Prepare a short brief for your Torvana walkthrough. Nothing here is submitted or sent.</p>
+            <p className="tv-modal-desc">Prepare a short brief for your Torvana walkthrough. We&apos;ll follow up after you download.</p>
+            <label>
+              Your name
+              <input value={contactName} onChange={e => setContactName(e.target.value)} placeholder="First and last name" />
+            </label>
+            <label>
+              Email
+              <input type="email" value={contactEmail} onChange={e => setContactEmail(e.target.value)} placeholder="you@yourpractice.com" />
+            </label>
+            <label>
+              Phone
+              <input type="tel" value={contactPhone} onChange={e => setContactPhone(e.target.value)} placeholder="(555) 000-0000" />
+            </label>
             <label>
               Practice name
               <input value={practice} onChange={e => setPractice(e.target.value)} placeholder="Your practice" />
@@ -599,8 +635,9 @@ export default function TorvanaPage() {
               Where does the workflow slow down?
               <textarea value={challenge} onChange={e => setChallenge(e.target.value)} placeholder="For example: intake completion, attorney status calls, records retrieval…" rows={3} />
             </label>
-            <button className="tv-btn-primary" onClick={download}>
-              {downloaded ? 'Download brief again' : 'Download walkthrough brief'} <ArrowRight size={17} />
+            {submitError && <p style={{ color: '#dc2626', fontSize: '13px', margin: '0 0 8px' }}>{submitError}</p>}
+            <button className="tv-btn-primary" onClick={download} disabled={submitting}>
+              {submitting ? 'Sending…' : downloaded ? 'Download brief again' : 'Download walkthrough brief'} {!submitting && <ArrowRight size={17} />}
             </button>
             <output className="tv-modal-note">
               {downloaded
