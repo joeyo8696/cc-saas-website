@@ -199,10 +199,19 @@ function ReferralDemo() {
 export default function TorvanaPage() {
   const [activeModule, setActiveModule] = useState(3)
   const [compareMode, setCompareMode] = useState<'before' | 'connected'>('connected')
+  const [workflowStage, setWorkflowStage] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
   const [practice, setPractice] = useState('')
   const [challenge, setChallenge] = useState('')
   const [downloaded, setDownloaded] = useState(false)
+
+  useEffect(() => {
+    if (compareMode !== 'connected') return
+    const t = setInterval(() => setWorkflowStage(s => (s + 1) % 3), 4000)
+    return () => clearInterval(t)
+  }, [compareMode])
+
+  const ws = stages[workflowStage]
 
   function download() {
     const blob = new Blob([
@@ -311,13 +320,28 @@ export default function TorvanaPage() {
                 ) : (
                   <>
                     <div className="tv-conversation-head"><span className="tv-activity-dot" /> THE CONNECTED HANDOFF</div>
-                    <div className="tv-bubble tv-b1"><small>PRACTICE</small><Check size={17} style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 6 }} /> Appointment confirmed.</div>
+                    <div className="tv-workflow-stage-pills">
+                      {stages.map((x, i) => (
+                        <button
+                          key={x.label}
+                          className={`tv-stage-pill${workflowStage === i ? ' active' : ''}`}
+                          onClick={() => { setWorkflowStage(i) }}
+                        >
+                          <span>{i + 1}</span>{x.label}
+                        </button>
+                      ))}
+                    </div>
+                    <div className="tv-bubble tv-b1" key={`b1-${workflowStage}`}>
+                      <small>PRACTICE</small>
+                      <Check size={17} style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 6 }} />
+                      {ws.status}
+                    </div>
                     <div className="tv-connection-pulse"><span /><span /><span /></div>
-                    <div className="tv-bubble tv-b2">
+                    <div className="tv-bubble tv-b2" key={`b2-${workflowStage}`}>
                       <small>REFERRING ATTORNEY PORTAL</small>
-                      Case #1048 is up to date.
-                      <div className="tv-mini-row"><span>Appointment</span><strong>Confirmed <Check size={14} /></strong></div>
-                      <div className="tv-mini-row"><span>Next step</span><strong>Records retrieval</strong></div>
+                      {ws.attorney}
+                      <div className="tv-mini-row"><span>Status</span><strong>Up to date <Check size={14} /></strong></div>
+                      <div className="tv-mini-row"><span>Stage</span><strong>{ws.label}</strong></div>
                     </div>
                     <div className="tv-conversation-note"><LockKeyhole size={14} /> Each firm sees only its own cases.</div>
                   </>

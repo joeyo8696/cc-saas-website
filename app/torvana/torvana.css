@@ -218,6 +218,13 @@
 .tv-modal-close { position: absolute; top: 13px; right: 13px; background: white; color: #898094; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 4px; border: 1px solid #e5e2ec; cursor: pointer; }
 .tv-modal-close:hover { background: #f3f2ff; }
 
+/* Workflow stage pills */
+.tv-workflow-stage-pills { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+.tv-stage-pill { display: flex; align-items: center; gap: 6px; font-size: 11px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #a89ec7; padding: 6px 10px; border-radius: 4px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.tv-stage-pill span { font-size: 9px; color: #7a72a0; }
+.tv-stage-pill.active { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.25); color: #f0ecff; }
+.tv-stage-pill.active span { color: #c4baf5; }
+
 /* Animations */
 @keyframes tv-bubble-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes tv-flow { 0%, 70%, 100% { opacity: 0.3; } 35% { opacity: 1; } }
