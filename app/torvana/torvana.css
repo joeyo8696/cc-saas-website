@@ -198,14 +198,14 @@
 .tv-intake-bullets { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .tv-intake-bullets li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #4a4766; }
 .tv-intake-bullets li svg { color: #504ce2; flex-shrink: 0; }
-.tv-intake-showcase-frame { box-shadow: 0 32px 80px rgba(0,0,0,0.13), 0 0 0 1px rgba(0,0,0,0.07); }
+.tv-intake-showcase-frame { box-shadow: 0 32px 80px rgba(0,0,0,0.13), 0 0 0 1px rgba(0,0,0,0.07); max-width: 600px; }
 @media (max-width: 900px) {
   .tv-intake-showcase-inner { grid-template-columns: 1fr; gap: 40px; }
 }
 
 /* Screenshot showcase section */
 .tv-screenshot-section { padding: 80px 0 90px; }
-.tv-screenshot-inner { max-width: 1120px; margin: 0 auto; }
+.tv-screenshot-inner { max-width: 1024px; margin: 0 auto; }
 .tv-screenshot-label { text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #94a3b8; margin-bottom: 24px; }
 .tv-screenshot-caption { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 16px; line-height: 1.6; }
 
