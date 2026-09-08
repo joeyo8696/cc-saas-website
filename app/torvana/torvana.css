@@ -227,8 +227,7 @@
 .tv-flow-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .tv-flow-list li { font-size: 13px; color: #4a4760; }
 .tv-flow-center-box { background: #0e1a35; border-radius: 10px; padding: 24px 22px; }
-.tv-flow-center-logo { margin-bottom: 20px; }
-.tv-flow-modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.tv-flow-center-logo { margin-bottom: 20px; display: flex; justify-content: center; }
 .tv-flow-module { background: white; border-radius: 5px; padding: 11px 10px; font-size: 12px; font-weight: 500; color: #2a2550; text-align: center; transition: background 0.3s, color 0.3s, box-shadow 0.3s; line-height: 1.3; }
 .tv-flow-module.active { background: #504ce2; color: white; box-shadow: 0 0 0 2px #8b87f0; }
 .tv-flow-center-note { font-size: 10px; color: #8a85a8; margin-top: 14px; line-height: 1.5; text-align: center; }
@@ -239,11 +238,11 @@
 .tv-arrow-track { position: relative; height: 16px; width: 100%; display: flex; align-items: center; overflow: visible; }
 .tv-arrow-track::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #d8d4e8; transform: translateY(-50%); transition: background 0.3s; }
 .tv-flow-arrow.active .tv-arrow-track::before { background: #504ce2; }
-.tv-arrow-head, .tv-arrow-head-l { font-size: 18px; color: #c5bfe0; line-height: 1; position: absolute; top: 50%; transform: translateY(-50%); transition: color 0.3s; z-index: 1; }
-.tv-arrow-head { right: -4px; }
-.tv-arrow-head-l { left: -4px; }
-.tv-flow-arrow.active .tv-arrow-head,
-.tv-flow-arrow.active .tv-arrow-head-l { color: #504ce2; }
+.tv-arrow-tip { position: absolute; top: 50%; transform: translateY(-50%); width: 0; height: 0; transition: border-color 0.3s; }
+.tv-arrow-tip.right { right: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid #c5bfe0; }
+.tv-arrow-tip.left  { left: 0;  border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-right: 7px solid #c5bfe0; }
+.tv-flow-arrow.active .tv-arrow-tip.right { border-left-color: #504ce2; }
+.tv-flow-arrow.active .tv-arrow-tip.left  { border-right-color: #504ce2; }
 .tv-arrow-dot { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #504ce2; top: 50%; transform: translateY(-50%); opacity: 0; }
 .tv-flow-arrow.right.active .tv-arrow-dot { animation: tv-flow-right 2.2s ease-in-out infinite; }
 .tv-flow-arrow.left.active .tv-arrow-dot { animation: tv-flow-left 2.2s ease-in-out infinite; }

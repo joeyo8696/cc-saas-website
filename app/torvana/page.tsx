@@ -503,17 +503,17 @@ export default function TorvanaPage() {
                 <div className="tv-flow-arrows-col">
                   <div className={`tv-flow-arrow right${flowStep === 0 ? ' active' : ''}`}>
                     <span className="tv-arrow-label">Refers patient</span>
-                    <div className="tv-arrow-track"><span className="tv-arrow-dot" /><span className="tv-arrow-head">›</span></div>
+                    <div className="tv-arrow-track"><span className="tv-arrow-dot" /><span className="tv-arrow-tip right" /></div>
                   </div>
                   <div className={`tv-flow-arrow left${flowStep === 3 ? ' active' : ''}`}>
-                    <div className="tv-arrow-track"><span className="tv-arrow-head-l">‹</span><span className="tv-arrow-dot" /></div>
+                    <div className="tv-arrow-track"><span className="tv-arrow-tip left" /><span className="tv-arrow-dot" /></div>
                     <span className="tv-arrow-label">Chronology + status</span>
                   </div>
                 </div>
 
                 {/* Center: Torvana */}
                 <div className="tv-flow-center-box">
-                <div className="tv-flow-center-logo" style={{ textAlign: 'center' }}>
+                  <div className="tv-flow-center-logo">
                     <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={280} height={68} unoptimized placeholder="empty" style={{ width: 'auto', height: '56px', filter: 'brightness(0) invert(1)' }} />
                   </div>
                   <div className="tv-flow-modules-grid">
@@ -537,10 +537,10 @@ export default function TorvanaPage() {
                 <div className="tv-flow-arrows-col">
                   <div className={`tv-flow-arrow right${flowStep === 1 ? ' active' : ''}`}>
                     <span className="tv-arrow-label">Books + intakes</span>
-                    <div className="tv-arrow-track"><span className="tv-arrow-dot" /><span className="tv-arrow-head">›</span></div>
+                    <div className="tv-arrow-track"><span className="tv-arrow-dot" /><span className="tv-arrow-tip right" /></div>
                   </div>
                   <div className={`tv-flow-arrow left${flowStep === 2 ? ' active' : ''}`}>
-                    <div className="tv-arrow-track"><span className="tv-arrow-head-l">‹</span><span className="tv-arrow-dot" /></div>
+                    <div className="tv-arrow-track"><span className="tv-arrow-tip left" /><span className="tv-arrow-dot" /></div>
                     <span className="tv-arrow-label">Sends records</span>
                   </div>
                 </div>
