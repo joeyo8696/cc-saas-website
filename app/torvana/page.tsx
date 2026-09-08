@@ -252,7 +252,7 @@ export default function TorvanaPage() {
                 height={58}
                 unoptimized
                 placeholder="empty"
-                style={{ width: 'auto', height: '80px' }}
+                style={{ width: 'auto', height: '120px' }}
               />
             </div>
             <div className="tv-eyebrow"><span /> Connected Care. Clear Progress.</div>
@@ -514,7 +514,7 @@ export default function TorvanaPage() {
                 {/* Center: Torvana */}
                 <div className="tv-flow-center-box">
                   <div className="tv-flow-center-logo">
-                    <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={140} height={34} unoptimized placeholder="empty" style={{ width: 'auto', height: '84px' }} />
+                    <Image src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={140} height={34} unoptimized placeholder="empty" style={{ width: 'auto', height: '28px' }} />
                   </div>
                   <div className="tv-flow-modules-grid">
                     {[
