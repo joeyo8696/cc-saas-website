@@ -40,7 +40,7 @@ const platformLinks = {
     href: '/torvana',
     eyebrow: 'Healthcare',
     name: 'Torvana',
-    description: 'Connected intake, scheduling, attorney portal and records automation for specialty medical practices.',
+    description: 'Intake, scheduling, records and a portal for your existing referring attorneys — built for specialty medical practices.',
   },
   workersComp: {
     href: '/solutions/workers-comp',

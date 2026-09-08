@@ -131,7 +131,7 @@ export default function TorvanaModal() {
           </h2>
 
           <p className="tv-intro-body">
-            Torvana connects specialty medical practices with referring attorneys — mobile patient intake, HIPAA authorization, scheduling, records retrieval and real-time case status. All in one connected workflow.
+            Torvana gives specialty medical practices the tools to serve their existing referring attorneys — mobile patient intake, HIPAA authorization, scheduling, records retrieval and real-time case status. Built around the referral relationships your practice already has.
           </p>
 
           <div className="tv-intro-actions">
