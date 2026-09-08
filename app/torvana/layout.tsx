@@ -27,7 +27,7 @@ const torvanaFaqSchema = {
     {
       '@type': 'Question',
       name: 'How does patient intake work?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Patients complete intake on their phone using a one-time passcode — no password to create or remember. Health history, consent forms, and HIPAA authorization are completed digitally, with e-signature built directly into the flow.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Intake runs in any browser — phone, tablet, or desktop. It can be embedded directly on your practice website or shared as a link. Patients complete their health history, consent forms, and HIPAA authorization digitally, with e-signature built into the flow. No app to download, no account to create.' },
     },
     {
       '@type': 'Question',
