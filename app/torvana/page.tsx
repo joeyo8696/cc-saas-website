@@ -104,10 +104,16 @@ const modules = [
   },
 ]
 
-function Brand() {
+function Brand({ white = false }: { white?: boolean }) {
   return (
     <a className="tv-brand" href="#top" aria-label="Torvana home">
-      <Image unoptimized src="/torvana.svg" alt="Torvana — Powered by Case Compass" width={200} height={48} />
+      <Image
+        src={white ? '/images/torvana-cc-logo-white.png' : '/images/torvana-cc-logo.png'}
+        alt="Torvana — Powered by Case Compass"
+        width={200}
+        height={48}
+        style={{ width: 'auto', height: '40px' }}
+      />
     </a>
   )
 }
@@ -456,7 +462,7 @@ export default function TorvanaPage() {
               <div className="tv-systems"><span>PACS</span><span>RIS</span><span>EHR</span></div>
               <div className="tv-system-connector" />
               <div className="tv-torvana-node">
-                <Image unoptimized src="/torvana.svg" alt="Torvana" width={100} height={24} />
+                <Image src="/images/torvana-cc-logo.png" alt="Torvana" width={120} height={29} style={{ width: 'auto', height: '24px', display: 'block' }} />
               </div>
               <div className="tv-system-connector" />
               <div className="tv-systems" style={{ justifyContent: 'center' }}>
