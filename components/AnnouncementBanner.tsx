@@ -30,13 +30,11 @@ export default function AnnouncementBanner() {
           textTransform: 'uppercase',
         }}
       >
-        New
+        New — Healthcare
       </span>
-      <span>Waypoint AI scoring + Referral Network are now live</span>
+      <span>Torvana is live — intake, scheduling and records automation for specialty medical practices.</span>
       <Link
-        href="https://blog.casecompass.io/posts/referrals-and-waypoint-launch"
-        target="_blank"
-        rel="noopener"
+        href="/torvana"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -46,7 +44,7 @@ export default function AnnouncementBanner() {
           textUnderlineOffset: '3px',
         }}
       >
-        Read the blog <ArrowRight size={13} />
+        See Torvana <ArrowRight size={13} />
       </Link>
     </div>
   )
