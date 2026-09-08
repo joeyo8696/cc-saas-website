@@ -690,38 +690,55 @@ export default function TorvanaPage() {
             <button className="tv-modal-close" onClick={() => setModalOpen(false)} aria-label="Close">
               <X size={18} />
             </button>
-            <span className="tv-eyebrow">YOUR PRACTICE, IN FOCUS</span>
-            <h2 className="tv-modal-title" id="tv-modal-title">Start with the handoffs.</h2>
-            <p className="tv-modal-desc">Prepare a short brief for your Torvana walkthrough. We&apos;ll follow up after you download.</p>
-            <label>
-              Your name
-              <input value={contactName} onChange={e => setContactName(e.target.value)} placeholder="First and last name" />
-            </label>
-            <label>
-              Email
-              <input type="email" value={contactEmail} onChange={e => setContactEmail(e.target.value)} placeholder="you@yourpractice.com" />
-            </label>
-            <label>
-              Phone
-              <input type="tel" value={contactPhone} onChange={e => setContactPhone(e.target.value)} placeholder="(555) 000-0000" />
-            </label>
-            <label>
-              Practice name
-              <input value={practice} onChange={e => setPractice(e.target.value)} placeholder="Your practice" />
-            </label>
-            <label>
-              Where does the workflow slow down?
-              <textarea value={challenge} onChange={e => setChallenge(e.target.value)} placeholder="For example: intake completion, attorney status calls, records retrieval…" rows={3} />
-            </label>
-            {submitError && <p style={{ color: '#dc2626', fontSize: '13px', margin: '0 0 8px' }}>{submitError}</p>}
-            <button className="tv-btn-primary" onClick={download} disabled={submitting}>
-              {submitting ? 'Sending…' : downloaded ? 'Download brief again' : 'Download walkthrough brief'} {!submitting && <ArrowRight size={17} />}
-            </button>
-            <output className="tv-modal-note">
-              {downloaded
-                ? 'Your brief is ready to bring to your conversation with Case Compass.'
-                : 'Please leave out patient names and case details.'}
-            </output>
+
+            {downloaded ? (
+              <>
+                <div style={{ textAlign: 'center', padding: '16px 0 8px' }}>
+                  <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'linear-gradient(135deg, #504ce2, #8b87f0)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                    <Check size={24} color="#fff" />
+                  </div>
+                  <span className="tv-eyebrow" style={{ justifyContent: 'center', marginBottom: '14px' }}>Brief downloaded</span>
+                  <h2 className="tv-modal-title" id="tv-modal-title" style={{ marginBottom: '14px' }}>We&apos;ll be in touch.</h2>
+                  <p className="tv-modal-desc" style={{ marginBottom: '28px' }}>
+                    Your brief is downloading now. Someone from our team will reach out to walk through your practice&apos;s workflow — usually within one business day.
+                  </p>
+                  <button className="tv-btn-primary" onClick={() => setModalOpen(false)} style={{ width: '100%', justifyContent: 'center' }}>
+                    Done <ArrowRight size={17} />
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <span className="tv-eyebrow">YOUR PRACTICE, IN FOCUS</span>
+                <h2 className="tv-modal-title" id="tv-modal-title">Start with the handoffs.</h2>
+                <p className="tv-modal-desc">Prepare a short brief for your Torvana walkthrough. We&apos;ll follow up after you download.</p>
+                <label>
+                  Your name
+                  <input value={contactName} onChange={e => setContactName(e.target.value)} placeholder="First and last name" />
+                </label>
+                <label>
+                  Email
+                  <input type="email" value={contactEmail} onChange={e => setContactEmail(e.target.value)} placeholder="you@yourpractice.com" />
+                </label>
+                <label>
+                  Phone
+                  <input type="tel" value={contactPhone} onChange={e => setContactPhone(e.target.value)} placeholder="(555) 000-0000" />
+                </label>
+                <label>
+                  Practice name
+                  <input value={practice} onChange={e => setPractice(e.target.value)} placeholder="Your practice" />
+                </label>
+                <label>
+                  Where does the workflow slow down?
+                  <textarea value={challenge} onChange={e => setChallenge(e.target.value)} placeholder="For example: intake completion, attorney status calls, records retrieval…" rows={3} />
+                </label>
+                {submitError && <p style={{ color: '#dc2626', fontSize: '13px', margin: '0 0 8px' }}>{submitError}</p>}
+                <button className="tv-btn-primary" onClick={download} disabled={submitting}>
+                  {submitting ? 'Sending…' : 'Download walkthrough brief'} {!submitting && <ArrowRight size={17} />}
+                </button>
+                <output className="tv-modal-note">Please leave out patient names and case details.</output>
+              </>
+            )}
           </div>
         </div>
       )}
