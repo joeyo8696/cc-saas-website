@@ -113,6 +113,7 @@ function Brand({ white = false }: { white?: boolean }) {
         alt="Torvana — Powered by Case Compass"
         width={200}
         height={48}
+        unoptimized
         placeholder="empty"
         style={{ width: 'auto', height: '40px' }}
       />
@@ -464,7 +465,7 @@ export default function TorvanaPage() {
               <div className="tv-systems"><span>PACS</span><span>RIS</span><span>EHR</span></div>
               <div className="tv-system-connector" />
               <div className="tv-torvana-node">
-                <Image src="/images/torvana-cc-logo.png" alt="Torvana" width={120} height={29} placeholder="empty" style={{ width: 'auto', height: '24px', display: 'block' }} />
+                <Image src="/images/torvana-cc-logo.png" alt="Torvana" width={120} height={29} unoptimized placeholder="empty" style={{ width: 'auto', height: '24px', display: 'block' }} />
               </div>
               <div className="tv-system-connector" />
               <div className="tv-systems" style={{ justifyContent: 'center' }}>
