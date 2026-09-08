@@ -7,7 +7,7 @@ import {
   ChevronDown, Menu, X,
   Waypoints, MessageSquare, PhoneForwarded, LayoutTemplate,
   GitBranch, FileSignature, UserCircle, BarChart3, Users,
-  TrendingUp, Building2, HardHat, Inbox, Scale, Headphones, Activity,
+  TrendingUp, Building2, HardHat, Inbox, Scale, Headphones,
 } from 'lucide-react'
 import DemoButton from '@/components/DemoButton'
 
@@ -189,8 +189,8 @@ export default function Nav() {
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eef2ff)' }}
                   >
-                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #504ce2, #8b87f0)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Activity size={17} color="#fff" />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #504ce2, #8b87f0)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '6px' }}>
+                      <img src="/images/Torvana-Illustrator-Master.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#504ce2', marginBottom: '3px' }}>{platformLinks.torvana.eyebrow}</div>
@@ -199,17 +199,17 @@ export default function Nav() {
                     </div>
                   </Link>
 
-                  <Link href={platformLinks.standalone.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)', textDecoration: 'none' }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f1f5f9, #e2e8f0)' }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f8fafc, #f1f5f9)' }}
+                  <Link href={platformLinks.featured.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)', textDecoration: 'none' }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eff6ff)' }}
                   >
-                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #0f172a, #334155)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Building2 size={17} color="#fff" />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Waypoints size={17} color="#fff" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#475569', marginBottom: '3px' }}>{platformLinks.standalone.eyebrow}</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.standalone.name}</div>
-                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.standalone.description}</div>
+                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>{platformLinks.featured.eyebrow}</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.featured.name}</div>
+                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.featured.description}</div>
                     </div>
                   </Link>
                 </div>
