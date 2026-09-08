@@ -211,6 +211,7 @@ export default function TorvanaPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const [screenshotTab, setScreenshotTab] = useState(0)
+  const [faqOpen, setFaqOpen] = useState<number | null>(null)
 
   useEffect(() => {
     const handler = () => setModalOpen(true)
@@ -659,6 +660,45 @@ export default function TorvanaPage() {
                 </div>
 
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="tv-faq-section tv-shell">
+          <div className="tv-faq-grid">
+            <div className="tv-faq-grid-aside">
+              <span className="tv-eyebrow" style={{ marginBottom: '20px' }}><span />Common questions</span>
+              <h2>Everything you<br /><em>want to know.</em></h2>
+              <p>Straight answers about how Torvana works, who it&apos;s built for, and what implementation actually looks like.</p>
+            </div>
+            <div className="tv-faq-list">
+              {[
+                { q: 'Who is Torvana built for?', a: 'Practices that get meaningful case volume from personal injury attorney referrals. That includes imaging centers, orthopedic practices, surgery centers, and pain management practices. If referring attorneys are a real part of your patient pipeline, Torvana is built around that relationship specifically, not as an afterthought.' },
+                { q: 'Does Torvana replace our existing PACS, RIS, or EHR?', a: "No. Torvana runs alongside your existing systems. You keep your PACS, RIS, or EHR, whichever vendor you're on, and Torvana adds the intake, scheduling, and referral layer on top. Integration is scoped to your specific systems during onboarding." },
+                { q: "What if our current system doesn't have an open integration option?", a: "We work with what's available. Some vendors have modern APIs, others require a more traditional interface. Either way, our approach is to connect to your existing systems rather than ask you to switch, and we scope that conversation with you directly." },
+                { q: 'How does patient intake work?', a: 'Patients complete intake on their phone using a one-time passcode — no password to create or remember. Health history, consent forms, and HIPAA authorization are completed digitally, with e-signature built directly into the flow.' },
+                { q: 'What do referring attorneys see in the portal?', a: 'Real-time status on their own cases only — intake completion, appointment confirmation, record retrieval status, and lien case status. It replaces phone calls and mailed status requests with self-serve visibility. Each firm only sees their own referred cases.' },
+                { q: 'How does medical record retrieval work?', a: 'Once HIPAA authorization is captured at intake, record retrieval is triggered automatically. Torvana targets a 24 to 48 hour turnaround, though actual timing varies by record source. The referring attorney sees retrieval status live.' },
+                { q: 'What is the AI-generated medical chronology?', a: "Once records are retrieved, Torvana automatically generates a chronology document summarizing the patient's treatment history — delivered alongside the records rather than as a separate request." },
+                { q: 'Do our patients need to download an app?', a: "No. Intake, scheduling, and the patient portal all run in a mobile browser. There's nothing to install." },
+                { q: 'Is Torvana HIPAA compliant?', a: 'Yes. Torvana is built with HIPAA compliance as a core requirement, not an add-on. Business Associate Agreements are in place with every vendor that touches protected health information.' },
+                { q: 'How is Torvana priced?', a: "Pricing depends on the number of locations, integration scope, and specific systems involved. We put together a detailed proposal for every practice rather than a one-size-fits-all price, since integration needs vary quite a bit." },
+                { q: 'Who is behind Torvana?', a: "Torvana is powered by Case Compass. The team has spent years building intake and case-tracking infrastructure for plaintiff-side law firms, combined with direct experience in healthcare patient intake and referral infrastructure. That combination is why the referring-attorney side of the platform works the way it does." },
+                { q: "Does Torvana work for practices that aren't PI-referral-based?", a: "Torvana is purpose-built around the PI attorney referral relationship — lien case tracking, attorney-facing status visibility, and record retrieval automation tied to that workflow. If that's not a meaningful part of your referral base, a general patient engagement platform may be a better fit." },
+              ].map(({ q, a }, i) => (
+                <div key={i} className="tv-faq-item">
+                  <button
+                    className="tv-faq-trigger"
+                    aria-expanded={faqOpen === i}
+                    onClick={() => setFaqOpen(faqOpen === i ? null : i)}
+                  >
+                    {q}
+                    <Plus size={18} />
+                  </button>
+                  {faqOpen === i && <p className="tv-faq-answer">{a}</p>}
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -320,6 +320,29 @@
 .tv-screenshot-tab:hover { background: #f5f3ff; border-color: #c5bef7; color: #504ce2; }
 .tv-screenshot-tab.active { background: #504ce2; border-color: #504ce2; color: white; }
 
+/* FAQ section */
+.tv-faq-section { padding: 80px 0 70px; border-top: 1px solid var(--tv-line); }
+.tv-faq-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-top: 40px; align-items: start; }
+.tv-faq-grid-aside h2 { font-size: clamp(30px, 2.8vw, 42px); margin-bottom: 16px; }
+.tv-faq-grid-aside p { font-size: 15px; line-height: 1.7; color: #656576; max-width: 280px; }
+.tv-faq-list { display: flex; flex-direction: column; }
+.tv-faq-item { border-bottom: 1px solid var(--tv-line); }
+.tv-faq-trigger {
+  width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 0; gap: 20px;
+  font-size: 15px; font-weight: 600; color: var(--tv-ink); line-height: 1.4;
+  transition: color 0.2s;
+}
+.tv-faq-trigger:hover { color: #504ce2; }
+.tv-faq-trigger svg { flex-shrink: 0; transition: transform 0.25s; color: #9b95b8; }
+.tv-faq-trigger[aria-expanded='true'] svg { transform: rotate(45deg); color: #504ce2; }
+.tv-faq-answer { font-size: 14px; color: #656576; line-height: 1.75; padding-bottom: 18px; max-width: 680px; }
+@media (max-width: 900px) {
+  .tv-faq-grid { grid-template-columns: 1fr; gap: 32px; }
+  .tv-faq-grid-aside p { max-width: 100%; }
+}
+
 /* Contact */
 .tv-contact { padding-block: 90px; position: relative; }
 .tv-contact::before {
