@@ -19,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Solution pages
     {
+      url: `${BASE_URL}/torvana`,
+      lastModified: NOW,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
       url: `${BASE_URL}/solutions/intake`,
       lastModified: NOW,
       changeFrequency: 'monthly',
