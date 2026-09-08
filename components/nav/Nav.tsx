@@ -7,7 +7,7 @@ import {
   ChevronDown, Menu, X,
   Waypoints, MessageSquare, PhoneForwarded, LayoutTemplate,
   GitBranch, FileSignature, UserCircle, BarChart3, Users,
-  TrendingUp, Building2, HardHat, Inbox, Scale, Headphones,
+  TrendingUp, Building2, HardHat, Inbox, Scale, Headphones, Activity,
 } from 'lucide-react'
 import DemoButton from '@/components/DemoButton'
 
@@ -35,6 +35,12 @@ const platformLinks = {
     eyebrow: 'Landlord Tenant',
     name: 'Dwellex',
     description: 'Complete case management for landlord-tenant law. Automated workflows from intake to lockout for eviction-focused practices.',
+  },
+  torvana: {
+    href: '/torvana',
+    eyebrow: 'Healthcare',
+    name: 'Torvana',
+    description: 'Connected intake, scheduling, attorney portal and records automation for specialty medical practices.',
   },
   workersComp: {
     href: '/solutions/workers-comp',
@@ -163,7 +169,7 @@ export default function Nav() {
               }}
             >
               <div style={{ background: '#fff', borderRadius: '16px', boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)' }}>
-                {/* Featured: Intake OS + Waypoint + Agent Platform */}
+                {/* Featured: Intake OS + Torvana + Dwellex */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderRadius: '16px 16px 0 0', overflow: 'hidden', borderBottom: '1px solid #e8edf5' }}>
                   <Link href={platformLinks.intakeOS.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f0fdf4, #eff6ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #dcfce7, #dbeafe)' }}
@@ -179,34 +185,31 @@ export default function Nav() {
                     </div>
                   </Link>
 
-                  <Link href={platformLinks.featured.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
+                  <Link href={platformLinks.torvana.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f5f3ff, #eef2ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eff6ff)' }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eef2ff)' }}
                   >
-                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Waypoints size={17} color="#fff" />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #504ce2, #8b87f0)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Activity size={17} color="#fff" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>{platformLinks.featured.eyebrow}</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.featured.name}</div>
-                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.featured.description}</div>
+                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#504ce2', marginBottom: '3px' }}>{platformLinks.torvana.eyebrow}</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.torvana.name}</div>
+                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.torvana.description}</div>
                     </div>
                   </Link>
 
-                  <Link href={platformLinks.agentPlatform.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #fdf4ff, #f5f3ff)', textDecoration: 'none', position: 'relative' }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #fae8ff, #ede9fe)' }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #fdf4ff, #f5f3ff)' }}
+                  <Link href={platformLinks.standalone.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)', textDecoration: 'none' }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f1f5f9, #e2e8f0)' }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f8fafc, #f1f5f9)' }}
                   >
-                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #7c3aed, #6366f1)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Headphones size={17} color="#fff" />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #0f172a, #334155)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Building2 size={17} color="#fff" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: '3px' }}>
-                        <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#7c3aed' }}>New</span>
-                        <span style={{ fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#7c3aed', color: '#fff', borderRadius: 3, padding: '1px 5px' }}>Just launched</span>
-                      </div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.agentPlatform.name}</div>
-                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.agentPlatform.description}</div>
+                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#475569', marginBottom: '3px' }}>{platformLinks.standalone.eyebrow}</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.standalone.name}</div>
+                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.standalone.description}</div>
                     </div>
                   </Link>
                 </div>
