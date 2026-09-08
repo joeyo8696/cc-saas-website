@@ -199,17 +199,17 @@ export default function Nav() {
                     </div>
                   </Link>
 
-                  <Link href={platformLinks.featured.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)', textDecoration: 'none' }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eff6ff)' }}
+                  <Link href={platformLinks.standalone.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)', textDecoration: 'none' }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f1f5f9, #e2e8f0)' }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f8fafc, #f1f5f9)' }}
                   >
-                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #4f46e5, #818cf8)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Waypoints size={17} color="#fff" />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #0f172a, #334155)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Building2 size={17} color="#fff" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '3px' }}>{platformLinks.featured.eyebrow}</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.featured.name}</div>
-                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.featured.description}</div>
+                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#475569', marginBottom: '3px' }}>{platformLinks.standalone.eyebrow}</div>
+                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.standalone.name}</div>
+                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.standalone.description}</div>
                     </div>
                   </Link>
                 </div>
@@ -217,7 +217,7 @@ export default function Nav() {
                 {/* Industry row */}
                 <div style={{ display: 'flex', borderBottom: '1px solid #e8edf5', padding: '0 8px' }}>
                   {[
-                    { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
+                    { href: platformLinks.featured.href, icon: Waypoints, label: 'Waypoint', sub: 'AI Scoring', iconBg: 'linear-gradient(135deg, #4f46e5, #818cf8)' },
                     { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: 'Workers\' Compensation', iconBg: 'linear-gradient(135deg, #b45309, #d97706)' },
                     { href: platformLinks.massTorts.href, icon: Scale, label: 'Mass Torts', sub: 'MDL Portfolio Mgmt', iconBg: 'linear-gradient(135deg, #7c3aed, #4f46e5)' },
                   ].map(({ href, icon: Icon, label, sub, iconBg }) => (

@@ -244,15 +244,15 @@ export default function TorvanaPage() {
         {/* Hero */}
         <section className="tv-hero tv-shell" id="top">
           <div className="tv-hero-copy">
-            <div style={{ marginBottom: '20px', marginTop: '-12px' }}>
+            <div style={{ marginBottom: '16px', marginTop: '-40px' }}>
               <Image
                 src="/images/Torvana-Illustrator-Master.svg"
                 alt="Torvana"
-                width={400}
-                height={96}
+                width={600}
+                height={144}
                 unoptimized
                 placeholder="empty"
-                style={{ width: 'auto', height: '160px' }}
+                style={{ width: 'auto', height: '200px' }}
               />
             </div>
             <div className="tv-eyebrow"><span /> Connected Care. Clear Progress.</div>

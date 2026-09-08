@@ -64,7 +64,7 @@
 .tv-icon-button { display: grid; place-items: center; width: 32px; height: 32px; background: transparent; color: #79738b; border: 1px solid #e5e2ec; border-radius: 4px; }
 
 /* Hero */
-.tv-hero { display: grid; grid-template-columns: 1.13fr 1fr; gap: 70px; padding-block: 90px 80px; align-items: center; }
+.tv-hero { display: grid; grid-template-columns: 1.13fr 1fr; gap: 70px; padding-block: 90px 80px; align-items: flex-start; }
 .tv-hero h1 { font-size: clamp(48px, 4.6vw, 70px); margin-top: 28px; letter-spacing: -0.06em; line-height: 1.08; white-space: nowrap; }
 .tv-hero h1 em { color: #504ce2; letter-spacing: -0.055em; }
 .tv-hero-lede { margin-top: 25px; max-width: 440px; font-size: 17px; line-height: 1.7; }
