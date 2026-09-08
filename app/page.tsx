@@ -59,6 +59,8 @@ import RobloxCallout from '@/components/home/RobloxCallout'
 import WorkersCompCallout from '@/components/home/WorkersCompCallout'
 import CtaSection from '@/components/home/CtaSection'
 import IntegrationsTicker from '@/components/home/IntegrationsTicker'
+import TorvanaSection from '@/components/home/TorvanaSection'
+import TorvanaModal from '@/components/home/TorvanaModal'
 export default function HomePage() {
   return (
     <>
@@ -84,9 +86,11 @@ export default function HomePage() {
         <DepoProveraCallout />
         <RobloxCallout />
         <WorkersCompCallout />
+        <TorvanaSection />
         <CtaSection />
       </main>
       <Footer />
+      <TorvanaModal />
     </>
   )
 }
