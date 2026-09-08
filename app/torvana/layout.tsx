@@ -27,7 +27,7 @@ const torvanaFaqSchema = {
     {
       '@type': 'Question',
       name: 'How does patient intake work?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Intake runs in any browser — phone, tablet, or desktop. It can be embedded directly on your practice website or shared as a link. Patients complete their health history, consent forms, and HIPAA authorization digitally, with e-signature built into the flow. No app to download, no account to create.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Intake runs in any browser — phone, tablet, or desktop. It can be embedded directly on your practice website, shared as a link, or sent to patients as a text message. Patients complete their health history, consent forms, and HIPAA authorization digitally, with e-signature built into the flow. No app to download, no account to create.' },
     },
     {
       '@type': 'Question',
