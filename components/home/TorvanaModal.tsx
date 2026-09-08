@@ -62,7 +62,7 @@ export default function TorvanaModal() {
           width: 6px; height: 6px; border-radius: 50%; background: #504ce2;
           box-shadow: 0 0 0 3px rgba(80,76,226,0.2);
         }
-        .tv-intro-logo { margin-bottom: 24px; text-align: center; }
+        .tv-intro-logo { margin-bottom: 28px; display: flex; justify-content: center; align-items: center; }
         .tv-intro-headline {
           font-size: 1.65rem; font-weight: 600; color: #0f172a;
           line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 14px;
@@ -120,9 +120,9 @@ export default function TorvanaModal() {
             <Image
               src="/images/Torvana-Illustrator-Master.svg"
               alt="Torvana"
-              width={320} height={78}
+              width={480} height={116}
               unoptimized placeholder="empty"
-              style={{ width: 'auto', height: '72px' }}
+              style={{ width: 'auto', height: '120px', display: 'block' }}
             />
           </div>
 
