@@ -106,7 +106,7 @@
   max-width: 540px;
   padding-top: 8px;
 }
-.hp-hero-lede {
+.hp-root .hp-hero-lede {
   margin-top: 52px;
   font-size: 1.05rem;
   color: var(--cream-muted);
@@ -701,7 +701,7 @@
     margin-top: 16px;
   }
   .hp-hero-copy { max-width: none; padding-top: 0; }
-  .hp-hero-lede { max-width: none; margin-top: 40px; }
+  .hp-root .hp-hero-lede { max-width: none; margin-top: 40px; }
   .hp-hero-ctas { margin-top: 22px; }
   .hp-hero-visual .prod-demo-stage { min-height: 0; }
   .hp-eyebrow { font-size: 0.64rem; }
