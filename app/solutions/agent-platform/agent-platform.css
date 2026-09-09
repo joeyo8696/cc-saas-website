@@ -1,0 +1,83 @@
+/* Agent Workforce — cream editorial extensions on .rf / .dw */
+
+.aw .rf-steps {
+  gap: 0;
+}
+
+.aw-tabs {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.aw-profile {
+  padding-block: 72px 20px;
+}
+
+.aw-profile-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.25fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.aw-profile h2 {
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  line-height: 1.12;
+  margin: 14px 0 18px;
+}
+
+.aw-profile h2 em {
+  color: var(--hot-purple);
+}
+
+.aw-profile > div > p {
+  color: #586174;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 22px;
+}
+
+.aw-profile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aw-profile li {
+  position: relative;
+  padding-left: 18px;
+  color: #4a4766;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.aw-profile li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--indigo);
+}
+
+@media (max-width: 900px) {
+  .aw .rf-steps {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .aw-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .aw .rf-steps {
+    grid-template-columns: 1fr !important;
+  }
+}
