@@ -23,7 +23,7 @@ export default function WaypointSection() {
           <div>
             <SectionReveal>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(196,181,253,0.25)', borderRadius: '6px', padding: '5px 12px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#c4b5fd', marginBottom: '20px' }}>
-                ★ Waypoint
+                ★ Waypoint — Intake OS & Torvana
               </div>
             </SectionReveal>
             <SectionReveal delay={1}>
@@ -33,7 +33,7 @@ export default function WaypointSection() {
             </SectionReveal>
             <SectionReveal delay={2}>
               <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '28px' }}>
-                Stop relying on gut instinct to prioritize your pipeline. Waypoint evaluates every submitted intake against a fully customizable scoring rubric — and surfaces a score before your team opens the file.
+                Stop relying on gut instinct to prioritize your pipeline. Waypoint evaluates every submitted intake against a fully customizable scoring rubric — powering case qualification for plaintiff law firms in Intake OS and patient/referral qualification in Torvana.
               </p>
             </SectionReveal>
             <SectionReveal delay={3}>

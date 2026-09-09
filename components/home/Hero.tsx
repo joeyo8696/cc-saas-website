@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import DemoButton from '@/components/DemoButton'
 
-const WORDS = ['Smart Intake.', 'Smarter', 'Firms.']
-const HL_WORDS = new Set(['Smarter', 'Firms.'])
+const WORDS = ['Intake', 'infrastructure.', 'Three', 'industries.']
+const HL_WORDS = new Set(['Three', 'industries.'])
 
 export default function Hero() {
   const h1Ref = useRef<HTMLHeadingElement>(null)
@@ -103,7 +103,7 @@ export default function Hero() {
             animation: 'pulse 2s ease-in-out infinite',
           }}
         />
-        Intake, Qualify, Convert
+        Three Platforms. One Infrastructure.
       </div>
 
       {/* Headline */}
@@ -131,13 +131,11 @@ export default function Hero() {
           marginBottom: '40px',
         }}
       >
-        Case Compass automates how plaintiff law firms qualify, score, and convert clients
-        — with Intelligent Intake, Waypoint scoring, and referral management built for
-        high-volume litigation.
+        Case Compass powers intake infrastructure across three platforms — IntakeOS for plaintiff law firms, Torvana for specialty medical practices, and Dwellex for landlord-tenant attorneys.
       </p>
 
       {/* Buttons */}
-      <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '72px' }}>
+      <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '36px' }}>
         <DemoButton>Schedule a Demo →</DemoButton>
         <Link
           href="/#features"
@@ -154,6 +152,44 @@ export default function Hero() {
         >
           See How It Works
         </Link>
+      </div>
+
+      {/* Product logomark strip */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0',
+        justifyContent: 'center',
+        marginBottom: '48px',
+        padding: '20px 32px',
+        background: 'rgba(255,255,255,0.04)',
+        border: '1px solid rgba(255,255,255,0.08)',
+        borderRadius: '12px',
+        maxWidth: '520px',
+      }}>
+        {[
+          { src: '/images/cc-logo-white.png', alt: 'IntakeOS', label: 'IntakeOS', width: 100, height: 20 },
+          { src: '/images/Torvana-Illustrator-Master.svg', alt: 'Torvana', label: 'Torvana', width: 90, height: 20 },
+          { src: '/images/dwellex_logo_white.png', alt: 'Dwellex', label: 'Dwellex', width: 90, height: 20 },
+        ].map((item, i) => (
+          <div key={item.label} style={{ display: 'flex', alignItems: 'center' }}>
+            {i > 0 && (
+              <div style={{ width: '1px', height: '32px', background: 'rgba(255,255,255,0.1)', margin: '0 24px' }} />
+            )}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                style={{ height: '20px', width: 'auto', display: 'block' }}
+              />
+              <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-display)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                {item.label}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* 3-panel mockup trio */}

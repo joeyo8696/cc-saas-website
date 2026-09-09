@@ -10,7 +10,7 @@ export default function CtaSection() {
         <SectionReveal>
           <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', color: '#fff', lineHeight: 1.25, marginBottom: '20px' }}>
             <span style={{ display: 'block', whiteSpace: 'nowrap', fontSize: '0.85em' }}>
-              Your legal team&apos;s{' '}
+              Your practice&apos;s{' '}
               <em style={{
                 fontStyle: 'italic',
                 background: 'linear-gradient(135deg, #818cf8, #4f46e5, #a78bfa)',
@@ -25,7 +25,7 @@ export default function CtaSection() {
         </SectionReveal>
         <SectionReveal delay={1}>
           <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: '40px' }}>
-            From your first intake bot to a fully automated referral and scoring pipeline — we set you up, train your team, and stay in your corner.
+            Whether you&apos;re a plaintiff law firm, a specialty medical practice, or a landlord-tenant attorney — we set you up, train your team, and stay in your corner.
           </p>
         </SectionReveal>
         <SectionReveal delay={2}>

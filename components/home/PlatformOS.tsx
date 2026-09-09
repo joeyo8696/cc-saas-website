@@ -31,7 +31,7 @@ export default function PlatformOS() {
         <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 64px' }}>
           <SectionReveal>
             <span style={{ display: 'inline-block', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#4f46e5', marginBottom: '12px' }}>
-              The Full Platform
+              Intake OS — Plaintiff Law
             </span>
           </SectionReveal>
           <SectionReveal delay={1}>

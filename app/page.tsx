@@ -4,11 +4,20 @@ import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import GalaxyCanvas from '@/components/home/GalaxyCanvas'
 import Hero from '@/components/home/Hero'
+import Ticker from '@/components/home/Ticker'
+import PlatformOS from '@/components/home/PlatformOS'
+import WaypointSection from '@/components/home/WaypointSection'
+import Stats from '@/components/home/Stats'
+import Testimonials from '@/components/home/Testimonials'
+import CtaSection from '@/components/home/CtaSection'
+import IntegrationsTicker from '@/components/home/IntegrationsTicker'
+import TorvanaModal from '@/components/home/TorvanaModal'
+import ProductSuite from '@/components/home/ProductSuite'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Case Compass — Smart Intake. Smarter Firms.' },
+  title: { absolute: 'Case Compass — Intake Infrastructure for Legal, Healthcare & Landlord-Tenant Law' },
   description:
-    'Case Compass is legal intake software built for plaintiff law firms. Replace static contact forms with AI-powered conversational intake, score every lead with Waypoint before your team opens the file, automate referral partner management, and close retainers with e-signatures — all in one platform.',
+    'Case Compass powers three intake platforms: IntakeOS for plaintiff law firms, Torvana for specialty medical practices, and Dwellex for landlord-tenant law. Automate intake, qualify leads, and convert clients — across every industry where intake drives growth.',
   keywords: [
     'legal intake software',
     'law firm intake software',
@@ -23,6 +32,12 @@ export const metadata: Metadata = {
     'legal intake chatbot',
     'law firm intake automation',
     'plaintiff law firm software',
+    'medical practice intake software',
+    'landlord tenant law software',
+    'Torvana',
+    'Dwellex',
+    'IntakeOS',
+    'specialty medical intake',
   ],
   alternates: {
     canonical: 'https://www.casecompass.io',
@@ -32,35 +47,18 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.casecompass.io',
     siteName: 'Case Compass',
-    title: 'Case Compass — Smart Intake. Smarter Firms.',
-    description: 'Automates client intake, qualifies leads with AI, and converts prospects for plaintiff law firms.',
-    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass — Smart Intake. Smarter Firms.' }],
+    title: 'Case Compass — Intake Infrastructure for Legal, Healthcare & Landlord-Tenant Law',
+    description: 'Three intake platforms — IntakeOS for plaintiff law firms, Torvana for specialty medical practices, and Dwellex for landlord-tenant law — powered by one infrastructure.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass — Intake Infrastructure for Legal, Healthcare & Landlord-Tenant Law' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@Case_Compass_',
-    title: 'Case Compass — Smart Intake. Smarter Firms.',
-    description: 'Intelligent Intake, Waypoint AI scoring, and referral management for plaintiff law firms.',
+    title: 'Case Compass — Intake Infrastructure for Legal, Healthcare & Landlord-Tenant Law',
+    description: 'IntakeOS for plaintiff law firms, Torvana for specialty medical, and Dwellex for landlord-tenant law — three platforms, one infrastructure.',
   },
 }
-import Ticker from '@/components/home/Ticker'
-import PlatformOS from '@/components/home/PlatformOS'
-import WaypointSection from '@/components/home/WaypointSection'
-import MdlPortfolioSection from '@/components/home/MdlPortfolioSection'
-import ReferralsSection from '@/components/home/ReferralsSection'
-import Stats from '@/components/home/Stats'
-import HowItWorks from '@/components/home/HowItWorks'
-import Testimonials from '@/components/home/Testimonials'
-import NotJustAChatbot from '@/components/home/NotJustAChatbot'
-import SocialMediaCallout from '@/components/home/SocialMediaCallout'
-import HairRelaxerCallout from '@/components/home/HairRelaxerCallout'
-import DepoProveraCallout from '@/components/home/DepoProveraCallout'
-import RobloxCallout from '@/components/home/RobloxCallout'
-import WorkersCompCallout from '@/components/home/WorkersCompCallout'
-import CtaSection from '@/components/home/CtaSection'
-import IntegrationsTicker from '@/components/home/IntegrationsTicker'
-import TorvanaSection from '@/components/home/TorvanaSection'
-import TorvanaModal from '@/components/home/TorvanaModal'
+
 export default function HomePage() {
   return (
     <>
@@ -72,21 +70,12 @@ export default function HomePage() {
       <main>
         <Hero />
         <Ticker />
-        <NotJustAChatbot />
+        <ProductSuite />
         <PlatformOS />
         <WaypointSection />
-        <MdlPortfolioSection />
-        <ReferralsSection />
         <Stats />
-        <HowItWorks />
         <IntegrationsTicker />
         <Testimonials />
-        <SocialMediaCallout />
-        <HairRelaxerCallout />
-        <DepoProveraCallout />
-        <RobloxCallout />
-        <WorkersCompCallout />
-        <TorvanaSection />
         <CtaSection />
       </main>
       <Footer />
