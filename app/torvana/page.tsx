@@ -283,7 +283,7 @@ export default function TorvanaPage() {
             
             <h1>The referral moves.<br /><em>Everyone knows.</em></h1>
             <p className="tv-hero-lede">
-              Intake, scheduling and case visibility for medical imaging centers and specialty practices that work with personal injury attorney referrals — so patients, your team and referring firms stay aligned from the first form to the latest update.
+              Connect your patients, your practice and the attorneys who refer to you — built for medical imaging centers and the specialty practices in that referral loop.
             </p>
             <div className="tv-hero-actions">
               <button className="tv-btn-primary" onClick={() => setModalOpen(true)}>
@@ -304,45 +304,17 @@ export default function TorvanaPage() {
         </section>
         </div>
 
-        {/* Specialties — crawlable AIO/SEO block */}
-        <section className="tv-shell tv-specialties-section" id="specialties" aria-labelledby="tv-specialties-heading">
-          <div className="tv-specialties-intro">
-            <span className="tv-eyebrow"><span />Built for specialty care</span>
-            <h2 id="tv-specialties-heading">Imaging first. Specialty practices that follow.</h2>
-            <p>
-              Torvana is designed for medical imaging centers and the specialty practices that share the same personal injury referral loop — orthopedic, surgical, pain and spine care — where attorney-referred patients, lien cases and records handoffs are part of daily operations.
-            </p>
+        {/* Specialties */}
+        <div className="tv-shell">
+          <div className="tv-specialties" aria-label="Built for specialty care: imaging centers, orthopedics, surgery centers, pain management, and spine clinics">
+            <span>BUILT AROUND<br />SPECIALTY CARE</span>
+            <div>Imaging centers</div>
+            <div>Orthopedics</div>
+            <div>Surgery centers</div>
+            <div>Pain management</div>
+            <div>Spine clinics</div>
           </div>
-          <div className="tv-specialty-grid">
-            {[
-              {
-                name: 'Medical imaging & radiology',
-                copy: 'Outpatient and diagnostic imaging centers — MRI, CT, PET, X-ray, ultrasound and multi-modality radiology groups. Exam-type intake, implant screening, scheduling and PACS/RIS-adjacent workflows without replacing your core systems.',
-              },
-              {
-                name: 'Orthopedics',
-                copy: 'Ortho practices coordinating imaging workups, procedures and lien cases with referring plaintiff firms. Intake and attorney-visible status that matches how injury cases actually move.',
-              },
-              {
-                name: 'Surgery centers',
-                copy: 'Ambulatory surgery centers whose PI referral volume needs structured intake, confirmation and records visibility for the attorneys who send patients.',
-              },
-              {
-                name: 'Pain management',
-                copy: 'Interventional and chronic pain practices tied to attorney-referred injury cases — with HIPAA authorization, scheduling and case status that reduce front-desk chase calls.',
-              },
-              {
-                name: 'Spine clinics',
-                copy: 'Spine-focused specialty care connected to imaging, injections and surgical pathways — and the referring firms that need to know where each case stands.',
-              },
-            ].map((s) => (
-              <article key={s.name} className="tv-specialty-card">
-                <h3>{s.name}</h3>
-                <p>{s.copy}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        </div>
 
         {/* Workflow */}
         <section className="tv-workflow-section" id="workflow">

@@ -213,7 +213,7 @@ const torvanaWebPageSchema = {
   },
   speakable: {
     '@type': 'SpeakableSpecification',
-    cssSelector: ['.tv-hero h1', '.tv-hero-lede', '.tv-specialty-card h3', '.tv-faq-answer'],
+    cssSelector: ['.tv-hero h1', '.tv-hero-lede', '.tv-specialties', '.tv-faq-answer'],
   },
 }
 
