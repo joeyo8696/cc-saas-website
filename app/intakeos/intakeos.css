@@ -1,5 +1,5 @@
 /* IntakeOS — extends shared .dw workspace/faq/cta patterns */
-.io-hero { background: var(--cream); color: var(--cream-ink); padding: 44px 0 0; }
+.io-hero { background: var(--cream); color: var(--cream-ink); padding: 44px 0 48px; }
 .io-lockup { display: flex; gap: 28px; align-items: center; margin-bottom: 42px; }
 .io-logo-link {
   display: inline-flex;
@@ -69,43 +69,6 @@
   max-height: 460px;
   object-fit: cover;
   object-position: top;
-}
-.io-product-bottom {
-  font-size: 0.875rem;
-  background: #29204f;
-  padding: 20px 26px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: #c3bcde;
-}
-.io-product-bottom > span {
-  opacity: 0.55;
-  transition: opacity 0.3s, color 0.3s;
-}
-.io-product-bottom > span.is-live {
-  opacity: 1;
-  color: #d5c4ff;
-}
-.io-integrations {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  padding: 35px 0;
-}
-.io-integrations > span {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: #6e687d;
-}
-.io-integrations > div {
-  display: flex;
-  gap: 45px;
-  font-family: var(--font-heading), Manrope, sans-serif;
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: #55506a;
 }
 .io-journey { padding-block: 85px; }
 .io-journey em, .io-results em { color: #b4a7ed; }
@@ -214,27 +177,18 @@
   .io-hero-split { grid-template-columns: 1fr; gap: 22px; }
   .io-headline { gap: 35px; }
   .io-headline h1 { font-size: 4.5rem; }
-  .io-integrations > div { gap: 25px; }
   .io-steps li { padding-right: 20px; }
   .io-steps li + li { padding-left: 20px; }
   .io-conversion-grid { gap: 45px; }
 }
 @media (max-width: 780px) {
-  .io-hero { padding-top: 30px; }
+  .io-hero { padding: 30px 0 36px; }
   .io-lockup { margin-bottom: 30px; gap: 18px; }
   .io-logo { width: 160px; }
   .io-lockup > span.io-label { padding-left: 18px; letter-spacing: 0.07em; }
   .io-headline { grid-template-columns: 1fr; gap: 24px; margin-bottom: 30px; }
   .io-headline h1 { font-size: clamp(2.9rem, 9vw, 4.4rem); }
   .io-headline > div { justify-self: start; max-width: 100%; }
-  .io-product-bottom { padding: 17px 18px; gap: 15px; font-size: 0.75rem; }
-  .io-integrations {
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-    padding-block: 28px;
-  }
-  .io-integrations > div { flex-wrap: wrap; gap: 18px 25px; font-size: 1.1rem; }
   .io-journey { padding-block: 58px; }
   .io-steps { grid-template-columns: 1fr 1fr; }
   .io-steps li, .io-steps li + li { border-left: 0; padding: 24px 20px 24px 0; }
@@ -261,5 +215,4 @@
     border-top: 1px solid #2b283e;
   }
   .io-lockup > span.io-label { font-size: 0.75rem; max-width: 150px; }
-  .io-product-bottom { flex-direction: column; gap: 6px; }
 }

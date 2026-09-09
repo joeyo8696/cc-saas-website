@@ -7,7 +7,6 @@ import { Check, Pause, Play } from 'lucide-react'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
-import IntegrationsTicker from '@/components/home/IntegrationsTicker'
 import { useDemoModal } from '@/components/DemoModalProvider'
 import BrowserFrame from '@/components/ui/BrowserFrame'
 import '../dwellex/dwellex.css'
@@ -311,29 +310,10 @@ export default function IntakeOSPage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/images/intake.png" width={3452} height={1826} alt="IntakeOS inbox showing leads, case details and intake management controls" />
                   </BrowserFrame>
-                  <div className="io-product-bottom">
-                    {leadStages.map((s, i) => (
-                      <span key={s.label} className={flowStage === i ? 'is-live' : undefined}>
-                        {s.label === 'Sign' ? 'Sign & sync' : s.label}.
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="io-integrations">
-                <span>CONNECTED TO YOUR CASE TOOLS</span>
-                <div>
-                  <span>Filevine</span>
-                  <span>Clio</span>
-                  <span>Litify</span>
-                  <span>LeadDocket</span>
                 </div>
               </div>
             </div>
           </section>
-
-          <IntegrationsTicker />
 
           <section className="io-journey wrap" id="workflow">
             <div className="dw-section-head">
