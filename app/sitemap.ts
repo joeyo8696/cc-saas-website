@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 const BASE_URL = 'https://www.casecompass.io'
-const NOW = new Date('2026-05-31')
+const NOW = new Date('2026-09-09')
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

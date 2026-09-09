@@ -145,6 +145,60 @@
 .tv-specialties > span { font-size: 12px; letter-spacing: 0.09em; line-height: 1.7; color: #898797; }
 .tv-specialties > div { font-family: Petrona, Georgia, serif; font-size: 22px; letter-spacing: -0.035em; color: #666375; }
 
+.tv-specialties-section {
+  padding-block: 28px 52px;
+  border-top: 1px solid var(--tv-line);
+}
+.tv-specialties-intro {
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+.tv-specialties-intro h2 {
+  font-family: Petrona, Georgia, serif;
+  font-size: clamp(28px, 3.2vw, 40px);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 14px 0 16px;
+  color: #2a2740;
+}
+.tv-specialties-intro p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6d687c;
+}
+.tv-specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.tv-specialty-card {
+  padding: 22px 22px 24px;
+  border: 1px solid #e2e0ea;
+  border-radius: 10px;
+  background: #faf9fc;
+}
+.tv-specialty-card h3 {
+  font-family: Petrona, Georgia, serif;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  color: #2a2740;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.tv-specialty-card p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #6d687c;
+}
+.tv-specialty-card:first-child {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #f5f3ff, #faf9fc);
+  border-color: #d8d4ef;
+}
+.tv-specialty-card:first-child h3 {
+  color: #504ce2;
+}
+
 /* Workflow section */
 .tv-workflow-section { background: #201e40; color: white; padding: 74px 0 85px; overflow: hidden; }
 .tv-workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 110px; margin-top: 55px; align-items: center; }
@@ -495,6 +549,8 @@
   .tv-referral-demo { width: 100%; max-width: 580px; margin-inline: auto; }
   .tv-specialties { flex-wrap: wrap; justify-content: flex-start; gap: 20px 34px; }
   .tv-specialties > span { width: 100%; }
+  .tv-specialty-grid { grid-template-columns: 1fr 1fr; }
+  .tv-specialty-card:first-child { grid-column: 1 / -1; }
   .tv-workflow-grid { gap: 35px !important; }
   .tv-workflow-grid h2 { font-size: 44px; }
   .tv-bubble { font-size: 18px; padding: 17px; max-width: 100%; }
@@ -518,6 +574,9 @@
   .tv-hero-lede { font-size: 16px; line-height: 1.65; margin-top: 20px; }
   .tv-hero-actions { flex-direction: column; align-items: flex-start; gap: 19px; }
   .tv-specialties > div { width: 50%; font-size: 20px; }
+  .tv-specialties-section { padding-block: 22px 36px; }
+  .tv-specialty-grid { grid-template-columns: 1fr; }
+  .tv-specialty-card:first-child { grid-column: auto; }
   .tv-workflow-section { padding-block: 43px 45px; }
   .tv-workflow-grid { grid-template-columns: 1fr; margin-top: 32px; gap: 32px !important; }
   .tv-workflow-grid h2 { font-size: 45px; }

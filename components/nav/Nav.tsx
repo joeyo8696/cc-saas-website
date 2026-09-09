@@ -8,9 +8,10 @@ import {
   ChevronDown, Menu, X,
   Waypoints, MessageSquare, PhoneForwarded, LayoutTemplate,
   GitBranch, FileSignature, UserCircle, BarChart3, Users,
-  TrendingUp, Building2, HardHat, Inbox, Scale, Headphones,
+  TrendingUp, Building2, Inbox,
 } from 'lucide-react'
 import DemoButton from '@/components/DemoButton'
+import './nav.css'
 
 const platformLinks = {
   featured: {
@@ -41,7 +42,7 @@ const platformLinks = {
     href: '/torvana',
     eyebrow: 'Healthcare',
     name: 'Torvana',
-    description: 'Intake, scheduling, records and a portal for your existing referring attorneys — built for specialty medical practices.',
+    description: 'Patient intake, scheduling, records and a referring-attorney portal — built for imaging centers, orthopedics, surgery centers and pain management.',
   },
   workersComp: {
     href: '/solutions/workers-comp',
@@ -174,19 +175,34 @@ export default function Nav() {
               <div style={{ background: '#fff', borderRadius: '16px', boxShadow: '0 24px 64px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.06)' }}>
                 {/* Featured: Intake OS + Torvana + Dwellex */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderRadius: '16px 16px 0 0', overflow: 'hidden', borderBottom: '1px solid #e8edf5' }}>
-                  <Link href={platformLinks.intakeOS.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f0fdf4, #eff6ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
+                  <div
+                    style={{ display: 'flex', flexDirection: 'column', padding: '18px', background: 'linear-gradient(135deg, #f0fdf4, #eff6ff)', borderRight: '1px solid #e8edf5' }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #dcfce7, #dbeafe)' }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f0fdf4, #eff6ff)' }}
                   >
-                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #0ea5e9, #4f46e5)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Inbox size={17} color="#fff" />
-                    </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0284c7', marginBottom: '3px' }}>{platformLinks.intakeOS.eyebrow}</div>
-                      <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.intakeOS.name}</div>
-                      <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.intakeOS.description}</div>
-                    </div>
-                  </Link>
+                    <Link href={platformLinks.intakeOS.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', textDecoration: 'none' }}>
+                      <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #0ea5e9, #4f46e5)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Inbox size={17} color="#fff" />
+                      </div>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#0284c7', marginBottom: '3px' }}>{platformLinks.intakeOS.eyebrow}</div>
+                        <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>{platformLinks.intakeOS.name}</div>
+                        <div style={{ fontSize: '0.74rem', color: '#64748b', lineHeight: 1.45 }}>{platformLinks.intakeOS.description}</div>
+                      </div>
+                    </Link>
+                    <Link
+                      href={platformLinks.featured.href}
+                      style={{
+                        marginTop: '12px', marginLeft: '48px', display: 'inline-flex', alignItems: 'center', gap: '6px',
+                        fontSize: '0.72rem', fontWeight: 600, color: '#4f46e5', textDecoration: 'none',
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#3730a3' }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = '#4f46e5' }}
+                    >
+                      <Waypoints size={13} />
+                      Includes Waypoint AI scoring →
+                    </Link>
+                  </div>
 
                   <Link href={platformLinks.torvana.href} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '18px', background: 'linear-gradient(135deg, #f5f3ff, #eef2ff)', borderRight: '1px solid #e8edf5', textDecoration: 'none' }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
@@ -240,7 +256,6 @@ export default function Nav() {
                   <div>
                     <div style={{ fontSize: '0.67rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', padding: '0 8px', marginBottom: '8px' }}>By Practice</div>
                     {[
-                      { label: 'Waypoint', sub: 'AI Scoring', href: platformLinks.featured.href },
                       { label: "Workers' Comp", sub: "Workers' Compensation", href: platformLinks.workersComp.href },
                       { label: 'Mass Torts', sub: 'MDL Portfolio Mgmt', href: platformLinks.massTorts.href },
                     ].map(({ label, sub, href }) => (
@@ -301,62 +316,84 @@ export default function Nav() {
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-      {/* ── Mobile drawer — positioned absolute so it anchors to nav's own bottom ── */}
+      {/* ── Mobile drawer ── */}
       {mobileOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            right: 0,
-            height: 'calc(100dvh - 64px)',
-            background: 'rgba(6,13,31,0.98)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            zIndex: 199,
-            overflowY: 'auto',
-          }}
-        >
-          {/* Platform accordion */}
+        <div className="cc-mobile-drawer">
           <button
+            type="button"
+            className="cc-mobile-drawer-toggle"
             onClick={() => setMobilePlatformOpen((v) => !v)}
-            style={{
-              width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              padding: '16px 20px', background: 'none', border: 'none',
-              borderBottom: '1px solid rgba(255,255,255,0.07)',
-              color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem', fontWeight: 600,
-              cursor: 'pointer', fontFamily: 'inherit',
-            }}
+            aria-expanded={mobilePlatformOpen}
           >
             Platform
-            <ChevronDown size={16} style={{ transition: 'transform 0.2s', transform: mobilePlatformOpen ? 'rotate(180deg)' : 'rotate(0deg)', color: 'rgba(255,255,255,0.5)' }} />
+            <ChevronDown size={16} style={{ transition: 'transform 0.2s', transform: mobilePlatformOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
           </button>
 
           {mobilePlatformOpen && (
-            <div style={{ background: 'rgba(255,255,255,0.03)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-              {/* Featured solutions */}
-              {[
-                { href: platformLinks.intakeOS.href, icon: Inbox, label: 'Intake OS', sub: 'Core Platform', iconBg: 'linear-gradient(135deg, #0ea5e9, #4f46e5)' },
-                { href: platformLinks.featured.href, icon: Waypoints, label: 'Waypoint', sub: 'AI Scoring', iconBg: 'linear-gradient(135deg, #4f46e5, #818cf8)' },
-                { href: '/solutions/agent-platform', icon: Headphones, label: 'Agent Platform', sub: 'Live Transfer & Calls', iconBg: 'linear-gradient(135deg, #6366f1, #818cf8)' },
-                { href: '/solutions/referrals', icon: Users, label: 'Referral Network', sub: 'Partner Management', iconBg: 'linear-gradient(135deg, #059669, #0891b2)' },
-                { href: '/solutions/esign', icon: FileSignature, label: 'E-Signatures', sub: 'Retainer Signing', iconBg: 'linear-gradient(135deg, #059669, #16a34a)' },
-                { href: platformLinks.standalone.href, icon: Building2, label: 'Dwellex', sub: 'Landlord Tenant', iconBg: 'linear-gradient(135deg, #0f172a, #334155)' },
-                { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: "Workers' Compensation", iconBg: 'linear-gradient(135deg, #b45309, #d97706)' },
-                { href: platformLinks.massTorts.href, icon: Scale, label: 'Mass Torts', sub: 'MDL Portfolio Mgmt', iconBg: 'linear-gradient(135deg, #7c3aed, #4f46e5)' },
-              ].map(({ href, icon: Icon, label, sub, iconBg }) => (
-                <Link key={href} href={href} className="mobile-nav-sublink" onClick={closeMobile}
-                  style={{ padding: '12px 20px', borderBottom: '1px solid rgba(255,255,255,0.04)' }}
-                >
-                  <div style={{ width: '32px', height: '32px', flexShrink: 0, borderRadius: '8px', background: iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={16} color="#fff" />
+            <div className="cc-mobile-platform">
+              {/* Featured platforms — matches desktop mega menu */}
+              <div className="cc-mobile-featured">
+                <Link href={platformLinks.intakeOS.href} className="cc-mobile-featured-card intake" onClick={closeMobile}>
+                  <div className="cc-mobile-featured-icon" style={{ background: 'linear-gradient(135deg, #0ea5e9, #4f46e5)' }}>
+                    <Inbox size={16} color="#fff" />
                   </div>
                   <div>
-                    <div style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 600, fontSize: '0.9rem' }}>{label}</div>
-                    <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem' }}>{sub}</div>
+                    <span className="cc-mobile-eyebrow">{platformLinks.intakeOS.eyebrow}</span>
+                    <strong>{platformLinks.intakeOS.name}</strong>
+                    <p>{platformLinks.intakeOS.description}</p>
                   </div>
                 </Link>
+                <Link href={platformLinks.featured.href} className="cc-mobile-waypoint-link" onClick={closeMobile}>
+                  <Waypoints size={13} />
+                  Includes Waypoint AI scoring →
+                </Link>
+
+                <Link href={platformLinks.torvana.href} className="cc-mobile-featured-card torvana" onClick={closeMobile}>
+                  <div className="cc-mobile-featured-icon torvana-icon" style={{ background: 'linear-gradient(135deg, #504ce2, #8b87f0)' }}>
+                    <img src="/images/Torvana-Illustrator-Master.svg" alt="" />
+                  </div>
+                  <div>
+                    <span className="cc-mobile-eyebrow">{platformLinks.torvana.eyebrow}</span>
+                    <strong>{platformLinks.torvana.name}</strong>
+                    <p>{platformLinks.torvana.description}</p>
+                  </div>
+                </Link>
+
+                <Link href={platformLinks.standalone.href} className="cc-mobile-featured-card dwellex" onClick={closeMobile}>
+                  <div className="cc-mobile-featured-icon" style={{ background: 'linear-gradient(135deg, #0f172a, #334155)' }}>
+                    <Building2 size={16} color="#fff" />
+                  </div>
+                  <div>
+                    <span className="cc-mobile-eyebrow">{platformLinks.standalone.eyebrow}</span>
+                    <strong>{platformLinks.standalone.name}</strong>
+                    <p>{platformLinks.standalone.description}</p>
+                  </div>
+                </Link>
+              </div>
+
+              {platformLinks.columns.map((col) => (
+                <div key={col.heading} className="cc-mobile-col">
+                  <div className="cc-mobile-col-heading">{col.heading}</div>
+                  {col.links.map(({ icon: Icon, label, href }) => (
+                    <Link key={label} href={href} className="cc-mobile-col-link" onClick={closeMobile}>
+                      <span className="cc-mobile-col-icon"><Icon size={13} /></span>
+                      {label}
+                    </Link>
+                  ))}
+                </div>
               ))}
+
+              <div className="cc-mobile-col">
+                <div className="cc-mobile-col-heading">By Practice</div>
+                <Link href={platformLinks.workersComp.href} className="cc-mobile-col-link stacked" onClick={closeMobile}>
+                  <span>{platformLinks.workersComp.name}</span>
+                  <small>{platformLinks.workersComp.eyebrow}</small>
+                </Link>
+                <Link href={platformLinks.massTorts.href} className="cc-mobile-col-link stacked" onClick={closeMobile}>
+                  <span>{platformLinks.massTorts.name}</span>
+                  <small>MDL Portfolio Mgmt</small>
+                </Link>
+              </div>
             </div>
           )}
 
@@ -364,11 +401,20 @@ export default function Nav() {
           <Link href="/about" className="mobile-nav-link" onClick={closeMobile}>About</Link>
           <Link href="https://blog.casecompass.io" className="mobile-nav-link" target="_blank" rel="noopener" onClick={closeMobile}>Blog</Link>
 
-          {/* CTA */}
-          <div style={{ padding: '24px 20px' }}>
-            <DemoButton style={{ width: '100%', padding: '14px', fontSize: '1rem', textAlign: 'center', justifyContent: 'center' }}>
-              Schedule a Demo →
-            </DemoButton>
+          <div className="cc-mobile-drawer-cta">
+            {isTorvana ? (
+              <button
+                type="button"
+                className="cc-mobile-drawer-cta-btn"
+                onClick={() => { closeMobile(); window.dispatchEvent(new CustomEvent('torvana:open-modal')) }}
+              >
+                Let&apos;s talk
+              </button>
+            ) : (
+              <DemoButton style={{ width: '100%', padding: '14px', fontSize: '1rem', textAlign: 'center', justifyContent: 'center' }}>
+                Schedule a Demo →
+              </DemoButton>
+            )}
           </div>
         </div>
       )}

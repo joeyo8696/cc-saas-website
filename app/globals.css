@@ -203,33 +203,6 @@ a { text-decoration: none; }
   }
 }
 
-/* Mobile menu link rows */
-.mobile-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 20px;
-  color: rgba(255,255,255,0.85);
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: background 0.15s, color 0.15s;
-}
-.mobile-nav-link:hover { background: rgba(255,255,255,0.05); color: #fff; }
-.mobile-nav-sublink {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 20px 10px 44px;
-  color: rgba(255,255,255,0.6);
-  font-size: 0.85rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
-}
-.mobile-nav-sublink:hover { background: rgba(255,255,255,0.05); color: #fff; }
-
 /* 3-col feature grid → 2-col on mobile */
 .feature-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 767px) {
