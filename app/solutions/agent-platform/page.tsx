@@ -155,7 +155,6 @@ export default function AgentPlatformPage() {
                   url="app.casecompass.io/live-transfer"
                   src="/images/agent-platform-live-transfer-inbox.png"
                   alt="Case Compass Live Transfer Inbox"
-                  framed={false}
                 />
               </div>
             </div>
@@ -237,7 +236,6 @@ export default function AgentPlatformPage() {
                   url="app.casecompass.io"
                   src={feature.img}
                   alt={feature.imgAlt}
-                  framed={tab !== 'transfer'}
                 />
               </article>
               <p className="rf-feature-note">{feature.note}</p>
