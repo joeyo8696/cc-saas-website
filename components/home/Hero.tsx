@@ -154,44 +154,6 @@ export default function Hero() {
         </Link>
       </div>
 
-      {/* Product logomark strip */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0',
-        justifyContent: 'center',
-        marginBottom: '48px',
-        padding: '20px 32px',
-        background: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: '12px',
-        maxWidth: '520px',
-      }}>
-        {[
-          { src: '/images/cc-logo-white.png', alt: 'IntakeOS', label: 'IntakeOS', width: 100, height: 20 },
-          { src: '/images/Torvana-Illustrator-Master.svg', alt: 'Torvana', label: 'Torvana', width: 90, height: 20 },
-          { src: '/images/dwellex_logo_white.png', alt: 'Dwellex', label: 'Dwellex', width: 90, height: 20 },
-        ].map((item, i) => (
-          <div key={item.label} style={{ display: 'flex', alignItems: 'center' }}>
-            {i > 0 && (
-              <div style={{ width: '1px', height: '32px', background: 'rgba(255,255,255,0.1)', margin: '0 24px' }} />
-            )}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                style={{ height: '20px', width: 'auto', display: 'block' }}
-              />
-              <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-display)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                {item.label}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-
       {/* 3-panel mockup trio */}
       <div
         ref={mockupRef}
