@@ -2,6 +2,7 @@
 import './torvana.css'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   ArrowUpRight, ArrowRight, Check, LockKeyhole,
   Pause, Play, Plus, Minus, FileText, CalendarDays,
@@ -578,6 +579,16 @@ export default function TorvanaPage() {
                   </div>
                 </article>
               </div>
+            </div>
+            <div className="tv-referral-network-link">
+              <div>
+                <p className="tv-eyebrow">REFERRAL NETWORK</p>
+                <h3>When referring firms need a two-way loop.</h3>
+                <p>Torvana keeps each referring attorney current on intake, appointments and records. For co-counsel agreements, outbound referrals and fee tracking across partner firms, the same Referral Network layer powers IntakeOS and Torvana.</p>
+              </div>
+              <Link className="tv-btn-outline" href="/solutions/referrals">
+                Explore Referral Network <ArrowUpRight size={16} />
+              </Link>
             </div>
             <div className="tv-flow-diagram">
               <div className="tv-flow-diagram-label">HOW IT WORKS — ONE LOOP AROUND THE VISIT</div>

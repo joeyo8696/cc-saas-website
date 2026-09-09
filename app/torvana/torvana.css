@@ -224,6 +224,32 @@
 .tv-principles article > span { font-size: 11px; color: #aaa3b8; padding-top: 5px; }
 .tv-principles h3 { font-size: 19px; letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.3; }
 .tv-principles p { font-size: 14px; line-height: 1.7; max-width: 380px; }
+.tv-referral-network-link {
+  margin-top: 48px;
+  padding: 28px 30px;
+  border: 1px solid #ddd8ea;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.tv-referral-network-link .tv-eyebrow { margin-bottom: 10px; }
+.tv-referral-network-link h3 {
+  font-family: Petrona, Georgia, serif;
+  font-size: 28px;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.tv-referral-network-link p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5c5870;
+  max-width: 560px;
+}
+.tv-referral-network-link .tv-btn-outline { flex-shrink: 0; }
 .tv-system-map { display: flex; gap: 0; align-items: center; justify-content: space-between; margin-top: 65px; border-top: 1px solid #dddae5; padding-top: 36px; }
 .tv-system-label { font-size: 12px; letter-spacing: 0.1em; color: #958ca6; max-width: 110px; margin-right: 22px; }
 .tv-systems { display: flex; gap: 7px; flex-wrap: wrap; }
@@ -507,6 +533,13 @@
   .tv-fit-section { padding-block: 44px 34px; }
   .tv-fit-grid { grid-template-columns: 1fr; margin-top: 30px; gap: 30px !important; }
   .tv-fit-grid h2 { font-size: 43px; }
+  .tv-referral-network-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 24px;
+  }
+  .tv-referral-network-link h3 { font-size: 24px; }
   .tv-system-map { margin-top: 30px; padding-top: 27px; gap: 15px; flex-direction: column; }
   .tv-system-connector { width: 1px; height: 16px; min-width: 1px; flex: none; }
   .tv-system-connector::after { right: -2px; top: auto; bottom: 0; }
