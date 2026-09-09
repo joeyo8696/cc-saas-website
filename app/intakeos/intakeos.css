@@ -43,11 +43,11 @@
   display: grid;
   grid-template-columns: 0.95fr 1.35fr;
   gap: 28px;
-  align-items: stretch;
+  align-items: start;
   margin-top: 8px;
 }
 .io-hero-split .prod-demo {
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -58,28 +58,19 @@
   overflow: hidden;
   background: #fff;
   box-shadow: 0 25px 50px #2b22551c;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
 }
 .io-hero-product .cc-browser {
   border-radius: 0;
   box-shadow: none;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
 }
 .io-hero-product .cc-browser-body {
-  flex: 1;
-  min-height: 0;
   background: #f8f8fb;
 }
 .io-hero-product .cc-browser-body img {
   width: 100%;
-  height: 100%;
-  max-height: none;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  object-fit: contain;
   object-position: top left;
 }
 .io-journey { padding-block: 85px; }
