@@ -59,8 +59,10 @@
   margin-top: 8px;
 }
 .rf-hero-shot .cc-browser-body img {
-  max-height: 520px;
-  object-fit: cover;
+  max-height: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   object-position: top;
 }
 .rf-directions {

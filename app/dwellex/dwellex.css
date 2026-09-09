@@ -257,7 +257,7 @@
 .dw-feature-image img {
   width: 100%;
   height: auto;
-  max-height: 420px;
+  max-height: 560px;
   object-fit: contain;
 }
 .dw-feature-image > span {
@@ -268,7 +268,7 @@
   font-size: 0.75rem;
 }
 .dw-feature .cc-browser-body img {
-  max-height: 420px;
+  max-height: 560px;
   object-fit: contain;
   object-position: top;
 }

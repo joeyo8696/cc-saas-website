@@ -6,7 +6,6 @@ import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import { useDemoModal } from '@/components/DemoModalProvider'
-import BrowserFrame from '@/components/ui/BrowserFrame'
 import ExpandableBrowserFrame from '@/components/ui/ExpandableBrowserFrame'
 import '../../dwellex/dwellex.css'
 import '../referrals/referrals.css'
@@ -152,15 +151,12 @@ export default function AgentPlatformPage() {
                 </div>
               </div>
               <div className="rf-hero-shot">
-                <BrowserFrame url="app.casecompass.io/live-transfer">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/images/agent-platform-live-transfer-inbox.png"
-                    width={1600}
-                    height={1000}
-                    alt="Case Compass Live Transfer Inbox"
-                  />
-                </BrowserFrame>
+                <ExpandableBrowserFrame
+                  url="app.casecompass.io/live-transfer"
+                  src="/images/agent-platform-live-transfer-inbox.png"
+                  alt="Case Compass Live Transfer Inbox"
+                  framed={false}
+                />
               </div>
             </div>
           </section>
@@ -241,6 +237,7 @@ export default function AgentPlatformPage() {
                   url="app.casecompass.io"
                   src={feature.img}
                   alt={feature.imgAlt}
+                  framed={tab !== 'transfer'}
                 />
               </article>
               <p className="rf-feature-note">{feature.note}</p>

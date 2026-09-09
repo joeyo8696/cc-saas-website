@@ -11,6 +11,8 @@ type ExpandableBrowserFrameProps = {
   url: string
   footer?: ReactNode
   className?: string
+  /** When true, the image already includes browser chrome — skip nested frame */
+  framed?: boolean
 }
 
 export default function ExpandableBrowserFrame({
@@ -19,6 +21,7 @@ export default function ExpandableBrowserFrame({
   url,
   footer = 'View full-size product screen',
   className = '',
+  framed = true,
 }: ExpandableBrowserFrameProps) {
   const [open, setOpen] = useState(false)
   const titleId = useId()
@@ -45,10 +48,17 @@ export default function ExpandableBrowserFrame({
         onClick={() => setOpen(true)}
         aria-label="View full-size product screenshot"
       >
-        <BrowserFrame url={url} footer={<>{footer} <span aria-hidden="true">↗</span></>}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={alt} loading="lazy" />
-        </BrowserFrame>
+        {framed ? (
+          <BrowserFrame url={url} footer={<>{footer} <span aria-hidden="true">↗</span></>}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={src} alt={alt} loading="lazy" />
+          </BrowserFrame>
+        ) : (
+          <span className="cc-shot-bare">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={src} alt={alt} loading="lazy" />
+          </span>
+        )}
       </button>
 
       {open && (

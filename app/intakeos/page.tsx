@@ -147,8 +147,8 @@ const features: Record<Tab, {
       'Team and channel performance',
       'Exportable reporting for marketing and ops',
     ],
-    img: '/images/referrals-reporting.png',
-    imgAlt: 'Case Compass reporting dashboard with intake and conversion analytics',
+    img: '/images/intake-analytics.png',
+    imgAlt: 'Intake analytics with end-status breakdown and marketing funnel',
   },
 }
 
