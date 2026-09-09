@@ -3,9 +3,9 @@
 import { useRef, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
 import { useDemoModal } from '@/components/DemoModalProvider'
 import BrowserFrame from '@/components/ui/BrowserFrame'
+import WorkflowDemo, { intakeLeadStages } from '@/components/demo/WorkflowDemo'
 import '@/app/home.css'
 
 type Platform = 'intake' | 'torvana' | 'dwellex'
@@ -70,6 +70,8 @@ const panels: Record<Platform, {
 
 export default function HomePageContent() {
   const [active, setActive] = useState<Platform>('intake')
+  const [flowStage, setFlowStage] = useState(0)
+  const [playing, setPlaying] = useState(true)
   const productRef = useRef<HTMLElement>(null)
   const { openModal } = useDemoModal()
   const panel = panels[active]
@@ -87,74 +89,61 @@ export default function HomePageContent() {
         {/* Hero */}
         <section className="hp-hero">
           <div className="hp-wrap">
-            <div className="hp-hero-top">
-              <div>
+            <div className="hp-hero-grid">
+              <div className="hp-hero-copy">
                 <p className="hp-eyebrow"><span className="hp-dash" /> ONE COMPANY. THREE PURPOSE-BUILT PLATFORMS.</p>
                 <h1>Smart intake.<br /><span>Connected practices.</span></h1>
+                <p className="hp-hero-lede">
+                  From the first conversation to the next critical step — software that keeps clients, patients and partners moving forward.
+                </p>
+                <div className="hp-hero-ctas">
+                  <button type="button" className="hp-hero-cta" onClick={openModal}>
+                    Schedule a demo <span aria-hidden="true">↗</span>
+                  </button>
+                  <a className="hp-quiet-link" href="#product">
+                    See the platforms <span aria-hidden="true">↓</span>
+                  </a>
+                </div>
               </div>
-              <div className="hp-hero-aside">
-                <p>From the first conversation to the next critical step. Software that keeps your clients, patients and partners moving forward.</p>
-                <a className="hp-quiet-link" href="#product">See the platforms in action <span aria-hidden="true">↓</span></a>
+              <div className="hp-hero-visual">
+                <WorkflowDemo
+                  stages={intakeLeadStages}
+                  stage={flowStage}
+                  setStage={setFlowStage}
+                  playing={playing}
+                  setPlaying={setPlaying}
+                />
               </div>
             </div>
 
-            <div className="hp-platforms" id="platforms">
-              <button type="button" className="hp-platform intake" onClick={() => selectPlatform('intake', true)}>
-                <div className="hp-platform-top">
-                  <span className="hp-market">PLAINTIFF LAW</span>
-                  <span className="hp-circle-arrow" aria-hidden="true">
-                    <ArrowUpRight size={16} strokeWidth={2.5} />
-                  </span>
-                </div>
-                <div className="hp-product-brand">
-                  <Image className="hp-intakeos-logo" src="/images/intakeos-logo.png" alt="IntakeOS" width={200} height={37} unoptimized />
-                  <span className="hp-byline">by Case Compass</span>
-                </div>
-                <p>More of the right cases.<br />Less between lead and client.</p>
-                <div className="hp-platform-bottom">
-                  <span>Qualify. Score. Sign.</span>
-                  <span className="hp-view-label">Explore IntakeOS</span>
-                </div>
+            <div className="hp-platform-strip" id="platforms" role="group" aria-label="Choose a platform">
+              <button
+                type="button"
+                className={`hp-strip-item intake${active === 'intake' ? ' is-active' : ''}`}
+                onClick={() => selectPlatform('intake', true)}
+                aria-pressed={active === 'intake'}
+              >
+                <span className="hp-market">PLAINTIFF LAW</span>
+                <Image className="hp-strip-logo intakeos" src="/images/intakeos-logo.png" alt="IntakeOS" width={140} height={26} unoptimized />
               </button>
-
-              <button type="button" className="hp-platform torvana" onClick={() => selectPlatform('torvana', true)}>
-                <div className="hp-platform-top">
-                  <span className="hp-market">SPECIALTY HEALTHCARE</span>
-                  <span className="hp-circle-arrow" aria-hidden="true">
-                    <ArrowUpRight size={16} strokeWidth={2.5} />
-                  </span>
-                </div>
-                <div className="hp-product-brand">
-                  <Image className="hp-torvana-logo" src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={185} height={82} unoptimized />
-                </div>
-                <p>One referral.<br />Everyone on the same page.</p>
-                <div className="hp-platform-bottom">
-                  <span>Intake. Schedule. Connect.</span>
-                  <span className="hp-view-label">Explore Torvana</span>
-                </div>
+              <button
+                type="button"
+                className={`hp-strip-item torvana${active === 'torvana' ? ' is-active' : ''}`}
+                onClick={() => selectPlatform('torvana', true)}
+                aria-pressed={active === 'torvana'}
+              >
+                <span className="hp-market">SPECIALTY HEALTHCARE</span>
+                <Image className="hp-strip-logo torvana" src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={120} height={36} unoptimized />
               </button>
-
-              <button type="button" className="hp-platform dwellex" onClick={() => selectPlatform('dwellex', true)}>
-                <div className="hp-platform-top">
-                  <span className="hp-market">LANDLORD–TENANT LAW</span>
-                  <span className="hp-circle-arrow" aria-hidden="true">
-                    <ArrowUpRight size={16} strokeWidth={2.5} />
-                  </span>
-                </div>
-                <div className="hp-product-brand">
-                  <Image className="hp-dwellex-logo" src="/images/dwellex.png" alt="Dwellex" width={151} height={66} unoptimized />
-                </div>
-                <p>Your entire eviction practice.<br />A clear path for every matter.</p>
-                <div className="hp-platform-bottom">
-                  <span>From intake through lockout.</span>
-                  <span className="hp-view-label">Explore Dwellex</span>
-                </div>
+              <button
+                type="button"
+                className={`hp-strip-item dwellex${active === 'dwellex' ? ' is-active' : ''}`}
+                onClick={() => selectPlatform('dwellex', true)}
+                aria-pressed={active === 'dwellex'}
+              >
+                <span className="hp-market">LANDLORD–TENANT</span>
+                <Image className="hp-strip-logo dwellex" src="/images/dwellex.png" alt="Dwellex" width={110} height={32} unoptimized />
               </button>
-            </div>
-
-            <div className="hp-hero-foot">
-              <span>Built around the way your practice works.</span>
-              <span>Different workflows. The same commitment to progress.</span>
             </div>
           </div>
         </section>
