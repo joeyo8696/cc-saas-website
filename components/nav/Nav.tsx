@@ -217,31 +217,8 @@ export default function Nav() {
                   </Link>
                 </div>
 
-                {/* Industry row */}
-                <div style={{ display: 'flex', borderBottom: '1px solid #e8edf5', padding: '0 8px' }}>
-                  {[
-                    { href: platformLinks.featured.href, icon: Waypoints, label: 'Waypoint', sub: 'AI Scoring', iconBg: 'linear-gradient(135deg, #4f46e5, #818cf8)' },
-                    { href: platformLinks.workersComp.href, icon: HardHat, label: "Workers' Comp", sub: 'Workers\' Compensation', iconBg: 'linear-gradient(135deg, #b45309, #d97706)' },
-                    { href: platformLinks.massTorts.href, icon: Scale, label: 'Mass Torts', sub: 'MDL Portfolio Mgmt', iconBg: 'linear-gradient(135deg, #7c3aed, #4f46e5)' },
-                  ].map(({ href, icon: Icon, label, sub, iconBg }) => (
-                    <Link key={label} href={href}
-                      style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', flex: 1 }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#f8fafc' }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = '' }}
-                    >
-                      <div style={{ width: '30px', height: '30px', flexShrink: 0, borderRadius: '7px', background: iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Icon size={15} color="#fff" />
-                      </div>
-                      <div>
-                        <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 600, color: '#0f172a' }}>{label}</div>
-                        <div style={{ fontSize: '0.72rem', color: '#94a3b8' }}>{sub}</div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-
                 {/* 3-col grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', padding: '20px 20px 22px', gap: '0 12px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', padding: '20px 20px 22px', gap: '0 12px' }}>
                   {platformLinks.columns.map((col) => (
                     <div key={col.heading}>
                       <div style={{ fontSize: '0.67rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', padding: '0 8px', marginBottom: '8px' }}>{col.heading}</div>
@@ -259,6 +236,24 @@ export default function Nav() {
                       ))}
                     </div>
                   ))}
+                  {/* By Practice — text only */}
+                  <div>
+                    <div style={{ fontSize: '0.67rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', padding: '0 8px', marginBottom: '8px' }}>By Practice</div>
+                    {[
+                      { label: 'Waypoint', sub: 'AI Scoring', href: platformLinks.featured.href },
+                      { label: "Workers' Comp", sub: "Workers' Compensation", href: platformLinks.workersComp.href },
+                      { label: 'Mass Torts', sub: 'MDL Portfolio Mgmt', href: platformLinks.massTorts.href },
+                    ].map(({ label, sub, href }) => (
+                      <Link key={label} href={href}
+                        style={{ display: 'flex', flexDirection: 'column', padding: '7px 8px', borderRadius: '8px', textDecoration: 'none', marginBottom: '2px' }}
+                        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#f8fafc' }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = '' }}
+                      >
+                        <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.82rem', fontWeight: 600, color: '#0f172a' }}>{label}</span>
+                        <span style={{ fontSize: '0.72rem', color: '#94a3b8', marginTop: '1px' }}>{sub}</span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
