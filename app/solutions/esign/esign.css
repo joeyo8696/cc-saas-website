@@ -1,0 +1,18 @@
+/* eSign — page-specific extensions on shared rf / dw patterns */
+.es-gap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 8px;
+}
+.es .rf-steps {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 1100px) {
+  .es .rf-steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 780px) {
+  .es-gap-grid { grid-template-columns: 1fr; }
+  .es .rf-steps { grid-template-columns: 1fr; }
+}

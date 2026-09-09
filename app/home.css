@@ -218,11 +218,11 @@
   object-fit: contain;
   object-position: left center;
 }
-/* Optical balance: IntakeOS is a dense wide wordmark, so it needs a shorter height */
-.hp-strip-logo.intakeos { height: 34px; width: auto; }
-.hp-strip-logo.torvana { height: 58px; width: auto; }
+/* IntakeOS fills its PNG tightly; Torvana/Dwellex have padded artwork — compensate optically */
+.hp-strip-logo.intakeos { height: 22px; width: auto; }
+.hp-strip-logo.torvana { height: 72px; width: auto; margin-left: -4px; }
 .hp-strip-logo.dwellex {
-  height: 52px;
+  height: 64px;
   width: auto;
   filter: brightness(0);
 }
