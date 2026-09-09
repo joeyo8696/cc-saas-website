@@ -1,288 +1,283 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
+'use client'
+
+import { useState, type ReactNode } from 'react'
 import Link from 'next/link'
-import { CheckCircle, Waypoints, ShieldCheck, Sliders, BarChart3 } from 'lucide-react'
+import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
-import AnnouncementBanner from '@/components/AnnouncementBanner'
-import SectionReveal from '@/components/ui/SectionReveal'
-import DemoButton from '@/components/DemoButton'
+import { useDemoModal } from '@/components/DemoModalProvider'
+import BrowserFrame from '@/components/ui/BrowserFrame'
+import '../../dwellex/dwellex.css'
+import '../referrals/referrals.css'
 
-export const metadata: Metadata = {
-  title: 'Waypoint — AI Lead Scoring for Legal Intake',
-  description:
-    'Waypoint scores every legal intake submission against your firm\'s custom criteria before your team opens the file. AI-powered lead scoring built for high-volume plaintiff law firms.',
-  keywords: [
-    'AI lead scoring law firm',
-    'legal lead scoring software',
-    'Waypoint AI scoring',
-    'plaintiff intake scoring',
-    'AI case evaluation software',
-    'law firm lead qualification',
-    'automated lead scoring legal',
-    'intake lead scoring',
-    'BYOK AI legal intake',
-    'legal AI intake scoring',
-    'mass tort lead scoring',
-    'personal injury lead scoring',
-  ],
-  alternates: {
-    canonical: 'https://www.casecompass.io/solutions/waypoint',
+type Tab = 'criteria' | 'score' | 'edit'
+
+const features: Record<Tab, {
+  title: ReactNode
+  body: string
+  bullets: string[]
+  img: string
+  imgAlt: string
+  note: string
+}> = {
+  criteria: {
+    title: <>Define what a strong<br />case looks like.</>,
+    body: 'Build scoring rubrics per practice area — weights, red flags, and priority order in plain language.',
+    bullets: [
+      'Natural-language criteria editor',
+      'Separate rubrics for mass tort, WC, PI, and more',
+      'Pre-built sets for active torts',
+    ],
+    img: '/images/waypoint-criteria-list.png',
+    imgAlt: 'Waypoint criteria management list',
+    note: 'Criteria library — practice-area rubrics',
   },
-  openGraph: {
-    type: 'website',
-    url: 'https://www.casecompass.io/solutions/waypoint',
-    siteName: 'Case Compass',
-    title: 'Waypoint — AI Intake Scoring for Law Firms | Case Compass',
-    description: 'Waypoint scores every intake submission against your firm\'s custom criteria before your team opens the file. Consistent, defensible, AI-powered lead scoring for plaintiff law firms.',
-    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Waypoint AI Intake Scoring' }],
+  score: {
+    title: <>A score before anyone<br />opens the file.</>,
+    body: 'The moment intake completes, Waypoint returns a numeric score, category breakdowns, a written summary, and flags.',
+    bullets: [
+      'Multi-dimensional scoring',
+      'Written summary on every lead',
+      'Red flags surfaced instantly',
+    ],
+    img: '/images/ai-lead-scoring.png',
+    imgAlt: 'AI lead scoring result on an intake',
+    note: 'Lead score — before file open',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Waypoint — AI Intake Scoring for Law Firms | Case Compass',
-    description: 'Score every intake submission automatically before your team opens the file.',
+  edit: {
+    title: <>Tune the rubric.<br />Keep the standard.</>,
+    body: 'Adjust dimensions, thresholds, and weights as your acceptance criteria evolve — without rebuilding intake forms.',
+    bullets: [
+      'Edit criteria without downtime',
+      'Documented, defensible standards',
+      'Same evaluation on every intake',
+    ],
+    img: '/images/waypoint-criteria-edit.png',
+    imgAlt: 'Editing a Waypoint scoring criterion',
+    note: 'Criteria editor — live adjustments',
   },
 }
 
-const waypointFaqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How does Waypoint score leads?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Waypoint uses your firm\'s custom criteria to evaluate each intake submission across multiple dimensions: case value, liability strength, evidence quality, urgency, and any red flags you define. It returns a structured score the moment intake is complete — before your team opens the file.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can I customize Waypoint\'s scoring criteria for my practice area?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Waypoint is fully customizable per practice area. You define what a strong case looks like for mass tort, workers\' comp, personal injury, or any other area. Pre-built criteria sets are also available for Depo-Provera, Roblox, and other active mass torts.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How does Waypoint compare to manual intake review?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Manual intake review introduces variance — different staff members evaluate cases differently, leading to inconsistent decisions. Waypoint applies the same documented, defensible evaluation standard to every intake, every time. It also scales infinitely: it evaluates as many intakes simultaneously as your firm receives, with zero delay.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Does Waypoint store my client data or use it to train AI models?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'No. Waypoint uses a Bring Your Own Key (BYOK) model — it operates using your firm\'s own OpenAI API key. Your data never touches a shared model and is never used to train anyone else\'s AI. Your client information stays yours.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What practice areas does Waypoint support?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Waypoint supports any plaintiff practice area. It is currently used for mass tort, workers\' compensation, personal injury, and landlord-tenant law. Custom criteria can be built for any case type in minutes.',
-      },
-    },
-  ],
-}
-
-const benefits = [
-  { icon: Sliders, title: 'Custom criteria per practice area', desc: 'Define what a strong case looks like for mass tort, workers\' comp, personal injury, and more. Waypoint adapts to your firm\'s standards.' },
-  { icon: BarChart3, title: 'Multi-dimensional scoring', desc: 'Scores on case value, liability, evidence quality, urgency, red flags, and every custom dimension you define.' },
-  { icon: CheckCircle, title: 'Consistent evaluation on every intake', desc: 'No variance between staff. Every claimant gets the same documented, defensible evaluation standard.' },
-  { icon: ShieldCheck, title: 'BYOK — your data stays yours', desc: 'Waypoint uses your own OpenAI API key. Your data never touches a shared model or trains anyone else\'s AI.' },
-  { icon: Waypoints, title: 'Scores before your team opens the file', desc: 'The moment intake is complete, Waypoint returns a score. Your team prioritizes with confidence from day one.' },
-  { icon: BarChart3, title: 'Built for mass torts & beyond', desc: 'Pre-built Waypoint criteria sets available for Depo-Provera, Roblox, and more. Build custom criteria for any tort in minutes.' },
+const faqs = [
+  {
+    q: 'How does Waypoint score leads?',
+    a: "Waypoint uses your firm's custom criteria to evaluate each intake submission across multiple dimensions: case value, liability strength, evidence quality, urgency, and any red flags you define. It returns a structured score the moment intake is complete — before your team opens the file.",
+  },
+  {
+    q: "Can I customize Waypoint's scoring criteria for my practice area?",
+    a: "Yes. Waypoint is fully customizable per practice area. You define what a strong case looks like for mass tort, workers' comp, personal injury, or any other area. Pre-built criteria sets are also available for Depo-Provera, Roblox, and other active mass torts.",
+  },
+  {
+    q: 'How does Waypoint compare to manual intake review?',
+    a: 'Manual intake review introduces variance — different staff members evaluate cases differently, leading to inconsistent decisions. Waypoint applies the same documented, defensible evaluation standard to every intake, every time. It also scales infinitely: it evaluates as many intakes simultaneously as your firm receives, with zero delay.',
+  },
+  {
+    q: 'Does Waypoint store my client data or use it to train AI models?',
+    a: "No. Waypoint uses a Bring Your Own Key (BYOK) model — it operates using your firm's own OpenAI API key. Your data never touches a shared model and is never used to train anyone else's AI. Your client information stays yours.",
+  },
+  {
+    q: 'What practice areas does Waypoint support?',
+    a: "Waypoint supports any plaintiff practice area. It is currently used for mass tort, workers' compensation, personal injury, and landlord-tenant law. Custom criteria can be built for any case type in minutes.",
+  },
 ]
 
-const waypointBreadcrumb = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
-    { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.casecompass.io/solutions' },
-    { '@type': 'ListItem', position: 3, name: 'Waypoint AI Lead Scoring', item: 'https://www.casecompass.io/solutions/waypoint' },
-  ],
-}
+const includes = [
+  { title: 'Custom criteria per practice area', body: 'Define what a strong case looks like for mass tort, workers\' comp, personal injury, and more.' },
+  { title: 'Multi-dimensional scoring', body: 'Scores on case value, liability, evidence quality, urgency, red flags, and every custom dimension you define.' },
+  { title: 'Consistent evaluation', body: 'No variance between staff. Every claimant gets the same documented, defensible standard.' },
+  { title: 'BYOK — your data stays yours', body: 'Uses your own OpenAI API key. Data never touches a shared model or trains anyone else\'s AI.' },
+  { title: 'Scores before file open', body: 'The moment intake is complete, Waypoint returns a score so your team prioritizes with confidence.' },
+  { title: 'Built for mass torts & beyond', body: 'Pre-built criteria for active torts. Build custom rubrics for any case type in minutes.' },
+]
 
 export default function WaypointPage() {
+  const [tab, setTab] = useState<Tab>('criteria')
+  const { openModal } = useDemoModal()
+  const feature = features[tab]
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(waypointFaqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(waypointBreadcrumb) }} />
-      <AnnouncementBanner />
-      <Nav />
-      <main>
-
-        {/* Hero */}
-        <section
-          style={{ background: 'linear-gradient(135deg, #060d1f, #1e1b4b)', padding: '100px 40px 80px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}
-        >
-          <div style={{ maxWidth: '720px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(196,181,253,0.25)', borderRadius: '6px', padding: '5px 12px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#c4b5fd', marginBottom: '24px' }}>
-              ★ Waypoint
-            </div>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', color: '#fff', lineHeight: 1.15, marginBottom: '24px' }}>
-              AI scoring that tells you <em>which cases to take</em>
-            </h1>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '40px' }}>
-              Stop relying on gut instinct to prioritize your pipeline. Waypoint evaluates every submitted intake against a fully customizable scoring rubric — and surfaces a score before your team opens the file.
-            </p>
-            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <DemoButton style={{ padding: '14px 32px', borderRadius: '8px', fontSize: '0.9rem' }}>
-                See Waypoint in Action →
-              </DemoButton>
-              <Link
-                href="https://blog.casecompass.io/posts/referrals-and-waypoint-launch"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600 }}
-              >
-                Read the Launch Post
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Screenshot */}
-        <section style={{ background: '#fff', padding: '80px 40px' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <SectionReveal>
-              <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 32px 80px rgba(0,0,0,0.15)', border: '1px solid #e2e8f0' }}>
-                <Image
-                  src="/images/waypoint-criteria-list.png"
-                  alt="Waypoint criteria management interface"
-                  width={900}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                  priority
-                />
+      <div style={{ position: 'sticky', top: 0, zIndex: 200 }}>
+        <AnnouncementBanner />
+        <Nav />
+      </div>
+      <div className="dw rf">
+        <main id="main">
+          <section className="rf-hero">
+            <div className="wrap">
+              <div className="rf-lockup">
+                <span className="rf-wordmark">Waypoint</span>
+                <span>INTAKEOS</span>
               </div>
-            </SectionReveal>
-          </div>
-        </section>
-
-        {/* How it works */}
-        <section style={{ background: '#f8fafc', padding: '96px 40px' }}>
-          <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 64px' }}>
-              <SectionReveal>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', color: '#0f172a', lineHeight: 1.2 }}>
-                  How Waypoint works
-                </h2>
-              </SectionReveal>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '32px' }}>
-              {[
-                { num: '1', title: 'Define your criteria', desc: 'Use the natural language editor to add scoring dimensions specific to your practice area. Set weights, priority order, and red-flag thresholds.' },
-                { num: '2', title: 'Intake is submitted', desc: 'A claimant completes your Case Compass intake form or chatbot. The full submission is packaged and sent to Waypoint.' },
-                { num: '3', title: 'Score appears instantly', desc: 'Waypoint returns a numeric score, category breakdowns, a written summary, and any flags — before your team opens the lead.' },
-              ].map(({ num, title, desc }) => (
-                <SectionReveal key={num}>
-                  <div style={{ background: '#fff', borderRadius: '14px', padding: '32px', border: '1px solid #e2e8f0' }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display)', fontWeight: 800, color: '#fff', marginBottom: '20px' }}>
-                      {num}
-                    </div>
-                    <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>{title}</h3>
-                    <p style={{ fontSize: '0.875rem', color: '#64748b', lineHeight: 1.7 }}>{desc}</p>
-                  </div>
-                </SectionReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits grid */}
-        <section style={{ background: '#fff', padding: '96px 40px' }}>
-          <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-            <SectionReveal>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', color: '#0f172a', lineHeight: 1.2, textAlign: 'center', marginBottom: '56px' }}>
-                Everything Waypoint can do
-              </h2>
-            </SectionReveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '24px' }}>
-              {benefits.map(({ icon: Icon, title, desc }) => (
-                <SectionReveal key={title}>
-                  <div style={{ padding: '28px', border: '1px solid #e2e8f0', borderRadius: '12px' }}>
-                    <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'linear-gradient(135deg, #ede9fe, #dbeafe)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
-                      <Icon size={18} color="#4338ca" />
-                    </div>
-                    <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '0.95rem', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>{title}</h3>
-                    <p style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.65 }}>{desc}</p>
-                  </div>
-                </SectionReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section style={{ background: '#f8fafc', padding: '96px 40px', borderTop: '1px solid #e2e8f0' }}>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <SectionReveal>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: '#0f172a', lineHeight: 1.2, marginBottom: '48px', textAlign: 'center' }}>
-                Frequently asked questions
-              </h2>
-            </SectionReveal>
-            {waypointFaqSchema.mainEntity.map(({ name, acceptedAnswer }) => (
-              <SectionReveal key={name}>
-                <div style={{ borderBottom: '1px solid #e2e8f0', padding: '28px 0' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>
-                    {name}
-                  </h3>
-                  <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.75, margin: 0 }}>
-                    {acceptedAnswer.text}
-                  </p>
+              <div className="rf-headline">
+                <h1>AI scoring that tells you<br /><em>which cases to take.</em></h1>
+                <div>
+                  <p>Stop relying on gut instinct to prioritize your pipeline. Waypoint evaluates every submitted intake against a fully customizable scoring rubric — and surfaces a score before your team opens the file.</p>
+                  <button type="button" className="button" onClick={openModal}>
+                    See Waypoint in action <span aria-hidden="true">↗</span>
+                  </button>
+                  <a className="text-link" href="#workflow">How it works ↓</a>
                 </div>
-              </SectionReveal>
-            ))}
-          </div>
-        </section>
-
-        {/* Related Solutions */}
-        <section style={{ background: '#fff', padding: '80px 40px', borderTop: '1px solid #e2e8f0' }}>
-          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <SectionReveal>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#94a3b8', textAlign: 'center', marginBottom: '32px' }}>
-                Related Solutions
-              </h2>
-            </SectionReveal>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-              {[
-                { href: '/intakeos', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow.' },
-                { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.' },
-                { href: '/dwellex', label: 'Dwellex', desc: 'Case management for landlord-tenant and eviction law.' },
-              ].map(({ href, label, desc }) => (
-                <SectionReveal key={href}>
-                  <Link href={href} className="related-solution-card" style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none' }}>
-                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: '#4f46e5', marginBottom: '8px' }}>{label} →</div>
-                    <p style={{ fontSize: '0.82rem', color: '#64748b', lineHeight: 1.6, margin: 0 }}>{desc}</p>
-                  </Link>
-                </SectionReveal>
-              ))}
+              </div>
+              <div className="rf-hero-shot">
+                <BrowserFrame url="app.casecompass.io/waypoint">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/waypoint-criteria-list.png"
+                    width={1600}
+                    height={1000}
+                    alt="Waypoint criteria management interface"
+                  />
+                </BrowserFrame>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* CTA */}
-        <section style={{ background: 'linear-gradient(135deg, #060d1f, #1e1b4b)', padding: '96px 40px', textAlign: 'center' }}>
-          <SectionReveal>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', lineHeight: 1.2, marginBottom: '20px' }}>
-              Ready to score every intake automatically?
-            </h2>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '40px' }}>
-              Book a walkthrough and we&apos;ll show you Waypoint live in your account.
-            </p>
-            <DemoButton style={{ padding: '15px 36px', borderRadius: '8px', fontSize: '1rem' }}>
-              Schedule a Demo →
-            </DemoButton>
-          </SectionReveal>
-        </section>
+          <section className="rf-flow wrap" id="workflow">
+            <div className="dw-section-head">
+              <div>
+                <p className="eyebrow">FROM RUBRIC TO SCORE</p>
+                <h2>How Waypoint works.<br /><em>Three steps.</em></h2>
+              </div>
+              <p>Define the standard once. Every intake gets the same evaluation — instantly.</p>
+            </div>
+            <ol className="rf-steps" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+              <li>
+                <span>01 / DEFINE</span>
+                <h3>Define your criteria</h3>
+                <p>Add scoring dimensions for your practice area. Set weights, priority order, and red-flag thresholds.</p>
+              </li>
+              <li>
+                <span>02 / INTAKE</span>
+                <h3>Intake is submitted</h3>
+                <p>A claimant completes your IntakeOS form or chatbot. The full submission is sent to Waypoint.</p>
+              </li>
+              <li>
+                <span>03 / SCORE</span>
+                <h3>Score appears instantly</h3>
+                <p>Numeric score, category breakdowns, written summary, and flags — before anyone opens the lead.</p>
+              </li>
+            </ol>
+          </section>
 
-      </main>
+          <section className="rf-workspace" id="workspace">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">INSIDE WAYPOINT</p>
+                  <h2>Built around the score.<br /><em>Right down to the criteria.</em></h2>
+                </div>
+                <p>Real product views.<br />One consistent evaluation standard.</p>
+              </div>
+              <div className="dw-tabs" role="tablist" aria-label="Waypoint features">
+                {([
+                  { id: 'criteria' as const, label: '01 / Criteria' },
+                  { id: 'score' as const, label: '02 / Scoring' },
+                  { id: 'edit' as const, label: '03 / Editor' },
+                ]).map((t) => (
+                  <button
+                    key={t.id}
+                    id={`tab-${t.id}`}
+                    role="tab"
+                    aria-selected={tab === t.id}
+                    aria-controls={`view-${t.id}`}
+                    tabIndex={tab === t.id ? 0 : -1}
+                    onClick={() => setTab(t.id)}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+              <article className="dw-feature" key={tab} id={`view-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`}>
+                <div className="dw-feature-copy">
+                  <h3>{feature.title}</h3>
+                  <p>{feature.body}</p>
+                  <ul>
+                    {feature.bullets.map((b) => <li key={b}>{b}</li>)}
+                  </ul>
+                </div>
+                <a className="cc-browser-link" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
+                  <BrowserFrame url="app.casecompass.io/waypoint" footer="View full-size product screen ↗">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
+                  </BrowserFrame>
+                </a>
+              </article>
+              <p className="rf-feature-note">{feature.note}</p>
+            </div>
+          </section>
+
+          <section className="rf-includes">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">EVERYTHING INCLUDED</p>
+                  <h2>Everything Waypoint<br /><em>can do.</em></h2>
+                </div>
+                <p>Custom rubrics, instant scores, and BYOK privacy — wired into IntakeOS.</p>
+              </div>
+              <div className="rf-include-grid">
+                {includes.map((item) => (
+                  <article key={item.title}>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="dw-faq">
+            <div className="wrap dw-faq-grid">
+              <div>
+                <p className="eyebrow">BEFORE YOU SCORE</p>
+                <h2>Good questions.<br /><em>Clear answers.</em></h2>
+              </div>
+              <div>
+                {faqs.map((faq) => (
+                  <details key={faq.q}>
+                    <summary>{faq.q}</summary>
+                    <p>{faq.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="rf-related">
+            <div className="wrap">
+              <p className="eyebrow" style={{ marginBottom: 28 }}>RELATED SOLUTIONS</p>
+              <div className="rf-related-grid">
+                <Link href="/intakeos">
+                  <strong>IntakeOS →</strong>
+                  <p>Plaintiff intake — chatbots, webforms, live transfer, and Waypoint scoring.</p>
+                </Link>
+                <Link href="/solutions/mass-torts">
+                  <strong>Mass Torts →</strong>
+                  <p>Tort-specific scoring and MDL portfolio management at campaign scale.</p>
+                </Link>
+                <Link href="/solutions/workers-comp">
+                  <strong>Workers&apos; Comp →</strong>
+                  <p>Intake automation purpose-built for workers&apos; compensation firms.</p>
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          <section className="dw-cta">
+            <div className="wrap">
+              <p className="eyebrow">EVERY INTAKE. ONE STANDARD.</p>
+              <h2>Ready to score every<br /><em>intake automatically?</em></h2>
+              <div>
+                <p>Book a walkthrough and we&apos;ll show you Waypoint live against your practice-area criteria.</p>
+                <button type="button" className="button" onClick={openModal}>
+                  Schedule a demo <span>↗</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
       <Footer />
     </>
   )

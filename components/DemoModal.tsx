@@ -1,7 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { X, Calendar } from 'lucide-react'
+import { useEffect } from 'react'
+import { X } from 'lucide-react'
+
+const CASE_COMPASS_SCHEDULER_SRC =
+  'https://scheduler.zoom.us/case-compass/case-compass-demo?embed=true'
 
 interface DemoModalProps {
   isOpen: boolean
@@ -9,56 +12,19 @@ interface DemoModalProps {
 }
 
 export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
-  const [formData, setFormData] = useState({
-    name: '',
-    firmName: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
+    if (!isOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
     }
+    window.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = prev
+      window.removeEventListener('keydown', onKey)
     }
-  }, [isOpen])
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-
-    try {
-      const response = await fetch('/api/demo-request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
-
-      if (response.ok) {
-        setSubmitStatus('success')
-        setFormData({ name: '', firmName: '', email: '', phone: '', message: '' })
-        setTimeout(() => {
-          onClose()
-          setSubmitStatus('idle')
-        }, 2000)
-      } else {
-        setSubmitStatus('error')
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error)
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
+  }, [isOpen, onClose])
 
   if (!isOpen) return null
 
@@ -71,383 +37,87 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '20px',
+        padding: '16px',
+        background: 'rgba(18, 16, 40, 0.72)',
       }}
       onClick={onClose}
+      role="presentation"
     >
-      {/* Backdrop */}
       <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'rgba(0,0,0,0.6)',
-          backdropFilter: 'blur(8px)',
-        }}
-      />
-
-      {/* Modal */}
-      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cc-demo-scheduler-title"
+        onClick={(e) => e.stopPropagation()}
         style={{
           position: 'relative',
           background: '#fff',
-          borderRadius: '24px',
-          maxWidth: '540px',
-          width: '100%',
-          maxHeight: '90vh',
-          overflow: 'auto',
-          boxShadow: '0 24px 64px rgba(0,0,0,0.3)',
+          color: '#1c1a33',
+          borderRadius: 12,
+          width: 'min(1100px, calc(100vw - 24px))',
+          maxHeight: 'min(94dvh, 760px)',
+          overflow: 'hidden',
+          boxShadow: '0 30px 100px rgba(23, 19, 48, 0.35)',
+          display: 'flex',
+          flexDirection: 'column',
         }}
-        onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
         <div
           style={{
-            padding: '32px 32px 24px',
-            borderBottom: '1px solid #e2e8f0',
-            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 16,
+            padding: '14px 18px',
+            borderBottom: '1px solid #e6e3ef',
+            flexShrink: 0,
           }}
         >
-          <button
-            onClick={onClose}
-            style={{
-              position: 'absolute',
-              top: '24px',
-              right: '24px',
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '8px',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'background 0.2s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#f1f5f9')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
-          >
-            <X size={20} color="#64748b" />
-          </button>
-
-          <div
-            style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: '12px',
-              background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: '16px',
-            }}
-          >
-            <Calendar size={24} color="#fff" />
-          </div>
-
           <h2
+            id="cc-demo-scheduler-title"
             style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: '1.75rem',
-              color: '#0f172a',
-              marginBottom: '8px',
-              lineHeight: 1.2,
+              margin: 0,
+              fontFamily: 'var(--font-display), Manrope, sans-serif',
+              fontSize: '1.05rem',
+              fontWeight: 600,
+              letterSpacing: 0,
+              color: '#1c1a33',
             }}
           >
-            Schedule a Demo
+            Book your Case Compass demo
           </h2>
-          <p style={{ fontSize: '0.95rem', color: '#64748b', lineHeight: 1.6 }}>
-            See how Case Compass can transform your firm&apos;s intake process. We&apos;ll reach out to schedule a personalized walkthrough.
-          </p>
-        </div>
-
-        {/* Form */}
-        <form onSubmit={handleSubmit} style={{ padding: '32px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div>
-              <label
-                htmlFor="name"
-                style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: '#0f172a',
-                  marginBottom: '8px',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                Your Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                required
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                  outline: 'none',
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#4f46e5'
-                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(79,70,229,0.1)'
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0'
-                  e.currentTarget.style.boxShadow = 'none'
-                }}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="firmName"
-                style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: '#0f172a',
-                  marginBottom: '8px',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                Firm Name *
-              </label>
-              <input
-                type="text"
-                id="firmName"
-                required
-                value={formData.firmName}
-                onChange={(e) => setFormData({ ...formData, firmName: e.target.value })}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                  outline: 'none',
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#4f46e5'
-                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(79,70,229,0.1)'
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0'
-                  e.currentTarget.style.boxShadow = 'none'
-                }}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: '#0f172a',
-                  marginBottom: '8px',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                  outline: 'none',
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#4f46e5'
-                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(79,70,229,0.1)'
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0'
-                  e.currentTarget.style.boxShadow = 'none'
-                }}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="phone"
-                style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: '#0f172a',
-                  marginBottom: '8px',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                Phone Number *
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                required
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '8px',
-                  fontSize: '1rem',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                  outline: 'none',
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#4f46e5'
-                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(79,70,229,0.1)'
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0'
-                  e.currentTarget.style.boxShadow = 'none'
-                }}
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  color: '#0f172a',
-                  marginBottom: '8px',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
-                Anything you&apos;d like us to know?
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                placeholder="Tell us about your practice, case volume, or what you're looking to solve..."
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                style={{
-                  width: '100%',
-                  padding: '12px 16px',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '8px',
-                  fontSize: '0.95rem',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                  outline: 'none',
-                  resize: 'vertical',
-                  lineHeight: 1.6,
-                  color: '#0f172a',
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#4f46e5'
-                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(79,70,229,0.1)'
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0'
-                  e.currentTarget.style.boxShadow = 'none'
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Status Messages */}
-          {submitStatus === 'success' && (
-            <div
-              style={{
-                marginTop: '20px',
-                padding: '12px 16px',
-                background: '#dcfce7',
-                border: '1px solid #86efac',
-                borderRadius: '8px',
-                color: '#166534',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              <span style={{ fontSize: '16px' }}>✓</span>
-              Thank you! We&apos;ll be in touch shortly.
-            </div>
-          )}
-
-          {submitStatus === 'error' && (
-            <div
-              style={{
-                marginTop: '20px',
-                padding: '12px 16px',
-                background: '#fee2e2',
-                border: '1px solid #fca5a5',
-                borderRadius: '8px',
-                color: '#991b1b',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-              }}
-            >
-              Something went wrong. Please try again.
-            </div>
-          )}
-
-          {/* Submit Button */}
           <button
-            type="submit"
-            disabled={isSubmitting}
+            type="button"
+            onClick={onClose}
+            aria-label="Close scheduler"
             style={{
-              width: '100%',
-              marginTop: '24px',
-              padding: '14px 24px',
-              background: isSubmitting
-                ? '#94a3b8'
-                : 'linear-gradient(135deg, #4f46e5, #7c3aed)',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '8px',
-              fontSize: '1rem',
-              fontWeight: 700,
-              fontFamily: 'var(--font-display)',
-              cursor: isSubmitting ? 'not-allowed' : 'pointer',
-              boxShadow: isSubmitting ? 'none' : '0 8px 24px rgba(79,70,229,0.35)',
-              transition: 'all 0.3s',
-            }}
-            onMouseEnter={(e) => {
-              if (!isSubmitting) {
-                e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 12px 32px rgba(79,70,229,0.45)'
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!isSubmitting) {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(79,70,229,0.35)'
-              }
+              width: 36,
+              height: 36,
+              border: '1px solid #e0dde9',
+              borderRadius: 8,
+              background: '#fff',
+              color: '#5c5870',
+              display: 'grid',
+              placeItems: 'center',
+              cursor: 'pointer',
             }}
           >
-            {isSubmitting ? 'Submitting...' : 'Request Demo'}
+            <X size={18} />
           </button>
-        </form>
+        </div>
+        <iframe
+          src={CASE_COMPASS_SCHEDULER_SRC}
+          title="Schedule a Case Compass demo"
+          allow="camera; microphone; fullscreen"
+          loading="lazy"
+          style={{
+            width: '100%',
+            height: 'min(640px, calc(94dvh - 72px))',
+            minHeight: 520,
+            border: 0,
+            display: 'block',
+            background: '#fff',
+          }}
+        />
       </div>
     </div>
   )
