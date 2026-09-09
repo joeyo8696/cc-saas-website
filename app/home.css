@@ -213,15 +213,17 @@
 }
 .hp-strip-logo {
   display: block;
+  width: auto;
   height: auto;
   object-fit: contain;
   object-position: left center;
 }
-.hp-strip-logo.intakeos { width: 210px; }
-.hp-strip-logo.torvana { width: 188px; height: 56px; }
+/* Optical balance: IntakeOS is a dense wide wordmark, so it needs a shorter height */
+.hp-strip-logo.intakeos { height: 34px; width: auto; }
+.hp-strip-logo.torvana { height: 58px; width: auto; }
 .hp-strip-logo.dwellex {
-  width: 176px;
   height: 52px;
+  width: auto;
   filter: brightness(0);
 }
 

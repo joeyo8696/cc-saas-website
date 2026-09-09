@@ -124,7 +124,7 @@ export default function HomePageContent() {
                 aria-pressed={active === 'intake'}
               >
                 <span className="hp-market">PLAINTIFF LAW</span>
-                <Image className="hp-strip-logo intakeos" src="/images/intakeos-logo.png" alt="IntakeOS" width={210} height={39} unoptimized />
+                <Image className="hp-strip-logo intakeos" src="/images/intakeos-logo.png" alt="IntakeOS" width={183} height={34} unoptimized />
               </button>
               <button
                 type="button"
@@ -133,7 +133,7 @@ export default function HomePageContent() {
                 aria-pressed={active === 'torvana'}
               >
                 <span className="hp-market">SPECIALTY HEALTHCARE</span>
-                <Image className="hp-strip-logo torvana" src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={188} height={56} unoptimized />
+                <Image className="hp-strip-logo torvana" src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={116} height={58} unoptimized />
               </button>
               <button
                 type="button"
@@ -142,7 +142,7 @@ export default function HomePageContent() {
                 aria-pressed={active === 'dwellex'}
               >
                 <span className="hp-market">LANDLORD–TENANT</span>
-                <Image className="hp-strip-logo dwellex" src="/images/dwellex.png" alt="Dwellex" width={176} height={52} unoptimized />
+                <Image className="hp-strip-logo dwellex" src="/images/dwellex.png" alt="Dwellex" width={119} height={52} unoptimized />
               </button>
             </div>
           </div>
