@@ -701,9 +701,19 @@ export default function TorvanaPage() {
             <h2>Less chasing.<br /><em>More moving forward.</em></h2>
             <div>
               <p>Bring your referral volume, your current systems and the handoffs that slow your team down. We&apos;ll start there.</p>
-              <button className="tv-btn-primary" onClick={() => setModalOpen(true)}>
-                Let&apos;s talk about your practice <ArrowUpRight size={19} />
-              </button>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <button className="tv-btn-primary" onClick={() => setModalOpen(true)}>
+                  Let&apos;s talk about your practice <ArrowUpRight size={19} />
+                </button>
+                <a
+                  href="https://scheduler.zoom.us/case-compass/torvana-demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tv-btn-outline"
+                >
+                  Book a demo <ArrowUpRight size={17} />
+                </a>
+              </div>
               <small>A conversation built around your practice.</small>
             </div>
           </div>
@@ -760,11 +770,20 @@ export default function TorvanaPage() {
                   </div>
                   <span className="tv-eyebrow" style={{ justifyContent: 'center', marginBottom: '14px' }}>Brief downloaded</span>
                   <h2 className="tv-modal-title" id="tv-modal-title" style={{ marginBottom: '14px' }}>We&apos;ll be in touch.</h2>
-                  <p className="tv-modal-desc" style={{ marginBottom: '28px' }}>
+                  <p className="tv-modal-desc" style={{ marginBottom: '24px' }}>
                     Your brief is downloading now. Someone from our team will reach out to walk through your practice&apos;s workflow — usually within one business day.
                   </p>
-                  <button className="tv-btn-primary" onClick={() => setModalOpen(false)} style={{ width: '100%', justifyContent: 'center' }}>
-                    Done <ArrowRight size={17} />
+                  <a
+                    href="https://scheduler.zoom.us/case-compass/torvana-demo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="tv-btn-primary"
+                    style={{ width: '100%', justifyContent: 'center', display: 'flex', marginBottom: '12px', textDecoration: 'none' }}
+                  >
+                    Book a demo now <ArrowUpRight size={17} />
+                  </a>
+                  <button className="tv-btn-ghost" onClick={() => setModalOpen(false)} style={{ width: '100%', justifyContent: 'center' }}>
+                    I&apos;ll wait for your call
                   </button>
                 </div>
               </>
