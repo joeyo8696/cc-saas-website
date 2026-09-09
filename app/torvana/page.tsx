@@ -202,6 +202,7 @@ export default function TorvanaPage() {
   const [submitError, setSubmitError] = useState('')
   const [screenshotTab, setScreenshotTab] = useState(0)
   const [faqOpen, setFaqOpen] = useState<number | null>(null)
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
 
   useEffect(() => {
     const handler = () => setModalOpen(true)
@@ -278,7 +279,7 @@ export default function TorvanaPage() {
                 style={{ width: 'auto', height: '200px' }}
               />
             </div>
-            <div className="tv-eyebrow"><span /> Connected Care. Clear Progress.</div>
+            
             <h1>The referral moves.<br /><em>Everyone knows.</em></h1>
             <p className="tv-hero-lede">
               Connect your patients, your practice and the attorneys who refer to you. From the first intake form to the latest case update.
@@ -407,7 +408,7 @@ export default function TorvanaPage() {
                 <li><Check size={14} /> Appointment confirmation writes back to your scheduler</li>
               </ul>
             </div>
-            <div className="tv-browser-frame tv-intake-showcase-frame">
+            <div className="tv-browser-frame tv-intake-showcase-frame" style={{ cursor: 'zoom-in' }} onClick={() => setLightboxSrc('/images/torvana-intake-portal.png')}>
               <div className="tv-browser-bar">
                 <div className="tv-browser-dots"><span /><span /><span /></div>
                 <div className="tv-browser-url"><span className="tv-browser-url-dot" />rochesterimageassociates.com</div>
@@ -438,7 +439,7 @@ export default function TorvanaPage() {
               ))}
             </div>
             {screenshotTab === 0 && (
-              <div className="tv-browser-frame">
+              <div className="tv-browser-frame" style={{ cursor: 'zoom-in' }} onClick={() => setLightboxSrc('/images/torvana-referring-providers.png')}>
                 <div className="tv-browser-bar">
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/referring-providers</div>
@@ -447,7 +448,7 @@ export default function TorvanaPage() {
               </div>
             )}
             {screenshotTab === 1 && (
-              <div className="tv-browser-frame">
+              <div className="tv-browser-frame" style={{ cursor: 'zoom-in' }} onClick={() => setLightboxSrc('/images/torvana-ai-chronology.png')}>
                 <div className="tv-browser-bar">
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/medical-records</div>
@@ -456,7 +457,7 @@ export default function TorvanaPage() {
               </div>
             )}
             {screenshotTab === 2 && (
-              <div className="tv-browser-frame">
+              <div className="tv-browser-frame" style={{ cursor: 'zoom-in' }} onClick={() => setLightboxSrc('/images/torvana-timeline-builder.png')}>
                 <div className="tv-browser-bar">
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/timeline-builder</div>
@@ -465,7 +466,7 @@ export default function TorvanaPage() {
               </div>
             )}
             {screenshotTab === 3 && (
-              <div className="tv-browser-frame">
+              <div className="tv-browser-frame" style={{ cursor: 'zoom-in' }} onClick={() => setLightboxSrc('/images/torvana-analytics.png')}>
                 <div className="tv-browser-bar">
                   <div className="tv-browser-dots"><span /><span /><span /></div>
                   <div className="tv-browser-url"><span className="tv-browser-url-dot" />app.casecompass.io/analytics</div>
@@ -713,7 +714,37 @@ export default function TorvanaPage() {
       {/* Footer */}
       <Footer />
 
-      {/* Walkthrough modal */}
+        {/* Lightbox */}
+        {lightboxSrc && (
+          <div
+            onClick={() => setLightboxSrc(null)}
+            style={{
+              position: 'fixed', inset: 0, zIndex: 9999,
+              background: 'rgba(0,0,0,0.88)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'zoom-out', padding: '24px',
+            }}
+          >
+            <img
+              src={lightboxSrc}
+              alt=""
+              style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: '6px' }}
+            />
+            <button
+              onClick={() => setLightboxSrc(null)}
+              aria-label="Close"
+              style={{
+                position: 'absolute', top: '16px', right: '20px',
+                background: 'none', border: 'none', cursor: 'pointer',
+                color: '#fff', opacity: 0.7, lineHeight: 1,
+              }}
+            >
+              <X size={28} />
+            </button>
+          </div>
+        )}
+
+        {/* Walkthrough modal */}
       {modalOpen && (
         <div className="tv-modal-backdrop" onClick={() => setModalOpen(false)}>
           <div className="tv-modal" onClick={e => e.stopPropagation()} role="dialog" aria-modal aria-labelledby="tv-modal-title">
