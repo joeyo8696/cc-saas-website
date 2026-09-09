@@ -91,15 +91,17 @@
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   color: #a8b2c6;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
-.ab-platform strong {
-  font-family: var(--font-heading), Manrope, sans-serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+.ab-platform-logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
 }
-.ab-platform strong i { font-style: normal; color: #b8a7ff; }
+.ab-platform-logo.intakeos { height: 28px; width: auto; }
+.ab-platform-logo.torvana { height: 42px; width: auto; }
+.ab-platform-logo.dwellex { height: 40px; width: auto; }
 
 /* Mission — cream */
 .ab-mission {

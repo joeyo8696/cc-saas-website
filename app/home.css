@@ -218,6 +218,12 @@
   object-fit: contain;
   object-position: center;
 }
+.hp-intakeos-logo {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
 .hp-dwellex-logo {
   width: 151px;
   height: 66px;

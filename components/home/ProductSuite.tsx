@@ -7,11 +7,11 @@ import SectionReveal from '@/components/ui/SectionReveal'
 const products = [
   {
     id: 'intakeos',
-    logoSrc: '/images/cc-logo-white.png',
-    logoAlt: 'IntakeOS by Case Compass',
-    logoWidth: 240,
-    logoHeight: 48,
-    logoBg: 'linear-gradient(135deg, #1e3a6e, #4f46e5)',
+    logoSrc: '/images/intakeos-logo.png',
+    logoAlt: 'IntakeOS',
+    logoWidth: 220,
+    logoHeight: 41,
+    logoBg: 'linear-gradient(135deg, #1a1635, #0d1020)',
     logoFilter: 'none',
     accentBar: 'linear-gradient(90deg, #4f46e5, #818cf8)',
     eyebrow: 'Plaintiff Law — Mass Torts · Mass Arb · PI',
@@ -24,7 +24,7 @@ const products = [
     ],
     checkColor: '#4f46e5',
     ctaLabel: 'Explore IntakeOS →',
-    ctaHref: '/#features',
+    ctaHref: '/intakeos',
     ctaColor: '#4f46e5',
   },
   {

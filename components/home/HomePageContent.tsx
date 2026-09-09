@@ -103,7 +103,7 @@ export default function HomePageContent() {
                   <span className="hp-circle-arrow" aria-hidden="true">↗</span>
                 </div>
                 <div className="hp-product-brand">
-                  <h2>Intake<span>OS</span></h2>
+                  <Image className="hp-intakeos-logo" src="/images/intakeos-logo.png" alt="IntakeOS" width={200} height={37} unoptimized />
                   <span className="hp-byline">by Case Compass</span>
                 </div>
                 <p>More of the right cases.<br />Less between lead and client.</p>

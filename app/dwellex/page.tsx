@@ -1,14 +1,62 @@
 'use client'
 
-import { useMemo, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react'
 import Image from 'next/image'
+import { Check, Pause, Play, X } from 'lucide-react'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
-import { useDemoModal } from '@/components/DemoModalProvider'
 import './dwellex.css'
 
+const DWELLEX_SCHEDULER_SRC =
+  'https://scheduler.zoom.us/case-compass/dwellex-demo?embedStyle=%7B%22buttonColor%22%3A%22%23371a94%22%2C%22fontFamily%22%3A%22Arial%22%7D&embed=true'
+
 type Tab = 'notices' | 'timeline' | 'courts'
+
+const matterStages = [
+  {
+    label: 'Intake',
+    actor: 'Landlord portal',
+    actorMeta: 'New matter request',
+    initials: 'PM',
+    message: 'Submitting nonpayment details for Unit 4B — lease, ledger and notice period attached.',
+    reply: 'Received. Queued for staff review.',
+    status: 'Intake ready for review',
+    detail: 'Documents attached · Jurisdiction rules matched',
+    panelTitle: 'Staff workspace',
+    panelMeta: 'Matter draft · Example',
+    panelBody: 'Review tenant details, confirm notice type and create the case when ready.',
+    trail: 'Intake → Review → Notices → Court → Lockout',
+  },
+  {
+    label: 'Prepare',
+    actor: 'Batch notices',
+    actorMeta: 'CSV import complete',
+    initials: 'BN',
+    message: '14 rows mapped. Three need a service-date check before generating documents.',
+    reply: 'Court expiration rules applied.',
+    status: 'Notices ready to preview',
+    detail: '14 notices · 3 flagged for review',
+    panelTitle: 'Client portal',
+    panelMeta: 'Property manager view',
+    panelBody: 'Status updates and next steps stay visible without a phone call for every milestone.',
+    trail: 'Intake → Review → Notices → Court → Lockout',
+  },
+  {
+    label: 'Progress',
+    actor: 'Trial Lists',
+    actorMeta: 'County session view',
+    initials: 'TL',
+    message: 'Thursday AM — County court. Six hearings grouped with balances and docket notes.',
+    reply: 'Exporting formatted court list.',
+    status: 'Hearing day organized',
+    detail: 'Client tasks open · Lockout coordination queued',
+    panelTitle: 'Matter timeline',
+    panelMeta: 'Shared attorney & client view',
+    panelBody: 'Hearings, assigned tasks and milestone reminders keep the next step visible.',
+    trail: 'Intake → Review → Notices → Court → Lockout',
+  },
+]
 
 const features: Record<Tab, {
   title: ReactNode
@@ -68,12 +116,117 @@ function estimateFor(n: number) {
   }
 }
 
+function MatterFlowDemo({
+  stage,
+  setStage,
+  playing,
+  setPlaying,
+}: {
+  stage: number
+  setStage: Dispatch<SetStateAction<number>>
+  playing: boolean
+  setPlaying: (v: boolean) => void
+}) {
+  useEffect(() => {
+    if (!playing || (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return
+    const t = setInterval(() => setStage(s => (s + 1) % matterStages.length), 6500)
+    return () => clearInterval(t)
+  }, [playing, setStage])
+
+  const s = matterStages[stage]
+  return (
+    <div className="prod-demo" aria-label="Interactive example Dwellex matter workflow">
+      <div className="prod-demo-meta">
+        <span><i /> ONE MATTER, CONNECTED</span>
+        <span>Illustrative workflow</span>
+      </div>
+      <div className="prod-demo-stage" key={stage}>
+        <div className="prod-thread">
+          <span className="prod-avatar">{s.initials}</span>
+          <div>{s.actor} <small>{s.actorMeta}</small></div>
+        </div>
+        <div className="prod-msg incoming">
+          {s.message}
+          <small>Dwellex · just now</small>
+        </div>
+        <div className="prod-msg outgoing">
+          {s.reply}<Check size={13} />
+        </div>
+        <div className="prod-sync">
+          <span /><small>STATUS SYNCED</small><span />
+        </div>
+        <div className="prod-status">
+          <span className="prod-status-disc" aria-hidden="true">✓</span>
+          <div>
+            <strong>{s.status}</strong>
+            <p>{s.detail}</p>
+          </div>
+          <span className="prod-tiny">Practice</span>
+        </div>
+        <div className="prod-panel">
+          <div className="prod-thread">
+            <span className="prod-avatar square">DX</span>
+            <div>{s.panelTitle} <small>{s.panelMeta}</small></div>
+          </div>
+          <p>{s.panelBody}</p>
+          <div className="prod-panel-foot">
+            <span className="prod-tag">Up to date</span>
+            <span>View matter ↗</span>
+          </div>
+        </div>
+      </div>
+      <div className="prod-demo-controls">
+        <div className="prod-stage-buttons">
+          {matterStages.map((x, i) => (
+            <button
+              key={x.label}
+              type="button"
+              className={stage === i ? 'active' : ''}
+              onClick={() => { setStage(i); setPlaying(false) }}
+              aria-pressed={stage === i}
+            >
+              <span>0{i + 1}</span>{x.label}
+            </button>
+          ))}
+        </div>
+        <button
+          type="button"
+          className="prod-icon-button"
+          onClick={() => setPlaying(!playing)}
+          aria-label={playing ? 'Pause animation' : 'Play animation'}
+        >
+          {playing ? <Pause size={16} /> : <Play size={16} />}
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export default function DwellexPage() {
   const [tab, setTab] = useState<Tab>('notices')
   const [cases, setCases] = useState(50)
-  const { openModal } = useDemoModal()
+  const [flowStage, setFlowStage] = useState(0)
+  const [playing, setPlaying] = useState(true)
+  const [schedulerOpen, setSchedulerOpen] = useState(false)
   const estimate = useMemo(() => estimateFor(cases), [cases])
   const feature = features[tab]
+  const activeTrail = matterStages[flowStage].trail
+
+  useEffect(() => {
+    if (!schedulerOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSchedulerOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prev
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [schedulerOpen])
+
+  const openScheduler = () => setSchedulerOpen(true)
 
   return (
     <>
@@ -93,7 +246,7 @@ export default function DwellexPage() {
                 <h1>More moving parts.<br /><em>One clear path.</em></h1>
                 <div className="dw-intro">
                   <p>Your cases have enough complexity. Bring intake, notices, court dates and client updates into one workspace built for your eviction practice.</p>
-                  <button type="button" className="button" onClick={openModal}>
+                  <button type="button" className="button" onClick={openScheduler}>
                     See Dwellex in action <span aria-hidden="true">↗</span>
                   </button>
                   <a className="text-link" href="#workflow">Follow the workflow ↓</a>
@@ -103,14 +256,16 @@ export default function DwellexPage() {
               <div className="dw-product-stage">
                 <div className="stage-top">
                   <span>THE WORKSPACE BEHIND EVERY NEXT STEP</span>
-                  <span>Dwellex / Notice review</span>
+                  <span>Dwellex / {matterStages[flowStage].label}</span>
                 </div>
                 <div className="stage-grid">
                   <div className="stage-copy">
-                    <span className="eyebrow">BUILT FOR VOLUME</span>
-                    <h2>A full caseload.<br />A clear view.</h2>
-                    <p>Review the details.<br />Prepare the notices.<br />Keep matters moving.</p>
-                    <a href="#workspace" className="quiet-link">Explore the workspace <span>↓</span></a>
+                    <MatterFlowDemo
+                      stage={flowStage}
+                      setStage={setFlowStage}
+                      playing={playing}
+                      setPlaying={setPlaying}
+                    />
                   </div>
                   <div className="dw-screen">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -118,7 +273,7 @@ export default function DwellexPage() {
                   </div>
                 </div>
                 <div className="stage-bottom">
-                  <span>Intake → Review → Notices → Court → Lockout</span>
+                  <span className="is-live">{activeTrail}</span>
                   <span>Purpose-built for landlord–tenant law</span>
                 </div>
               </div>
@@ -141,21 +296,26 @@ export default function DwellexPage() {
               <p>Give your team a shared workflow and your clients a window into what comes next.</p>
             </div>
             <ol className="dw-steps">
-              <li>
-                <span>01 / INTAKE</span>
-                <h3>Start with the details.</h3>
-                <p>Landlords submit tenant information and documents through your portal. Staff review each request before creating the case.</p>
-              </li>
-              <li>
-                <span>02 / PREPARE</span>
-                <h3>Turn data into action.</h3>
-                <p>Generate notices from intake data, apply your court rules and assign the work to the right people.</p>
-              </li>
-              <li>
-                <span>03 / PROGRESS</span>
-                <h3>Keep the next step visible.</h3>
-                <p>Track hearings, client tasks and lockout coordination, with milestone reminders along the way.</p>
-              </li>
+              {matterStages.map((s, i) => (
+                <li
+                  key={s.label}
+                  className={flowStage === i ? 'is-active' : undefined}
+                  onClick={() => { setFlowStage(i); setPlaying(false) }}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <span>0{i + 1} / {s.label.toUpperCase()}</span>
+                  <h3>
+                    {i === 0 && 'Start with the details.'}
+                    {i === 1 && 'Turn data into action.'}
+                    {i === 2 && 'Keep the next step visible.'}
+                  </h3>
+                  <p>
+                    {i === 0 && 'Landlords submit tenant information and documents through your portal. Staff review each request before creating the case.'}
+                    {i === 1 && 'Generate notices from intake data, apply your court rules and assign the work to the right people.'}
+                    {i === 2 && 'Track hearings, client tasks and lockout coordination, with milestone reminders along the way.'}
+                  </p>
+                </li>
+              ))}
             </ol>
           </section>
 
@@ -188,7 +348,7 @@ export default function DwellexPage() {
                 ))}
               </div>
 
-              <article className="dw-feature" id={`view-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`}>
+              <article className="dw-feature" key={tab} id={`view-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`}>
                 <div className="dw-feature-copy">
                   <h3>{feature.title}</h3>
                   <p>{feature.body}</p>
@@ -230,7 +390,7 @@ export default function DwellexPage() {
                 <span>/ month<br />+ per-case fees</span>
               </div>
               <p className="dw-small">Implementation, training and custom integrations are scoped separately for your practice.</p>
-              <button type="button" className="quiet-link" onClick={openModal}>
+              <button type="button" className="quiet-link" onClick={openScheduler}>
                 Talk through your setup <span>↗</span>
               </button>
             </div>
@@ -274,7 +434,7 @@ export default function DwellexPage() {
                 <div><span>151–999</span><strong>$5.00 / case</strong></div>
                 <div><span>1,000+</span><strong>Custom flat rate</strong></div>
               </div>
-              <button type="button" className="button" onClick={openModal}>
+              <button type="button" className="button" onClick={openScheduler}>
                 Find your fit <span>↗</span>
               </button>
             </div>
@@ -313,7 +473,7 @@ export default function DwellexPage() {
               <h2>See what a clearer<br /><em>day could look like.</em></h2>
               <div>
                 <p>Walk through Dwellex with your practice in mind.</p>
-                <button type="button" className="button" onClick={openModal}>
+                <button type="button" className="button" onClick={openScheduler}>
                   Book your Dwellex demo <span>↗</span>
                 </button>
               </div>
@@ -322,6 +482,40 @@ export default function DwellexPage() {
         </main>
       </div>
       <Footer />
+
+      {schedulerOpen && (
+        <div
+          className="dw-scheduler-backdrop"
+          onClick={() => setSchedulerOpen(false)}
+          role="presentation"
+        >
+          <div
+            className="dw-scheduler-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="dw-scheduler-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="dw-scheduler-header">
+              <h2 id="dw-scheduler-title">Book your Dwellex demo</h2>
+              <button
+                type="button"
+                className="dw-scheduler-close"
+                onClick={() => setSchedulerOpen(false)}
+                aria-label="Close scheduler"
+              >
+                <X size={18} />
+              </button>
+            </div>
+            <iframe
+              src={DWELLEX_SCHEDULER_SRC}
+              title="Schedule a Dwellex demo with Case Compass"
+              className="dw-scheduler-frame"
+              allow="camera; microphone; fullscreen"
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }

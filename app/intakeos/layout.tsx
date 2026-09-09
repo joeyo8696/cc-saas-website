@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description:
       'Conversational intake, Waypoint AI scoring, live transfer and e-signatures for plaintiff law firms.',
     url: 'https://www.casecompass.io/intakeos',
+    images: [{ url: '/images/intakeos-logo.png', width: 774, height: 144, alt: 'IntakeOS' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'IntakeOS — Turn first contact into forward motion.',
+    description:
+      'Conversational intake, Waypoint AI scoring, live transfer and e-signatures for plaintiff law firms.',
+    images: ['/images/intakeos-logo.png'],
   },
 }
 

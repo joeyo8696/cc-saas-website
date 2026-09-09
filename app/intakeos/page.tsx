@@ -1,7 +1,9 @@
 'use client'
 
-import { useState, type ReactNode } from 'react'
+import { useEffect, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
+import { Check, Pause, Play } from 'lucide-react'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
@@ -11,6 +13,61 @@ import '../dwellex/dwellex.css'
 import './intakeos.css'
 
 type Tab = 'builder' | 'scoring' | 'timelines' | 'transfer' | 'inbox' | 'analytics'
+
+const leadStages = [
+  {
+    label: 'Capture',
+    actor: 'Prospective client',
+    actorMeta: 'Website chat · MVA',
+    initials: 'JR',
+    message: 'I was rear-ended last week and still dealing with the hospital bills. Can someone look at this?',
+    reply: 'Thanks — a few questions so we can route this correctly.',
+    status: 'Intake conversation started',
+    detail: 'Case type: MVA · Form path branched',
+    panelTitle: 'IntakeOS inbox',
+    panelMeta: 'Lead #4821 · Example',
+    panelBody: 'Transcript and answers stay with the lead from the first message.',
+  },
+  {
+    label: 'Qualify',
+    actor: 'Waypoint',
+    actorMeta: 'Firm criteria applied',
+    initials: 'WP',
+    message: "Severity, urgency and completeness scored against your firm's rules.",
+    reply: 'Meets intake criteria — prioritize review.',
+    status: 'Qualified for follow-up',
+    detail: 'Score ready · Clarification tasks flagged',
+    panelTitle: 'Case assessment',
+    panelMeta: 'Scoring breakdown',
+    panelBody: 'Your team sees why it ranked — not just a number.',
+  },
+  {
+    label: 'Connect',
+    actor: 'Live transfer',
+    actorMeta: 'Peak intent handoff',
+    initials: 'LT',
+    message: 'Qualified lead waiting — agent available with full transcript on screen.',
+    reply: 'Connecting now.',
+    status: 'Warm handoff in progress',
+    detail: 'Context attached · Softphone ready',
+    panelTitle: 'Agent inbox',
+    panelMeta: 'Live transfer queue',
+    panelBody: 'Intake staff pick up with the conversation already captured.',
+  },
+  {
+    label: 'Sign',
+    actor: 'E-sign retainer',
+    actorMeta: 'Same session',
+    initials: 'ES',
+    message: 'Retainer pre-filled from intake answers. Signature collected in-browser.',
+    reply: 'Signed. Syncing to case management.',
+    status: 'Client signed · CRM synced',
+    detail: 'Filevine / Clio / Litify push complete',
+    panelTitle: 'Case start',
+    panelMeta: 'Signed matter',
+    panelBody: 'The signed case and intake package land where your team already works.',
+  },
+]
 
 const features: Record<Tab, {
   title: ReactNode
@@ -94,8 +151,115 @@ const features: Record<Tab, {
   },
 }
 
+const stepCopy = [
+  {
+    title: 'Meet them where they are.',
+    body: 'Engage visitors through conversational chat or embedded forms, with questions tailored to the case type.',
+  },
+  {
+    title: 'Put your criteria to work.',
+    body: 'Waypoint evaluates submissions against the rules your firm defines, helping your team prioritize its review.',
+  },
+  {
+    title: 'Make the moment count.',
+    body: 'Route qualified leads to available intake staff. Keep the transcript and case context with the conversation.',
+  },
+  {
+    title: 'Give the case a strong start.',
+    body: 'Collect a pre-filled retainer signature, then send the case and intake details to your case management system.',
+  },
+]
+
+function LeadFlowDemo({
+  stage,
+  setStage,
+  playing,
+  setPlaying,
+}: {
+  stage: number
+  setStage: Dispatch<SetStateAction<number>>
+  playing: boolean
+  setPlaying: (v: boolean) => void
+}) {
+  useEffect(() => {
+    if (!playing || (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return
+    const t = setInterval(() => setStage(s => (s + 1) % leadStages.length), 6500)
+    return () => clearInterval(t)
+  }, [playing, setStage])
+
+  const s = leadStages[stage]
+  return (
+    <div className="prod-demo" aria-label="Interactive example IntakeOS lead workflow">
+      <div className="prod-demo-meta">
+        <span><i /> ONE LEAD, CONNECTED</span>
+        <span>Illustrative workflow</span>
+      </div>
+      <div className="prod-demo-stage" key={stage}>
+        <div className="prod-thread">
+          <span className="prod-avatar">{s.initials}</span>
+          <div>{s.actor} <small>{s.actorMeta}</small></div>
+        </div>
+        <div className="prod-msg incoming">
+          {s.message}
+          <small>IntakeOS · just now</small>
+        </div>
+        <div className="prod-msg outgoing">
+          {s.reply}<Check size={13} />
+        </div>
+        <div className="prod-sync">
+          <span /><small>STATUS SYNCED</small><span />
+        </div>
+        <div className="prod-status">
+          <span className="prod-status-disc" aria-hidden="true">✓</span>
+          <div>
+            <strong>{s.status}</strong>
+            <p>{s.detail}</p>
+          </div>
+          <span className="prod-tiny">Firm</span>
+        </div>
+        <div className="prod-panel">
+          <div className="prod-thread">
+            <span className="prod-avatar square">IO</span>
+            <div>{s.panelTitle} <small>{s.panelMeta}</small></div>
+          </div>
+          <p>{s.panelBody}</p>
+          <div className="prod-panel-foot">
+            <span className="prod-tag">Up to date</span>
+            <span>Open lead ↗</span>
+          </div>
+        </div>
+      </div>
+      <div className="prod-demo-controls">
+        <div className="prod-stage-buttons">
+          {leadStages.map((x, i) => (
+            <button
+              key={x.label}
+              type="button"
+              className={stage === i ? 'active' : ''}
+              onClick={() => { setStage(i); setPlaying(false) }}
+              aria-pressed={stage === i}
+            >
+              <span>0{i + 1}</span>{x.label}
+            </button>
+          ))}
+        </div>
+        <button
+          type="button"
+          className="prod-icon-button"
+          onClick={() => setPlaying(!playing)}
+          aria-label={playing ? 'Pause animation' : 'Play animation'}
+        >
+          {playing ? <Pause size={16} /> : <Play size={16} />}
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export default function IntakeOSPage() {
   const [tab, setTab] = useState<Tab>('builder')
+  const [flowStage, setFlowStage] = useState(0)
+  const [playing, setPlaying] = useState(true)
   const { openModal } = useDemoModal()
   const feature = features[tab]
 
@@ -110,8 +274,16 @@ export default function IntakeOSPage() {
           <section className="io-hero">
             <div className="wrap">
               <div className="io-lockup">
-                <Link href="/intakeos" aria-label="IntakeOS home" className="io-wordmark">
-                  Intake<span className="io-os">OS</span>
+                <Link href="/intakeos" aria-label="IntakeOS home" className="io-logo-link">
+                  <Image
+                    src="/images/intakeos-logo.png"
+                    alt="IntakeOS"
+                    width={200}
+                    height={37}
+                    className="io-logo"
+                    unoptimized
+                    priority
+                  />
                 </Link>
                 <span className="io-label">BUILT FOR PLAINTIFF LAW</span>
               </div>
@@ -126,17 +298,27 @@ export default function IntakeOSPage() {
                 </div>
               </div>
 
-              <div className="io-hero-product">
-                <div className="io-product-top">
-                  <span>YOUR INTAKE OPERATION. ONE WORKSPACE.</span>
-                  <span>IntakeOS / Inbox</span>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/intake.png" width={3452} height={1826} alt="IntakeOS inbox showing leads, case details and intake management controls" />
-                <div className="io-product-bottom">
-                  <span>Capture the conversation.</span>
-                  <span>Find the right fit.</span>
-                  <span>Make the next move.</span>
+              <div className="io-hero-split">
+                <LeadFlowDemo
+                  stage={flowStage}
+                  setStage={setFlowStage}
+                  playing={playing}
+                  setPlaying={setPlaying}
+                />
+                <div className="io-hero-product">
+                  <div className="io-product-top">
+                    <span>YOUR INTAKE OPERATION. ONE WORKSPACE.</span>
+                    <span>IntakeOS / {leadStages[flowStage].label}</span>
+                  </div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/intake.png" width={3452} height={1826} alt="IntakeOS inbox showing leads, case details and intake management controls" />
+                  <div className="io-product-bottom">
+                    {leadStages.map((s, i) => (
+                      <span key={s.label} className={flowStage === i ? 'is-live' : undefined}>
+                        {s.label === 'Sign' ? 'Sign & sync' : s.label}.
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -163,26 +345,18 @@ export default function IntakeOSPage() {
               <p>Your intake team gets the context to act. Your prospective clients get a clear path forward.</p>
             </div>
             <ol className="io-steps">
-              <li>
-                <span>01 / CAPTURE</span>
-                <h3>Meet them where they are.</h3>
-                <p>Engage visitors through conversational chat or embedded forms, with questions tailored to the case type.</p>
-              </li>
-              <li>
-                <span>02 / QUALIFY</span>
-                <h3>Put your criteria to work.</h3>
-                <p>Waypoint evaluates submissions against the rules your firm defines, helping your team prioritize its review.</p>
-              </li>
-              <li>
-                <span>03 / CONNECT</span>
-                <h3>Make the moment count.</h3>
-                <p>Route qualified leads to available intake staff. Keep the transcript and case context with the conversation.</p>
-              </li>
-              <li>
-                <span>04 / SIGN &amp; SYNC</span>
-                <h3>Give the case a strong start.</h3>
-                <p>Collect a pre-filled retainer signature, then send the case and intake details to your case management system.</p>
-              </li>
+              {leadStages.map((s, i) => (
+                <li
+                  key={s.label}
+                  className={flowStage === i ? 'is-active' : undefined}
+                  onClick={() => { setFlowStage(i); setPlaying(false) }}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <span>0{i + 1} / {s.label === 'Sign' ? 'SIGN & SYNC' : s.label.toUpperCase()}</span>
+                  <h3>{stepCopy[i].title}</h3>
+                  <p>{stepCopy[i].body}</p>
+                </li>
+              ))}
             </ol>
           </section>
 
@@ -218,7 +392,7 @@ export default function IntakeOSPage() {
                 ))}
               </div>
 
-              <article className="dw-feature" id={`view-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`}>
+              <article className="dw-feature" key={tab} id={`view-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`}>
                 <div className="dw-feature-copy">
                   <h3>{feature.title}</h3>
                   <p>{feature.body}</p>

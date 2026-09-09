@@ -1,15 +1,16 @@
 /* IntakeOS — extends shared .dw workspace/faq/cta patterns */
 .io-hero { background: var(--cream); color: var(--cream-ink); padding: 44px 0 0; }
 .io-lockup { display: flex; gap: 28px; align-items: center; margin-bottom: 42px; }
-.io-lockup > a,
-.io-lockup > span.io-wordmark {
-  font-family: var(--font-heading), Manrope, sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.055em;
-  color: var(--cream-ink);
+.io-logo-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
 }
-.io-lockup .io-os { color: var(--indigo); }
+.io-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+}
 .io-lockup > span.io-label {
   border-left: 1px solid #d4cfda;
   padding-left: 28px;
@@ -38,6 +39,19 @@
   color: white;
   border-color: var(--indigo);
 }
+.io-hero-split {
+  display: grid;
+  grid-template-columns: 0.95fr 1.35fr;
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 8px;
+}
+.io-hero-split .prod-demo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.io-hero-split .prod-demo-stage { flex: 1; }
 .io-hero-product {
   border: 1px solid #48406a;
   border-radius: 12px;
@@ -66,6 +80,14 @@
   font-size: 0.875rem;
   background: #29204f;
   padding-block: 20px;
+}
+.io-product-bottom > span {
+  opacity: 0.55;
+  transition: opacity 0.3s, color 0.3s;
+}
+.io-product-bottom > span.is-live {
+  opacity: 1;
+  color: #d5c4ff;
 }
 .io-integrations {
   display: flex;
@@ -191,6 +213,7 @@
 }
 
 @media (max-width: 1100px) {
+  .io-hero-split { grid-template-columns: 1fr; gap: 22px; }
   .io-headline { gap: 35px; }
   .io-headline h1 { font-size: 4.5rem; }
   .io-integrations > div { gap: 25px; }
@@ -201,6 +224,7 @@
 @media (max-width: 780px) {
   .io-hero { padding-top: 30px; }
   .io-lockup { margin-bottom: 30px; gap: 18px; }
+  .io-logo { width: 160px; }
   .io-lockup > span.io-label { padding-left: 18px; letter-spacing: 0.07em; }
   .io-headline { grid-template-columns: 1fr; gap: 24px; margin-bottom: 30px; }
   .io-headline h1 { font-size: clamp(2.9rem, 9vw, 4.4rem); }
