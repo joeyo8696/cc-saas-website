@@ -135,7 +135,7 @@ export default function HomePageContent() {
                   <span className="hp-circle-arrow" aria-hidden="true">↗</span>
                 </div>
                 <div className="hp-product-brand">
-                  <Image className="hp-dwellex-logo" src="/images/dwellex-logo-dark.png" alt="Dwellex" width={151} height={66} unoptimized />
+                  <Image className="hp-dwellex-logo" src="/images/dwellex.png" alt="Dwellex" width={151} height={66} unoptimized />
                 </div>
                 <p>Your entire eviction practice.<br />A clear path for every matter.</p>
                 <div className="hp-platform-bottom">

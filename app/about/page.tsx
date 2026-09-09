@@ -50,7 +50,7 @@ export default function AboutPage() {
                 </div>
                 <div className="ab-platform dwellex">
                   <span>LANDLORD–TENANT LAW</span>
-                  <Image className="ab-platform-logo dwellex" src="/images/dwellex-logo-dark.png" alt="Dwellex" width={130} height={57} unoptimized />
+                  <Image className="ab-platform-logo dwellex" src="/images/dwellex.png" alt="Dwellex" width={130} height={57} unoptimized />
                 </div>
               </div>
             </div>
