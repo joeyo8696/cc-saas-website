@@ -75,6 +75,7 @@
   font-weight: 600;
   transition: background 0.2s, transform 0.2s;
   cursor: pointer;
+  font-family: inherit;
 }
 .hp-button:hover { background: white; transform: translateY(-2px); }
 

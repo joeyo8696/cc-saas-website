@@ -6,6 +6,7 @@ import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import IntegrationsTicker from '@/components/home/IntegrationsTicker'
+import { useDemoModal } from '@/components/DemoModalProvider'
 import '../dwellex/dwellex.css'
 import './intakeos.css'
 
@@ -59,6 +60,7 @@ const features: Record<Tab, {
 
 export default function IntakeOSPage() {
   const [tab, setTab] = useState<Tab>('builder')
+  const { openModal } = useDemoModal()
   const feature = features[tab]
 
   return (
@@ -81,9 +83,9 @@ export default function IntakeOSPage() {
                 <h1>First contact.<br /><em>Forward motion.</em></h1>
                 <div>
                   <p>Turn interest into qualified cases. Bring intake, scoring, live conversations and signed retainers into one connected flow.</p>
-                  <a className="button" href="mailto:support@casecompass.io?subject=IntakeOS%20demo">
+                  <button type="button" className="button" onClick={openModal}>
                     See what IntakeOS can do <span aria-hidden="true">↗</span>
-                  </a>
+                  </button>
                   <a className="text-link" href="#workflow">From first click to signed client ↓</a>
                 </div>
               </div>
@@ -201,9 +203,9 @@ export default function IntakeOSPage() {
                 <p className="eyebrow">THE SPACE BETWEEN INTEREST AND ENGAGEMENT</p>
                 <h2>Don&apos;t let a good lead<br /><em>lose momentum.</em></h2>
                 <p>Build the next action into the flow, whether that&apos;s a conversation now, a retainer to sign, or a follow-up when the time is right.</p>
-                <a className="button" href="mailto:support@casecompass.io?subject=IntakeOS%20workflow%20demo">
+                <button type="button" className="button" onClick={openModal}>
                   Walk through your workflow <span>↗</span>
-                </a>
+                </button>
               </div>
               <div className="io-conversion-items">
                 <article>
@@ -300,9 +302,9 @@ export default function IntakeOSPage() {
               <h2>Make your first impression<br /><em>the start of something.</em></h2>
               <div>
                 <p>Let&apos;s build a better intake journey for your firm.</p>
-                <a className="button" href="mailto:support@casecompass.io?subject=IntakeOS%20demo">
+                <button type="button" className="button" onClick={openModal}>
                   Talk about IntakeOS <span>↗</span>
-                </a>
+                </button>
               </div>
             </div>
           </section>

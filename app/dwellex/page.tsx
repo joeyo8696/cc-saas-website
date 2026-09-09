@@ -5,6 +5,7 @@ import Image from 'next/image'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
+import { useDemoModal } from '@/components/DemoModalProvider'
 import './dwellex.css'
 
 type Tab = 'notices' | 'timeline' | 'courts'
@@ -70,6 +71,7 @@ function estimateFor(n: number) {
 export default function DwellexPage() {
   const [tab, setTab] = useState<Tab>('notices')
   const [cases, setCases] = useState(50)
+  const { openModal } = useDemoModal()
   const estimate = useMemo(() => estimateFor(cases), [cases])
   const feature = features[tab]
 
@@ -91,9 +93,9 @@ export default function DwellexPage() {
                 <h1>More moving parts.<br /><em>One clear path.</em></h1>
                 <div className="dw-intro">
                   <p>Your cases have enough complexity. Bring intake, notices, court dates and client updates into one workspace built for your eviction practice.</p>
-                  <a className="button" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+                  <button type="button" className="button" onClick={openModal}>
                     See Dwellex in action <span aria-hidden="true">↗</span>
-                  </a>
+                  </button>
                   <a className="text-link" href="#workflow">Follow the workflow ↓</a>
                 </div>
               </div>
@@ -228,9 +230,9 @@ export default function DwellexPage() {
                 <span>/ month<br />+ per-case fees</span>
               </div>
               <p className="dw-small">Implementation, training and custom integrations are scoped separately for your practice.</p>
-              <a className="quiet-link" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+              <button type="button" className="quiet-link" onClick={openModal}>
                 Talk through your setup <span>↗</span>
-              </a>
+              </button>
             </div>
             <div className="dw-calculator">
               <div className="calc-header">
@@ -272,9 +274,9 @@ export default function DwellexPage() {
                 <div><span>151–999</span><strong>$5.00 / case</strong></div>
                 <div><span>1,000+</span><strong>Custom flat rate</strong></div>
               </div>
-              <a className="button" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+              <button type="button" className="button" onClick={openModal}>
                 Find your fit <span>↗</span>
-              </a>
+              </button>
             </div>
           </section>
 
@@ -311,9 +313,9 @@ export default function DwellexPage() {
               <h2>See what a clearer<br /><em>day could look like.</em></h2>
               <div>
                 <p>Walk through Dwellex with your practice in mind.</p>
-                <a className="button" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+                <button type="button" className="button" onClick={openModal}>
                   Book your Dwellex demo <span>↗</span>
-                </a>
+                </button>
               </div>
             </div>
           </section>

@@ -3,6 +3,7 @@
 import { useRef, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useDemoModal } from '@/components/DemoModalProvider'
 import '@/app/home.css'
 
 type Platform = 'intake' | 'torvana' | 'dwellex'
@@ -68,6 +69,7 @@ const panels: Record<Platform, {
 export default function HomePageContent() {
   const [active, setActive] = useState<Platform>('intake')
   const productRef = useRef<HTMLElement>(null)
+  const { openModal } = useDemoModal()
   const panel = panels[active]
 
   function selectPlatform(name: Platform, scroll = false) {
@@ -299,9 +301,9 @@ export default function HomePageContent() {
             <p>Tell us how your practice runs. We&apos;ll show you where Case Compass can help.</p>
           </div>
           <div className="hp-contact-actions">
-            <a className="hp-button" href="mailto:support@casecompass.io?subject=Case%20Compass%20platform%20demo">
+            <button type="button" className="hp-button" onClick={openModal}>
               Let&apos;s talk about your practice <span>↗</span>
-            </a>
+            </button>
             <Link className="hp-quiet-link" href="/about">Visit Case Compass <span>↗</span></Link>
           </div>
         </section>
