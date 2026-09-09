@@ -157,9 +157,9 @@
   opacity: 0.65;
 }
 .hp-platform.intake {
-  --tone: #a89aff;
-  background: linear-gradient(135deg, #30275d, #171c38 80%);
-  border-color: #554781;
+  --tone: #b8a7ff;
+  background: linear-gradient(135deg, #5a4db8, #3d387e 75%);
+  border-color: #8578d4;
 }
 .hp-platform.torvana {
   --tone: #6bc9be;
