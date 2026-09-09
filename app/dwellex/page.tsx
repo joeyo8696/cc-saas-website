@@ -6,6 +6,7 @@ import { Check, Pause, Play, X } from 'lucide-react'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
+import BrowserFrame from '@/components/ui/BrowserFrame'
 import './dwellex.css'
 
 const DWELLEX_SCHEDULER_SRC =
@@ -268,8 +269,10 @@ export default function DwellexPage() {
                     />
                   </div>
                   <div className="dw-screen">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/dwellex-dashboard.png" width={3456} height={1846} alt="Dwellex batch notice review workspace with intake details and notice generation controls" />
+                    <BrowserFrame url="app.casecompass.io/dwellex">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/images/dwellex-dashboard.png" width={3456} height={1846} alt="Dwellex batch notice review workspace with intake details and notice generation controls" />
+                    </BrowserFrame>
                   </div>
                 </div>
                 <div className="stage-bottom">
@@ -356,10 +359,11 @@ export default function DwellexPage() {
                     {feature.bullets.map((b) => <li key={b}>{b}</li>)}
                   </ul>
                 </div>
-                <a className="dw-feature-image" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
-                  <span>View full-size product screen ↗</span>
+                <a className="cc-browser-link" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
+                  <BrowserFrame url="app.casecompass.io/dwellex" footer="View full-size product screen ↗">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
+                  </BrowserFrame>
                 </a>
               </article>
 

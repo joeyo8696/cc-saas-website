@@ -353,6 +353,18 @@
   overflow: hidden;
   box-shadow: 0 18px 60px #0004;
 }
+.hp-screen-wrap {
+  border-radius: 14px;
+  overflow: visible;
+}
+.hp-screen-wrap .cc-browser {
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.hp-screen-wrap .cc-browser-body img {
+  max-height: 520px;
+  object-fit: cover;
+  object-position: top;
+}
 .hp-screen-bar {
   height: 35px;
   display: flex;

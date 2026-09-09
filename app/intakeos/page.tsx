@@ -9,6 +9,7 @@ import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import IntegrationsTicker from '@/components/home/IntegrationsTicker'
 import { useDemoModal } from '@/components/DemoModalProvider'
+import BrowserFrame from '@/components/ui/BrowserFrame'
 import '../dwellex/dwellex.css'
 import './intakeos.css'
 
@@ -306,12 +307,10 @@ export default function IntakeOSPage() {
                   setPlaying={setPlaying}
                 />
                 <div className="io-hero-product">
-                  <div className="io-product-top">
-                    <span>YOUR INTAKE OPERATION. ONE WORKSPACE.</span>
-                    <span>IntakeOS / {leadStages[flowStage].label}</span>
-                  </div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/intake.png" width={3452} height={1826} alt="IntakeOS inbox showing leads, case details and intake management controls" />
+                  <BrowserFrame url={`app.casecompass.io · ${leadStages[flowStage].label}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/intake.png" width={3452} height={1826} alt="IntakeOS inbox showing leads, case details and intake management controls" />
+                  </BrowserFrame>
                   <div className="io-product-bottom">
                     {leadStages.map((s, i) => (
                       <span key={s.label} className={flowStage === i ? 'is-live' : undefined}>
@@ -401,10 +400,11 @@ export default function IntakeOSPage() {
                   </ul>
                   {feature.extra}
                 </div>
-                <a className="dw-feature-image" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
-                  <span>View full-size product screen ↗</span>
+                <a className="cc-browser-link" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
+                  <BrowserFrame url="app.casecompass.io" footer="View full-size product screen ↗">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
+                  </BrowserFrame>
                 </a>
               </article>
             </div>

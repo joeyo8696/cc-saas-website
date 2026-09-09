@@ -157,14 +157,20 @@
 .stage-copy .quiet-link { margin-top: 28px; color: #d5c4ff; }
 .dw-screen {
   align-self: end;
-  border: 5px solid #535084;
-  border-bottom: 0;
-  border-right: 0;
-  border-radius: 9px 0 0 0;
-  overflow: hidden;
-  background: #fff;
+  padding: 0 0 28px;
+  overflow: visible;
+  background: transparent;
+  border: 0;
 }
-.dw-screen img { width: 100%; height: auto; }
+.dw-screen .cc-browser {
+  border-radius: 12px 0 0 0;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+}
+.dw-screen .cc-browser-body img {
+  max-height: 420px;
+  object-fit: cover;
+  object-position: top;
+}
 .stage-bottom { background: #171638; border-top: 1px solid #ffffff15; }
 .dw-assurances {
   display: flex;
@@ -260,6 +266,11 @@
   background: #dfdaec;
   color: #50427c;
   font-size: 0.75rem;
+}
+.dw-feature .cc-browser-body img {
+  max-height: 420px;
+  object-fit: contain;
+  object-position: top;
 }
 .dw-steps li,
 .io-steps li {
@@ -713,7 +724,12 @@
   .stage-copy { padding-bottom: 8px; }
   .stage-copy .quiet-link { margin-top: 8px; }
   .prod-demo-stage { min-height: 0; }
-  .dw-screen { border-right: 5px solid #535084; border-radius: 8px 8px 0 0; }
+  .dw-screen {
+    padding: 0 0 20px;
+  }
+  .dw-screen .cc-browser {
+    border-radius: 10px;
+  }
   .stage-bottom { padding: 15px 20px; line-height: 1.6; }
   .stage-bottom > span:last-child { display: none; }
   .dw-assurances { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.875rem; }

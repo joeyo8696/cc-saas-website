@@ -59,27 +59,25 @@
   background: #171631;
   box-shadow: 0 25px 50px #2b22551c;
 }
-.io-product-top, .io-product-bottom {
-  padding: 18px 26px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: #c3bcde;
-  font-size: 0.75rem;
+.io-hero-product .cc-browser {
+  border-radius: 0;
+  box-shadow: none;
 }
-.io-product-top > span:first-child { letter-spacing: 0.1em; }
-.io-hero-product > img {
+.io-hero-product .cc-browser-body img {
   width: 100%;
   height: auto;
-  max-height: 510px;
+  max-height: 460px;
   object-fit: cover;
   object-position: top;
-  border-top: 1px solid #4e456d;
 }
 .io-product-bottom {
   font-size: 0.875rem;
   background: #29204f;
-  padding-block: 20px;
+  padding: 20px 26px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #c3bcde;
 }
 .io-product-bottom > span {
   opacity: 0.55;
@@ -229,8 +227,6 @@
   .io-headline { grid-template-columns: 1fr; gap: 24px; margin-bottom: 30px; }
   .io-headline h1 { font-size: clamp(2.9rem, 9vw, 4.4rem); }
   .io-headline > div { justify-self: start; max-width: 100%; }
-  .io-product-top { padding: 15px 18px; line-height: 1.5; }
-  .io-product-top > span:last-child { display: none; }
   .io-product-bottom { padding: 17px 18px; gap: 15px; font-size: 0.75rem; }
   .io-integrations {
     flex-direction: column;

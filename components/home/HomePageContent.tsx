@@ -4,6 +4,7 @@ import { useRef, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useDemoModal } from '@/components/DemoModalProvider'
+import BrowserFrame from '@/components/ui/BrowserFrame'
 import '@/app/home.css'
 
 type Platform = 'intake' | 'torvana' | 'dwellex'
@@ -191,14 +192,11 @@ export default function HomePageContent() {
                 </div>
                 <Link className="hp-quiet-link" href={panel.href}>{panel.cta} <span>↗</span></Link>
               </div>
-              <div className="hp-screen-frame">
-                <div className="hp-screen-bar">
-                  <span className="hp-screen-dots" aria-hidden="true">● ● ●</span>
-                  <span>{panel.barLabel}</span>
-                  <span>PRODUCT VIEW</span>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={panel.img} alt={panel.imgAlt} width={3452} height={1826} />
+              <div className="hp-screen-wrap">
+                <BrowserFrame url={panel.barLabel}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={panel.img} alt={panel.imgAlt} width={3452} height={1826} />
+                </BrowserFrame>
               </div>
               <div className="hp-feature-strip">
                 {panel.features.map((f) => (
