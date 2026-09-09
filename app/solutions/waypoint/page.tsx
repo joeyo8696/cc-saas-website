@@ -7,6 +7,7 @@ import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import { useDemoModal } from '@/components/DemoModalProvider'
 import BrowserFrame from '@/components/ui/BrowserFrame'
+import ExpandableBrowserFrame from '@/components/ui/ExpandableBrowserFrame'
 import '../../dwellex/dwellex.css'
 import '../referrals/referrals.css'
 
@@ -198,12 +199,11 @@ export default function WaypointPage() {
                     {feature.bullets.map((b) => <li key={b}>{b}</li>)}
                   </ul>
                 </div>
-                <a className="cc-browser-link" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
-                  <BrowserFrame url="app.casecompass.io/waypoint" footer="View full-size product screen ↗">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
-                  </BrowserFrame>
-                </a>
+                <ExpandableBrowserFrame
+                  url="app.casecompass.io/waypoint"
+                  src={feature.img}
+                  alt={feature.imgAlt}
+                />
               </article>
               <p className="rf-feature-note">{feature.note}</p>
             </div>

@@ -7,6 +7,7 @@ import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import BrowserFrame from '@/components/ui/BrowserFrame'
+import ExpandableBrowserFrame from '@/components/ui/ExpandableBrowserFrame'
 import './dwellex.css'
 
 const DWELLEX_SCHEDULER_SRC =
@@ -359,12 +360,11 @@ export default function DwellexPage() {
                     {feature.bullets.map((b) => <li key={b}>{b}</li>)}
                   </ul>
                 </div>
-                <a className="cc-browser-link" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
-                  <BrowserFrame url="app.casecompass.io/dwellex" footer="View full-size product screen ↗">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
-                  </BrowserFrame>
-                </a>
+                <ExpandableBrowserFrame
+                  url="app.casecompass.io/dwellex"
+                  src={feature.img}
+                  alt={feature.imgAlt}
+                />
               </article>
 
               <div className="dw-support-features">

@@ -9,6 +9,7 @@ import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import { useDemoModal } from '@/components/DemoModalProvider'
 import BrowserFrame from '@/components/ui/BrowserFrame'
+import ExpandableBrowserFrame from '@/components/ui/ExpandableBrowserFrame'
 import '../dwellex/dwellex.css'
 import './intakeos.css'
 
@@ -380,12 +381,11 @@ export default function IntakeOSPage() {
                   </ul>
                   {feature.extra}
                 </div>
-                <a className="cc-browser-link" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
-                  <BrowserFrame url="app.casecompass.io" footer="View full-size product screen ↗">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
-                  </BrowserFrame>
-                </a>
+                <ExpandableBrowserFrame
+                  url="app.casecompass.io"
+                  src={feature.img}
+                  alt={feature.imgAlt}
+                />
               </article>
             </div>
           </section>
