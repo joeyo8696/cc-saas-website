@@ -603,7 +603,7 @@ export default function QualificationsPage() {
                     <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#7c3aed', color: '#fff', borderRadius: 4, padding: '2px 7px' }}>New</span>
                   </div>
                   <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-                    The full agent workforce suite — live transfer inbox, browser softphone with RingCentral, agent SOPs &amp; checklists, speed-to-lead dashboards, and outbound callback queues. Everything your team needs from the moment the call connects.
+                    The agent workforce suite — live transfer inbox, RingCentral softphone or RingOut, Agent SOPs &amp; checklists, speed-to-lead dashboards, and outbound callback queues. Everything your team needs from the moment the call connects.
                   </p>
                 </div>
                 <Link href="/solutions/agent-platform" style={{
