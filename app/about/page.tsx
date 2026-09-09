@@ -371,7 +371,7 @@ export default function AboutPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      Joey joined Case Compass in 2024 as part of the new management team and has been leading the company&apos;s expansion from a legal intake platform into a multi-vertical intake infrastructure company. Before Case Compass, he served as Co-Founder &amp; CTO at CHESS Health — a HIPAA-compliant digital health platform — and as VP of Engineering at Talkiatry, scaling multidisciplinary engineering teams through rapid growth in highly regulated healthcare environments. That background is not incidental. The same problems he solved in healthcare patient flow — fragmented intake, manual handoffs, records that don&apos;t move — are the ones Torvana is built to eliminate for specialty medical practices.
+                      Joey joined Case Compass in 2024 as part of the new management team and has been leading the company&apos;s expansion from a legal intake platform into a multi-vertical intake infrastructure company. Before Case Compass, he served as Co-Founder &amp; CTO at CHESS Health — a provider of evidence-based digital health solutions that empower providers, health plans, and public sector organizations to tackle substance use disorder — and as VP of Engineering at Talkiatry, scaling multidisciplinary engineering teams through rapid growth in highly regulated healthcare environments. That background is not incidental. The same problems he solved in healthcare patient flow — fragmented intake, manual handoffs, records that don&apos;t move — are the ones Torvana is built to eliminate for specialty medical practices.
                     </p>
                     <p
                       style={{
