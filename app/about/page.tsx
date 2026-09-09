@@ -122,7 +122,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              Where legal intake meets<br />intelligent growth
+              Built on intake.<br />Expanding across every industry that needs it.
             </h1>
 
             <p
@@ -135,7 +135,7 @@ export default function AboutPage() {
                 margin: '0 auto',
               }}
             >
-              Redefining intake as the engine of growth for modern plaintiff firms
+              Redefining intake as the engine of growth — for plaintiff firms, specialty medical practices, and the industries between them.
             </p>
           </div>
 
@@ -182,7 +182,7 @@ export default function AboutPage() {
                     marginBottom: '40px',
                   }}
                 >
-                  Intake is the engine.<br />We built the platform around it.
+                  Intake is the engine.<br />Every vertical has one.
                 </h2>
                 <p
                   style={{
@@ -194,7 +194,19 @@ export default function AboutPage() {
                     fontWeight: 400,
                   }}
                 >
-                  Case Compass is a smart-intake platform built exclusively for high-volume plaintiff firms, designed to turn inquiries into qualified leads and signed retainers with speed and precision. Our Smart-Intake Engine adapts instantly to changing case criteria, engages clients across web, SMS, and voice, and delivers a seamless, mobile-first experience that reduces drop-off and wasted spend.
+                  Case Compass started with a simple conviction: intake is the most underleveraged lever in a plaintiff firm's business. The firms who get it right — who qualify faster, sign faster, and lose fewer leads to friction — win. We built the Smart-Intake Engine around that thesis, and it works. Tens of thousands of intakes. Mass torts, class actions, consumer litigation. Growing without adding headcount.
+                </p>
+                <p
+                  style={{
+                    fontSize: '1.2rem',
+                    color: '#475569',
+                    lineHeight: 1.9,
+                    textAlign: 'center',
+                    marginBottom: '28px',
+                    fontWeight: 400,
+                  }}
+                >
+                  Then we looked at what our team actually knew. Joey spent years building intake and patient-flow infrastructure in healthcare — first as Co-Founder &amp; CTO at CHESS Health, then as VP of Engineering at Talkiatry. The problems he saw there were the same ones he solved in legal: disconnected systems, manual handoffs, lost patients at every step. That background didn't just inform Torvana — it made it inevitable.
                 </p>
                 <p
                   style={{
@@ -205,7 +217,7 @@ export default function AboutPage() {
                     fontWeight: 400,
                   }}
                 >
-                  Unlike generic bots or forms, Case Compass gives firms full control, compliance-ready workflows, and real-time analytics to lower acquisition costs and scale intake without adding headcount. Already trusted across mass torts and class actions, Case Compass is redefining intake as the engine of growth for modern plaintiff firms.
+                  Torvana brings that same intake-first thinking to specialty medical practices that work with personal injury attorney referrals. Dwellex does the same for real estate. The platform changes. The problem doesn't: every high-volume, relationship-driven business needs intake that actually works — one that connects the patient, the client, the customer to the practice from the very first touch.
                 </p>
               </div>
             </SectionReveal>
@@ -359,7 +371,17 @@ export default function AboutPage() {
                         lineHeight: 1.8,
                       }}
                     >
-                      Joey joined Case Compass in 2024 as part of the new management team, leading the company&apos;s expansion into a full intake and lead conversion platform for plaintiff firms. Prior to Case Compass, he served as Co-Founder &amp; CTO at CHESS Health and VP of Engineering at Talkiatry — scaling multidisciplinary engineering teams through rapid growth in highly regulated industries. Joey came in with the conviction that intake is the most underleveraged lever in a plaintiff firm&apos;s business, and that the firms who get it right will define the next decade of plaintiff law.
+                      Joey joined Case Compass in 2024 as part of the new management team and has been leading the company&apos;s expansion from a legal intake platform into a multi-vertical intake infrastructure company. Before Case Compass, he served as Co-Founder &amp; CTO at CHESS Health — a HIPAA-compliant digital health platform — and as VP of Engineering at Talkiatry, scaling multidisciplinary engineering teams through rapid growth in highly regulated healthcare environments. That background is not incidental. The same problems he solved in healthcare patient flow — fragmented intake, manual handoffs, records that don&apos;t move — are the ones Torvana is built to eliminate for specialty medical practices.
+                    </p>
+                    <p
+                      style={{
+                        fontSize: '1.05rem',
+                        color: '#475569',
+                        lineHeight: 1.8,
+                        marginTop: '16px',
+                      }}
+                    >
+                      Joey came into Case Compass with the conviction that intake is the most underleveraged lever in any relationship-driven, high-volume business. The firms and practices who get it right will define the next decade of their industries. Case Compass, Torvana, and Dwellex are each built on that thesis — with intake at the core.
                     </p>
                   </div>
                 </div>
@@ -649,15 +671,16 @@ export default function AboutPage() {
                   margin: '0 auto',
                 }}
               >
-                Case Compass is already powering tens of thousands of intakes across mass torts, class actions, and consumer litigation, helping firms grow without adding headcount. Our vision is clear:
+                Case Compass started with legal intake and proved the model. Now we&apos;re applying it everywhere that intake is broken. Our direction is clear:
               </p>
             </div>
 
             <div style={{ display: 'grid', gap: '20px', marginBottom: '64px' }}>
               {[
-                'Put intake teams in control with no-code, instantly updatable workflows.',
-                'Deliver analytics and transparency so firms know exactly where dollars convert to signed cases.',
-                'Scale smart-intake into every channel — web, SMS, and voice — with compliance and client trust at the core.',
+                'Keep legal intake at the core — and keep making it faster, smarter, and more configurable than anything else in the market.',
+                'Expand Torvana as the intake and referral layer for specialty medical practices — built on the same infrastructure, shaped by years of healthcare experience.',
+                'Grow Dwellex into the intake and workflow layer for high-volume real estate — same thesis, different industry.',
+                'Scale every platform across web, SMS, and voice with compliance, data ownership, and full client control at the foundation.',
               ].map((item, i) => (
                 <SectionReveal key={i}>
                   <div
@@ -733,8 +756,8 @@ export default function AboutPage() {
                   fontStyle: 'italic',
                 }}
               >
-                We&apos;re not just rethinking intake. We&apos;re making it the engine of growth for the next generation of plaintiff firms.
-              </p>
+                  We&apos;re not building vertical software. We&apos;re building intake infrastructure — and applying it to every industry where intake is the difference between growth and stagnation.
+                </p>
             </div>
           </div>
         </section>
@@ -797,7 +820,7 @@ export default function AboutPage() {
                     lineHeight: 1.7,
                   }}
                 >
-                  Schedule a demo and see how Case Compass can help your firm scale without adding headcount.
+                  Schedule a demo and see how Case Compass can help your firm or practice scale without adding headcount.
                 </p>
                 <DemoButton style={{ padding: '18px 48px', fontSize: '1.05rem' }}>
                   Schedule a Demo →
