@@ -9,8 +9,8 @@ const products = [
     id: 'intakeos',
     logoSrc: '/images/cc-logo-white.png',
     logoAlt: 'IntakeOS by Case Compass',
-    logoWidth: 120,
-    logoHeight: 24,
+    logoWidth: 240,
+    logoHeight: 48,
     logoBg: 'linear-gradient(135deg, #1e3a6e, #4f46e5)',
     logoFilter: 'none',
     accentBar: 'linear-gradient(90deg, #4f46e5, #818cf8)',
@@ -31,8 +31,8 @@ const products = [
     id: 'torvana',
     logoSrc: '/images/Torvana-Illustrator-Master.svg',
     logoAlt: 'Torvana',
-    logoWidth: 130,
-    logoHeight: 32,
+    logoWidth: 260,
+    logoHeight: 64,
     logoBg: 'linear-gradient(135deg, #f3e8ff, #ede9fe)',
     logoFilter: 'none',
     accentBar: 'linear-gradient(90deg, #7c3aed, #4f46e5)',
@@ -53,8 +53,8 @@ const products = [
     id: 'dwellex',
     logoSrc: '/images/dwellex_logo_white.png',
     logoAlt: 'Dwellex',
-    logoWidth: 130,
-    logoHeight: 32,
+    logoWidth: 260,
+    logoHeight: 64,
     logoBg: 'linear-gradient(135deg, #1e293b, #334155)',
     logoFilter: 'none',
     accentBar: 'linear-gradient(90deg, #0f172a, #334155)',
@@ -165,8 +165,8 @@ export default function ProductSuite() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     background: product.logoBg,
-                    borderRadius: '10px',
-                    padding: '10px 18px',
+                    borderRadius: '12px',
+                    padding: '14px 24px',
                     marginBottom: '20px',
                     alignSelf: 'flex-start',
                   }}>
@@ -175,8 +175,9 @@ export default function ProductSuite() {
                       alt={product.logoAlt}
                       width={product.logoWidth}
                       height={product.logoHeight}
+                      unoptimized
                       style={{
-                        height: '28px',
+                        height: '44px',
                         width: 'auto',
                         display: 'block',
                         filter: product.logoFilter === 'none' ? undefined : product.logoFilter,
