@@ -12,7 +12,7 @@ const aboutBreadcrumb = {
 export const metadata: Metadata = {
   title: { absolute: 'About Us — Case Compass' },
   description:
-    'Case Compass is legal intake software built exclusively for high-volume plaintiff law firms. Learn about our team and our vision for the future of legal intake automation.',
+    'Case Compass builds intake infrastructure for plaintiff law (IntakeOS), specialty healthcare (Torvana), and landlord-tenant law (Dwellex). Meet the team and our vision.',
   alternates: {
     canonical: 'https://www.casecompass.io/about',
   },
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.casecompass.io/about',
     siteName: 'Case Compass',
-    title: 'About Case Compass — Built by Practitioners, for Practitioners',
-    description: 'Case Compass is a smart-intake platform built exclusively for high-volume plaintiff firms. Meet the team and learn our vision for the future of legal intake.',
+    title: 'About Case Compass — Intake infrastructure across practices',
+    description: 'Built on intake. Expanding where it matters — IntakeOS, Torvana, and Dwellex.',
     images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'About Case Compass' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Case Compass — Built by Practitioners, for Practitioners',
-    description: 'Smart-intake platform built exclusively for high-volume plaintiff law firms.',
+    title: 'About Case Compass — Intake infrastructure across practices',
+    description: 'IntakeOS, Torvana, and Dwellex — powered by Case Compass.',
   },
 }
 
