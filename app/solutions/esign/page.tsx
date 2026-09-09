@@ -167,7 +167,7 @@ export default function ESignPage() {
                 See eSign in Action →
               </DemoButton>
               <Link
-                href="/solutions/intake"
+                href="/intakeos"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.8)', padding: '14px 32px', borderRadius: '8px', fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 600, textDecoration: 'none' }}
               >
                 See the Full Intake Flow
@@ -275,7 +275,7 @@ export default function ESignPage() {
             </SectionReveal>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
               {[
-                { href: '/solutions/intake', label: 'Intelligent Intake', desc: 'AI chatbots, webforms, and live transfer — the full intake flow.' },
+                { href: '/intakeos', label: 'Intelligent Intake', desc: 'AI chatbots, webforms, and live transfer — the full intake flow.' },
                 { href: '/solutions/waypoint', label: 'Waypoint AI', desc: 'Score every lead before your team opens the file.' },
                 { href: '/solutions/referrals', label: 'Referral Network', desc: 'Partner portals, fee tracking, and referral performance reporting.' },
               ].map(({ href, label, desc }) => (

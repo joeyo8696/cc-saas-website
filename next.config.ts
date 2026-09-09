@@ -12,6 +12,31 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Permanent 301s — preserve SEO equity from old solution URLs
+      {
+        source: '/solutions/intake',
+        destination: '/intakeos',
+        permanent: true,
+      },
+      {
+        source: '/solutions/intake/:path*',
+        destination: '/intakeos',
+        permanent: true,
+      },
+      {
+        source: '/solutions/dwellex',
+        destination: '/dwellex',
+        permanent: true,
+      },
+      {
+        source: '/solutions/dwellex/:path*',
+        destination: '/dwellex',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;

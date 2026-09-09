@@ -503,7 +503,7 @@ export default function ReferralsPage() {
             </SectionReveal>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
               {[
-                { href: '/solutions/intake', label: 'Intelligent Intake', desc: 'The complete intake flow — chatbots, webforms, live transfer.' },
+                { href: '/intakeos', label: 'Intelligent Intake', desc: 'The complete intake flow — chatbots, webforms, live transfer.' },
                 { href: '/solutions/waypoint', label: 'Waypoint AI', desc: 'Score every referred lead before your team opens the file.' },
                 { href: '/solutions/esign', label: 'E-Signatures', desc: 'Close retainers in the same session — no separate tool.' },
               ].map(({ href, label, desc }) => (

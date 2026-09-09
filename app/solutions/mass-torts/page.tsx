@@ -579,7 +579,7 @@ export default function MassTortsPage() {
               {[
                 { href: '/lp/mdl-intake', label: 'MDL Intake Software', desc: 'The full MDL toolkit — portfolio management, PFS mapping, key dates, and court-ready exports.' },
                 { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', desc: 'Deep dive into how Waypoint scores every intake against custom criteria.' },
-                { href: '/solutions/intake', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow for plaintiff firms.' },
+                { href: '/intakeos', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow for plaintiff firms.' },
               ].map(({ href, label, desc }) => (
                 <SectionReveal key={href}>
                   <Link href={href} className="related-solution-card" style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none', background: '#fff' }}>

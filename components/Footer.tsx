@@ -27,7 +27,9 @@ const footerLinks = [
     heading: 'Product',
     links: [
       { label: 'Waypoint AI', href: '/solutions/waypoint' },
-      { label: 'Intelligent Intake', href: '/solutions/intake' },
+      { label: 'IntakeOS', href: '/intakeos' },
+      { label: 'Torvana', href: '/torvana' },
+      { label: 'Dwellex', href: '/dwellex' },
       { label: 'Referral Network', href: '/solutions/referrals' },
       { label: 'E-Signatures', href: '/solutions/esign' },
       { label: 'Mass Torts', href: '/solutions/mass-torts' },

@@ -20,7 +20,7 @@ const platformLinks = {
     description: 'The AI scoring engine built for law firms. Automatically qualify, rank, and prioritize every intake — powered by your firm\'s own criteria.',
   },
   intakeOS: {
-    href: '/solutions/intake',
+    href: '/intakeos',
     eyebrow: 'Core Platform',
     name: 'Intake OS',
     description: 'The complete intake system — chatbots, webforms, live transfer, e-signatures, and automated nurture. From first click to signed retainer.',
@@ -32,7 +32,7 @@ const platformLinks = {
     description: 'Live transfer inbox, browser softphone, agent SOPs, speed-to-lead dashboards, and outbound callback queues — built for high-performance intake teams.',
   },
   standalone: {
-    href: '/solutions/dwellex',
+    href: '/dwellex',
     eyebrow: 'Landlord Tenant',
     name: 'Dwellex',
     description: 'Complete case management for landlord-tenant law. Automated workflows from intake to lockout for eviction-focused practices.',
@@ -59,17 +59,17 @@ const platformLinks = {
     {
       heading: 'Intake',
       links: [
-        { icon: MessageSquare, label: 'Intelligent Intake', href: '/solutions/intake' },
-        { icon: PhoneForwarded, label: 'Live Transfer', href: '/solutions/intake' },
-        { icon: LayoutTemplate, label: 'Intake Form Builder', href: '/solutions/intake' },
+        { icon: MessageSquare, label: 'Intelligent Intake', href: '/intakeos' },
+        { icon: PhoneForwarded, label: 'Live Transfer', href: '/intakeos' },
+        { icon: LayoutTemplate, label: 'Intake Form Builder', href: '/intakeos' },
       ],
     },
     {
       heading: 'Workflow',
       links: [
-        { icon: GitBranch, label: 'Timeline Automation', href: '/solutions/intake' },
+        { icon: GitBranch, label: 'Timeline Automation', href: '/intakeos' },
         { icon: FileSignature, label: 'E-Signatures', href: '/solutions/esign' },
-        { icon: UserCircle, label: 'Client Portal', href: '/solutions/intake' },
+        { icon: UserCircle, label: 'Client Portal', href: '/intakeos' },
       ],
     },
     {

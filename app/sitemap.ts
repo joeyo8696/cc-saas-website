@@ -37,12 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
-      url: `${BASE_URL}/solutions/intake`,
-      lastModified: NOW,
-      changeFrequency: 'monthly',
-      priority: 0.95,
-    },
-    {
       url: `${BASE_URL}/solutions/waypoint`,
       lastModified: NOW,
       changeFrequency: 'monthly',
@@ -71,12 +65,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: NOW,
       changeFrequency: 'monthly',
       priority: 0.85,
-    },
-    {
-      url: `${BASE_URL}/solutions/dwellex`,
-      lastModified: NOW,
-      changeFrequency: 'weekly',
-      priority: 0.95,
     },
     {
       url: `${BASE_URL}/solutions/agent-platform`,

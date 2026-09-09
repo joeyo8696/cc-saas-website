@@ -179,7 +179,7 @@ export default function AgentPlatformPage() {
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <DemoButton />
-              <Link href="/solutions/intake"
+              <Link href="/intakeos"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 28px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.15)', color: '#94a3b8', textDecoration: 'none', fontSize: 15, fontWeight: 500, transition: 'all 0.2s' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.3)'; (e.currentTarget as HTMLElement).style.color = '#fff' }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.15)'; (e.currentTarget as HTMLElement).style.color = '#94a3b8' }}>
@@ -508,7 +508,7 @@ export default function AgentPlatformPage() {
               <p style={{ fontSize: 13, fontWeight: 600, color: '#94a3b8', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 28, textAlign: 'center' }}>Related solutions</p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
                 {[
-                  { href: '/solutions/intake', label: 'Intake OS', sub: 'Chatbots, webforms, live transfer — the full intake stack.' },
+                  { href: '/intakeos', label: 'Intake OS', sub: 'Chatbots, webforms, live transfer — the full intake stack.' },
                   { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', sub: 'Qualify leads before they reach your agents.' },
                   { href: '/solutions/esign', label: 'E-Signatures', sub: 'Close cases with automated retainer signing.' },
                   { href: '/solutions/mass-torts', label: 'Mass Torts', sub: 'MDL portfolio management built for volume.' },
@@ -540,7 +540,7 @@ export default function AgentPlatformPage() {
               </p>
               <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <DemoButton />
-                <Link href="/solutions/intake"
+                <Link href="/intakeos"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 28px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.2)', color: '#e2e8f0', textDecoration: 'none', fontSize: 15, fontWeight: 500, transition: 'all 0.2s' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.4)' }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.2)' }}>

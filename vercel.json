@@ -19,10 +19,12 @@
       "permanent": true
     },
 
-    { "source": "/solutions/landlord-tenant",  "destination": "/solutions/dwellex", "permanent": true },
-    { "source": "/solutions/qualifications",   "destination": "/solutions/intake", "permanent": true },
-    { "source": "/solutions/conversions",      "destination": "/solutions/intake", "permanent": true },
-    { "source": "/solutions/integration",      "destination": "/solutions/intake", "permanent": true },
+    { "source": "/solutions/landlord-tenant",  "destination": "/dwellex", "permanent": true },
+    { "source": "/solutions/qualifications",   "destination": "/intakeos", "permanent": true },
+    { "source": "/solutions/conversions",      "destination": "/intakeos", "permanent": true },
+    { "source": "/solutions/integration",      "destination": "/intakeos", "permanent": true },
+    { "source": "/solutions/intake",            "destination": "/intakeos", "permanent": true },
+    { "source": "/solutions/dwellex",           "destination": "/dwellex", "permanent": true },
     { "source": "/schedule-a-demo",           "destination": "/", "permanent": true },
     { "source": "/form-success",              "destination": "/", "permanent": true },
     { "source": "/contact",                   "destination": "/", "permanent": true },

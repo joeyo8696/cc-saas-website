@@ -252,9 +252,9 @@ export default function WaypointPage() {
             </SectionReveal>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
               {[
-                { href: '/solutions/intake', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow.' },
+                { href: '/intakeos', label: 'Intelligent Intake', desc: 'Chatbots, webforms, and live transfer — the full intake flow.' },
                 { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.' },
-                { href: '/solutions/dwellex', label: 'Dwellex', desc: 'Case management for landlord-tenant and eviction law.' },
+                { href: '/dwellex', label: 'Dwellex', desc: 'Case management for landlord-tenant and eviction law.' },
               ].map(({ href, label, desc }) => (
                 <SectionReveal key={href}>
                   <Link href={href} className="related-solution-card" style={{ display: 'block', padding: '24px', border: '1px solid #e2e8f0', borderRadius: '12px', textDecoration: 'none' }}>

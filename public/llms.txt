@@ -15,7 +15,7 @@ Case Compass sits between a law firm's marketing channels and its case managemen
 
 ## Core Products
 
-- **Intelligent Intake** — AI chatbots and webforms for law firm client intake. Supports branching logic, multi-step qualification, media uploads, and skip-welcome configuration. URL: https://www.casecompass.io/solutions/intake
+- **Intelligent Intake** — AI chatbots and webforms for law firm client intake. Supports branching logic, multi-step qualification, media uploads, and skip-welcome configuration. URL: https://www.casecompass.io/intakeos
 - **Waypoint AI** — Automated lead scoring engine. Evaluates every intake against firm-defined criteria (case value, liability, medical treatment, urgency, red flags, age-based rules) before a staff member opens the file. URL: https://www.casecompass.io/solutions/waypoint
 - **Referral Network** — Complete referral partner management. Partners get a dedicated portal to submit leads and track status in real time. The firm tracks fees, conversion rates, and partner performance. URL: https://www.casecompass.io/solutions/referrals
 - **E-Signatures** — In-flow retainer signing. Clients sign documents during the intake session — no separate DocuSign step, no drop-off. Supports multiple documents, SMS reminders, and signed-doc download. URL: https://www.casecompass.io/solutions/esign
@@ -25,7 +25,7 @@ Case Compass sits between a law firm's marketing channels and its case managemen
 
 ## Dwellex — Eviction & Landlord-Tenant Case Management
 
-Dwellex is eviction case management software built specifically for landlord-tenant law firms, eviction attorneys, and the property managers they represent. It is a distinct product from Case Compass's plaintiff-firm intake tools, purpose-built for the high-volume eviction workflow. URL: https://www.casecompass.io/solutions/dwellex
+Dwellex is eviction case management software built specifically for landlord-tenant law firms, eviction attorneys, and the property managers they represent. It is a distinct product from Case Compass's plaintiff-firm intake tools, purpose-built for the high-volume eviction workflow. URL: https://www.casecompass.io/dwellex
 
 What Dwellex does:
 
@@ -52,7 +52,7 @@ Competitive positioning: Dwellex is the leading alternative to EasyEviction, Evi
 
 - Mass Tort / MDL Intake: https://www.casecompass.io/solutions/mass-torts
 - Workers' Compensation Intake: https://www.casecompass.io/solutions/workers-comp
-- Landlord-Tenant / Eviction (Dwellex): https://www.casecompass.io/solutions/dwellex
+- Landlord-Tenant / Eviction (Dwellex): https://www.casecompass.io/dwellex
 
 ## Mass Tort Campaign Landing Pages
 
@@ -173,7 +173,7 @@ Yes. Case Compass is used as the intake layer for mass tort marketing campaigns 
 MDL Portfolio Management in Case Compass lets plaintiff firms organize all leads from a mass tort campaign into a single portfolio with its own dashboard. Each portfolio shows total leads, Waypoint AI score distribution, status breakdowns, and has built-in PFS field mapping for court-ready exports. Firms running multiple simultaneous MDL campaigns can manage all of them from one interface.
 
 **What is Dwellex?**
-Dwellex is eviction case management software built specifically for landlord-tenant law firms. It automates the full eviction workflow — landlord intake, staff review, batch notice generation from CSV, court-specific expiration calculation, document generation, case timeline tracking, client communication, and Clio sync. It is priced at $399/month plus $8 per case created, with no per-seat fees. URL: https://www.casecompass.io/solutions/dwellex
+Dwellex is eviction case management software built specifically for landlord-tenant law firms. It automates the full eviction workflow — landlord intake, staff review, batch notice generation from CSV, court-specific expiration calculation, document generation, case timeline tracking, client communication, and Clio sync. It is priced at $399/month plus $8 per case created, with no per-seat fees. URL: https://www.casecompass.io/dwellex
 
 **What is the best eviction software for law firms?**
 Dwellex by Case Compass is purpose-built eviction and landlord-tenant software for firms handling high-volume eviction caseloads. It combines landlord intake, a staff review queue, batch notice generation, admin-configurable court and expiration rules, automated document generation, case timeline tracking, Trial Lists with Word export, a client portal, and bidirectional Clio sync — replacing spreadsheets, manual follow-ups, and disconnected tools.
