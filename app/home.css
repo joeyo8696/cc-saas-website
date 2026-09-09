@@ -97,8 +97,9 @@
 .hp-hero .hp-dash { background: var(--hot-purple); }
 .hp-hero h1 {
   font-size: clamp(3rem, 4.8vw, 4.5rem);
-  line-height: 1.06;
+  line-height: 1.1;
   margin-top: 18px;
+  margin-bottom: 0;
 }
 .hp-hero h1 span { color: var(--hot-purple); }
 .hp-hero-copy {
@@ -106,7 +107,7 @@
   padding-top: 8px;
 }
 .hp-hero-lede {
-  margin-top: 36px;
+  margin-top: 52px;
   font-size: 1.05rem;
   color: var(--cream-muted);
   max-width: 420px;
@@ -700,7 +701,7 @@
     margin-top: 16px;
   }
   .hp-hero-copy { max-width: none; padding-top: 0; }
-  .hp-hero-lede { max-width: none; margin-top: 18px; }
+  .hp-hero-lede { max-width: none; margin-top: 40px; }
   .hp-hero-ctas { margin-top: 22px; }
   .hp-hero-visual .prod-demo-stage { min-height: 0; }
   .hp-eyebrow { font-size: 0.64rem; }
