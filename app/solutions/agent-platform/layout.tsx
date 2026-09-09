@@ -49,7 +49,7 @@ const faqSchema = {
       name: 'Does Case Compass record phone calls and create call summaries?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. When call recording is enabled through the RingCentral integration, every call is automatically recorded and the recording is attached to the lead\'s profile. Agents can add post-call summaries including disposition (spoke with client, no answer, follow-up needed), call notes, and a structured SOP checklist completion record. Recordings and summaries are accessible directly from the lead profile timeline.',
+        text: 'Yes. When call recording is enabled through the RingCentral integration, every call is automatically recorded and the recording is attached to the lead\'s profile. You can also enable OpenAI Whisper transcription for AI QA. Agents can add post-call summaries including disposition (spoke with client, no answer, follow-up needed), call notes, and a structured SOP checklist completion record. Recordings and summaries are accessible directly from the lead profile timeline.',
       },
     },
   ],
@@ -61,26 +61,28 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.casecompass.io' },
     { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.casecompass.io/solutions' },
-    { '@type': 'ListItem', position: 3, name: 'Agent Platform', item: 'https://www.casecompass.io/solutions/agent-platform' },
+    { '@type': 'ListItem', position: 3, name: 'Agent Workforce', item: 'https://www.casecompass.io/solutions/agent-platform' },
   ],
 }
 
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Case Compass Agent Platform',
+  name: 'Case Compass Agent Workforce',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   url: 'https://www.casecompass.io/solutions/agent-platform',
-  description: 'An integrated agent workforce platform for law firm intake teams — live transfer inbox, browser softphone, agent SOPs, speed-to-lead dashboards, outbound callback queues, and RingCentral telephony integration.',
+  description: 'An integrated agent workforce platform for law firm intake teams — live transfer inbox, RingCentral browser softphone and RingOut, agent SOPs, speed-to-lead dashboards, outbound callback queues, call recording, and Whisper transcription for AI QA.',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
   featureList: [
     'Live transfer inbox with real-time queue management',
-    'Browser softphone via RingCentral',
-    'Agent SOPs and compliance checklists',
+    'Browser softphone via RingCentral with Softphone RINGOUT status',
+    'RingOut dial mode for desk and mobile phones',
+    'Agent SOPs and compliance checklists assigned per intake form',
     'Speed-to-lead dashboard and SLA tracking',
     'Outbound callback queue with agent assignment',
-    'Automatic call recording and post-call summaries',
+    'Automatic call recording and Whisper transcription for AI QA',
+    'Post-call summaries and SOP checklist completion',
     'Inbound call attribution to marketing sources',
     'Agent leaderboard and performance analytics',
   ],
@@ -92,17 +94,20 @@ const softwareSchema = {
 }
 
 export const metadata: Metadata = {
-  title: { absolute: 'Agent Workforce Platform for Law Firms | Case Compass' },
+  title: { absolute: 'Agent Workforce for Law Firms | Case Compass' },
   description:
-    'Case Compass gives intake agents a complete workforce platform — live transfer inbox, RingCentral browser softphone, agent SOPs, speed-to-lead dashboards, and outbound callback queues. Reduce response time. Convert more leads.',
+    'Case Compass Agent Workforce gives intake agents a live transfer inbox, RingCentral browser softphone or RingOut, Agent SOPs, speed-to-lead dashboards, outbound callback queues, call recording, and Whisper transcription for AI QA.',
   keywords: [
-    'law firm agent platform',
+    'law firm agent workforce',
+    'agent workforce platform legal intake',
     'legal intake live transfer software',
     'live transfer inbox law firm',
     'speed to lead dashboard legal',
     'agent SOP software law firm',
     'RingCentral law firm integration',
     'browser softphone legal intake',
+    'RingOut softphone law firm',
+    'OpenAI Whisper call transcription legal',
     'outbound callback queue legal',
     'law firm call center software',
     'legal intake agent tools',
@@ -124,14 +129,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.casecompass.io/solutions/agent-platform',
     siteName: 'Case Compass',
-    title: 'Agent Workforce Platform for Law Firms | Case Compass',
-    description: 'Live transfer inbox, browser softphone, agent SOPs, speed-to-lead dashboards, and outbound callback queues — one platform for your entire intake team.',
-    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass Agent Platform' }],
+    title: 'Agent Workforce for Law Firms | Case Compass',
+    description: 'Live transfer inbox, RingCentral softphone, Agent SOPs, speed-to-lead dashboards, and outbound queues — the agent workforce inside IntakeOS.',
+    images: [{ url: '/images/cc-logo-white.png', width: 1200, height: 630, alt: 'Case Compass Agent Workforce' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agent Workforce Platform for Law Firms | Case Compass',
-    description: 'Live transfer inbox, browser softphone, agent SOPs, and speed-to-lead dashboards — built for high-performance intake teams.',
+    title: 'Agent Workforce for Law Firms | Case Compass',
+    description: 'Live transfer inbox, RingCentral softphone, Agent SOPs, and speed-to-lead dashboards — built for high-performance intake teams.',
   },
 }
 

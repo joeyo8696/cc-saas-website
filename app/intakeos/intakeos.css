@@ -176,6 +176,67 @@
   margin-top: 16px;
 }
 
+.io-workforce {
+  padding-block: 0 10px;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+.io-workforce-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 28px 30px;
+  border: 1px solid #ddd8ea;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(43, 34, 85, 0.06);
+}
+.io-workforce-card .eyebrow {
+  margin-bottom: 10px;
+  color: #6d5fd4;
+}
+.io-workforce-card h2 {
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--cream-ink);
+}
+.io-workforce-card > div > p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #5c5870;
+  max-width: 620px;
+  margin: 0;
+}
+.io-workforce-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+}
+.io-workforce-chips li {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #4f46e5;
+  background: #eef2ff;
+  border: 1px solid #e0e7ff;
+  border-radius: 999px;
+  padding: 6px 11px;
+}
+.io-workforce-card .button {
+  flex-shrink: 0;
+  background: var(--indigo);
+  color: #fff;
+  border-color: var(--indigo);
+  white-space: nowrap;
+}
+
 @media (max-width: 1100px) {
   .io-hero-split { grid-template-columns: 1fr; gap: 22px; }
   .io-headline { gap: 35px; }
@@ -183,6 +244,7 @@
   .io-steps li { padding-right: 20px; }
   .io-steps li + li { padding-left: 20px; }
   .io-conversion-grid { gap: 45px; }
+  .io-workforce-card { flex-direction: column; align-items: flex-start; gap: 22px; }
 }
 @media (max-width: 780px) {
   .io-hero { padding: 30px 0 36px; }
@@ -198,6 +260,9 @@
   .io-steps li:nth-child(even) { padding-left: 20px; border-left: 1px solid #2b283e; }
   .io-steps li:nth-child(n+3) { border-top: 1px solid #2b283e; }
   .io-steps h3 { margin-top: 18px; font-size: 1.3rem; }
+  .io-workforce { margin-top: 0; padding-block: 8px 0; }
+  .io-workforce-card { padding: 24px; }
+  .io-workforce-card .button { width: 100%; justify-content: center; }
   .io-conversion { padding: 58px 0; }
   .io-conversion-grid { grid-template-columns: 1fr; gap: 35px; }
   .io-results { padding-block: 58px; }

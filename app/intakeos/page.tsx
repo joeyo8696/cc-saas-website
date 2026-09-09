@@ -125,7 +125,7 @@ const features: Record<Tab, {
     img: '/images/agent-platform-live-transfer-inbox.png',
     imgAlt: 'Live transfer inbox with agent assignment and lead queue',
     extra: (
-      <Link className="text-link" href="/solutions/agent-platform">Explore Agent Platform ↗</Link>
+      <Link className="text-link" href="/solutions/agent-platform">Explore Agent Workforce ↗</Link>
     ),
   },
   inbox: {
@@ -390,6 +390,29 @@ export default function IntakeOSPage() {
             </div>
           </section>
 
+          <section className="io-workforce wrap" aria-labelledby="io-workforce-heading">
+            <div className="io-workforce-card">
+              <div>
+                <p className="eyebrow">AGENT WORKFORCE</p>
+                <h2 id="io-workforce-heading">Your intake team, ready when the lead is.</h2>
+                <p>
+                  Live transfer inbox, RingCentral browser softphone or RingOut, Agent SOPs, speed-to-lead dashboards, and outbound callback queues — so agents pick up with context, hit SLAs, and keep every call on the lead record.
+                </p>
+                <ul className="io-workforce-chips" aria-label="Agent Workforce capabilities">
+                  <li>Live Transfer Inbox</li>
+                  <li>Softphone · RINGOUT</li>
+                  <li>Speed Dashboard</li>
+                  <li>Agent SOPs</li>
+                  <li>Outbound Queue</li>
+                  <li>Call recording · Whisper QA</li>
+                </ul>
+              </div>
+              <Link className="button" href="/solutions/agent-platform">
+                Explore Agent Workforce <span>↗</span>
+              </Link>
+            </div>
+          </section>
+
           <section className="io-conversion">
             <div className="wrap io-conversion-grid">
               <div>
@@ -465,6 +488,10 @@ export default function IntakeOSPage() {
                 <h2>Built for your firm.<br /><em>Connected to your tools.</em></h2>
               </div>
               <div>
+                <details>
+                  <summary>What is Agent Workforce?</summary>
+                  <p>Agent Workforce is the intake team layer inside IntakeOS — live transfer inbox, RingCentral softphone or RingOut, Agent SOPs, speed-to-lead dashboards, outbound callback queues, and call recording with optional Whisper transcription for AI QA.</p>
+                </details>
                 <details>
                   <summary>Can we use IntakeOS on our current website?</summary>
                   <p>Yes. Deploy conversational intake, webforms or embedded widgets independently or together. The intake can be tailored to your practice areas and case types.</p>

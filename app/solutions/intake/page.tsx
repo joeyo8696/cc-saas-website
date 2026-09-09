@@ -599,7 +599,7 @@ export default function QualificationsPage() {
                 </div>
                 <div style={{ flex: 1, minWidth: 200 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a' }}>Agent Platform</span>
+                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', fontWeight: 700, color: '#0f172a' }}>Agent Workforce</span>
                     <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: '#7c3aed', color: '#fff', borderRadius: 4, padding: '2px 7px' }}>New</span>
                   </div>
                   <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6, margin: 0 }}>
@@ -616,7 +616,7 @@ export default function QualificationsPage() {
                 }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.9' }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1' }}>
-                  Explore Agent Platform <ArrowRight size={15} />
+                  Explore Agent Workforce <ArrowRight size={15} />
                 </Link>
               </div>
             </SectionReveal>
@@ -907,7 +907,7 @@ export default function QualificationsPage() {
             </SectionReveal>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
               {[
-                { href: '/solutions/agent-platform', label: 'Agent Platform', desc: 'Live transfer inbox, browser softphone, agent SOPs, speed dashboards, and outbound callback queues.', badge: 'New', color: '#7c3aed' },
+                { href: '/solutions/agent-platform', label: 'Agent Workforce', desc: 'Live transfer inbox, RingCentral softphone, Agent SOPs, speed dashboards, and outbound callback queues.', badge: 'New', color: '#7c3aed' },
                 { href: '/solutions/waypoint', label: 'Waypoint AI Scoring', desc: 'Score every intake submission automatically before your team opens the file.', color: '#4f46e5' },
                 { href: '/solutions/workers-comp', label: "Workers' Comp", desc: 'Intake automation purpose-built for workers\' compensation firms.', color: '#4f46e5' },
                 { href: '/solutions/esign', label: 'E-Signatures', desc: 'Send pre-filled retainer agreements for signature in the same intake session.', color: '#4f46e5' },

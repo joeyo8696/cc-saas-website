@@ -46,7 +46,7 @@ const faq = [
   },
   {
     q: 'Does Case Compass record calls and create summaries?',
-    a: 'Yes. When call recording is enabled through RingCentral, every call is automatically recorded and attached to the lead\'s profile. Agents complete a post-call summary including disposition, notes, and checklist completion — permanently linked to the lead profile timeline.',
+    a: 'Yes. When call recording is enabled through RingCentral, every call is automatically recorded and attached to the lead\'s profile. Optionally enable OpenAI Whisper transcription for AI QA. Agents complete a post-call summary including disposition, notes, and checklist completion — permanently linked to the lead profile timeline.',
   },
 ]
 
@@ -166,16 +166,16 @@ export default function AgentPlatformPage() {
           <SectionReveal>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.35)', borderRadius: 999, padding: '6px 16px', marginBottom: 28 }}>
               <Headphones size={14} color="#818cf8" />
-              <span style={{ fontSize: 13, fontWeight: 600, color: '#818cf8', letterSpacing: '0.04em', textTransform: 'uppercase' }}>Agent Platform</span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: '#818cf8', letterSpacing: '0.04em', textTransform: 'uppercase' }}>Agent Workforce</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem, 5.5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.1, color: '#fff', marginBottom: 24, letterSpacing: '-0.02em' }}>
-              The complete agent workforce platform{' '}
+              The agent workforce{' '}
               <span style={{ background: 'linear-gradient(135deg, #818cf8, #6366f1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                for legal intake teams
+                built into IntakeOS
               </span>
             </h1>
             <p style={{ fontSize: 'clamp(1.05rem, 2.2vw, 1.25rem)', color: '#94a3b8', lineHeight: 1.7, marginBottom: 40, maxWidth: 680, margin: '0 auto 40px' }}>
-              Live transfer inbox. Browser softphone with RingCentral. Agent SOPs &amp; checklists. Speed-to-lead dashboards. Outbound callback queues. One platform built for high-performance plaintiff intake teams.
+              Live transfer inbox. RingCentral softphone or RingOut. Agent SOPs &amp; checklists. Speed-to-lead dashboards. Outbound callback queues. Call recording with Whisper transcription for AI QA — one workspace for high-performance intake teams.
             </p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
               <DemoButton />
@@ -444,12 +444,13 @@ export default function AgentPlatformPage() {
                   Your phone system, inside your intake dashboard
                 </h2>
                 <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.7, marginBottom: 32 }}>
-                  Connect Case Compass to RingCentral in minutes. Choose Browser Softphone to talk directly in the browser, or RingOut to bridge calls through your desk or mobile phone. Every call is automatically logged, recorded, and attributed — regardless of dial mode.
+                  Connect Case Compass to RingCentral in minutes. Softphone stays with agents across Inbox, Live Transfer, and Speed Dashboard — talk in-browser, or use RingOut to bridge a desk or mobile phone. Recordings attach to the lead; enable Whisper transcription when you want AI QA on every call.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {[
-                    { mode: 'Browser softphone', color: '#10b981', points: ['Talk in any browser — no app required', 'Floating panel visible across every page', 'Mute, hold, transfer built-in', 'Automatic routing to lead profile or Call Intake'] },
+                    { mode: 'Browser softphone', color: '#10b981', points: ['Talk in any browser — no app required', 'Floating Softphone RINGOUT panel across every page', 'Mute, hold, transfer built-in', 'Automatic routing to lead profile or Call Intake'] },
                     { mode: 'RingOut', color: '#f59e0b', points: ['Agent\'s desk or mobile phone bridges to lead', 'Works with any existing handset', 'All calls still logged and attributed', 'Call routing notification pushed to dashboard'] },
+                    { mode: 'Recording & Whisper QA', color: '#6366f1', points: ['Account-level call recording on new sessions', 'OpenAI Whisper transcription for AI QA', 'Recordings and summaries on the lead timeline', 'Disposition, notes, and SOP checklist completion'] },
                   ].map(m => (
                     <div key={m.mode} style={{ padding: '18px 20px', borderRadius: 12, border: `1px solid ${m.color}30`, background: `${m.color}08` }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
@@ -484,7 +485,7 @@ export default function AgentPlatformPage() {
               <div style={{ textAlign: 'center', marginBottom: 56 }}>
                 <p style={{ fontSize: 13, fontWeight: 600, color: '#6366f1', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 16 }}>FAQ</p>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                  Common questions about the Agent Platform
+                  Common questions about Agent Workforce
                 </h2>
               </div>
             </SectionReveal>

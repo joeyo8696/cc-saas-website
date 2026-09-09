@@ -28,9 +28,9 @@ const platformLinks = {
   },
   agentPlatform: {
     href: '/solutions/agent-platform',
-    eyebrow: 'New',
-    name: 'Agent Platform',
-    description: 'Live transfer inbox, browser softphone, agent SOPs, speed-to-lead dashboards, and outbound callback queues — built for high-performance intake teams.',
+    eyebrow: 'Inside IntakeOS',
+    name: 'Agent Workforce',
+    description: 'Live transfer inbox, RingCentral softphone, Agent SOPs, speed-to-lead dashboards, and outbound queues for intake teams.',
   },
   standalone: {
     href: '/dwellex',
@@ -61,7 +61,7 @@ const platformLinks = {
       heading: 'Intake',
       links: [
         { icon: MessageSquare, label: 'Intelligent Intake', href: '/intakeos' },
-        { icon: PhoneForwarded, label: 'Live Transfer', href: '/intakeos' },
+        { icon: PhoneForwarded, label: 'Live Transfer', href: '/solutions/agent-platform' },
         { icon: LayoutTemplate, label: 'Intake Form Builder', href: '/intakeos' },
       ],
     },
@@ -69,6 +69,7 @@ const platformLinks = {
       heading: 'Workflow',
       links: [
         { icon: GitBranch, label: 'Timeline Automation', href: '/intakeos' },
+        { icon: PhoneForwarded, label: 'Agent Workforce', href: '/solutions/agent-platform' },
         { icon: FileSignature, label: 'E-Signatures', href: '/solutions/esign' },
         { icon: UserCircle, label: 'Client Portal', href: '/intakeos' },
       ],
