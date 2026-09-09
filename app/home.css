@@ -171,8 +171,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  padding: 16px 18px;
+  justify-content: center;
+  gap: 14px;
+  min-height: 112px;
+  padding: 22px 24px;
   border: 1px solid #e2ddd4;
   border-radius: 10px;
   background: #fff;
@@ -215,11 +217,11 @@
   object-fit: contain;
   object-position: left center;
 }
-.hp-strip-logo.intakeos { width: 132px; }
-.hp-strip-logo.torvana { width: 112px; height: 34px; }
+.hp-strip-logo.intakeos { width: 210px; }
+.hp-strip-logo.torvana { width: 188px; height: 56px; }
 .hp-strip-logo.dwellex {
-  width: 104px;
-  height: 30px;
+  width: 176px;
+  height: 52px;
   filter: brightness(0);
 }
 
