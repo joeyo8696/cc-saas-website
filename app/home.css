@@ -163,8 +163,8 @@
 }
 .hp-platform.torvana {
   --tone: #6bc9be;
-  background: linear-gradient(135deg, #112d36, #101b2d 80%);
-  border-color: #2a494f;
+  background: linear-gradient(135deg, #2a5a64, #1e3d4a 75%);
+  border-color: #4a7a84;
 }
 .hp-platform.dwellex {
   --tone: #81a6f0;
