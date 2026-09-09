@@ -76,21 +76,39 @@
   margin-top: 48px;
 }
 .ab-platform {
-  border: 1px solid #3d395b;
-  border-radius: 9px;
+  border: 1px solid #e2ddd4;
+  border-radius: 12px;
   padding: 20px 22px;
-  background: linear-gradient(135deg, #211e3b, #11172b 80%);
-  color: var(--text);
+  background: #fff;
+  color: var(--cream-ink);
   min-height: 120px;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  box-shadow: 0 10px 28px rgba(23, 25, 52, 0.05);
 }
-.ab-platform.intake { border-color: #554781; background: linear-gradient(135deg, #30275d, #171c38 80%); }
-.ab-platform.torvana { border-color: #2a494f; background: linear-gradient(135deg, #112d36, #101b2d 80%); }
-.ab-platform.dwellex { border-color: #30425d; background: linear-gradient(135deg, #182940, #11192d 80%); }
+.ab-platform:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(23, 25, 52, 0.1);
+}
+.ab-platform.intake {
+  border-color: #ddd5f5;
+  background: linear-gradient(165deg, #fbfaff 0%, #f0ecff 100%);
+}
+.ab-platform.intake:hover { border-color: #5046e5; }
+.ab-platform.torvana {
+  border-color: #cfe3de;
+  background: linear-gradient(165deg, #f8fcfb 0%, #e8f5f2 100%);
+}
+.ab-platform.torvana:hover { border-color: #2f9f93; }
+.ab-platform.dwellex {
+  border-color: #cfd9ea;
+  background: linear-gradient(165deg, #f8fafd 0%, #e8eef8 100%);
+}
+.ab-platform.dwellex:hover { border-color: #3f6fd0; }
 .ab-platform span {
   display: block;
   font-size: 0.65rem;
   letter-spacing: 0.1em;
-  color: #a8b2c6;
+  color: #6b7285;
   margin-bottom: 14px;
 }
 .ab-platform-logo {

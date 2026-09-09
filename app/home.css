@@ -126,50 +126,66 @@
   --tone: #8977f7;
   position: relative;
   padding: 23px 28px 21px;
-  border: 1px solid #3d395b;
-  border-radius: 9px;
-  background: linear-gradient(135deg, #211e3b, #11172b 80%);
+  border: 1px solid #e2ddd4;
+  border-radius: 12px;
+  background: #fff;
   overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
   min-height: 266px;
   display: flex;
   flex-direction: column;
-  color: var(--text);
-  box-shadow: 0 12px 24px #121a3010;
+  color: var(--cream-ink);
+  box-shadow: 0 10px 28px rgba(23, 25, 52, 0.05);
   text-align: left;
   cursor: pointer;
   width: 100%;
   font: inherit;
 }
 .hp-platform:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--tone);
-  box-shadow: 0 20px 40px #121a3022;
+  box-shadow: 0 28px 56px rgba(23, 25, 52, 0.12);
+}
+.hp-platform:hover .hp-circle-arrow {
+  background: var(--tone);
+  border-color: var(--tone);
+  color: #fff;
+  transform: translate(1px, -1px);
+}
+.hp-platform:hover .hp-view-label {
+  display: inline;
+  color: var(--tone);
+  font-weight: 600;
 }
 .hp-platform::before {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 28px;
-  right: 28px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--tone), transparent);
-  opacity: 0.65;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--tone), transparent 85%);
+  opacity: 0.9;
+  transition: height 0.28s ease, opacity 0.28s ease;
+}
+.hp-platform:hover::before {
+  height: 4px;
+  opacity: 1;
 }
 .hp-platform.intake {
-  --tone: #b8a7ff;
-  background: linear-gradient(135deg, #5a4db8, #3d387e 75%);
-  border-color: #8578d4;
+  --tone: #5046e5;
+  background: linear-gradient(165deg, #fbfaff 0%, #f0ecff 100%);
+  border-color: #ddd5f5;
 }
 .hp-platform.torvana {
-  --tone: #6bc9be;
-  background: linear-gradient(135deg, #2a5a64, #1e3d4a 75%);
-  border-color: #4a7a84;
+  --tone: #2f9f93;
+  background: linear-gradient(165deg, #f8fcfb 0%, #e8f5f2 100%);
+  border-color: #cfe3de;
 }
 .hp-platform.dwellex {
-  --tone: #81a6f0;
-  background: linear-gradient(135deg, #182940, #11192d 80%);
-  border-color: #30425d;
+  --tone: #3f6fd0;
+  background: linear-gradient(165deg, #f8fafd 0%, #e8eef8 100%);
+  border-color: #cfd9ea;
 }
 .hp-platform-top {
   display: flex;
@@ -180,17 +196,18 @@
   font-size: 0.69rem;
   font-weight: 600;
   letter-spacing: 0.11em;
-  color: #c3ccdf;
+  color: #6b7285;
 }
 .hp-circle-arrow {
   width: 27px;
   height: 27px;
   display: grid;
   place-items: center;
-  border: 1px solid #ffffff29;
+  border: 1px solid #c8cdd8;
   border-radius: 50%;
   color: var(--tone);
   font-size: 16px;
+  transition: background 0.28s ease, border-color 0.28s ease, color 0.28s ease, transform 0.28s ease;
 }
 .hp-product-brand {
   height: 86px;
@@ -205,11 +222,11 @@
   letter-spacing: -0.05em;
   line-height: 1.1;
 }
-.hp-product-brand h2 span { color: #b8a7ff; }
+.hp-product-brand h2 span { color: #5046e5; }
 .hp-byline {
   font-size: 0.65rem;
   letter-spacing: 0.07em;
-  color: #a6adbf;
+  color: #7a8194;
   margin-top: 4px;
 }
 .hp-torvana-logo {
@@ -232,14 +249,15 @@
 .hp-platform > p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #d3dbea;
+  color: #3f4658;
 }
 .hp-platform-bottom {
   margin-top: auto;
   padding-top: 22px;
   display: flex;
   justify-content: space-between;
-  color: #99a8c1;
+  align-items: center;
+  color: #6d7588;
   font-size: 0.75rem;
 }
 .hp-view-label { display: none; }
