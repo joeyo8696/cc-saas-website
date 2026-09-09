@@ -95,10 +95,10 @@
 }
 .ab-platform.intake:hover { border-color: #5046e5; }
 .ab-platform.torvana {
-  border-color: #cfe3de;
-  background: linear-gradient(165deg, #f8fcfb 0%, #e8f5f2 100%);
+  border-color: #f0cfe0;
+  background: linear-gradient(165deg, #fff8fb 0%, #fce8f2 100%);
 }
-.ab-platform.torvana:hover { border-color: #2f9f93; }
+.ab-platform.torvana:hover { border-color: #e0489a; }
 .ab-platform.dwellex {
   border-color: #cfd9ea;
   background: linear-gradient(165deg, #f8fafd 0%, #e8eef8 100%);

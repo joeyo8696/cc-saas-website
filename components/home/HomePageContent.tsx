@@ -3,6 +3,7 @@
 import { useRef, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 import { useDemoModal } from '@/components/DemoModalProvider'
 import BrowserFrame from '@/components/ui/BrowserFrame'
 import '@/app/home.css'
@@ -101,7 +102,9 @@ export default function HomePageContent() {
               <button type="button" className="hp-platform intake" onClick={() => selectPlatform('intake', true)}>
                 <div className="hp-platform-top">
                   <span className="hp-market">PLAINTIFF LAW</span>
-                  <span className="hp-circle-arrow" aria-hidden="true">↗</span>
+                  <span className="hp-circle-arrow" aria-hidden="true">
+                    <ArrowUpRight size={16} strokeWidth={2.5} />
+                  </span>
                 </div>
                 <div className="hp-product-brand">
                   <Image className="hp-intakeos-logo" src="/images/intakeos-logo.png" alt="IntakeOS" width={200} height={37} unoptimized />
@@ -117,7 +120,9 @@ export default function HomePageContent() {
               <button type="button" className="hp-platform torvana" onClick={() => selectPlatform('torvana', true)}>
                 <div className="hp-platform-top">
                   <span className="hp-market">SPECIALTY HEALTHCARE</span>
-                  <span className="hp-circle-arrow" aria-hidden="true">↗</span>
+                  <span className="hp-circle-arrow" aria-hidden="true">
+                    <ArrowUpRight size={16} strokeWidth={2.5} />
+                  </span>
                 </div>
                 <div className="hp-product-brand">
                   <Image className="hp-torvana-logo" src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={185} height={82} unoptimized />
@@ -132,7 +137,9 @@ export default function HomePageContent() {
               <button type="button" className="hp-platform dwellex" onClick={() => selectPlatform('dwellex', true)}>
                 <div className="hp-platform-top">
                   <span className="hp-market">LANDLORD–TENANT LAW</span>
-                  <span className="hp-circle-arrow" aria-hidden="true">↗</span>
+                  <span className="hp-circle-arrow" aria-hidden="true">
+                    <ArrowUpRight size={16} strokeWidth={2.5} />
+                  </span>
                 </div>
                 <div className="hp-product-brand">
                   <Image className="hp-dwellex-logo" src="/images/dwellex.png" alt="Dwellex" width={151} height={66} unoptimized />
