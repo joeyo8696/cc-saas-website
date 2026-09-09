@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import DemoButton from '@/components/DemoButton'
 
-const WORDS = ['Intake', 'infrastructure.', 'Three', 'industries.']
-const HL_WORDS = new Set(['Three', 'industries.'])
+const WORDS = ['Smart Intake.', 'Smarter', 'Practice.']
+const HL_WORDS = new Set(['Smarter', 'Practice.'])
 
 export default function Hero() {
   const h1Ref = useRef<HTMLHeadingElement>(null)
@@ -103,7 +103,7 @@ export default function Hero() {
             animation: 'pulse 2s ease-in-out infinite',
           }}
         />
-        Three Platforms. One Infrastructure.
+        Intake, Qualify, Convert
       </div>
 
       {/* Headline */}
