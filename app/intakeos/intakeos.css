@@ -103,6 +103,19 @@
 .io-steps h3 { font-size: 1.5rem; line-height: 1.25; margin: 27px 0 16px; }
 .io-steps p { color: #a1aec4; font-size: 1rem; }
 .io .dw-workspace { background: #edeaf4; }
+.io-tabs {
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.io-tabs button {
+  flex: 1 0 auto;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  padding: 15px 10px;
+  min-width: max-content;
+}
 .io-conversion { background: #2c235d; padding: 85px 0; }
 .io-conversion-grid {
   display: grid;

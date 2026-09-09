@@ -10,7 +10,7 @@ import { useDemoModal } from '@/components/DemoModalProvider'
 import '../dwellex/dwellex.css'
 import './intakeos.css'
 
-type Tab = 'builder' | 'scoring' | 'inbox'
+type Tab = 'builder' | 'scoring' | 'timelines' | 'transfer' | 'inbox' | 'analytics'
 
 const features: Record<Tab, {
   title: ReactNode
@@ -45,6 +45,31 @@ const features: Record<Tab, {
       <Link className="text-link" href="/solutions/waypoint">Explore Waypoint ↗</Link>
     ),
   },
+  timelines: {
+    title: <>What happens next.<br />Already built in.</>,
+    body: 'Visual workflows that run after intake — follow-ups, document requests, CRM sync and e-sign handoffs without staff chasing every step.',
+    bullets: [
+      'Drag-and-drop timeline builder',
+      'SMS, email and task automation',
+      'Conditional routing by case type',
+    ],
+    img: '/images/timeline-builder.png',
+    imgAlt: 'Case Compass timeline builder with automated workflow steps',
+  },
+  transfer: {
+    title: <>Warm handoffs.<br />At peak intent.</>,
+    body: 'When a lead qualifies, route them to available intake staff in real time — with the transcript and case context already on screen.',
+    bullets: [
+      'Live queue with agent assignment',
+      'Full intake context before pickup',
+      'Browser softphone and speed-to-lead tracking',
+    ],
+    img: '/images/agent-platform-live-transfer-inbox.png',
+    imgAlt: 'Live transfer inbox with agent assignment and lead queue',
+    extra: (
+      <Link className="text-link" href="/solutions/agent-platform">Explore Agent Platform ↗</Link>
+    ),
+  },
   inbox: {
     title: <>Context stays<br />with the conversation.</>,
     body: 'Give your team a shared place to review incoming leads and move the right work forward.',
@@ -55,6 +80,17 @@ const features: Record<Tab, {
     ],
     img: '/images/intake.png',
     imgAlt: 'IntakeOS lead inbox and intake workspace',
+  },
+  analytics: {
+    title: <>See what converts.<br />Not just what comes in.</>,
+    body: 'Track intake completion, source quality and conversion through to signed retainers — so the next campaign decision has more behind it than a lead count.',
+    bullets: [
+      'Full-funnel visibility by source and campaign',
+      'Team and channel performance',
+      'Exportable reporting for marketing and ops',
+    ],
+    img: '/images/referrals-reporting.png',
+    imgAlt: 'Case Compass reporting dashboard with intake and conversion analytics',
   },
 }
 
@@ -159,11 +195,14 @@ export default function IntakeOSPage() {
                 </div>
                 <p>From the questions you ask<br />to the leads your team opens first.</p>
               </div>
-              <div className="dw-tabs" role="tablist" aria-label="IntakeOS product features">
+              <div className="dw-tabs io-tabs" role="tablist" aria-label="IntakeOS product features">
                 {([
-                  { id: 'builder' as const, label: '01 / Build your intake' },
-                  { id: 'scoring' as const, label: '02 / Prioritize with Waypoint' },
-                  { id: 'inbox' as const, label: '03 / Work the pipeline' },
+                  { id: 'builder' as const, label: '01 / Intake builder' },
+                  { id: 'scoring' as const, label: '02 / Waypoint' },
+                  { id: 'timelines' as const, label: '03 / Timelines' },
+                  { id: 'transfer' as const, label: '04 / Live transfer' },
+                  { id: 'inbox' as const, label: '05 / Inbox' },
+                  { id: 'analytics' as const, label: '06 / Analytics' },
                 ]).map((t) => (
                   <button
                     key={t.id}
