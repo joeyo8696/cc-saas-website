@@ -41,12 +41,10 @@ const torvanaFaqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'What is the AI-generated medical chronology?',
-      acceptedAnswer: { '@type': 'Answer', text: "Once records are retrieved, Torvana automatically generates a chronology document summarizing the patient's treatment history, delivered alongside the records themselves rather than as a separate request." },
+      name: 'What is the medical chronology?',
+      acceptedAnswer: { '@type': 'Answer', text: "Once records are retrieved, Torvana generates a chronology document summarizing the patient's treatment history — delivered alongside the records rather than as a separate request." },
     },
     {
-      '@type': 'Question',
-      name: 'How does automated recall work?',
       acceptedAnswer: { '@type': 'Answer', text: "Torvana can run scheduled outreach for recurring or follow-up care, like annual imaging, on a set timeline. Reminders go out automatically via SMS and the patient portal, so recall doesn't rely on staff remembering to follow up." },
     },
     {

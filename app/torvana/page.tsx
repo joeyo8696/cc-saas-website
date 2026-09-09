@@ -38,7 +38,7 @@ const stages = [
     reply: 'One less thing to follow up on.',
     status: 'Records retrieved',
     detail: 'Authorized records added to the case.',
-    attorney: 'Records and medical chronology are ready to review.',
+    attorney: 'Records and medical chronology are ready to review in the portal.',
     time: 'Next day',
   },
 ]
@@ -85,24 +85,14 @@ const modules = [
     note: 'Access scoped to this firm\'s referrals.',
   },
   {
-    name: 'Authorization & records',
-    short: 'From signed consent to retrieved records.',
-    copy: 'Capture HIPAA authorization during intake and connect it to record retrieval through DataVant and Digital Owl. Target turnaround: 24–48 hours.',
-    icon: FileText,
-    rows: ['Authorization captured', 'Records requested', 'Records retrieved'],
-    tag: 'Records workflow',
-    label: 'The paperwork moves forward.',
-    note: 'Timing depends on the source and integration.',
-  },
-  {
     name: 'Medical chronology',
     short: 'A timeline that arrives with the records.',
-    copy: 'An AI-generated, attorney-readable chronology accompanies the retrieved records. The legal team can review the timeline alongside its source material.',
+    copy: 'A structured, attorney-readable chronology accompanies the retrieved records. The legal team can review the timeline alongside its source material.',
     icon: FileText,
     rows: ['Records organized', 'Chronology generated', 'Ready for attorney review'],
     tag: 'Attorney view',
     label: 'The story, in order.',
-    note: 'Generated chronology · Ready for review',
+    note: 'Chronology delivered · Ready for review',
   },
 ]
 
@@ -434,7 +424,7 @@ export default function TorvanaPage() {
             <div className="tv-screenshot-tabs">
               {[
                 'Referring Providers',
-                'AI Medical Chronology',
+                'Medical Records',
                 'Workflow Automation',
                 'Analytics',
               ].map((label, i) => (
@@ -485,7 +475,7 @@ export default function TorvanaPage() {
             )}
             <p className="tv-screenshot-caption">
               {screenshotTab === 0 && 'Manage every referring provider and patient in one queue — track intake status, leads and outreach from a single view.'}
-              {screenshotTab === 1 && 'Retrieved records are assembled into a dated AI chronology with record flags, diagnoses and billing totals — delivered back to the referrer automatically.'}
+              {screenshotTab === 1 && 'Retrieved records are assembled into a dated chronology with record flags, diagnoses and billing totals — delivered back to the referrer automatically.'}
               {screenshotTab === 2 && 'Visual workflow automation for every referral path. Build intake sequences, scheduling triggers, appointment reminders and EHR push steps — no code required.'}
               {screenshotTab === 3 && 'Track intake completion rates, timeline performance and marketing funnel drop-off by referral source — so you know which relationships are working.'}
             </p>
@@ -680,7 +670,7 @@ export default function TorvanaPage() {
                 { q: 'How does patient intake work?', a: 'Intake runs in any browser — phone, tablet, or desktop. It can be embedded directly on your practice website, shared as a link, or sent to patients as a text message. Patients complete their health history, consent forms, and HIPAA authorization digitally, with e-signature built into the flow. No app to download, no account to create.' },
                 { q: 'What do referring attorneys see in the portal?', a: 'Real-time status on their own cases only — intake completion, appointment confirmation, record retrieval status, and lien case status. It replaces phone calls and mailed status requests with self-serve visibility. Each firm only sees their own referred cases.' },
                 { q: 'How does medical record retrieval work?', a: 'Once HIPAA authorization is captured at intake, record retrieval is triggered automatically. Torvana targets a 24 to 48 hour turnaround, though actual timing varies by record source. The referring attorney sees retrieval status live.' },
-                { q: 'What is the AI-generated medical chronology?', a: "Once records are retrieved, Torvana automatically generates a chronology document summarizing the patient's treatment history — delivered alongside the records rather than as a separate request." },
+                { q: 'What is the medical chronology?', a: "Once records are retrieved, Torvana generates a chronology document summarizing the patient's treatment history — delivered alongside the records rather than as a separate request." },
                 { q: 'Do our patients need to download an app?', a: "No. Intake, scheduling, and the patient portal all run in a mobile browser. There's nothing to install." },
                 { q: 'Is Torvana HIPAA compliant?', a: 'Yes. Torvana is built with HIPAA compliance as a core requirement, not an add-on. Business Associate Agreements are in place with every vendor that touches protected health information.' },
                 { q: 'How is Torvana priced?', a: "Pricing depends on the number of locations, integration scope, and specific systems involved. We put together a detailed proposal for every practice rather than a one-size-fits-all price, since integration needs vary quite a bit." },
