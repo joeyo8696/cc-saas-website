@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { DM_Serif_Display, Space_Grotesk, Inter } from 'next/font/google'
+import { DM_Serif_Display, Space_Grotesk, Inter, Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
@@ -24,6 +24,13 @@ const inter = Inter({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   variable: '--font-body',
+  display: 'swap',
+})
+
+const manrope = Manrope({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-heading',
   display: 'swap',
 })
 
@@ -312,7 +319,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSerifDisplay.variable} ${spaceGrotesk.variable} ${inter.variable}`}
+      className={`${dmSerifDisplay.variable} ${spaceGrotesk.variable} ${inter.variable} ${manrope.variable}`}
     >
       <body>
         <Script id="apollo-tracker" strategy="beforeInteractive">{`function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,o.onload=function(){window.trackingFunctions.onLoad({appId:"6a2ef70ce49d680020cc3c33"})},document.head.appendChild(o)}initApollo();`}</Script>

@@ -1,0 +1,325 @@
+'use client'
+
+import { useMemo, useState, type ReactNode } from 'react'
+import Image from 'next/image'
+import AnnouncementBanner from '@/components/AnnouncementBanner'
+import Nav from '@/components/nav/Nav'
+import Footer from '@/components/Footer'
+import './dwellex.css'
+
+type Tab = 'notices' | 'timeline' | 'courts'
+
+const features: Record<Tab, {
+  title: ReactNode
+  body: string
+  bullets: string[]
+  img: string
+  imgAlt: string
+}> = {
+  notices: {
+    title: <>One upload.<br />A batch ready for review.</>,
+    body: 'Import a property management CSV, reuse saved column mappings and catch row-level issues before generating notices.',
+    bullets: [
+      'Review notice types and service dates',
+      'Apply configured court expiration rules',
+      'Preview documents before finalizing',
+    ],
+    img: '/images/dwellex-dashboard.png',
+    imgAlt: 'Batch notice review in Dwellex',
+  },
+  timeline: {
+    title: <>Every task.<br />Its place in the matter.</>,
+    body: 'Separate attorney and client responsibilities in a shared timeline, with a clear view of progress at each stage.',
+    bullets: [
+      'Workflows tailored to your case types',
+      'Assigned action items and due dates',
+      'Email and SMS milestone reminders',
+    ],
+    img: '/images/dwellex-timeline.png',
+    imgAlt: 'Dwellex case timeline with client and attorney tasks',
+  },
+  courts: {
+    title: <>A court day.<br />Already organized.</>,
+    body: 'Bring upcoming hearings into Trial Lists grouped by county and morning or afternoon session.',
+    bullets: [
+      'Filter by county and hearing date',
+      'See docket details and case balances',
+      'Export a formatted Word court list',
+    ],
+    img: '/images/dwellex-courts.png',
+    imgAlt: 'Dwellex Trial Lists grouped by county and court session',
+  },
+}
+
+function estimateFor(n: number) {
+  const enterprise = n >= 1000
+  const rate = n <= 50 ? 8 : n <= 150 ? 6.5 : 5
+  const tier = enterprise ? 'Enterprise' : n <= 50 ? 'Starter' : n <= 150 ? 'Growth' : 'Scale'
+  return {
+    enterprise,
+    rate,
+    tier,
+    total: enterprise ? null : 399 + n * rate,
+    label: enterprise ? '1,000+' : String(n),
+    math: enterprise
+      ? 'Custom flat-rate pricing for your practice'
+      : `$399 platform + ${n} cases × $${rate.toFixed(2)}`,
+  }
+}
+
+export default function DwellexPage() {
+  const [tab, setTab] = useState<Tab>('notices')
+  const [cases, setCases] = useState(50)
+  const estimate = useMemo(() => estimateFor(cases), [cases])
+  const feature = features[tab]
+
+  return (
+    <>
+      <div style={{ position: 'sticky', top: 0, zIndex: 200 }}>
+        <AnnouncementBanner />
+        <Nav />
+      </div>
+      <div className="dw">
+        <main id="main">
+          <section className="dw-hero">
+            <div className="wrap">
+              <div className="dw-lockup">
+                <Image src="/images/dwellex.png" alt="Dwellex" width={130} height={57} unoptimized />
+                <span>LANDLORD–TENANT CASE MANAGEMENT</span>
+              </div>
+              <div className="dw-hero-grid">
+                <h1>More moving parts.<br /><em>One clear path.</em></h1>
+                <div className="dw-intro">
+                  <p>Your cases have enough complexity. Bring intake, notices, court dates and client updates into one workspace built for your eviction practice.</p>
+                  <a className="button" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+                    See Dwellex in action <span aria-hidden="true">↗</span>
+                  </a>
+                  <a className="text-link" href="#workflow">Follow the workflow ↓</a>
+                </div>
+              </div>
+
+              <div className="dw-product-stage">
+                <div className="stage-top">
+                  <span>THE WORKSPACE BEHIND EVERY NEXT STEP</span>
+                  <span>Dwellex / Notice review</span>
+                </div>
+                <div className="stage-grid">
+                  <div className="stage-copy">
+                    <span className="eyebrow">BUILT FOR VOLUME</span>
+                    <h2>A full caseload.<br />A clear view.</h2>
+                    <p>Review the details.<br />Prepare the notices.<br />Keep matters moving.</p>
+                    <a href="#workspace" className="quiet-link">Explore the workspace <span>↓</span></a>
+                  </div>
+                  <div className="dw-screen">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/dwellex-dashboard.png" width={3456} height={1846} alt="Dwellex batch notice review workspace with intake details and notice generation controls" />
+                  </div>
+                </div>
+                <div className="stage-bottom">
+                  <span>Intake → Review → Notices → Court → Lockout</span>
+                  <span>Purpose-built for landlord–tenant law</span>
+                </div>
+              </div>
+
+              <div className="dw-assurances">
+                <span>Unlimited users</span>
+                <span>Role-based access</span>
+                <span>Residential &amp; commercial</span>
+                <span>Clio integration</span>
+              </div>
+            </div>
+          </section>
+
+          <section className="dw-workflow wrap" id="workflow">
+            <div className="dw-section-head">
+              <div>
+                <p className="eyebrow">FROM FIRST INTAKE TO FINAL STEP</p>
+                <h2>The whole process.<br /><em>Held together.</em></h2>
+              </div>
+              <p>Give your team a shared workflow and your clients a window into what comes next.</p>
+            </div>
+            <ol className="dw-steps">
+              <li>
+                <span>01 / INTAKE</span>
+                <h3>Start with the details.</h3>
+                <p>Landlords submit tenant information and documents through your portal. Staff review each request before creating the case.</p>
+              </li>
+              <li>
+                <span>02 / PREPARE</span>
+                <h3>Turn data into action.</h3>
+                <p>Generate notices from intake data, apply your court rules and assign the work to the right people.</p>
+              </li>
+              <li>
+                <span>03 / PROGRESS</span>
+                <h3>Keep the next step visible.</h3>
+                <p>Track hearings, client tasks and lockout coordination, with milestone reminders along the way.</p>
+              </li>
+            </ol>
+          </section>
+
+          <section className="dw-workspace" id="workspace">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">A CLOSER LOOK</p>
+                  <h2>Built around the work.<br /><em>Right down to the details.</em></h2>
+                </div>
+                <p>Real product views.<br />One connected practice.</p>
+              </div>
+              <div className="dw-tabs" role="tablist" aria-label="Product features">
+                {([
+                  { id: 'notices' as const, label: '01 / Batch notices' },
+                  { id: 'timeline' as const, label: '02 / Case timelines' },
+                  { id: 'courts' as const, label: '03 / Court preparation' },
+                ]).map((t) => (
+                  <button
+                    key={t.id}
+                    id={`tab-${t.id}`}
+                    role="tab"
+                    aria-selected={tab === t.id}
+                    aria-controls={`view-${t.id}`}
+                    tabIndex={tab === t.id ? 0 : -1}
+                    onClick={() => setTab(t.id)}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+
+              <article className="dw-feature" id={`view-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`}>
+                <div className="dw-feature-copy">
+                  <h3>{feature.title}</h3>
+                  <p>{feature.body}</p>
+                  <ul>
+                    {feature.bullets.map((b) => <li key={b}>{b}</li>)}
+                  </ul>
+                </div>
+                <a className="dw-feature-image" href={feature.img} target="_blank" rel="noopener noreferrer" aria-label="Open full-size product screenshot">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={feature.img} alt={feature.imgAlt} loading="lazy" />
+                  <span>View full-size product screen ↗</span>
+                </a>
+              </article>
+
+              <div className="dw-support-features">
+                <div>
+                  <h3>Clients stay connected.</h3>
+                  <p>A secure portal for documents, case progress and conversations. Email replies return to the case thread.</p>
+                </div>
+                <div>
+                  <h3>Your systems stay in sync.</h3>
+                  <p>Connect Clio matters, tasks and documents. Dwellex also integrates with Practice Panther and Rent Manager.</p>
+                </div>
+                <div>
+                  <h3>Your team sees the bigger picture.</h3>
+                  <p>Track active matters, pending intake and rent at risk. Export reports to CSV or Excel.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="dw-pricing wrap" id="pricing">
+            <div className="dw-price-intro">
+              <p className="eyebrow">ROOM FOR YOUR WHOLE TEAM</p>
+              <h2>Price by caseload.<br /><em>Not by seat.</em></h2>
+              <p>One platform fee. Unlimited users. Per-case rates that decrease as your monthly volume grows.</p>
+              <div className="dw-base">
+                <strong>$399</strong>
+                <span>/ month<br />+ per-case fees</span>
+              </div>
+              <p className="dw-small">Implementation, training and custom integrations are scoped separately for your practice.</p>
+              <a className="quiet-link" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+                Talk through your setup <span>↗</span>
+              </a>
+            </div>
+            <div className="dw-calculator">
+              <div className="calc-header">
+                <h3>Your monthly estimate</h3>
+                <span>USD</span>
+              </div>
+              <label htmlFor="cases">
+                Cases created per month
+                <output id="case-count" htmlFor="cases">{estimate.label}</output>
+              </label>
+              <input
+                type="range"
+                id="cases"
+                min={10}
+                max={1000}
+                step={10}
+                value={cases}
+                onChange={(e) => setCases(Number(e.target.value))}
+              />
+              <div className="range-labels">
+                <span>10 cases</span>
+                <span>1,000+</span>
+              </div>
+              <div className="estimate" aria-live="polite">
+                <span>{estimate.tier}</span>
+                <p>
+                  <strong>
+                    {estimate.enterprise
+                      ? "Let's talk"
+                      : new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(estimate.total!)}
+                  </strong>
+                  <span>{estimate.enterprise ? '' : ' / month'}</span>
+                </p>
+                <span>{estimate.math}</span>
+              </div>
+              <div className="dw-tiers">
+                <div><span>Up to 50</span><strong>$8.00 / case</strong></div>
+                <div><span>51–150</span><strong>$6.50 / case</strong></div>
+                <div><span>151–999</span><strong>$5.00 / case</strong></div>
+                <div><span>1,000+</span><strong>Custom flat rate</strong></div>
+              </div>
+              <a className="button" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+                Find your fit <span>↗</span>
+              </a>
+            </div>
+          </section>
+
+          <section className="dw-faq">
+            <div className="wrap dw-faq-grid">
+              <div>
+                <p className="eyebrow">A FEW THINGS TO KNOW</p>
+                <h2>Good questions.<br /><em>Clear answers.</em></h2>
+              </div>
+              <div>
+                <details>
+                  <summary>Can we use our own workflows and court rules?</summary>
+                  <p>Yes. Configure case templates, action items, document templates and court-specific notice rules. Firm administrators can maintain jurisdiction details and expiration settings.</p>
+                </details>
+                <details>
+                  <summary>What can landlords and property managers see?</summary>
+                  <p>Clients can submit intake, upload documents and follow their case timeline in a secure portal. Role-based access controls who can view and work on matters.</p>
+                </details>
+                <details>
+                  <summary>Does Dwellex connect to Clio?</summary>
+                  <p>Yes. Dwellex supports bidirectional Clio synchronization for case information, tasks and documents, with controls for sync scope and document visibility.</p>
+                </details>
+                <details>
+                  <summary>What does getting started involve?</summary>
+                  <p>Implementation is scoped around your existing systems and caseload, including data migration, workflow configuration, jurisdiction setup and team training. A demo is the first step toward a plan for your practice.</p>
+                </details>
+              </div>
+            </div>
+          </section>
+
+          <section className="dw-cta">
+            <div className="wrap">
+              <p className="eyebrow">YOUR CASELOAD. YOUR WORKFLOW.</p>
+              <h2>See what a clearer<br /><em>day could look like.</em></h2>
+              <div>
+                <p>Walk through Dwellex with your practice in mind.</p>
+                <a className="button" href="https://scheduler.zoom.us/case-compass/dwellex-demo" target="_blank" rel="noopener noreferrer">
+                  Book your Dwellex demo <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <Footer />
+    </>
+  )
+}
