@@ -69,57 +69,6 @@
   font-size: 1.05rem;
   max-width: 380px;
 }
-.ab-platforms {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 48px;
-}
-.ab-platform {
-  border: 1px solid #e2ddd4;
-  border-radius: 12px;
-  padding: 20px 22px;
-  background: #fff;
-  color: var(--cream-ink);
-  min-height: 120px;
-  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-  box-shadow: 0 10px 28px rgba(23, 25, 52, 0.05);
-}
-.ab-platform:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(23, 25, 52, 0.1);
-}
-.ab-platform.intake {
-  border-color: #ddd5f5;
-  background: linear-gradient(165deg, #fbfaff 0%, #f0ecff 100%);
-}
-.ab-platform.intake:hover { border-color: #5046e5; }
-.ab-platform.torvana {
-  border-color: #f0cfe0;
-  background: linear-gradient(165deg, #fff8fb 0%, #fce8f2 100%);
-}
-.ab-platform.torvana:hover { border-color: #e0489a; }
-.ab-platform.dwellex {
-  border-color: #cfd9ea;
-  background: linear-gradient(165deg, #f8fafd 0%, #e8eef8 100%);
-}
-.ab-platform.dwellex:hover { border-color: #3f6fd0; }
-.ab-platform span {
-  display: block;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  color: #6b7285;
-  margin-bottom: 14px;
-}
-.ab-platform-logo {
-  display: block;
-  width: auto;
-  object-fit: contain;
-  object-position: left center;
-}
-.ab-platform-logo.intakeos { height: 28px; width: auto; }
-.ab-platform-logo.torvana { height: 42px; width: auto; }
-.ab-platform-logo.dwellex { height: 40px; width: auto; filter: brightness(0); }
 
 /* Mission — cream */
 .ab-mission {

@@ -38,21 +38,6 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-
-              <div className="ab-platforms">
-                <div className="ab-platform intake">
-                  <span>PLAINTIFF LAW</span>
-                  <Image className="ab-platform-logo intakeos" src="/images/intakeos-logo.png" alt="IntakeOS" width={180} height={33} unoptimized />
-                </div>
-                <div className="ab-platform torvana">
-                  <span>SPECIALTY HEALTHCARE</span>
-                  <Image className="ab-platform-logo torvana" src="/images/Torvana-Illustrator-Master.svg" alt="Torvana" width={160} height={50} unoptimized />
-                </div>
-                <div className="ab-platform dwellex">
-                  <span>LANDLORD–TENANT LAW</span>
-                  <Image className="ab-platform-logo dwellex" src="/images/dwellex.png" alt="Dwellex" width={130} height={57} unoptimized />
-                </div>
-              </div>
             </div>
           </section>
 
