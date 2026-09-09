@@ -251,6 +251,7 @@
   width: 151px;
   height: 66px;
   object-fit: contain;
+  filter: brightness(0);
 }
 .hp-platform > p {
   font-size: 1rem;

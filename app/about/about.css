@@ -119,7 +119,7 @@
 }
 .ab-platform-logo.intakeos { height: 28px; width: auto; }
 .ab-platform-logo.torvana { height: 42px; width: auto; }
-.ab-platform-logo.dwellex { height: 40px; width: auto; }
+.ab-platform-logo.dwellex { height: 40px; width: auto; filter: brightness(0); }
 
 /* Mission — cream */
 .ab-mission {
