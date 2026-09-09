@@ -72,10 +72,24 @@
   padding: 16px 23px;
   font-size: 0.875rem;
   font-weight: 600;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
   cursor: pointer;
 }
-.dw .button:hover { background: white; transform: translateY(-2px); }
+.dw .button:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+/* Indigo CTAs — darken on hover, don't flip to white */
+.dw-intro .button:hover,
+.dw-calculator .button:hover,
+.dw-cta .button:hover,
+.io-headline .button:hover,
+.io-conversion .button:hover,
+.io-cta .button:hover {
+  background: #4036ad;
+  border-color: #4036ad;
+  color: #fff;
+}
 .dw .text-link {
   display: block;
   font-size: 0.875rem;
