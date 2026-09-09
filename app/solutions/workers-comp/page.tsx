@@ -153,65 +153,69 @@ export default function WorkersCompPage() {
             </div>
           </section>
 
-          <section className="rf-directions wrap">
-            <div className="dw-section-head">
-              <div>
-                <p className="eyebrow">SOUND FAMILIAR?</p>
-                <h2>The problems slowing<br /><em>your firm down.</em></h2>
+          <section className="rf-directions">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">SOUND FAMILIAR?</p>
+                  <h2>The problems slowing<br /><em>your firm down.</em></h2>
+                </div>
+                <p>High-volume WC practices lose cases to chaos, delay, and paperwork — not to better competitors.</p>
               </div>
-              <p>High-volume WC practices lose cases to chaos, delay, and paperwork — not to better competitors.</p>
-            </div>
-            <div className="wc-pain-grid">
-              {painPoints.map((p, i) => (
-                <article key={p.title} className="rf-direction">
-                  <span>{String(i + 1).padStart(2, '0')} / PAIN</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.body}</p>
-                </article>
-              ))}
+              <div className="wc-pain-grid">
+                {painPoints.map((p, i) => (
+                  <article key={p.title} className="rf-direction">
+                    <span>{String(i + 1).padStart(2, '0')} / PAIN</span>
+                    <h3>{p.title}</h3>
+                    <p>{p.body}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
 
-          <section className="rf-flow wrap" id="workflow">
-            <div className="dw-section-head">
-              <div>
-                <p className="eyebrow">THE WORKFLOW</p>
-                <h2>From first contact<br /><em>to signed retainer.</em></h2>
+          <section className="rf-flow" id="workflow">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">THE WORKFLOW</p>
+                  <h2>From first contact<br /><em>to signed retainer.</em></h2>
+                </div>
+                <p>Every channel in. Qualified cases out. Paperwork that builds itself.</p>
               </div>
-              <p>Every channel in. Qualified cases out. Paperwork that builds itself.</p>
+              <ol className="rf-steps" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                <li>
+                  <span>01 / REACH</span>
+                  <h3>Injured worker reaches out</h3>
+                  <p>Web form, phone, or referral — every channel captured in one place.</p>
+                </li>
+                <li>
+                  <span>02 / SCORE</span>
+                  <h3>AI qualifies the lead</h3>
+                  <p>Waypoint scores injury type, date, employer, and coverage in seconds.</p>
+                </li>
+                <li>
+                  <span>03 / OUTREACH</span>
+                  <h3>Instant outreach fires</h3>
+                  <p>SMS and email sequences launch; live transfer for hot leads.</p>
+                </li>
+                <li>
+                  <span>04 / SIGN</span>
+                  <h3>Retainer signed</h3>
+                  <p>Auto-generated agreement sent for e-signature — less staff time per file.</p>
+                </li>
+                <li>
+                  <span>05 / BUILD</span>
+                  <h3>Case file built</h3>
+                  <p>Medical requests, employer forms, and timeline initialized automatically.</p>
+                </li>
+                <li>
+                  <span>06 / LOOP</span>
+                  <h3>Client kept in the loop</h3>
+                  <p>Automated updates at every milestone; portal access for status checks.</p>
+                </li>
+              </ol>
             </div>
-            <ol className="rf-steps" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-              <li>
-                <span>01 / REACH</span>
-                <h3>Injured worker reaches out</h3>
-                <p>Web form, phone, or referral — every channel captured in one place.</p>
-              </li>
-              <li>
-                <span>02 / SCORE</span>
-                <h3>AI qualifies the lead</h3>
-                <p>Waypoint scores injury type, date, employer, and coverage in seconds.</p>
-              </li>
-              <li>
-                <span>03 / OUTREACH</span>
-                <h3>Instant outreach fires</h3>
-                <p>SMS and email sequences launch; live transfer for hot leads.</p>
-              </li>
-              <li>
-                <span>04 / SIGN</span>
-                <h3>Retainer signed</h3>
-                <p>Auto-generated agreement sent for e-signature — less staff time per file.</p>
-              </li>
-              <li>
-                <span>05 / BUILD</span>
-                <h3>Case file built</h3>
-                <p>Medical requests, employer forms, and timeline initialized automatically.</p>
-              </li>
-              <li>
-                <span>06 / LOOP</span>
-                <h3>Client kept in the loop</h3>
-                <p>Automated updates at every milestone; portal access for status checks.</p>
-              </li>
-            </ol>
           </section>
 
           <section className="rf-workspace" id="workspace">

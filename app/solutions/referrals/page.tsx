@@ -164,77 +164,81 @@ export default function ReferralsPage() {
             </div>
           </section>
 
-          <section className="rf-directions wrap">
-            <div className="dw-section-head">
-              <div>
-                <p className="eyebrow">ONE NETWORK. TWO PRODUCTS.</p>
-                <h2>Built for firms.<br /><em>And for practices.</em></h2>
+          <section className="rf-directions">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">ONE NETWORK. TWO PRODUCTS.</p>
+                  <h2>Built for firms.<br /><em>And for practices.</em></h2>
+                </div>
+                <p>Referral Network is available in IntakeOS and Torvana — shaped to each side of the relationship.</p>
               </div>
-              <p>Referral Network is available in IntakeOS and Torvana — shaped to each side of the relationship.</p>
-            </div>
-            <div className="rf-direction-grid">
-              <article className="rf-direction">
-                <span>01 / INTAKEOS</span>
-                <h3>Plaintiff law firms</h3>
-                <p>Accept inbound leads from partner attorneys, refer cases out with co-counsel agreements, and track every fee — in the same intake platform that qualifies and signs clients.</p>
-                <ul>
-                  <li>Partner attorney portals for inbound leads</li>
-                  <li>Outbound co-counsel agreements &amp; type-to-sign</li>
-                  <li>Fee tracking and partner performance reporting</li>
-                  <li>Waypoint-triggered auto-referrals</li>
-                </ul>
-                <Link className="rf-direction-link" href="/intakeos">Explore IntakeOS →</Link>
-              </article>
-              <article className="rf-direction">
-                <span>02 / TORVANA</span>
-                <h3>Specialty medical practices</h3>
-                <p>Give each referring firm a scoped view of its own patients — intake, appointments, records and status — so front desk status calls drop and the referral relationship stays intact.</p>
-                <ul>
-                  <li>Referring attorney portal, scoped per firm</li>
-                  <li>Live status on intake, scheduling and records</li>
-                  <li>No marketplace — your existing relationships</li>
-                  <li>Same network layer as IntakeOS when you need outbound loops</li>
-                </ul>
-                <Link className="rf-direction-link" href="/torvana">Explore Torvana →</Link>
-              </article>
+              <div className="rf-direction-grid">
+                <article className="rf-direction">
+                  <span>01 / INTAKEOS</span>
+                  <h3>Plaintiff law firms</h3>
+                  <p>Accept inbound leads from partner attorneys, refer cases out with co-counsel agreements, and track every fee — in the same intake platform that qualifies and signs clients.</p>
+                  <ul>
+                    <li>Partner attorney portals for inbound leads</li>
+                    <li>Outbound co-counsel agreements &amp; type-to-sign</li>
+                    <li>Fee tracking and partner performance reporting</li>
+                    <li>Waypoint-triggered auto-referrals</li>
+                  </ul>
+                  <Link className="rf-direction-link" href="/intakeos">Explore IntakeOS →</Link>
+                </article>
+                <article className="rf-direction">
+                  <span>02 / TORVANA</span>
+                  <h3>Specialty medical practices</h3>
+                  <p>Give each referring firm a scoped view of its own patients — intake, appointments, records and status — so front desk status calls drop and the referral relationship stays intact.</p>
+                  <ul>
+                    <li>Referring attorney portal, scoped per firm</li>
+                    <li>Live status on intake, scheduling and records</li>
+                    <li>No marketplace — your existing relationships</li>
+                    <li>Same network layer as IntakeOS when you need outbound loops</li>
+                  </ul>
+                  <Link className="rf-direction-link" href="/torvana">Explore Torvana →</Link>
+                </article>
+              </div>
             </div>
           </section>
 
-          <section className="rf-flow wrap" id="workflow">
-            <div className="dw-section-head">
-              <div>
-                <p className="eyebrow">FROM CREATE TO FEE</p>
-                <h2>The outbound flow.<br /><em>Held together.</em></h2>
+          <section className="rf-flow" id="workflow">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">FROM CREATE TO FEE</p>
+                  <h2>The outbound flow.<br /><em>Held together.</em></h2>
+                </div>
+                <p>From creating a referral to a fully executed co-counsel agreement — every step in one place.</p>
               </div>
-              <p>From creating a referral to a fully executed co-counsel agreement — every step in one place.</p>
+              <ol className="rf-steps">
+                <li>
+                  <span>01 / CREATE</span>
+                  <h3>Create referral</h3>
+                  <p>Select a case, choose a partner, set the fee. The partner gets an email instantly.</p>
+                </li>
+                <li>
+                  <span>02 / RESPOND</span>
+                  <h3>Partner responds</h3>
+                  <p>Accept or decline via email link or portal. Your staff is notified either way.</p>
+                </li>
+                <li>
+                  <span>03 / AGREE</span>
+                  <h3>Send agreement</h3>
+                  <p>Generate the co-counsel PDF, type-to-sign, and send it in one click.</p>
+                </li>
+                <li>
+                  <span>04 / SIGN</span>
+                  <h3>Partner signs</h3>
+                  <p>They review and sign in their portal. Both parties get the executed copy.</p>
+                </li>
+                <li>
+                  <span>05 / TRACK</span>
+                  <h3>Track the fee</h3>
+                  <p>When the case resolves, mark fee owed or paid. The ledger stays current.</p>
+                </li>
+              </ol>
             </div>
-            <ol className="rf-steps">
-              <li>
-                <span>01 / CREATE</span>
-                <h3>Create referral</h3>
-                <p>Select a case, choose a partner, set the fee. The partner gets an email instantly.</p>
-              </li>
-              <li>
-                <span>02 / RESPOND</span>
-                <h3>Partner responds</h3>
-                <p>Accept or decline via email link or portal. Your staff is notified either way.</p>
-              </li>
-              <li>
-                <span>03 / AGREE</span>
-                <h3>Send agreement</h3>
-                <p>Generate the co-counsel PDF, type-to-sign, and send it in one click.</p>
-              </li>
-              <li>
-                <span>04 / SIGN</span>
-                <h3>Partner signs</h3>
-                <p>They review and sign in their portal. Both parties get the executed copy.</p>
-              </li>
-              <li>
-                <span>05 / TRACK</span>
-                <h3>Track the fee</h3>
-                <p>When the case resolves, mark fee owed or paid. The ledger stays current.</p>
-              </li>
-            </ol>
           </section>
 
           <section className="rf-workspace" id="workspace">

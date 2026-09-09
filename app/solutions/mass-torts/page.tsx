@@ -160,58 +160,62 @@ export default function MassTortsPage() {
             </div>
           </section>
 
-          <section className="rf-directions wrap">
-            <div className="dw-section-head">
-              <div>
-                <p className="eyebrow">ACTIVE TORTS</p>
-                <h2>Pre-built criteria<br /><em>for campaigns that move.</em></h2>
+          <section className="rf-directions">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">ACTIVE TORTS</p>
+                  <h2>Pre-built criteria<br /><em>for campaigns that move.</em></h2>
+                </div>
+                <p>Start from tort-specific rubrics — or build your own for any emerging litigation in minutes.</p>
               </div>
-              <p>Start from tort-specific rubrics — or build your own for any emerging litigation in minutes.</p>
+              <div className="mt-tort-grid">
+                {activeTorts.map((t, i) => (
+                  <article key={t.name} className="rf-direction">
+                    <span>{String(i + 1).padStart(2, '0')} / ACTIVE</span>
+                    <h3>{t.name}</h3>
+                    <p>{t.body}</p>
+                  </article>
+                ))}
+              </div>
+              <p className="mt-pi-note">
+                Personal injury campaigns stay always-on — fully configurable criteria for liability, severity, SOL, and more.
+              </p>
             </div>
-            <div className="mt-tort-grid">
-              {activeTorts.map((t, i) => (
-                <article key={t.name} className="rf-direction">
-                  <span>{String(i + 1).padStart(2, '0')} / ACTIVE</span>
-                  <h3>{t.name}</h3>
-                  <p>{t.body}</p>
-                </article>
-              ))}
-            </div>
-            <p className="mt-pi-note">
-              Personal injury campaigns stay always-on — fully configurable criteria for liability, severity, SOL, and more.
-            </p>
           </section>
 
-          <section className="rf-flow wrap" id="workflow">
-            <div className="dw-section-head">
-              <div>
-                <p className="eyebrow">FROM FIRST CLICK</p>
-                <h2>From intake<br /><em>to signed retainer.</em></h2>
+          <section className="rf-flow" id="workflow">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">FROM FIRST CLICK</p>
+                  <h2>From intake<br /><em>to signed retainer.</em></h2>
+                </div>
+                <p>Every channel feeds one pipeline. Waypoint ranks. Your team works the best cases first.</p>
               </div>
-              <p>Every channel feeds one pipeline. Waypoint ranks. Your team works the best cases first.</p>
+              <ol className="rf-steps" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+                <li>
+                  <span>01 / CAPTURE</span>
+                  <h3>Claimant submits</h3>
+                  <p>Chatbot, webform, or live transfer — captured 24/7 into the same pipeline.</p>
+                </li>
+                <li>
+                  <span>02 / SCORE</span>
+                  <h3>Waypoint scores instantly</h3>
+                  <p>Tort-specific criteria applied the moment intake is complete.</p>
+                </li>
+                <li>
+                  <span>03 / PRIORITIZE</span>
+                  <h3>Team works best first</h3>
+                  <p>Scores, summaries, and flags surface. Others enter nurture flows.</p>
+                </li>
+                <li>
+                  <span>04 / SIGN</span>
+                  <h3>Retainer in-session</h3>
+                  <p>Qualified claimants sign digitally. Data syncs to your CMS.</p>
+                </li>
+              </ol>
             </div>
-            <ol className="rf-steps" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
-              <li>
-                <span>01 / CAPTURE</span>
-                <h3>Claimant submits</h3>
-                <p>Chatbot, webform, or live transfer — captured 24/7 into the same pipeline.</p>
-              </li>
-              <li>
-                <span>02 / SCORE</span>
-                <h3>Waypoint scores instantly</h3>
-                <p>Tort-specific criteria applied the moment intake is complete.</p>
-              </li>
-              <li>
-                <span>03 / PRIORITIZE</span>
-                <h3>Team works best first</h3>
-                <p>Scores, summaries, and flags surface. Others enter nurture flows.</p>
-              </li>
-              <li>
-                <span>04 / SIGN</span>
-                <h3>Retainer in-session</h3>
-                <p>Qualified claimants sign digitally. Data syncs to your CMS.</p>
-              </li>
-            </ol>
           </section>
 
           <section className="rf-workspace" id="workspace">

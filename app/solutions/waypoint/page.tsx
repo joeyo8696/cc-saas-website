@@ -133,31 +133,33 @@ export default function WaypointPage() {
             </div>
           </section>
 
-          <section className="rf-flow wrap" id="workflow">
-            <div className="dw-section-head">
-              <div>
-                <p className="eyebrow">FROM RUBRIC TO SCORE</p>
-                <h2>How Waypoint works.<br /><em>Three steps.</em></h2>
+          <section className="rf-flow" id="workflow">
+            <div className="wrap">
+              <div className="dw-section-head">
+                <div>
+                  <p className="eyebrow">FROM RUBRIC TO SCORE</p>
+                  <h2>How Waypoint works.<br /><em>Three steps.</em></h2>
+                </div>
+                <p>Define the standard once. Every intake gets the same evaluation — instantly.</p>
               </div>
-              <p>Define the standard once. Every intake gets the same evaluation — instantly.</p>
+              <ol className="rf-steps" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                <li>
+                  <span>01 / DEFINE</span>
+                  <h3>Define your criteria</h3>
+                  <p>Add scoring dimensions for your practice area. Set weights, priority order, and red-flag thresholds.</p>
+                </li>
+                <li>
+                  <span>02 / INTAKE</span>
+                  <h3>Intake is submitted</h3>
+                  <p>A claimant completes your IntakeOS form or chatbot. The full submission is sent to Waypoint.</p>
+                </li>
+                <li>
+                  <span>03 / SCORE</span>
+                  <h3>Score appears instantly</h3>
+                  <p>Numeric score, category breakdowns, written summary, and flags — before anyone opens the lead.</p>
+                </li>
+              </ol>
             </div>
-            <ol className="rf-steps" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-              <li>
-                <span>01 / DEFINE</span>
-                <h3>Define your criteria</h3>
-                <p>Add scoring dimensions for your practice area. Set weights, priority order, and red-flag thresholds.</p>
-              </li>
-              <li>
-                <span>02 / INTAKE</span>
-                <h3>Intake is submitted</h3>
-                <p>A claimant completes your IntakeOS form or chatbot. The full submission is sent to Waypoint.</p>
-              </li>
-              <li>
-                <span>03 / SCORE</span>
-                <h3>Score appears instantly</h3>
-                <p>Numeric score, category breakdowns, written summary, and flags — before anyone opens the lead.</p>
-              </li>
-            </ol>
           </section>
 
           <section className="rf-workspace" id="workspace">

@@ -131,6 +131,8 @@
 .rf-direction-link:hover { color: #fff; }
 .rf-flow {
   padding-block: 90px;
+  background: #070e20;
+  color: var(--text);
 }
 .rf-flow em { color: #b4a7ed; }
 .rf-steps {
