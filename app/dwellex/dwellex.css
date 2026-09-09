@@ -531,14 +531,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
 }
 .dw-scheduler-modal {
   background: #fff;
   color: #1c1a33;
   border-radius: 12px;
-  width: min(790px, 100%);
-  max-height: min(92dvh, 680px);
+  width: min(1100px, calc(100vw - 24px));
+  max-height: min(94dvh, 760px);
   overflow: hidden;
   box-shadow: 0 30px 100px rgba(23, 19, 48, 0.35);
   display: flex;
@@ -549,13 +549,16 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 20px;
+  padding: 14px 18px;
   border-bottom: 1px solid #e6e3ef;
+  flex-shrink: 0;
 }
 .dw-scheduler-header h2 {
   margin: 0;
-  font-size: 1.15rem;
-  letter-spacing: -0.03em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .dw-scheduler-close {
   width: 36px;
@@ -574,10 +577,11 @@
 }
 .dw-scheduler-frame {
   width: 100%;
-  height: min(560px, calc(92dvh - 80px));
+  height: min(640px, calc(94dvh - 72px));
+  min-height: 520px;
   border: 0;
   display: block;
-  background: #faf9fc;
+  background: #fff;
 }
 .dw-support-features {
   display: grid;

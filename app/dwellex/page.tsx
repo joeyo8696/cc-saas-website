@@ -10,7 +10,7 @@ import BrowserFrame from '@/components/ui/BrowserFrame'
 import './dwellex.css'
 
 const DWELLEX_SCHEDULER_SRC =
-  'https://scheduler.zoom.us/case-compass/dwellex-demo?embedStyle=%7B%22buttonColor%22%3A%22%23371a94%22%2C%22fontFamily%22%3A%22Arial%22%7D&embed=true'
+  'https://scheduler.zoom.us/case-compass/dwellex-demo?embed=true'
 
 type Tab = 'notices' | 'timeline' | 'courts'
 
@@ -516,6 +516,7 @@ export default function DwellexPage() {
               title="Schedule a Dwellex demo with Case Compass"
               className="dw-scheduler-frame"
               allow="camera; microphone; fullscreen"
+              loading="lazy"
             />
           </div>
         </div>
