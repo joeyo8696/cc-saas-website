@@ -75,12 +75,8 @@ export default function ExpandableBrowserFrame({
                 <X size={18} />
               </button>
             </div>
-            <div className="cc-shot-lightbox-frame">
-              <BrowserFrame url={url}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={alt} />
-              </BrowserFrame>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="cc-shot-lightbox-img" src={src} alt={alt} />
           </div>
         </div>
       )}
