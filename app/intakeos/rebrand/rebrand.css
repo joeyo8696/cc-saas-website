@@ -247,8 +247,6 @@
   font-size: 0.95rem;
   color: var(--cream-muted);
   margin-bottom: 22px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--cream-line);
 }
 .rb-product-grid {
   display: grid;
