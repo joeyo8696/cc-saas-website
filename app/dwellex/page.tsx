@@ -69,25 +69,25 @@ const features: Record<Tab, {
 }> = {
   notices: {
     title: <>One upload.<br />A batch ready for review.</>,
-    body: 'Import a property management CSV, reuse saved column mappings and catch row-level issues before generating notices.',
+    body: 'Import a property management CSV, reuse saved column mappings and catch row-level issues before generating notices. State-specific compliance produces legally valid documents — including Pay or Quit notices — tailored to local housing laws and your configured court rules.',
     bullets: [
-      'Review notice types and service dates',
-      'Apply configured court expiration rules',
-      'Preview documents before finalizing',
+      'Generate legally valid notices tailored to local housing laws',
+      'Pay or Quit and other jurisdiction-ready notice types',
+      'Review service dates and court expiration rules before finalizing',
     ],
     img: '/images/dwellex-dashboard.png',
-    imgAlt: 'Batch notice review in Dwellex',
+    imgAlt: 'Batch notice review in Dwellex with state-specific eviction notice generation',
   },
   timeline: {
     title: <>Every task.<br />Its place in the matter.</>,
-    body: 'Separate attorney and client responsibilities in a shared timeline, with a clear view of progress at each stage.',
+    body: 'Separate attorney and client responsibilities in a shared timeline. Deadline and date tracking sends automated reminders for court dates, cure periods, and vacate deadlines so nothing slips past the window.',
     bullets: [
-      'Workflows tailored to your case types',
-      'Assigned action items and due dates',
+      'Automated reminders for court dates, cure periods, and vacate deadlines',
+      'Assigned action items and due dates on every matter',
       'Email and SMS milestone reminders',
     ],
     img: '/images/dwellex-timeline.png',
-    imgAlt: 'Dwellex case timeline with client and attorney tasks',
+    imgAlt: 'Dwellex case timeline with deadline tracking for court dates and cure periods',
   },
   courts: {
     title: <>A court day.<br />Already organized.</>,
@@ -247,7 +247,7 @@ export default function DwellexPage() {
               <div className="dw-hero-grid">
                 <h1>More moving parts.<br /><em>One clear path.</em></h1>
                 <div className="dw-intro">
-                  <p>Your cases have enough complexity. Bring intake, notices, court dates and client updates into one workspace built for your eviction practice.</p>
+                  <p>Your cases have enough complexity. Bring intake, state-specific notices, court dates, cure periods and client updates into one workspace built for your eviction practice.</p>
                   <button type="button" className="button" onClick={openScheduler}>
                     See Dwellex in action <span aria-hidden="true">↗</span>
                   </button>
@@ -315,8 +315,8 @@ export default function DwellexPage() {
                   </h3>
                   <p>
                     {i === 0 && 'Landlords submit tenant information and documents through your portal. Staff review each request before creating the case.'}
-                    {i === 1 && 'Generate notices from intake data, apply your court rules and assign the work to the right people.'}
-                    {i === 2 && 'Track hearings, client tasks and lockout coordination, with milestone reminders along the way.'}
+                    {i === 1 && 'Generate legally valid notices from intake data — including Pay or Quit notices tailored to local housing laws — apply your court rules and assign the work to the right people.'}
+                    {i === 2 && 'Track hearings, cure periods, vacate deadlines and lockout coordination, with automated reminders along the way.'}
                   </p>
                 </li>
               ))}
@@ -369,16 +369,16 @@ export default function DwellexPage() {
 
               <div className="dw-support-features">
                 <div>
-                  <h3>Clients stay connected.</h3>
-                  <p>A secure portal for documents, case progress and conversations. Email replies return to the case thread.</p>
+                  <h3>State-specific compliance.</h3>
+                  <p>Generate legally valid notices — like a Pay or Quit notice — tailored to local housing laws and the jurisdictions your practice files in.</p>
+                </div>
+                <div>
+                  <h3>Deadline &amp; date tracking.</h3>
+                  <p>Automated reminders for court dates, cure periods, and vacate deadlines keep every window visible across attorney and client timelines.</p>
                 </div>
                 <div>
                   <h3>Your systems stay in sync.</h3>
                   <p>Connect Clio matters, tasks and documents. Dwellex also integrates with Practice Panther and Rent Manager.</p>
-                </div>
-                <div>
-                  <h3>Your team sees the bigger picture.</h3>
-                  <p>Track active matters, pending intake and rent at risk. Export reports to CSV or Excel.</p>
                 </div>
               </div>
             </div>
@@ -451,6 +451,14 @@ export default function DwellexPage() {
                 <h2>Good questions.<br /><em>Clear answers.</em></h2>
               </div>
               <div>
+                <details>
+                  <summary>Does Dwellex generate state-specific eviction notices?</summary>
+                  <p>Yes. State-specific compliance produces legally valid notices — including Pay or Quit notices — tailored to local housing laws and your configured court rules, so you can batch, preview and serve documents that match each jurisdiction.</p>
+                </details>
+                <details>
+                  <summary>How does deadline and date tracking work?</summary>
+                  <p>Dwellex sends automated reminders for court dates, cure periods, and vacate deadlines. Matter timelines hold attorney and client tasks with due dates, and email or SMS milestones keep hearing days and cure windows from slipping.</p>
+                </details>
                 <details>
                   <summary>Can we use our own workflows and court rules?</summary>
                   <p>Yes. Configure case templates, action items, document templates and court-specific notice rules. Firm administrators can maintain jurisdiction details and expiration settings.</p>
