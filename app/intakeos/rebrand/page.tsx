@@ -156,7 +156,7 @@ export default function IntakeOSRebrandPage() {
                 </p>
               </div>
               <p className="rb-company">
-                <strong>Case Compass</strong> — the company, and the platform underneath all three.
+                <strong>Case Compass</strong> — the company behind all three.
               </p>
               <div className="rb-product-grid">
                 {products.map((product) => (
