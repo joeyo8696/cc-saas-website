@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  ChevronDown, Menu, X, Phone,
+  ChevronDown, Menu, X, Phone, Heart,
   Waypoints, MessageSquare, PhoneForwarded, LayoutTemplate,
   GitBranch, FileSignature, UserCircle, BarChart3, Users,
   TrendingUp, Building2, Inbox,
@@ -208,8 +208,8 @@ export default function Nav() {
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #ede9fe, #e0e7ff)' }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, #f5f3ff, #eef2ff)' }}
                   >
-                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #504ce2, #8b87f0)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '6px' }}>
-                      <img src="/images/Torvana-Illustrator-Master.svg" alt="" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+                    <div style={{ width: '36px', height: '36px', flexShrink: 0, background: 'linear-gradient(135deg, #504ce2, #8b87f0)', borderRadius: '9px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Heart size={17} color="#fff" fill="#fff" />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#504ce2', marginBottom: '3px' }}>{platformLinks.torvana.eyebrow}</div>
@@ -344,8 +344,8 @@ export default function Nav() {
                 </Link>
 
                 <Link href={platformLinks.torvana.href} className="cc-mobile-featured-card torvana" onClick={closeMobile}>
-                  <div className="cc-mobile-featured-icon torvana-icon" style={{ background: 'linear-gradient(135deg, #504ce2, #8b87f0)' }}>
-                    <img src="/images/Torvana-Illustrator-Master.svg" alt="" />
+                  <div className="cc-mobile-featured-icon" style={{ background: 'linear-gradient(135deg, #504ce2, #8b87f0)' }}>
+                    <Heart size={16} color="#fff" fill="#fff" />
                   </div>
                   <div>
                     <span className="cc-mobile-eyebrow">{platformLinks.torvana.eyebrow}</span>
