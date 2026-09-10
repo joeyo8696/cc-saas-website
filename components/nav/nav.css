@@ -24,6 +24,32 @@
   color: #fff;
 }
 
+.cc-nav-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.cc-nav-phone:hover {
+  color: #fff;
+  opacity: 0.88;
+}
+.cc-nav-phone svg {
+  flex-shrink: 0;
+}
+
+.cc-nav-phone-mobile {
+  color: #fff !important;
+}
+
 .cc-mobile-drawer {
   position: absolute;
   top: 100%;

@@ -5,13 +5,16 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  ChevronDown, Menu, X,
+  ChevronDown, Menu, X, Phone,
   Waypoints, MessageSquare, PhoneForwarded, LayoutTemplate,
   GitBranch, FileSignature, UserCircle, BarChart3, Users,
   TrendingUp, Building2, Inbox,
 } from 'lucide-react'
 import DemoButton from '@/components/DemoButton'
 import './nav.css'
+
+const PHONE_DISPLAY = '(585) 484-7472'
+const PHONE_HREF = 'tel:+15854847472'
 
 const platformLinks = {
   featured: {
@@ -274,6 +277,10 @@ export default function Nav() {
           <Link href="/#results" className="cc-nav-link">Results</Link>
           <Link href="/about" className="cc-nav-link">About</Link>
           <Link href="https://blog.casecompass.io" target="_blank" rel="noopener" className="cc-nav-link">Blog</Link>
+          <a href={PHONE_HREF} className="cc-nav-phone">
+            <Phone size={15} strokeWidth={2.5} aria-hidden="true" />
+            {PHONE_DISPLAY}
+          </a>
           {isTorvana ? (
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('torvana:open-modal'))}
@@ -388,6 +395,10 @@ export default function Nav() {
           <Link href="/#results" className="mobile-nav-link" onClick={closeMobile}>Results</Link>
           <Link href="/about" className="mobile-nav-link" onClick={closeMobile}>About</Link>
           <Link href="https://blog.casecompass.io" className="mobile-nav-link" target="_blank" rel="noopener" onClick={closeMobile}>Blog</Link>
+          <a href={PHONE_HREF} className="mobile-nav-link cc-nav-phone-mobile" onClick={closeMobile}>
+            <Phone size={16} strokeWidth={2.5} aria-hidden="true" />
+            {PHONE_DISPLAY}
+          </a>
 
           <div className="cc-mobile-drawer-cta">
             {isTorvana ? (
