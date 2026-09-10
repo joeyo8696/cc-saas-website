@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useId, useState, type ReactNode } from 'react'
-import { X } from 'lucide-react'
+import { useEffect, useId, useState } from 'react'
+import { Search, X } from 'lucide-react'
 import BrowserFrame from './BrowserFrame'
 import './browser-frame.css'
 
@@ -9,7 +9,6 @@ type ExpandableBrowserFrameProps = {
   src: string
   alt: string
   url: string
-  footer?: ReactNode
   className?: string
   /** When true, the image already includes browser chrome — skip nested frame */
   framed?: boolean
@@ -19,7 +18,6 @@ export default function ExpandableBrowserFrame({
   src,
   alt,
   url,
-  footer = 'View full-size product screen',
   className = '',
   framed = true,
 }: ExpandableBrowserFrameProps) {
@@ -46,19 +44,24 @@ export default function ExpandableBrowserFrame({
         type="button"
         className={`cc-browser-link${className ? ` ${className}` : ''}`}
         onClick={() => setOpen(true)}
-        aria-label="View full-size product screenshot"
+        aria-label={`Enlarge screenshot: ${alt}`}
       >
-        {framed ? (
-          <BrowserFrame url={url} footer={<>{footer} <span aria-hidden="true">↗</span></>}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={alt} loading="lazy" />
-          </BrowserFrame>
-        ) : (
-          <span className="cc-shot-bare">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={alt} loading="lazy" />
+        <span className="cc-browser-zoom">
+          {framed ? (
+            <BrowserFrame url={url}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={src} alt={alt} loading="lazy" />
+            </BrowserFrame>
+          ) : (
+            <span className="cc-shot-bare">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={src} alt={alt} loading="lazy" />
+            </span>
+          )}
+          <span className="cc-browser-zoom-badge" aria-hidden="true">
+            <Search size={22} strokeWidth={2.25} />
           </span>
-        )}
+        </span>
       </button>
 
       {open && (
@@ -80,7 +83,7 @@ export default function ExpandableBrowserFrame({
                 type="button"
                 className="cc-shot-lightbox-close"
                 onClick={() => setOpen(false)}
-                aria-label="Close full-size screenshot"
+                aria-label="Close screenshot"
               >
                 <X size={18} />
               </button>

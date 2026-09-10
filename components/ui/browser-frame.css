@@ -98,7 +98,7 @@ a.cc-browser-link {
   text-decoration: none;
   color: inherit;
   border-radius: 14px;
-  cursor: pointer;
+  cursor: zoom-in;
   font: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -110,6 +110,52 @@ a.cc-browser-link:hover {
 button.cc-browser-link .cc-browser,
 a.cc-browser-link .cc-browser {
   box-shadow: 0 18px 35px #27234415, 0 0 0 1px #c4bdd6;
+}
+
+.cc-browser-zoom {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+}
+.cc-browser-zoom-badge {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: rgba(15, 12, 36, 0.28);
+  border-radius: 14px;
+}
+.cc-browser-zoom-badge svg {
+  width: 52px;
+  height: 52px;
+  padding: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #2f2a55;
+  box-shadow: 0 12px 32px rgba(15, 12, 36, 0.22);
+}
+button.cc-browser-link:hover .cc-browser-zoom-badge,
+button.cc-browser-link:focus-visible .cc-browser-zoom-badge,
+a.cc-browser-link:hover .cc-browser-zoom-badge,
+a.cc-browser-link:focus-visible .cc-browser-zoom-badge {
+  opacity: 1;
+}
+@media (hover: none) {
+  .cc-browser-zoom-badge {
+    opacity: 0.92;
+    background: transparent;
+    place-items: end end;
+    padding: 14px;
+  }
+  .cc-browser-zoom-badge svg {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    box-shadow: 0 8px 20px rgba(15, 12, 36, 0.18);
+  }
 }
 
 /* Full-size screenshot lightbox — image only, no nested chrome clipping */
