@@ -304,7 +304,7 @@ export default function HomePageContent() {
             <button type="button" className="hp-button" onClick={openModal}>
               Let&apos;s talk about your practice <span>↗</span>
             </button>
-            <Link className="hp-quiet-link" href="/about">Visit Case Compass <span>↗</span></Link>
+            <Link className="hp-quiet-link" href="/about">About Case Compass <span>↗</span></Link>
           </div>
         </section>
       </main>

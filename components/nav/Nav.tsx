@@ -149,13 +149,9 @@ export default function Nav() {
             onMouseLeave={() => setMenuOpen(false)}
           >
             <button
-              style={{
-                display: 'flex', alignItems: 'center', gap: '5px',
-                color: menuOpen ? '#fff' : 'rgba(255,255,255,0.7)',
-                fontSize: '0.875rem', fontWeight: 500,
-                background: 'none', border: 'none', padding: 0,
-                cursor: 'pointer', fontFamily: 'inherit', transition: 'color 0.2s',
-              }}
+              type="button"
+              className={`cc-nav-link${menuOpen ? ' is-open' : ''}`}
+              aria-expanded={menuOpen}
             >
               Platform
               <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: menuOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
@@ -275,18 +271,9 @@ export default function Nav() {
             </div>
           </div>
 
-          <Link href="/#results" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
-          >Results</Link>
-          <Link href="/about" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
-          >About</Link>
-          <Link href="https://blog.casecompass.io" target="_blank" rel="noopener" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#fff' }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.7)' }}
-          >Blog</Link>
+          <Link href="/#results" className="cc-nav-link">Results</Link>
+          <Link href="/about" className="cc-nav-link">About</Link>
+          <Link href="https://blog.casecompass.io" target="_blank" rel="noopener" className="cc-nav-link">Blog</Link>
           {isTorvana ? (
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('torvana:open-modal'))}

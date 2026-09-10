@@ -1,5 +1,29 @@
 /* Mobile drawer — imported by Nav so page-root a { color: inherit } can't wash out text */
 
+/* Desktop top-level nav links — Manrope + bold, Clio-style presence */
+.cc-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.cc-nav-link:hover,
+.cc-nav-link[aria-expanded="true"],
+.cc-nav-link.is-open {
+  color: #fff;
+}
+
 .cc-mobile-drawer {
   position: absolute;
   top: 100%;
@@ -29,10 +53,11 @@
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   color: rgba(255, 255, 255, 0.95) !important;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   cursor: pointer;
-  font-family: inherit;
 }
 
 .cc-mobile-drawer-toggle svg {
@@ -220,9 +245,11 @@
   align-items: center;
   gap: 10px;
   padding: 14px 20px;
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-size: 0.95rem;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   text-decoration: none !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   transition: background 0.15s, color 0.15s;
