@@ -22,17 +22,24 @@
 }
 
 .tv-root *, .tv-root *::before, .tv-root *::after { box-sizing: border-box; }
-.tv-root p, .tv-root h1, .tv-root h2, .tv-root h3, .tv-root h4 { margin: 0; }
-.tv-root p { color: #656576; }
+.tv-root h1, .tv-root h2, .tv-root h3, .tv-root h4 { margin: 0; }
+.tv-root main p,
+.tv-root .tv-modal p { margin: 0; color: #656576; }
 .tv-root svg { flex-shrink: 0; }
 .tv-root em { font-family: Petrona, Georgia, serif; font-weight: 400; font-style: italic; }
 .tv-root h1, .tv-root h2, .tv-root h3 { font-weight: 500; letter-spacing: -0.055em; line-height: 1.06; }
 .tv-root button, .tv-root a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 .tv-root button { font: inherit; cursor: pointer; border: 0; }
 .tv-root button:disabled { cursor: default; }
-.tv-root a { color: inherit; text-decoration: none; }
+.tv-root a { text-decoration: none; }
+/* Keep Case Compass nav/footer chrome on their own palette — don't inherit Torvana ink */
+.tv-root main a,
+.tv-root .tv-modal a { color: inherit; }
 .tv-root ::selection { background: #dedcff; }
-.tv-root button:focus-visible, .tv-root a:focus-visible { outline: 2px solid #504ce2; outline-offset: 5px; }
+.tv-root main button:focus-visible,
+.tv-root main a:focus-visible,
+.tv-root .tv-modal button:focus-visible,
+.tv-root .tv-modal a:focus-visible { outline: 2px solid #504ce2; outline-offset: 5px; }
 
 /* Layout */
 .tv-shell { width: min(1280px, calc(100% - 112px)); margin-inline: auto; }

@@ -53,7 +53,10 @@ export default function AboutPage() {
               </div>
               <div className="ab-mission-copy">
                 <p>
-                  Case Compass started with a simple conviction: intake is the most underleveraged lever in a plaintiff firm&apos;s business. The firms who get it right — who qualify faster, sign faster, and lose fewer leads to friction — win. We built IntakeOS around that thesis, and it works. Tens of thousands of intakes. Mass torts, mass arbitration, personal injury. Growing without adding headcount.
+                  Case Compass started with a simple conviction: intake is the most underleveraged lever in a plaintiff firm&apos;s business. The firms who get it right — who qualify faster, sign faster, and lose fewer leads to friction — win. We built IntakeOS around that thesis, and it works. Tens of thousands of intakes. Mass torts, mass arbitration, personal injury. Growing without adding headcount.{' '}
+                  <Link href="/intakeos/rebrand" style={{ color: 'var(--indigo)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+                    Why we renamed the product →
+                  </Link>
                 </p>
                 <p>
                   Then we looked at what our team actually knew. Joey spent years building intake and patient-flow infrastructure in healthcare — first as Co-Founder &amp; CTO at CHESS Health, then as VP of Engineering at Talkiatry. The problems he saw there were the same ones he solved in legal: disconnected systems, manual handoffs, lost patients at every step. That background didn&apos;t just inform Torvana — it made it inevitable.

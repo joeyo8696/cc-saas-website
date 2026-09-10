@@ -1,0 +1,414 @@
+/* IntakeOS rebrand announcement — cream editorial, scoped .rb-* */
+.rb-root {
+  --bg: #070e20;
+  --text: #f6f8ff;
+  --muted: #a1aec4;
+  --line: #243049;
+  --cream: #f9f6ef;
+  --cream-ink: #171934;
+  --cream-muted: #586174;
+  --cream-line: #dedbd5;
+  --indigo: #4f46c9;
+  --hot-purple: #8b22e8;
+  --violet: #ae9aff;
+  color: var(--cream-ink);
+  background: var(--cream);
+  font-synthesis: none;
+}
+.rb-root * { box-sizing: border-box; }
+.rb-root a { color: inherit; text-decoration: none; }
+.rb-root button { font: inherit; cursor: pointer; }
+.rb-root h1, .rb-root h2, .rb-root h3, .rb-root p { margin: 0; }
+.rb-root h1, .rb-root h2, .rb-root h3 {
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+.rb-root p { line-height: 1.65; }
+.rb-wrap { width: min(1120px, calc(100% - 80px)); margin-inline: auto; }
+.rb-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.13em;
+  font-weight: 650;
+  color: #62667a;
+  line-height: 1.5;
+}
+.rb-dash {
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 2px;
+  background: var(--hot-purple);
+  margin-right: 10px;
+}
+
+/* Hero */
+.rb-hero {
+  background: var(--cream);
+  color: var(--cream-ink);
+  padding: 80px 0 72px;
+}
+.rb-hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 56px;
+  align-items: end;
+}
+.rb-hero h1 {
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  line-height: 1.08;
+  margin-top: 22px;
+}
+.rb-hero h1 em {
+  font-style: normal;
+  color: var(--hot-purple);
+}
+.rb-hero-aside p {
+  color: var(--cream-muted);
+  font-size: 1.05rem;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+.rb-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.rb-btn {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  background: var(--indigo);
+  color: #fff;
+  border: 1px solid var(--indigo);
+  border-radius: 6px;
+  padding: 15px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+.rb-btn:hover {
+  background: #3d37b0;
+  transform: translateY(-2px);
+}
+.rb-btn-ghost {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--indigo);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px 4px;
+  border-bottom: 1px solid #c5c0e8;
+  transition: color 0.2s, border-color 0.2s;
+}
+.rb-btn-ghost:hover {
+  color: var(--hot-purple);
+  border-color: var(--hot-purple);
+}
+
+/* Changing / not changing */
+.rb-change {
+  background: var(--cream);
+  border-top: 1px solid var(--cream-line);
+  padding: 0 0 90px;
+}
+.rb-change-head {
+  padding-top: 72px;
+  margin-bottom: 40px;
+  max-width: 640px;
+}
+.rb-change-head h2 {
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  line-height: 1.15;
+  margin-top: 18px;
+}
+.rb-change-head h2 em {
+  font-style: normal;
+  color: var(--indigo);
+}
+.rb-change-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.rb-change-card {
+  background: #fff;
+  border: 1px solid var(--cream-line);
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+.rb-change-card h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+.rb-change-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rb-change-card li {
+  padding: 12px 0;
+  border-top: 1px solid #e8e4dc;
+  color: var(--cream-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.rb-change-card li:first-child { border-top: 0; padding-top: 0; }
+.rb-change-card.keep h3 { color: var(--indigo); }
+.rb-reassure {
+  background: #201d49;
+  color: #fff;
+  border-radius: 12px;
+  padding: 28px 32px;
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+/* Name narrative */
+.rb-story {
+  background: #0c1529;
+  color: #fff;
+  padding: 90px 0;
+  border-top: 1px solid var(--line);
+}
+.rb-story .rb-eyebrow { color: #a9b8d2; }
+.rb-story .rb-dash { background: var(--violet); }
+.rb-story-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 70px;
+}
+.rb-story h2 {
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  line-height: 1.15;
+  margin-top: 18px;
+}
+.rb-story h2 em {
+  font-style: normal;
+  color: #b0a8e3;
+}
+.rb-story-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+}
+.rb-story-copy p:last-of-type { margin-bottom: 0; }
+.rb-emphasis {
+  margin-top: 28px;
+  border: 1px solid #3a4264;
+  border-radius: 12px;
+  padding: 28px 30px;
+  background: linear-gradient(135deg, #1c2244, #141f35);
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+/* Three products */
+.rb-products {
+  background: var(--cream);
+  color: var(--cream-ink);
+  padding: 90px 0;
+}
+.rb-products-head {
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+.rb-products-head h2 {
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  line-height: 1.15;
+  margin-top: 18px;
+}
+.rb-products-head h2 em {
+  font-style: normal;
+  color: var(--indigo);
+}
+.rb-products-head > p {
+  margin-top: 20px;
+  color: var(--cream-muted);
+  font-size: 1.05rem;
+}
+.rb-company {
+  font-size: 0.95rem;
+  color: var(--cream-muted);
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--cream-line);
+}
+.rb-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.rb-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--cream-line);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  min-height: 100%;
+}
+.rb-product-card:hover {
+  border-color: #c4bdd6;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(39, 35, 68, 0.08);
+}
+.rb-product-card span {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--indigo);
+}
+.rb-product-card strong {
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--cream-ink);
+}
+.rb-product-card p {
+  color: var(--cream-muted);
+  font-size: 0.95rem;
+  flex: 1;
+}
+.rb-product-card em {
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--hot-purple);
+}
+.rb-products-close {
+  color: var(--cream-muted);
+  font-size: 1.02rem;
+  max-width: 720px;
+}
+
+/* Evaluating */
+.rb-eval {
+  background: #0c1529;
+  color: #fff;
+  padding: 90px 0;
+  border-top: 1px solid var(--line);
+}
+.rb-eval .rb-eyebrow { color: #a9b8d2; }
+.rb-eval .rb-dash { background: var(--violet); }
+.rb-eval-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.rb-eval h2 {
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  line-height: 1.15;
+  margin: 18px 0 20px;
+}
+.rb-eval h2 em {
+  font-style: normal;
+  color: #b0a8e3;
+}
+.rb-eval-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+.rb-stats {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.rb-stats li {
+  background: #141f35;
+  border: 1px solid #2e3e58;
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+.rb-stats strong {
+  display: block;
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.rb-stats span {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.rb-eval-cta {
+  margin-top: 28px;
+}
+
+/* FAQ */
+.rb-faq {
+  background: var(--cream);
+  color: var(--cream-ink);
+  padding: 90px 0;
+}
+.rb-faq-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+}
+.rb-faq h2 {
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  line-height: 1.15;
+  margin-top: 18px;
+}
+.rb-faq h2 em {
+  font-style: normal;
+  color: var(--indigo);
+}
+.rb-faq details {
+  border-bottom: 1px solid #d8d2dd;
+  padding: 22px 0;
+}
+.rb-faq details:first-child { padding-top: 0; }
+.rb-faq summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading), Manrope, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 550;
+  letter-spacing: -0.02em;
+  color: var(--cream-ink);
+}
+.rb-faq summary::-webkit-details-marker { display: none; }
+.rb-faq details p {
+  margin-top: 14px;
+  color: #625d71;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 900px) {
+  .rb-wrap { width: calc(100% - 48px); }
+  .rb-hero-grid,
+  .rb-change-grid,
+  .rb-story-grid,
+  .rb-product-grid,
+  .rb-eval-grid,
+  .rb-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .rb-hero-aside p { max-width: 100%; }
+  .rb-reassure,
+  .rb-emphasis { padding: 24px; }
+}

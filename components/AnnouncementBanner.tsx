@@ -17,6 +17,8 @@ export default function AnnouncementBanner() {
         color: '#fff',
         position: 'relative',
         zIndex: 1,
+        flexWrap: 'wrap',
+        textAlign: 'center',
       }}
     >
       <span
@@ -30,11 +32,11 @@ export default function AnnouncementBanner() {
           textTransform: 'uppercase',
         }}
       >
-        New — Healthcare
+        Rebrand
       </span>
-      <span>Torvana is live — intake, scheduling and records automation for specialty medical practices.</span>
+      <span>Case Compass intake is now IntakeOS — same product, sharper name.</span>
       <Link
-        href="/torvana"
+        href="/intakeos/rebrand"
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -44,7 +46,7 @@ export default function AnnouncementBanner() {
           textUnderlineOffset: '3px',
         }}
       >
-        See Torvana <ArrowRight size={13} />
+        Read the note <ArrowRight size={13} />
       </Link>
     </div>
   )

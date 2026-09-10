@@ -8,6 +8,7 @@ import {
   Pause, Play, Plus, Minus, FileText, CalendarDays,
   Smartphone, Bell, X,
 } from 'lucide-react'
+import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Footer from '@/components/Footer'
 import Nav from '@/components/nav/Nav'
 
@@ -258,10 +259,13 @@ export default function TorvanaPage() {
   const mod = modules[activeModule]
 
   return (
-    <div className="tv-root">
-      <style>{`.tv-root nav[style] { background: rgba(6,13,31,0.97) !important; }`}</style>
+    <>
+      <div style={{ position: 'sticky', top: 0, zIndex: 200 }}>
+        <AnnouncementBanner />
+        <Nav />
+      </div>
+      <div className="tv-root">
       <a className="tv-skip" href="#main">Skip to content</a>
-      <Nav />
 
       <main id="main">
 
@@ -735,9 +739,6 @@ export default function TorvanaPage() {
 
       </main>
 
-      {/* Footer */}
-      <Footer />
-
         {/* Lightbox */}
         {lightboxSrc && (
           <div
@@ -836,6 +837,8 @@ export default function TorvanaPage() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+      <Footer />
+    </>
   )
 }
