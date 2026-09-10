@@ -70,7 +70,7 @@ export default function TorvanaSection() {
                 <em style={{ fontStyle: 'italic', color: '#a5a0f5' }}>Everyone knows.</em>
               </h2>
               <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, marginBottom: '32px', maxWidth: '420px' }}>
-                Torvana is Case Compass for specialty medical practices. Intake, scheduling, records automation and a portal for the referring attorneys your practice already works with — built for imaging centers, orthopedics, surgery centers and pain management.
+                Torvana is a HIPAA-compliant intake, scheduling, and referral workflow platform for specialty medical practices with personal injury attorney referral relationships — imaging centers, orthopedics, surgery centers, and pain management.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '36px' }}>
                 {['HIPAA-compliant workflows', 'Alongside your existing PACS, RIS or EHR', 'Real-time status for every referring firm'].map(point => (

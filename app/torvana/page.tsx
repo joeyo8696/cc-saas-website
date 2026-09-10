@@ -8,9 +8,10 @@ import {
   Pause, Play, Plus, Minus, FileText, CalendarDays,
   Smartphone, Bell, X,
 } from 'lucide-react'
-import AnnouncementBanner from '@/components/AnnouncementBanner'
 import Footer from '@/components/Footer'
 import Nav from '@/components/nav/Nav'
+import AnnouncementBanner from '@/components/AnnouncementBanner'
+import { TORVANA_ENTITY, torvanaFaqs } from './torvanaContent'
 
 const stages = [
   {
@@ -286,8 +287,11 @@ export default function TorvanaPage() {
             </div>
             
             <h1>The referral moves.<br /><em>Everyone knows.</em></h1>
-            <p className="tv-hero-lede">
-              Connect your patients, your practice and the attorneys who refer to you — built for medical imaging centers and the specialty practices in that referral loop.
+            <p className="tv-hero-lede tv-entity">
+              {TORVANA_ENTITY}
+            </p>
+            <p className="tv-hero-lede" style={{ marginTop: '12px', fontSize: '15px', color: '#7a768f' }}>
+              Connect patients, your practice, and the attorneys who refer to you — imaging centers, orthopedics, surgery centers, and pain management in the PI referral loop.
             </p>
             <div className="tv-hero-actions">
               <button className="tv-btn-primary" onClick={() => setModalOpen(true)}>
@@ -680,23 +684,8 @@ export default function TorvanaPage() {
               <p>Straight answers about how Torvana works, who it&apos;s built for, and what implementation actually looks like.</p>
             </div>
             <div className="tv-faq-list">
-              {[
-                { q: 'Is Torvana built for medical imaging centers?', a: 'Yes. Torvana is purpose-built for outpatient and diagnostic imaging centers — including MRI, CT, PET, X-ray, ultrasound, and multi-modality radiology groups — that receive meaningful volume from personal injury attorney referrals. Exam-type intake, implant screening, body-region capture, PACS/RIS-adjacent workflows, and attorney-facing case status are designed around imaging operations.' },
-                { q: 'Who else is Torvana built for besides imaging?', a: 'Beyond imaging centers and radiology groups, Torvana fits orthopedic practices, ambulatory surgery centers, interventional and chronic pain management practices, spine clinics, and other specialty providers whose patient pipeline depends on PI attorney referrals and lien-based care.' },
-                { q: 'Does Torvana replace our existing PACS, RIS, or EHR?', a: "No. Torvana runs alongside your existing systems. You keep your PACS, RIS, or EHR, whichever vendor you're on, and Torvana adds the intake, scheduling, and referral layer on top. Integration is scoped to your specific systems during onboarding." },
-                { q: "What if our current system doesn't have an open integration option?", a: "We work with what's available. Some vendors have modern APIs, others require a more traditional interface. Either way, our approach is to connect to your existing systems rather than ask you to switch, and we scope that conversation with you directly." },
-                { q: 'How does patient intake work for imaging patients?', a: 'Intake runs in any browser — phone, tablet, or desktop. It can be embedded on your imaging center website, shared as a link, or sent by text. Patients complete health history, exam and body-region details, implant screening, consent forms, and HIPAA authorization with e-signature before they arrive. No app to download, no account to create.' },
-                { q: 'What do referring attorneys see in the portal?', a: 'Real-time status on their own cases only — intake completion, appointment confirmation, record retrieval status, and lien case status. It replaces phone calls and mailed status requests with self-serve visibility. Each firm only sees their own referred cases.' },
-                { q: 'How does medical record retrieval work?', a: 'Once HIPAA authorization is captured at intake, record retrieval is triggered automatically. Torvana targets a 24 to 48 hour turnaround, though actual timing varies by record source. The referring attorney sees retrieval status live.' },
-                { q: 'What is the medical chronology?', a: "Once records are retrieved, Torvana generates a chronology document summarizing the patient's treatment history — delivered alongside the records rather than as a separate request." },
-                { q: 'Can Torvana handle annual imaging recall?', a: "Yes. Torvana can run scheduled outreach for recurring or follow-up care, like annual imaging, on a set timeline. Reminders go out automatically via SMS and the patient portal, so recall doesn't rely on staff remembering to follow up." },
-                { q: 'Do our patients need to download an app?', a: "No. Intake, scheduling, and the patient portal all run in a mobile browser. There's nothing to install." },
-                { q: 'Is Torvana HIPAA compliant?', a: 'Yes. Torvana is built with HIPAA compliance as a core requirement, not an add-on. Business Associate Agreements are in place with every vendor that touches protected health information.' },
-                { q: 'How is Torvana priced?', a: "Pricing depends on the number of locations, integration scope, and specific systems involved. We put together a detailed proposal for every imaging center or specialty practice rather than a one-size-fits-all price." },
-                { q: 'Who is behind Torvana?', a: "Torvana is powered by Case Compass. The team has spent years building intake and case-tracking infrastructure for plaintiff-side law firms, combined with direct experience in healthcare patient intake and referral infrastructure. That combination is why the referring-attorney side of the platform works the way it does." },
-                { q: "Does Torvana work for practices that aren't PI-referral-based?", a: "Torvana is purpose-built around the PI attorney referral relationship — lien case tracking, attorney-facing status visibility, and record retrieval automation tied to that workflow. If that's not a meaningful part of your referral base, a general patient engagement platform may be a better fit." },
-              ].map(({ q, a }, i) => (
-                <div key={i} className="tv-faq-item">
+              {torvanaFaqs.map(({ q, a }, i) => (
+                <div key={q} className="tv-faq-item">
                   <button
                     className="tv-faq-trigger"
                     aria-expanded={faqOpen === i}

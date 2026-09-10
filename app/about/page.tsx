@@ -62,7 +62,7 @@ export default function AboutPage() {
                   Then we looked at what our team actually knew. Joey spent years building intake and patient-flow infrastructure in healthcare — first as Co-Founder &amp; CTO at CHESS Health, then as VP of Engineering at Talkiatry. The problems he saw there were the same ones he solved in legal: disconnected systems, manual handoffs, lost patients at every step. That background didn&apos;t just inform Torvana — it made it inevitable.
                 </p>
                 <p>
-                  Torvana brings that same intake-first thinking to specialty medical practices that work with personal injury attorney referrals. Dwellex does the same for landlord–tenant law. The platform changes. The problem doesn&apos;t: every high-volume, relationship-driven practice needs intake that actually works — connecting the client, patient, or partner from the very first touch.
+                  Torvana is a HIPAA-compliant intake, scheduling, and referral workflow platform for specialty medical practices with personal injury attorney referral relationships. Dwellex does the same for landlord–tenant law. The platform changes. The problem doesn&apos;t: every high-volume, relationship-driven practice needs intake that actually works — connecting the client, patient, or partner from the very first touch.
                 </p>
               </div>
             </div>
