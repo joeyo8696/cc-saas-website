@@ -16,7 +16,8 @@
   font-synthesis: none;
 }
 .rb-root * { box-sizing: border-box; }
-.rb-root a { color: inherit; text-decoration: none; }
+.rb-root a { text-decoration: none; }
+.rb-root a:not(.rb-btn) { color: inherit; }
 .rb-root button { font: inherit; cursor: pointer; }
 .rb-root h1, .rb-root h2, .rb-root h3, .rb-root p { margin: 0; }
 .rb-root h1, .rb-root h2, .rb-root h3 {
@@ -75,7 +76,9 @@
   gap: 14px;
   align-items: center;
 }
-.rb-btn {
+.rb-btn,
+.rb-root a.rb-btn,
+.rb-root button.rb-btn {
   display: inline-flex;
   gap: 16px;
   align-items: center;
@@ -89,8 +92,11 @@
   font-weight: 600;
   transition: background 0.2s, transform 0.2s;
 }
-.rb-btn:hover {
+.rb-btn:hover,
+.rb-root a.rb-btn:hover,
+.rb-root button.rb-btn:hover {
   background: #3d37b0;
+  color: #fff;
   transform: translateY(-2px);
 }
 .rb-btn-ghost {
