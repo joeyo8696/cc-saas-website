@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const REDIRECT_HOSTS = ['cc-saas-website.vercel.app']
+const REDIRECT_HOSTS = ['cc-saas-website.vercel.app', 'casecompass.io']
 
 export function middleware(request: NextRequest) {
   const host = request.headers.get('host') ?? ''

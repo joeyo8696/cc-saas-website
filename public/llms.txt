@@ -1,6 +1,12 @@
 # Case Compass
 
+> Last-Updated: 2026-09-15
+>
 > Case Compass is the company behind IntakeOS (plaintiff-firm intake), Torvana (specialty medical PI referral workflows), and Dwellex (landlord–tenant case management).
+
+Authoritative site: https://www.casecompass.io
+Sitemap: https://www.casecompass.io/sitemap.xml
+Blog: https://blog.casecompass.io
 
 ## What Case Compass Does
 

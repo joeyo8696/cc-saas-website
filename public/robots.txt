@@ -2,8 +2,12 @@ User-agent: *
 Allow: /
 Disallow: /demos
 
-# Sitemap
+# Sitemaps
 Sitemap: https://www.casecompass.io/sitemap.xml
+Sitemap: https://blog.casecompass.io/sitemap.xml
+
+# LLM / answer-engine summary (AIO)
+# https://www.casecompass.io/llms.txt
 
 # Major search engines
 User-agent: Googlebot
@@ -52,8 +56,8 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-User-agent: cohere-ai
+User-agent: Google-Extended
 Allow: /
 
-User-agent: Google-Extended
+User-agent: cohere-ai
 Allow: /

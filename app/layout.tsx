@@ -154,7 +154,7 @@ const globalJsonLd = {
         '@type': 'ImageObject',
         url: 'https://www.casecompass.io/favicon.png',
       },
-      description: 'Case Compass is legal intake software built exclusively for plaintiff law firms. It automates client intake, qualifies leads with AI, manages referral partners, and converts prospects into signed clients.',
+      description: 'Case Compass is the company behind IntakeOS (plaintiff-firm intake), Torvana (specialty medical PI referral workflows), and Dwellex (landlord-tenant case management).',
       sameAs: [
         'https://www.linkedin.com/company/case-compass/',
         'https://www.facebook.com/casecompass2024',
@@ -163,6 +163,8 @@ const globalJsonLd = {
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'sales',
+        telephone: '+1-585-484-7472',
+        email: 'support@casecompass.io',
         url: 'https://www.casecompass.io',
       },
     },
@@ -171,32 +173,23 @@ const globalJsonLd = {
       '@id': 'https://www.casecompass.io/#website',
       url: 'https://www.casecompass.io',
       name: 'Case Compass',
+      description:
+        'Case Compass builds IntakeOS for plaintiff firms, Torvana for specialty medical practices, and Dwellex for landlord-tenant law.',
       publisher: { '@id': 'https://www.casecompass.io/#organization' },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: 'https://www.casecompass.io/?q={search_term_string}',
-        },
-        'query-input': 'required name=search_term_string',
-      },
     },
     {
       '@type': 'SoftwareApplication',
       '@id': 'https://www.casecompass.io/#software',
-      name: 'Case Compass',
-      applicationCategory: 'LegalService',
+      name: 'IntakeOS',
+      alternateName: ['Case Compass', 'Intake OS'],
+      applicationCategory: 'BusinessApplication',
       applicationSubCategory: 'Legal Intake Software',
       operatingSystem: 'Web',
-      url: 'https://www.casecompass.io',
-      description: 'Case Compass is legal intake software for plaintiff law firms. It automates client intake with AI chatbots and webforms, scores every lead with Waypoint AI, manages referral partner networks, and closes retainers with built-in e-signature — all in one platform.',
-      keywords: 'legal intake software, law firm intake automation, plaintiff intake software, mass tort intake, workers comp intake, AI lead scoring, legal chatbot, attorney intake software, legal marketing software, law firm marketing software, legal lead generation, legal marketing automation, mass tort marketing, MDL intake software',
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock',
-        seller: { '@id': 'https://www.casecompass.io/#organization' },
-      },
+      url: 'https://www.casecompass.io/intakeos',
+      description:
+        'IntakeOS is legal intake software for plaintiff law firms. It automates client intake with AI chatbots and webforms, scores every lead with Waypoint AI, manages referral partner networks, and closes retainers with built-in e-signature — all in one platform.',
+      keywords:
+        'legal intake software, law firm intake automation, plaintiff intake software, mass tort intake, workers comp intake, AI lead scoring, legal chatbot, attorney intake software',
       featureList: [
         'Legal intake chatbots and webforms',
         'AI-powered lead scoring (Waypoint)',
@@ -209,6 +202,7 @@ const globalJsonLd = {
         'UTM and attribution tracking',
         'Intake analytics and reporting',
       ],
+      provider: { '@id': 'https://www.casecompass.io/#organization' },
     },
     {
       '@type': 'Service',
@@ -216,8 +210,9 @@ const globalJsonLd = {
       name: 'Legal Intake Software',
       serviceType: 'Legal Intake Automation',
       provider: { '@id': 'https://www.casecompass.io/#organization' },
-      url: 'https://www.casecompass.io',
-      description: 'Case Compass provides legal intake software for plaintiff law firms, including AI chatbot intake, webform intake, Waypoint lead scoring, referral management, and e-signature retainer closing.',
+      url: 'https://www.casecompass.io/intakeos',
+      description:
+        'Case Compass provides IntakeOS legal intake software for plaintiff law firms, including AI chatbot intake, webform intake, Waypoint lead scoring, referral management, and e-signature retainer closing.',
       areaServed: {
         '@type': 'Country',
         name: 'United States',
@@ -237,76 +232,6 @@ const globalJsonLd = {
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Referral Partner Management' } },
         ],
       },
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': 'https://www.casecompass.io/#faq',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'What is legal intake software?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Legal intake software automates the process of capturing, qualifying, and converting prospective clients for law firms. It replaces static contact forms with dynamic, conversational intake flows that collect structured case information, route qualified leads, and trigger automated follow-up — all without manual staff intervention at each step.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How does AI lead scoring work in law firms?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'AI lead scoring for law firms evaluates every intake submission against a firm\'s custom criteria — such as case value, liability indicators, medical treatment, urgency, and red flags — and assigns a score before a staff member reviews it. Case Compass\'s Waypoint engine does this automatically on submission, so intake teams prioritize by case strength rather than by submission order.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What is the difference between a chatbot and a conversational intake platform?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'A basic chatbot handles conversational engagement but typically lacks the backend infrastructure for lead scoring, CRM integration, e-signatures, and referral tracking. A conversational intake platform like Case Compass combines the guided intake experience with automated scoring (Waypoint), referral partner portals, in-flow e-signatures, live transfer, and full CRM sync — making it a complete intake operating system rather than a front-end widget.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How do law firms track referral partner performance?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Case Compass includes a dedicated Referral Network module. Each referring attorney or partner gets a portal to submit leads and track real-time statuses. The firm sees leads, intakes, conversion rates, and fee totals for every partner from a single dashboard. Referral fees are tracked and can be marked as paid without spreadsheets.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Can law firms collect e-signatures during online intake?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes. Case Compass includes in-flow e-signature collection, so clients can sign retainer agreements and authorization forms as part of the same intake session — with no redirect to a separate tool. Multi-document signing, SMS reminders for pending signatures, and automatic attachment of signed documents to notification emails are all included.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What CRMs does Case Compass integrate with?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Case Compass integrates with Litify (Salesforce-based), Filevine, LeadDocket, Clio (Manage and Grow), HubSpot, and Zapier. Practice areas, campaigns, originating URLs, and intake answers sync automatically. Case Compass also offers a WordPress plugin for embedding intake forms directly on a firm\'s website.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How long does legal intake software take to implement?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Most firms using Case Compass are live within a few days. Implementation does not require replacing existing systems — Case Compass sits between your marketing channels and your CRM, so there is no rip-and-replace. Intake forms, Waypoint scoring criteria, and CRM integrations are configured during a guided onboarding.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What is Waypoint AI?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Waypoint is the AI-powered lead scoring engine built into Case Compass. When a prospective client submits an intake, Waypoint automatically evaluates the submission against your firm\'s custom criteria — case value, liability, medical treatment, urgency, statute of limitations, red flags, and more — and surfaces a score in your dashboard before any staff member reviews the lead. Waypoint uses your firm\'s own AI API credentials (BYOK), so intake data never flows through a shared pool.',
-          },
-        },
-      ],
     },
   ],
 }
