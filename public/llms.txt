@@ -77,7 +77,7 @@ What Dwellex does:
 - Automated reminders for court dates, cure periods, and vacate deadlines
 - Case timelines, trial lists, and lockout coordination
 - Client portal where landlords and property managers submit intake, upload documents, and track case status
-- Bidirectional Clio sync (matters, tasks, documents); PracticePanther and Rent Manager integrations
+- Bidirectional Clio sync (matters, tasks, documents); PracticePanther, Rent Manager and Yardi integrations
 - Unlimited users with role-based access; residential and commercial matters
 
 Pricing (published):
@@ -107,7 +107,7 @@ Alternatives (factual framing): EvictionAssistant, EasyEviction, Throw Out My Te
 
 ## Integrations
 
-Litify, Filevine, LeadDocket, Clio, PracticePanther, Rent Manager, HubSpot, Zapier, WordPress, CallRail — https://www.casecompass.io/integrations
+Litify, Filevine, LeadDocket, Clio, PracticePanther, Rent Manager, Yardi, HubSpot, Zapier, WordPress, CallRail — https://www.casecompass.io/integrations
 
 ## Who Uses Case Compass
 

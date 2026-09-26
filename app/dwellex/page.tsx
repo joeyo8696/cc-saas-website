@@ -376,13 +376,13 @@ export default function DwellexPage() {
             <div className="dw-pm-copy">
               <p className="eyebrow">FOR PROPERTY MANAGERS</p>
               <h2>Send the whole batch.<br /><em>Watch every case move.</em></h2>
-              <p>Export delinquent tenants from Rent Manager or any property management system as a CSV, and your attorney&apos;s team reviews and generates the notices in Dwellex. Every case, hearing date and vacate deadline shows up in one portal, so you stop chasing status by email.</p>
+              <p>Export delinquent tenants from Rent Manager, Yardi, or any property management system as a CSV, and your attorney&apos;s team reviews and generates the notices in Dwellex. Every case, hearing date and vacate deadline shows up in one portal, so you stop chasing status by email.</p>
               <button type="button" className="button" onClick={() => openScheduler('pm_section')}>
                 Refer your eviction attorney to Dwellex <span aria-hidden="true">↗</span>
               </button>
             </div>
             <ul className="dw-pm-points">
-              <li>Upload a CSV or sync from Rent Manager, no retyping ledgers</li>
+              <li>Upload a CSV or sync from Rent Manager or Yardi, no retyping ledgers</li>
               <li>See notice, filing, hearing and lockout status for every unit in one portal</li>
               <li>Role-based access for regional managers, site staff and owners</li>
             </ul>
@@ -443,7 +443,7 @@ export default function DwellexPage() {
                 </div>
                 <div>
                   <h3>Your systems stay in sync.</h3>
-                  <p>Connect Clio matters, tasks and documents. Dwellex also integrates with Practice Panther and Rent Manager.</p>
+                  <p>Connect Clio matters, tasks and documents. Dwellex also integrates with Practice Panther, Rent Manager and Yardi.</p>
                 </div>
               </div>
             </div>

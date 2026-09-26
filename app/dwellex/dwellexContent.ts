@@ -37,7 +37,7 @@ export const dwellexFaqs: { question: string; answer: string }[] = [
   {
     question: 'What is the best eviction software for law firms?',
     answer:
-      'It depends on volume and how your firm works. Firms filing eviction cases at volume usually need batch notice generation, jurisdiction-specific court rules, automated deadline tracking and a client portal for property managers. Dwellex is built specifically for landlord-tenant practices, with unlimited users, published per-case pricing, and integrations with Clio, PracticePanther and Rent Manager.',
+      'It depends on volume and how your firm works. Firms filing eviction cases at volume usually need batch notice generation, jurisdiction-specific court rules, automated deadline tracking and a client portal for property managers. Dwellex is built specifically for landlord-tenant practices, with unlimited users, published per-case pricing, and integrations with Clio, PracticePanther, Rent Manager and Yardi.',
   },
   {
     question: 'How much does eviction software cost?',
@@ -97,7 +97,7 @@ export const dwellexSoftwareSchema = {
     'Automated reminders for court dates, cure periods and vacate deadlines',
     'Landlord and property manager client portal',
     'Clio bidirectional sync',
-    'PracticePanther and Rent Manager integrations',
+    'PracticePanther, Rent Manager and Yardi integrations',
     'Unlimited users with role-based access',
   ],
 }

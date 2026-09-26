@@ -24,7 +24,7 @@ const jsonLd = {
       operatingSystem: 'Web',
       url: 'https://www.casecompass.io/solutions/dwellex',
       description:
-        'Dwellex is eviction case management software built for landlord-tenant law firms. It automates intake, tracks full case timelines from filing to lockout, generates court documents, and integrates with Clio, Practice Panther, and Rent Manager.',
+        'Dwellex is eviction case management software built for landlord-tenant law firms. It automates intake, tracks full case timelines from filing to lockout, generates court documents, and integrates with Clio, Practice Panther, Rent Manager, and Yardi.',
       offers: {
         '@type': 'Offer',
         price: '399',
@@ -48,7 +48,7 @@ const jsonLd = {
         'Client portal with case timeline visibility and document upload',
         'Case templates with ordered action steps and due date rules',
         'Clio integration with bidirectional matter and document sync',
-        'Practice Panther and Rent Manager integrations',
+        'Practice Panther, Rent Manager and Yardi integrations',
         'Court date tracking and marshal coordination',
         'Lockout scheduling and notifications',
         'Case-linked messaging with email threading and auto-filed attachments',
@@ -92,7 +92,7 @@ const jsonLd = {
           name: 'What eviction software works with Clio?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Dwellex integrates directly with Clio via OAuth 2.0. Every new intake automatically creates a matter in Clio, and documents, case stages, and status updates sync bidirectionally in real time. Practice Panther and Rent Manager integrations are also available.',
+            text: 'Dwellex integrates directly with Clio via OAuth 2.0. Every new intake automatically creates a matter in Clio, and documents, case stages, and status updates sync bidirectionally in real time. Practice Panther, Rent Manager and Yardi integrations are also available.',
           },
         },
         {
@@ -266,6 +266,7 @@ const integrations = [
   { name: 'Clio', desc: 'Practice management sync', logo: '/images/clio-logo.png' },
   { name: 'Practice Panther', desc: 'Case and document sync', logo: '/images/practice-panther-logo.jpg' },
   { name: 'Rent Manager', desc: 'Property management integration', logo: '/images/rent-manager-logo.png' },
+  { name: 'Yardi', desc: 'Property management integration' },
 ]
 
 const audience = [
@@ -434,7 +435,7 @@ const faqs = [
   },
   {
     q: 'What eviction software integrates with Clio?',
-    a: 'Dwellex integrates directly with Clio via OAuth 2.0. Every new intake automatically creates a matter in Clio, and documents, case stages, and status updates sync bidirectionally in real time. Practice Panther and Rent Manager integrations are also available.',
+    a: 'Dwellex integrates directly with Clio via OAuth 2.0. Every new intake automatically creates a matter in Clio, and documents, case stages, and status updates sync bidirectionally in real time. Practice Panther, Rent Manager and Yardi integrations are also available.',
   },
   {
     q: 'What is the best landlord-tenant software for law firms?',
@@ -853,7 +854,7 @@ export default function DwellexPage() {
                     { k: 'What it is', v: 'Eviction & landlord-tenant case management software' },
                     { k: 'Built for', v: 'Eviction law firms, landlord-tenant attorneys & property managers' },
                     { k: 'Pricing', v: '$399/mo + per-case (starts $8, scales down to $5 at volume)' },
-                    { k: 'Integrates with', v: 'Clio, Practice Panther, Rent Manager' },
+                    { k: 'Integrates with', v: 'Clio, Practice Panther, Rent Manager, Yardi' },
                     { k: 'Coverage', v: 'All 50 states — residential & commercial' },
                     { k: 'Best-known alternative to', v: 'EasyEviction, Eviction Assistant, and generic LPM + spreadsheets' },
                   ].map(({ k, v }) => (
@@ -1499,6 +1500,7 @@ export default function DwellexPage() {
                     ['Clio bidirectional sync', true, false, 'Native'],
                     ['Practice Panther integration', true, false, false],
                     ['Rent Manager integration', true, true, false],
+                    ['Yardi integration', true, true, false],
                     ['Role-based access control', true, true, 'Partial'],
                     ['Modern browser-based UI (no Windows app required)', true, 'Partial', true],
                     ['Per-case pricing (no per-seat lock-in)', true, false, false],
@@ -1692,7 +1694,7 @@ export default function DwellexPage() {
                     'Trial Lists with Word doc export',
                     'Court document generation',
                     'Client portal with document upload',
-                    'Clio, Practice Panther & Rent Manager sync',
+                    'Clio, Practice Panther, Rent Manager & Yardi sync',
                     'SMS + email notifications',
                     'Marshal & lockout coordination',
                     'Role-based access (admin, staff, client)',
@@ -1812,13 +1814,17 @@ export default function DwellexPage() {
                     }}
                   >
                     <div style={{ height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                      <Image
-                        src={logo}
-                        alt={`${name} logo`}
-                        width={280}
-                        height={100}
-                        style={{ objectFit: 'contain', maxHeight: '100px', width: 'auto' }}
-                      />
+                      {logo ? (
+                        <Image
+                          src={logo}
+                          alt={`${name} logo`}
+                          width={280}
+                          height={100}
+                          style={{ objectFit: 'contain', maxHeight: '100px', width: 'auto' }}
+                        />
+                      ) : (
+                        <span style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 700, color: '#0f172a', letterSpacing: '-0.03em' }}>{name}</span>
+                      )}
                     </div>
                     <div style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.6 }}>
                       {desc}
