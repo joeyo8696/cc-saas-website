@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
 import { DemoModalProvider } from '@/components/DemoModalProvider'
+import SiteAnalytics from '@/components/analytics/SiteAnalytics'
 
 const dmSerifDisplay = DM_Serif_Display({
   weight: ['400'],
@@ -255,6 +256,7 @@ export default function RootLayout({
         <DemoModalProvider>
           {children}
         </DemoModalProvider>
+        <SiteAnalytics />
         <Analytics />
       </body>
     </html>

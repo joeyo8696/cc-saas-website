@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Linkedin, Facebook } from 'lucide-react'
 import { useDemoModal } from './DemoModalProvider'
 import './footer.css'
@@ -68,8 +69,19 @@ const socialLinks = [
   },
 ]
 
+function taglineFor(pathname: string) {
+  if (pathname === '/dwellex' || pathname.startsWith('/dwellex/')) {
+    return 'Case management for landlord-tenant and eviction practices.'
+  }
+  if (pathname === '/torvana' || pathname.startsWith('/torvana/')) {
+    return 'Intake, scheduling and records for specialty medical practices.'
+  }
+  return 'Smart intake for plaintiff law firms.'
+}
+
 export default function Footer() {
   const { openModal } = useDemoModal()
+  const pathname = usePathname()
   return (
     <footer className="cc-footer">
       <div className="cc-footer-inner">
@@ -83,7 +95,7 @@ export default function Footer() {
               className="cc-footer-logo"
             />
             <p className="cc-footer-tagline">
-              Smart intake for plaintiff law firms.
+              {taglineFor(pathname)}
             </p>
             <div className="cc-footer-social">
               {socialLinks.map(({ href, label, network, icon }) => (

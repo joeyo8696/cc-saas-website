@@ -600,6 +600,33 @@
   padding-block: 90px;
   color: var(--text);
 }
+.dw-pm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding-block: 90px;
+}
+.dw-pm em { color: #b4a7ed; }
+.dw-pm-copy > p:not(.eyebrow) {
+  margin-top: 22px;
+  max-width: 520px;
+  color: #a1aec4;
+}
+.dw-pm .button { margin-top: 28px; }
+.dw-pm-points {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0 0;
+}
+.dw-pm-points li {
+  padding: 18px 0;
+  border-top: 1px solid #49445f;
+  color: #e7e4f4;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.dw-pm-points li:last-child { border-bottom: 1px solid #49445f; }
 .dw-price-intro .eyebrow { color: #a89bcf; }
 .dw-price-intro em { color: #b4a7ed; }
 .dw-price-intro > p:not(.eyebrow) { margin-top: 24px; max-width: 440px; color: #a1aec4; }
@@ -737,7 +764,7 @@
   .stage-bottom { padding: 15px 20px; line-height: 1.6; }
   .stage-bottom > span:last-child { display: none; }
   .dw-assurances { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.875rem; }
-  .dw-workflow, .dw-pricing { padding-block: 60px; }
+  .dw-workflow, .dw-pricing, .dw-pm { padding-block: 60px; }
   .dw-section-head { flex-direction: column; align-items: start; gap: 20px; margin-bottom: 30px; }
   .dw-steps { grid-template-columns: 1fr; }
   .dw-steps li, .dw-steps li + li { padding: 25px 0; border-left: 0; }
@@ -747,7 +774,7 @@
   .dw-tabs button { font-size: 0.875rem; padding: 15px 2px; }
   .dw-feature { grid-template-columns: 1fr; gap: 25px; min-height: 0; padding-top: 30px; }
   .dw-support-features { grid-template-columns: 1fr; gap: 28px; margin-top: 35px; }
-  .dw-pricing { grid-template-columns: 1fr; gap: 35px; }
+  .dw-pricing, .dw-pm { grid-template-columns: 1fr; gap: 35px; }
   .dw-calculator { padding: 26px; }
   .dw-faq { padding: 60px 0; }
   .dw-faq-grid { grid-template-columns: 1fr; gap: 30px; }

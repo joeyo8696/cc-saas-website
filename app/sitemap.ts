@@ -56,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blog (Cloudflare) — full post set for crawl discovery from the main property
     entry(`${BLOG_URL}/`, { changeFrequency: 'weekly', priority: 0.8 }),
+    entry(`${BLOG_URL}/posts/best-eviction-software-for-law-firms.html`, { changeFrequency: 'monthly', priority: 0.9 }),
     entry(`${BLOG_URL}/posts/legal-intake-software-guide.html`, { changeFrequency: 'monthly', priority: 0.9 }),
     entry(`${BLOG_URL}/posts/5-signs-your-law-firm-has-outgrown-its-contact-form.html`, {
       changeFrequency: 'monthly',

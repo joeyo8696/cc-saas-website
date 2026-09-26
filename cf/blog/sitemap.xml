@@ -5,9 +5,40 @@
 
   <url>
     <loc>https://blog.casecompass.io/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://blog.casecompass.io/posts/best-eviction-software-for-law-firms.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Case Compass Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-25</news:publication_date>
+      <news:title>Best Eviction Software for Law Firms in 2026: What to Look For and How the Options Compare</news:title>
+    </news:news>
+    <image:image>
+      <image:loc>https://blog.casecompass.io/images/dwellex-dashboard.png</image:loc>
+      <image:caption>Dwellex batch notice review workspace</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blog.casecompass.io/images/dwellex-courts.png</image:loc>
+      <image:caption>Dwellex court rules for notice periods and required language</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blog.casecompass.io/images/dwellex-timeline-builder.png</image:loc>
+      <image:caption>Dwellex timeline builder with branching eviction steps</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://blog.casecompass.io/images/dwellex-trial-lists.png</image:loc>
+      <image:caption>Dwellex trial lists grouped by county and court session</image:caption>
+    </image:image>
   </url>
 
   <url>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react'
+import { useEffect, useMemo, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react'
 import Image from 'next/image'
 import { Check, Pause, Play, X } from 'lucide-react'
 import AnnouncementBanner from '@/components/AnnouncementBanner'
@@ -8,6 +8,8 @@ import Nav from '@/components/nav/Nav'
 import Footer from '@/components/Footer'
 import BrowserFrame from '@/components/ui/BrowserFrame'
 import ExpandableBrowserFrame from '@/components/ui/ExpandableBrowserFrame'
+import { captureAttribution, readAttribution, trackEvent } from '@/lib/analytics'
+import { dwellexFaqs } from './dwellexContent'
 import './dwellex.css'
 
 const DWELLEX_SCHEDULER_SRC =
@@ -210,9 +212,28 @@ export default function DwellexPage() {
   const [flowStage, setFlowStage] = useState(0)
   const [playing, setPlaying] = useState(true)
   const [schedulerOpen, setSchedulerOpen] = useState(false)
+  const [schedulerSource, setSchedulerSource] = useState('dwellex')
+  const calcTracked = useRef(false)
+  const calcTimer = useRef<number | null>(null)
   const estimate = useMemo(() => estimateFor(cases), [cases])
   const feature = features[tab]
   const activeTrail = matterStages[flowStage].trail
+
+  useEffect(() => {
+    captureAttribution()
+  }, [])
+
+  useEffect(() => {
+    function onMessage(event: MessageEvent) {
+      if (event.origin !== 'https://scheduler.zoom.us') return
+      const data = event.data as { type?: string } | null
+      if (!data || data.type !== 'bookingForm') return
+      const attr = readAttribution()
+      trackEvent('dwellex_demo_submit', { source: attr.source || schedulerSource })
+    }
+    window.addEventListener('message', onMessage)
+    return () => window.removeEventListener('message', onMessage)
+  }, [schedulerSource])
 
   useEffect(() => {
     if (!schedulerOpen) return
@@ -228,7 +249,35 @@ export default function DwellexPage() {
     }
   }, [schedulerOpen])
 
-  const openScheduler = () => setSchedulerOpen(true)
+  const schedulerSrc = useMemo(() => {
+    const url = new URL(DWELLEX_SCHEDULER_SRC)
+    if (typeof window !== 'undefined') {
+      const attr = readAttribution()
+      for (const [key, value] of Object.entries(attr)) {
+        url.searchParams.set(key, value)
+      }
+    }
+    url.searchParams.set('source', schedulerSource)
+    return url.toString()
+  }, [schedulerSource])
+
+  const openScheduler = (ctaLocation: 'hero' | 'pricing' | 'pm_section' | 'footer_cta') => {
+    const source = ctaLocation === 'pm_section' ? 'pm-section' : ctaLocation
+    setSchedulerSource(source)
+    setSchedulerOpen(true)
+    trackEvent('dwellex_demo_click', { cta_location: ctaLocation })
+    if (ctaLocation === 'pm_section') trackEvent('pm_section_cta_click')
+  }
+
+  const onCalculatorRelease = (value: number) => {
+    if (calcTracked.current) return
+    if (calcTimer.current) window.clearTimeout(calcTimer.current)
+    calcTimer.current = window.setTimeout(() => {
+      if (calcTracked.current) return
+      calcTracked.current = true
+      trackEvent('pricing_calculator_used', { cases_per_month: value })
+    }, 400)
+  }
 
   return (
     <>
@@ -248,7 +297,7 @@ export default function DwellexPage() {
                 <h1>More moving parts.<br /><em>One clear path.</em></h1>
                 <div className="dw-intro">
                   <p>Your cases have enough complexity. Bring intake, state-specific notices, court dates, cure periods and client updates into one workspace built for your eviction practice.</p>
-                  <button type="button" className="button" onClick={openScheduler}>
+                  <button type="button" className="button" onClick={() => openScheduler('hero')}>
                     See Dwellex in action <span aria-hidden="true">↗</span>
                   </button>
                   <a className="text-link" href="#workflow">Follow the workflow ↓</a>
@@ -323,6 +372,22 @@ export default function DwellexPage() {
             </ol>
           </section>
 
+          <section className="dw-pm wrap" id="property-managers">
+            <div className="dw-pm-copy">
+              <p className="eyebrow">FOR PROPERTY MANAGERS</p>
+              <h2>Send the whole batch.<br /><em>Watch every case move.</em></h2>
+              <p>Export delinquent tenants from Rent Manager or any property management system as a CSV, and your attorney&apos;s team reviews and generates the notices in Dwellex. Every case, hearing date and vacate deadline shows up in one portal, so you stop chasing status by email.</p>
+              <button type="button" className="button" onClick={() => openScheduler('pm_section')}>
+                Refer your eviction attorney to Dwellex <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <ul className="dw-pm-points">
+              <li>Upload a CSV or sync from Rent Manager, no retyping ledgers</li>
+              <li>See notice, filing, hearing and lockout status for every unit in one portal</li>
+              <li>Role-based access for regional managers, site staff and owners</li>
+            </ul>
+          </section>
+
           <section className="dw-workspace" id="workspace">
             <div className="wrap">
               <div className="dw-section-head">
@@ -394,7 +459,7 @@ export default function DwellexPage() {
                 <span>/ month<br />+ per-case fees</span>
               </div>
               <p className="dw-small">Implementation, training and custom integrations are scoped separately for your practice.</p>
-              <button type="button" className="quiet-link" onClick={openScheduler}>
+              <button type="button" className="quiet-link" onClick={() => openScheduler('pricing')}>
                 Talk through your setup <span>↗</span>
               </button>
             </div>
@@ -415,6 +480,8 @@ export default function DwellexPage() {
                 step={10}
                 value={cases}
                 onChange={(e) => setCases(Number(e.target.value))}
+                onPointerUp={(e) => onCalculatorRelease(Number(e.currentTarget.value))}
+                onKeyUp={(e) => onCalculatorRelease(Number(e.currentTarget.value))}
               />
               <div className="range-labels">
                 <span>10 cases</span>
@@ -438,7 +505,7 @@ export default function DwellexPage() {
                 <div><span>151–999</span><strong>$5.00 / case</strong></div>
                 <div><span>1,000+</span><strong>Custom flat rate</strong></div>
               </div>
-              <button type="button" className="button" onClick={openScheduler}>
+              <button type="button" className="button" onClick={() => openScheduler('pricing')}>
                 Find your fit <span>↗</span>
               </button>
             </div>
@@ -451,30 +518,17 @@ export default function DwellexPage() {
                 <h2>Good questions.<br /><em>Clear answers.</em></h2>
               </div>
               <div>
-                <details>
-                  <summary>Does Dwellex generate state-specific eviction notices?</summary>
-                  <p>Yes. State-specific compliance produces legally valid notices — including Pay or Quit notices — tailored to local housing laws and your configured court rules, so you can batch, preview and serve documents that match each jurisdiction.</p>
-                </details>
-                <details>
-                  <summary>How does deadline and date tracking work?</summary>
-                  <p>Dwellex sends automated reminders for court dates, cure periods, and vacate deadlines. Matter timelines hold attorney and client tasks with due dates, and email or SMS milestones keep hearing days and cure windows from slipping.</p>
-                </details>
-                <details>
-                  <summary>Can we use our own workflows and court rules?</summary>
-                  <p>Yes. Configure case templates, action items, document templates and court-specific notice rules. Firm administrators can maintain jurisdiction details and expiration settings.</p>
-                </details>
-                <details>
-                  <summary>What can landlords and property managers see?</summary>
-                  <p>Clients can submit intake, upload documents and follow their case timeline in a secure portal. Role-based access controls who can view and work on matters.</p>
-                </details>
-                <details>
-                  <summary>Does Dwellex connect to Clio?</summary>
-                  <p>Yes. Dwellex supports bidirectional Clio synchronization for case information, tasks and documents, with controls for sync scope and document visibility.</p>
-                </details>
-                <details>
-                  <summary>What does getting started involve?</summary>
-                  <p>Implementation is scoped around your existing systems and caseload, including data migration, workflow configuration, jurisdiction setup and team training. A demo is the first step toward a plan for your practice.</p>
-                </details>
+                {dwellexFaqs.map((item) => (
+                  <details
+                    key={item.question}
+                    onToggle={(e) => {
+                      if (e.currentTarget.open) trackEvent('dwellex_faq_open', { question: item.question })
+                    }}
+                  >
+                    <summary>{item.question}</summary>
+                    <p>{item.answer}</p>
+                  </details>
+                ))}
               </div>
             </div>
           </section>
@@ -485,7 +539,7 @@ export default function DwellexPage() {
               <h2>See what a clearer<br /><em>day could look like.</em></h2>
               <div>
                 <p>Walk through Dwellex with your practice in mind.</p>
-                <button type="button" className="button" onClick={openScheduler}>
+                <button type="button" className="button" onClick={() => openScheduler('footer_cta')}>
                   Book your Dwellex demo <span>↗</span>
                 </button>
               </div>
@@ -520,7 +574,7 @@ export default function DwellexPage() {
               </button>
             </div>
             <iframe
-              src={DWELLEX_SCHEDULER_SRC}
+              src={schedulerSrc}
               title="Schedule a Dwellex demo with Case Compass"
               className="dw-scheduler-frame"
               allow="camera; microphone; fullscreen"
