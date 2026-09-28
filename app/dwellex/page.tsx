@@ -115,7 +115,7 @@ const features: Record<Tab, {
   },
   assignments: {
     title: <>Who owns the building.<br />Per timeline.</>,
-    body: 'Map responsible staff to organizations and properties, then override by timeline when Kansas non-payment and a market tenant file need different people. Time off and handoffs keep the queue moving when someone is out.',
+    body: 'Map responsible staff to organizations and properties, then override by timeline when different matter types need different people. Time off and handoffs keep the queue moving when someone is out.',
     bullets: [
       'Defaults that inherit from organization to building',
       'Timeline-specific owners for notice requests and matter types',
