@@ -15,7 +15,7 @@ import './dwellex.css'
 const DWELLEX_SCHEDULER_SRC =
   'https://scheduler.zoom.us/case-compass/dwellex-demo?embed=true'
 
-type Tab = 'notices' | 'action' | 'timeline' | 'courts' | 'assignments' | 'staff'
+type Tab = 'notices' | 'intake' | 'action' | 'timeline' | 'courts' | 'assignments' | 'staff'
 
 const matterStages = [
   {
@@ -79,6 +79,17 @@ const features: Record<Tab, {
     ],
     img: '/images/dwellex-dashboard.png',
     imgAlt: 'Batch notice review in Dwellex with state-specific eviction notice generation',
+  },
+  intake: {
+    title: <>Custom intake forms.<br />Eligibility built in.</>,
+    body: 'Build the form your clients fill out, then turn a submission away when the answers already show the firm cannot take the case. A property outside the counties you file in. A tenant who has already moved out. The client sees your message where Submit was, instead of waiting on a decline.',
+    bullets: [
+      'Fields, blocks, eligibility, timeline, and appearance in one builder',
+      'Rules that refuse a submission when answers match',
+      'Your message shown in place of the Submit button',
+    ],
+    img: '/images/dwellex-intake-eligibility.png',
+    imgAlt: 'Dwellex intake form eligibility rules that refuse a submission when answers match',
   },
   action: {
     title: <>Every open case.<br />The step it is on.</>,
@@ -433,11 +444,12 @@ export default function DwellexPage() {
               <div className="dw-tabs" role="tablist" aria-label="Product features">
                 {([
                   { id: 'notices' as const, label: '01 / Batch notices' },
-                  { id: 'action' as const, label: '02 / Action items' },
-                  { id: 'timeline' as const, label: '03 / Case timelines' },
-                  { id: 'courts' as const, label: '04 / Courts & notices' },
-                  { id: 'assignments' as const, label: '05 / Assignments' },
-                  { id: 'staff' as const, label: '06 / Staff home' },
+                  { id: 'intake' as const, label: '02 / Intake forms' },
+                  { id: 'action' as const, label: '03 / Action items' },
+                  { id: 'timeline' as const, label: '04 / Case timelines' },
+                  { id: 'courts' as const, label: '05 / Courts & notices' },
+                  { id: 'assignments' as const, label: '06 / Assignments' },
+                  { id: 'staff' as const, label: '07 / Staff home' },
                 ]).map((t) => (
                   <button
                     key={t.id}

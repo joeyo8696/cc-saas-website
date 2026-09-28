@@ -74,6 +74,7 @@ Dwellex is built for:
 What Dwellex does:
 - State-specific notice generation, including Pay or Quit notices, based on configured jurisdiction and court rules
 - Batch notice generation from property management CSV exports, with saved column mappings and row-level validation
+- Custom intake forms with eligibility rules that refuse a submission when answers show the firm cannot take the case
 - Action Items queue showing every open case, the step it is on, and what it needs next
 - Visual case timelines you design, with branching steps, required documents, and a client-visible path
 - Configurable courts and notice periods, including calendar-day or court-day rules and per-court overrides

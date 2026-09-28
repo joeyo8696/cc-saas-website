@@ -94,6 +94,7 @@ export const dwellexSoftwareSchema = {
   featureList: [
     'State-specific eviction notices including Pay or Quit',
     'Batch notice generation from property management CSV exports',
+    'Custom intake forms with eligibility rules that refuse ineligible submissions',
     'Action Items queue for open cases and what each one needs',
     'Visual case timelines with branching steps and client-visible tasks',
     'Configurable courts, notice periods and court-day overrides',
