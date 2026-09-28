@@ -74,8 +74,13 @@ Dwellex is built for:
 What Dwellex does:
 - State-specific notice generation, including Pay or Quit notices, based on configured jurisdiction and court rules
 - Batch notice generation from property management CSV exports, with saved column mappings and row-level validation
+- Action Items queue showing every open case, the step it is on, and what it needs next
+- Visual case timelines you design, with branching steps, required documents, and a client-visible path
+- Configurable courts and notice periods, including calendar-day or court-day rules and per-court overrides
+- Staff assignments by building and timeline, with time off and handoffs
+- Customizable staff home for upcoming dates, notice requests, and intake approvals
 - Automated reminders for court dates, cure periods, and vacate deadlines
-- Case timelines, trial lists, and lockout coordination
+- Trial lists and lockout coordination
 - Client portal where landlords and property managers submit intake, upload documents, and track case status
 - Bidirectional Clio sync (matters, tasks, documents); PracticePanther, Rent Manager and Yardi integrations
 - Unlimited users with role-based access; residential and commercial matters

@@ -15,7 +15,7 @@ import './dwellex.css'
 const DWELLEX_SCHEDULER_SRC =
   'https://scheduler.zoom.us/case-compass/dwellex-demo?embed=true'
 
-type Tab = 'notices' | 'timeline' | 'courts'
+type Tab = 'notices' | 'action' | 'timeline' | 'courts' | 'assignments' | 'staff'
 
 const matterStages = [
   {
@@ -71,7 +71,7 @@ const features: Record<Tab, {
 }> = {
   notices: {
     title: <>One upload.<br />A batch ready for review.</>,
-    body: 'Import a property management CSV, reuse saved column mappings and catch row-level issues before generating notices. State-specific compliance produces legally valid documents — including Pay or Quit notices — tailored to local housing laws and your configured court rules.',
+    body: 'Import a property management CSV, reuse saved column mappings and catch row-level issues before generating notices. State-specific compliance produces legally valid documents, including Pay or Quit notices, tailored to local housing laws and your configured court rules.',
     bullets: [
       'Generate legally valid notices tailored to local housing laws',
       'Pay or Quit and other jurisdiction-ready notice types',
@@ -80,27 +80,60 @@ const features: Record<Tab, {
     img: '/images/dwellex-dashboard.png',
     imgAlt: 'Batch notice review in Dwellex with state-specific eviction notice generation',
   },
-  timeline: {
-    title: <>Every task.<br />Its place in the matter.</>,
-    body: 'Separate attorney and client responsibilities in a shared timeline. Deadline and date tracking sends automated reminders for court dates, cure periods, and vacate deadlines so nothing slips past the window.',
+  action: {
+    title: <>Every open case.<br />The step it is on.</>,
+    body: 'Action Items is the firm inbox for eviction work. See what is waiting on the firm, what needs an answer, and what is ready to approve. Tick the ones asking the same question and handle them together.',
     bullets: [
-      'Automated reminders for court dates, cure periods, and vacate deadlines',
-      'Assigned action items and due dates on every matter',
-      'Email and SMS milestone reminders',
+      'Filter by assigned to me, waiting on the firm, or all open cases',
+      'Approve, complete, or answer from the same queue',
+      'Search by case, address, step, or assignee',
     ],
-    img: '/images/dwellex-timeline.png',
-    imgAlt: 'Dwellex case timeline with deadline tracking for court dates and cure periods',
+    img: '/images/dwellex-action-items.png',
+    imgAlt: 'Dwellex Action Items queue showing open eviction cases and what each one needs',
+  },
+  timeline: {
+    title: <>The case is the timeline.<br />Branches included.</>,
+    body: 'Design the matter once: who owns each step, what the property manager can see, which documents are required, and where the path splits when the facts change. List, diagram, or split view on every file. Nothing else in this market runs eviction this way.',
+    bullets: [
+      'Branching steps for service problems, revised quit dates, and restarts',
+      'Attorney, case staff, and client-visible responsibilities on the same path',
+      'Automated reminders for court dates, cure periods, and vacate deadlines',
+    ],
+    img: '/images/dwellex-timeline-split.png',
+    imgAlt: 'Dwellex split case view with step list and visual timeline diagram for a Market Tenant matter',
   },
   courts: {
-    title: <>A court day.<br />Already organized.</>,
-    body: 'Bring upcoming hearings into Trial Lists grouped by county and morning or afternoon session.',
+    title: <>Your courts.<br />Your notice periods.</>,
+    body: 'Configure the courts you file in and the notice types those courts expect. Set calendar days or court days, then override by court when a jurisdiction needs a different answer. Expiration dates stop guessing.',
     bullets: [
-      'Filter by county and hearing date',
-      'See docket details and case balances',
-      'Export a formatted Word court list',
+      'Court days, locations, and counties in one place',
+      'Notice periods with per-court overrides',
+      'Trial Lists for hearing day, grouped by county and session',
     ],
-    img: '/images/dwellex-courts.png',
-    imgAlt: 'Dwellex Trial Lists grouped by county and court session',
+    img: '/images/dwellex-court-rules.png',
+    imgAlt: 'Dwellex courts and notice types configuration with court-day periods and overrides',
+  },
+  assignments: {
+    title: <>Who owns the building.<br />Per timeline.</>,
+    body: 'Map responsible staff to organizations and properties, then override by timeline when Kansas non-payment and a market tenant file need different people. Time off and handoffs keep the queue moving when someone is out.',
+    bullets: [
+      'Defaults that inherit from organization to building',
+      'Timeline-specific owners for notice requests and matter types',
+      'Schedule time off and reassign work without losing the trail',
+    ],
+    img: '/images/dwellex-assignments.png',
+    imgAlt: 'Dwellex assignments matrix showing responsible staff by building and timeline',
+  },
+  staff: {
+    title: <>Staff home.<br />Built for your firm.</>,
+    body: 'Configure what attorneys and paralegals see when they log in: upcoming dates, notice requests, intake approvals, and the header action that starts a new matter. Drag tiles and boxes until the home page matches how your team works.',
+    bullets: [
+      'Reorder tiles and boxes for the firm home page',
+      'Set the header button to submit intake for a client',
+      'Preview the layout before you save',
+    ],
+    img: '/images/dwellex-staff-home.png',
+    imgAlt: 'Dwellex firm settings for a customizable staff home page with live preview',
   },
 }
 
@@ -400,8 +433,11 @@ export default function DwellexPage() {
               <div className="dw-tabs" role="tablist" aria-label="Product features">
                 {([
                   { id: 'notices' as const, label: '01 / Batch notices' },
-                  { id: 'timeline' as const, label: '02 / Case timelines' },
-                  { id: 'courts' as const, label: '03 / Court preparation' },
+                  { id: 'action' as const, label: '02 / Action items' },
+                  { id: 'timeline' as const, label: '03 / Case timelines' },
+                  { id: 'courts' as const, label: '04 / Courts & notices' },
+                  { id: 'assignments' as const, label: '05 / Assignments' },
+                  { id: 'staff' as const, label: '06 / Staff home' },
                 ]).map((t) => (
                   <button
                     key={t.id}
@@ -435,11 +471,11 @@ export default function DwellexPage() {
               <div className="dw-support-features">
                 <div>
                   <h3>State-specific compliance.</h3>
-                  <p>Generate legally valid notices — like a Pay or Quit notice — tailored to local housing laws and the jurisdictions your practice files in.</p>
+                  <p>Generate legally valid notices, like a Pay or Quit notice, tailored to local housing laws and the court rules your firm configures.</p>
                 </div>
                 <div>
-                  <h3>Deadline &amp; date tracking.</h3>
-                  <p>Automated reminders for court dates, cure periods, and vacate deadlines keep every window visible across attorney and client timelines.</p>
+                  <h3>Court day, ready to go.</h3>
+                  <p>Trial Lists group hearings by county and morning or afternoon session, with balances and a Word export for the docket.</p>
                 </div>
                 <div>
                   <h3>Your systems stay in sync.</h3>

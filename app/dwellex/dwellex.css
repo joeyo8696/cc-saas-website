@@ -207,17 +207,23 @@
 .dw-workspace .eyebrow, .dw-faq .eyebrow, .dw-price-intro .eyebrow { color: #676381; }
 .dw-workspace em, .dw-faq em, .dw-price-intro em { color: var(--indigo); }
 .dw-workspace .dw-section-head > p { color: #68647c; }
-.dw-tabs { display: flex; border-bottom: 1px solid #cac5dc; gap: 24px; }
+.dw-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #cac5dc;
+  gap: 4px 18px;
+}
 .dw-tabs button {
   background: none;
   border: 0;
   border-bottom: 3px solid transparent;
-  padding: 17px 4px;
+  padding: 14px 2px;
   color: #6d677d;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.92rem;
   text-align: left;
-  flex: 1;
+  flex: 0 1 auto;
+  white-space: nowrap;
 }
 .dw-tabs button[aria-selected="true"] {
   color: var(--indigo);

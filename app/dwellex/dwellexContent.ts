@@ -94,7 +94,11 @@ export const dwellexSoftwareSchema = {
   featureList: [
     'State-specific eviction notices including Pay or Quit',
     'Batch notice generation from property management CSV exports',
-    'Automated reminders for court dates, cure periods and vacate deadlines',
+    'Action Items queue for open cases and what each one needs',
+    'Visual case timelines with branching steps and client-visible tasks',
+    'Configurable courts, notice periods and court-day overrides',
+    'Staff assignments by building and timeline with time off and handoffs',
+    'Customizable staff home with upcoming dates and notice requests',
     'Landlord and property manager client portal',
     'Clio bidirectional sync',
     'PracticePanther, Rent Manager and Yardi integrations',
