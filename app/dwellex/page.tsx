@@ -338,9 +338,9 @@ export default function DwellexPage() {
                 <span>LANDLORD–TENANT CASE MANAGEMENT</span>
               </div>
               <div className="dw-hero-grid">
-                <h1>More moving parts.<br /><em>One clear path.</em></h1>
+                <h1>Eviction software for law firms.<br /><em>One clear path.</em></h1>
                 <div className="dw-intro">
-                  <p>Your cases have enough complexity. Bring intake, state-specific notices, court dates, cure periods and client updates into one workspace built for your eviction practice.</p>
+                  <p>Dwellex is eviction and landlord-tenant case management software. Bring intake, state-specific notices, court dates, cure periods and client updates into one workspace built for your practice.</p>
                   <button type="button" className="button" onClick={() => openScheduler('hero')}>
                     See Dwellex in action <span aria-hidden="true">↗</span>
                   </button>

@@ -6,10 +6,13 @@ import {
   dwellexSoftwareSchema,
 } from './dwellexContent'
 
+const DWELLEX_PAGE_TITLE =
+  'Dwellex | Eviction Software for Law Firms | Landlord-Tenant Case Management'
+
 const dwellexWebPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Dwellex — Eviction Software with State-Specific Notices & Deadline Tracking',
+  name: DWELLEX_PAGE_TITLE,
   url: 'https://www.casecompass.io/dwellex',
   description: DWELLEX_META_DESCRIPTION,
   isPartOf: {
@@ -32,7 +35,7 @@ const dwellexWebPageSchema = {
 }
 
 export const metadata: Metadata = {
-  title: { absolute: 'Dwellex — Eviction Software with State-Specific Notices & Deadline Tracking' },
+  title: { absolute: DWELLEX_PAGE_TITLE },
   description: DWELLEX_META_DESCRIPTION,
   alternates: {
     canonical: 'https://www.casecompass.io/dwellex',
@@ -41,20 +44,20 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.casecompass.io/dwellex',
     siteName: 'Case Compass',
-    title: 'Dwellex — State-specific notices. Deadlines that stay on track.',
+    title: DWELLEX_PAGE_TITLE,
     description: DWELLEX_META_DESCRIPTION,
     images: [
       {
         url: '/images/dwellex-dashboard.png',
         width: 1200,
         height: 630,
-        alt: 'Dwellex eviction case management — batch notices and matter workspace',
+        alt: 'Dwellex eviction software for landlord-tenant law firms',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dwellex — Eviction Software with State-Specific Notices & Deadline Tracking',
+    title: DWELLEX_PAGE_TITLE,
     description: DWELLEX_META_DESCRIPTION,
     images: ['/images/dwellex-dashboard.png'],
   },
